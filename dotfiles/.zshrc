@@ -163,7 +163,9 @@ PATH=$PATH:$HOME/.local/bin/:$GOPATH/bin
 # export XMODIFIERS=@im=ibus
 # export QT_IM_MODULE=ibus
 # java
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
+export JDTLS_CONFIG=~/project/dev.d/config_linux
+# export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 # tmux params
 export TERM='xterm-256color'
 export EDITOR='nvim'

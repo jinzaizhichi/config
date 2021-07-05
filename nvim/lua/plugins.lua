@@ -5,20 +5,19 @@ vim.cmd [[packadd packer.nvim]]
 -- Only if your version of Neovim doesn't have https://github.com/neovim/neovim/pull/12632 merged
 -- vim._update_package_paths()
 
-return require('packer').startup(function()
+return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   -- Post-install/update hook with neovim command
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = function()
-      require'nvim-treesitter.configs'.setup {
-      ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-      ignore_install = { }, -- List of parsers to ignore installing
-      highlight = {
-        enable = true,              -- false will disable the whole extension
-        disable = { },  -- list of language that will be disabled
-      },
-    }
-  end }
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+  require'nvim-treesitter.configs'.setup {
+  ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ignore_install = { }, -- List of parsers to ignore installing
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    disable = { },  -- list of language that will be disabled
+  },
+}
   -- You can specify multiple plugins in a single call
   use {'tjdevries/colorbuddy.vim'}
   -- You can alias plugin names
@@ -29,29 +28,30 @@ return require('packer').startup(function()
   use {'nvim-lua/popup.nvim'}
   use { 'lewis6991/gitsigns.nvim', config = function() require('gitsigns').setup() end }
   use 'b3nj5m1n/kommentary'
-  use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
-  require("bufferline").setup{
-      options = {
-            show_buffer_icons = false,
-            show_close_icon = false,
-            show_buffer_close_icons = false,
-      },
-        highlights = {
-            buffer_selected = {
-                guifg = '#282c34',
-                guibg = '#bbc2cf',
-                gui = "bold,italic"
-            },
+  use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons', config = function() end}
+      require("bufferline").setup{
+          options = {
+                show_buffer_icons = false,
+                show_close_icon = false,
+                show_buffer_close_icons = false,
+          },
+            highlights = {
+                buffer_selected = {
+                    guifg = '#282c34',
+                    guibg = '#bbc2cf',
+                    gui = "bold,italic"
+                },
+            }
         }
-  }
   use {'kevinhwang91/nvim-hlslens'}
   use 'kyazdani42/nvim-tree.lua'
   use 'tpope/vim-surround'
-  use {'akinsho/nvim-toggleterm.lua', config = function()
-        require("toggleterm").setup{
+  use {'akinsho/nvim-toggleterm.lua'}
+
+require("toggleterm").setup{
       -- size can be a number or function which is passed the current terminal
-      size = 20,
-      open_mapping = [[<C-t>]],
+      size = 15,
+      open_mapping = [[<leader>m]],
       hide_numbers = false, -- hide the number column in toggleterm buffers
       shade_terminals = true,
       -- shading_factor = '<1>', -- the degree by which to darken to terminal colour, default: 1 for dark backgrounds, 3 for light
@@ -62,74 +62,44 @@ return require('packer').startup(function()
       close_on_exit = true, -- close the terminal window when the process exits
       shell = vim.o.shell, -- change the default shell
     }
-  end
-  }
   use 'nvim-telescope/telescope.nvim'
-  use 'norcalli/nvim-colorizer.lua' require('colorizer').setup()
-  use { 'lewis6991/spellsitter.nvim', config = function() require('spellsitter').setup() end}
-  use {'windwp/nvim-autopairs'} require('nvim-autopairs').setup()
+  use {'norcalli/nvim-colorizer.lua', config = require('colorizer').setup()}
+  use {'lewis6991/spellsitter.nvim', config = function()  end}
+  require('spellsitter').setup()
+  use {'windwp/nvim-autopairs', config = function() require('nvim-autopairs').setup() end} 
+  require('nvim-autopairs').setup()
   --[[ use {
     'blackCauldron7/surround.nvim',
     config = function()
       require 'surround'.setup {}
     end
   } ]]
-  use {
-    'NTBBloodbath/rest.nvim',
-    requires = { 'nvim-lua/plenary.nvim' },
-    config = function()
-        require('rest-nvim').setup()
-    end
-  }
+  use {'NTBBloodbath/rest.nvim', config = function()  end}
+  require('rest-nvim').setup()
   use {'glepnir/dashboard-nvim'}
-  use {'p00f/nvim-ts-rainbow'}
+  use {'p00f/nvim-ts-rainbow', config = function() end }
   use 'windwp/nvim-spectre'
-  require'nvim-treesitter.configs'.setup{
-      rainbow = {
-        enable = true,
-        extended_mode = true, -- Highlight also non-parentheses delimiters, boolean or table: lang -> boolean
-      }
-    }
-  use {
-  "ahmedkhalf/lsp-rooter.nvim",
-  config = function()
-    require("lsp-rooter").setup {
-      -- your configuration comes here
+  use { "ahmedkhalf/lsp-rooter.nvim"}
+
+  require("lsp-rooter").setup {
+  -- your configuration comes here
       -- or leave it empty to use the default settings
       -- refer to the configuration section below
     }
-  end
-}
   use 'kdheepak/lazygit.nvim'
-  use 'yamatsum/nvim-cursorline'
+  use 'itchyny/vim-cursorword'
   use 'windwp/nvim-ts-autotag'
   use {'kevinhwang91/nvim-bqf'}
-  use {
-  "folke/todo-comments.nvim",
-  requires = "nvim-lua/plenary.nvim",
-  config = function()
-    require("todo-comments").setup {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    }
-  end
-  }
-
-  use {
-  'phaazon/hop.nvim',
-  as = 'hop',
-  config = function()
+  use {'folke/todo-comments.nvim', config = function() require("todo-comments").setup{} end}
+  use {'phaazon/hop.nvim', as = 'hop'}
     -- you can configure Hop the way you like here; see :h hop-config
-    require'hop'.setup { create_hl_autocmd = true }
-  end
-  }
+  require('hop').setup()
   -- Don't know why highlight not work util add this line
-  require('hop').setup({create_hl_autocmd = true})
-  vim.api.nvim_set_keymap('n', '<leader><leader>w', "<cmd>lua require'hop'.hint_words()<cr>", {})
+  -- require('hop').setup({create_hl_autocmd = true})
+  --[[ vim.api.nvim_set_keymap('n', '<leader><leader>w', "<cmd>lua require'hop'.hint_words()<cr>", {})
   vim.api.nvim_set_keymap('n', '<leader><leader>p', "<cmd>lua require'hop'.hint_patterns()<cr>", {})
   vim.api.nvim_set_keymap('n', '<leader><leader>j', "<cmd>lua require'hop'.hint_lines()<cr>", {})
-  vim.api.nvim_set_keymap('n', '<leader><leader>s', "<cmd>lua require'hop'.hint_char1()<cr>", {})
+  vim.api.nvim_set_keymap('n', '<leader><leader>s', "<cmd>lua require'hop'.hint_char1()<cr>", {}) ]]
 
   -- Lazy loading:
   -- Load on specific commands
@@ -147,12 +117,50 @@ return require('packer').startup(function()
   --   config = 'vim.cmd[[ALEEnable]]'
   -- }
 
+  use {'hrsh7th/nvim-compe',
+    requires = {{'hrsh7th/vim-vsnip', opt = true}, {'hrsh7th/vim-vsnip-integ', opt = true}},
+  config = function()
+  end}
+      require'compe'.setup {
+      enabled = true;
+      autocomplete = true;
+      debug = false;
+      min_length = 1;
+      preselect = 'enable';
+      throttle_time = 80;
+      source_timeout = 200;
+      resolve_timeout = 800;
+      incomplete_delay = 400;
+      max_abbr_width = 100;
+      max_kind_width = 100;
+      max_menu_width = 100;
+      documentation = {
+        border = { '', '' ,'', ' ', '', '', '', ' ' }, -- the border option is the same as `|help nvim_open_win|`
+        winhighlight = "NormalFloat:CompeDocumentation,FloatBorder:CompeDocumentationBorder",
+        max_width = 120,
+        min_width = 60,
+        max_height = math.floor(vim.o.lines * 0.3),
+        min_height = 1,
+      };
+
+      source = {
+        path = true;
+        buffer = true;
+        calc = true;
+        nvim_lsp = true;
+        nvim_lua = true;
+        vsnip = true;
+        ultisnips = true;
+        luasnip = true;
+      };
+    }
+    use {'tzachar/compe-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-compe'}
   -- Plugins can have dependencies on other plugins
-  use {
+  --[[ use {
     'haorenW1025/completion-nvim',
     opt = true,
     requires = {{'hrsh7th/vim-vsnip', opt = true}, {'hrsh7th/vim-vsnip-integ', opt = true}}
-  }
+  } ]]
   -- require'lspconfig'.tsserver.setup{on_attach=require'completion'.on_attach}
 
   -- Plugins can also depend on rocks from luarocks.org:
@@ -175,7 +183,7 @@ return require('packer').startup(function()
   -- Post-install/update hook with call of vimscript function with argument
   use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
 
-  use {'sindrets/diffview.nvim'}
+  use {'sindrets/diffview.nvim', config = function() 
   local cb = require'diffview.config'.diffview_callback
 
   require'diffview'.setup{
@@ -213,16 +221,17 @@ return require('packer').startup(function()
       }
     }
   }
+  end}
 
   -- Use specific branch, dependency and run lua file after load
   use {
     'glepnir/galaxyline.nvim', branch = 'main', 
-    config = function() require('eviline') end,
+    config = function()  end,
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
   }
+  require('eviline')
 
-  use 'mhartington/formatter.nvim'
-  require('formatter').setup()
+  use {'mhartington/formatter.nvim', config = function() require('formatter').setup() end}
   use 'neovim/nvim-lspconfig'
   local nvim_lsp = require('lspconfig')
 
@@ -307,6 +316,7 @@ end
   end
   }
   use 'nanotee/sqls.nvim'
+  use 'folke/lsp-colors.nvim'
   use 'onsails/lspkind-nvim'
   require'lspconfig'.sqls.setup{
     on_attach = function(client)

@@ -13,8 +13,9 @@ set number
 set cursorline
 set whichwrap+=<,>,h,l
 set ttimeoutlen=0
-set timeoutlen=500
+" set timeoutlen=500
 set virtualedit=block,onemore
+set completeopt=menuone,noselect
 
 " ignore filetype when file search
 set wildignore+=*/tmp/*,*.so,*.swp,*.png,*.jpg,*.jpeg,*.gif,*.zip,*.rar,*.class,*.jar,*.pyc,*.pyd

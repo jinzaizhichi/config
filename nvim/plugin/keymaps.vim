@@ -103,3 +103,14 @@ nnoremap <silent> ]e <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_ne
 " or use command
 nnoremap <silent> [e :Lspsaga diagnostic_jump_next<CR>
 nnoremap <silent> ]e :Lspsaga diagnostic_jump_prev<CR>
+
+nnoremap <silent> <leader><leader>w <cmd>lua require'hop'.hint_words()<cr>
+nnoremap <silent> <leader><leader>p <cmd>lua require'hop'.hint_patterns()<cr>
+nnoremap <silent> <leader><leader>j <cmd>lua require'hop'.hint_lines()<cr>
+nnoremap <silent> <leader><leader>s <cmd>lua require'hop'.hint_char1()<cr>
+" compe
+inoremap <silent><expr> <C-Space> compe#complete()
+inoremap <silent><expr> <CR>      compe#confirm('<CR>')
+inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
+inoremap <silent><expr> <C-b>     compe#scroll({ 'delta': -4 })
