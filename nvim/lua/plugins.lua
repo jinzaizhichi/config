@@ -26,7 +26,8 @@ return require('packer').startup(function(use)
   -- use 'glepnir/indent-guides.nvim'
   use {'nvim-lua/plenary.nvim'}
   use {'nvim-lua/popup.nvim'}
-  use { 'lewis6991/gitsigns.nvim', config = function() require('gitsigns').setup() end }
+  use { 'lewis6991/gitsigns.nvim', config = function()  end }
+  require('gitsigns').setup()
   use 'b3nj5m1n/kommentary'
   use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons', config = function() end}
       require("bufferline").setup{

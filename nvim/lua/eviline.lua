@@ -55,7 +55,7 @@ gls.left[6] = {
   GitIcon = {
     provider = function() return '  ' end,
     condition = condition.check_git_workspace,
-    separator = ' ',
+    separator = '',
     separator_highlight = {'NONE',colors.bg},
     highlight = {colors.violet,colors.bg,'bold'},
   }
@@ -98,37 +98,6 @@ gls.left[10] = {
   }
 }
 
-gls.left[11] = {
-  DiagnosticError = {
-    provider = 'DiagnosticError',
-    icon = '  ',
-    highlight = {colors.red,colors.bg}
-  }
-}
-gls.left[12] = {
-  DiagnosticWarn = {
-    provider = 'DiagnosticWarn',
-    icon = '  ',
-    highlight = {colors.yellow,colors.bg},
-  }
-}
-
-gls.left[13] = {
-  DiagnosticHint = {
-    provider = 'DiagnosticHint',
-    icon = '  ',
-    highlight = {colors.cyan,colors.bg},
-  }
-}
-
-gls.left[14] = {
-  DiagnosticInfo = {
-    provider = 'DiagnosticInfo',
-    icon = '  ',
-    highlight = {colors.blue,colors.bg},
-  }
-}
-
 gls.mid[1] = {
   ShowLspClient = {
     provider = 'GetLspClient',
@@ -144,7 +113,39 @@ gls.mid[1] = {
   }
 }
 
+
 gls.right[1] = {
+  DiagnosticError = {
+    provider = 'DiagnosticError',
+    icon = '  ',
+    highlight = {colors.red,colors.bg}
+  }
+}
+gls.right[2] = {
+  DiagnosticWarn = {
+    provider = 'DiagnosticWarn',
+    icon = '  ',
+    highlight = {colors.yellow,colors.bg},
+  }
+}
+
+gls.right[3] = {
+  DiagnosticHint = {
+    provider = 'DiagnosticHint',
+    icon = '  ',
+    highlight = {colors.cyan,colors.bg},
+  }
+}
+
+gls.right[4] = {
+  DiagnosticInfo = {
+    provider = 'DiagnosticInfo',
+    icon = '  ',
+    highlight = {colors.blue,colors.bg},
+  }
+}
+
+gls.right[5] = {
   FileEncode = {
     provider = 'FileEncode',
     condition = condition.hide_in_width,
@@ -154,7 +155,7 @@ gls.right[1] = {
   }
 }
 
-gls.right[2] = {
+gls.right[6] = {
   FileFormat = {
     provider = 'FileFormat',
     condition = condition.hide_in_width,
@@ -164,7 +165,7 @@ gls.right[2] = {
   }
 }
 
-gls.right[3] = {
+gls.right[7] = {
   LineInfo = {
     provider = 'LineColumn',
     separator = ' ',
@@ -173,7 +174,7 @@ gls.right[3] = {
   },
 }
 
-gls.right[4] = {
+gls.right[8] = {
   PerCent = {
     provider = 'LinePercent',
     separator = ' ',
@@ -183,7 +184,7 @@ gls.right[4] = {
 }
 
 
-gls.right[5] = {
+gls.right[9] = {
   RainbowBlue = {
     provider = function() return ' ▊' end,
     highlight = {colors.blue,colors.bg}
