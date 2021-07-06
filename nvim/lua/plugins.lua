@@ -183,6 +183,7 @@ require("toggleterm").setup{
 
   -- Post-install/update hook with call of vimscript function with argument
   use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
+  use 'mfussenegger/nvim-dap'
 
   use {'sindrets/diffview.nvim', config = function() 
   local cb = require'diffview.config'.diffview_callback

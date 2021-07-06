@@ -141,6 +141,7 @@ alias ll='ls -la'
 alias la='ls -a'
 alias pc='proxychains'
 alias py='python'
+alias lg='lazygit'
 # alias vi='vim'
 alias javac="javac -J-Dfile.encoding=utf8"
 alias grep="grep --color=auto"
@@ -154,7 +155,7 @@ go env -w GO111MODULE=on
 # go proxy
 go env -w GOPROXY=https://goproxy.cn,direct
 #export GOPROXY=https://mirrors.aliyun.com/goproxy/,direct
-PATH=$PATH:$HOME/.local/bin/:$GOPATH/bin
+PATH=$PATH:$HOME/.local/bin/:$GOPATH/bin:$HOME/.config/nvim/lua/lspconfig/bin/
 # source ~/.oh-my-zsh/plugins/incr/incr*.zsh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
