@@ -319,6 +319,7 @@ end
   use 'nanotee/sqls.nvim'
   use 'folke/lsp-colors.nvim'
   use 'onsails/lspkind-nvim'
+  use 'mfussenegger/nvim-jdtls'
   require'lspconfig'.sqls.setup{
     on_attach = function(client)
         client.resolved_capabilities.execute_command = true
