@@ -155,7 +155,7 @@ go env -w GO111MODULE=on
 # go proxy
 go env -w GOPROXY=https://goproxy.cn,direct
 #export GOPROXY=https://mirrors.aliyun.com/goproxy/,direct
-PATH=$PATH:$HOME/.local/bin/:$GOPATH/bin:$HOME/.config/nvim/lua/lspconfig/bin/
+PATH=$PATH:$HOME/.local/bin/:$GOPATH/bin:$HOME/.config/nvim/lua/lsp/bin/
 # source ~/.oh-my-zsh/plugins/incr/incr*.zsh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

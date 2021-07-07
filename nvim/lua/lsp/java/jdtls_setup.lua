@@ -195,9 +195,9 @@ function M.setup()
     --   end
     -- end
     local bundles = {
-            vim.fn.glob("~/.config/nvim/lua/lspconfig/java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar")
+            vim.fn.glob("~/.config/nvim/lua/lsp/java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar")
         };
-    vim.list_extend(bundles, vim.split(vim.fn.glob("~/.config/nvim/lua/lspconfig/java/vscode-java-test/server/*.jar"), "\n"))
+    vim.list_extend(bundles, vim.split(vim.fn.glob("~/.config/nvim/lua/lsp/java/vscode-java-test/server/*.jar"), "\n"))
     config['init_options'] = {
       bundles = bundles;
     }
