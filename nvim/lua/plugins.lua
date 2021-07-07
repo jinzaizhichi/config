@@ -284,15 +284,21 @@ end
   use 'kabouzeid/nvim-lspinstall'
   require'lspinstall'.setup() -- important
 
-  local servers = require'lspinstall'.installed_servers()
+  --[[ local servers = require'lspinstall'.installed_servers()
   for _, server in pairs(servers) do
-    require'lspconfig'[server].setup{}
-  end
+    if server ~= 'java' then
+      require'lspconfig'[server].setup{}
+    end
+  end ]]
   local function setup_servers()
   require'lspinstall'.setup()
   local servers = require'lspinstall'.installed_servers()
   for _, server in pairs(servers) do
-    require'lspconfig'[server].setup{}
+    if server ~= 'java' then
+      require'lspconfig'[server].setup{}
+    else 
+      require'lspconfig.java.jdtls_setup'.setup()
+    end
   end
   end
   
