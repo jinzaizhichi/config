@@ -109,28 +109,19 @@ nnoremap <silent> <leader><leader>w <cmd>lua require'hop'.hint_words()<cr>
 nnoremap <silent> <leader><leader>p <cmd>lua require'hop'.hint_patterns()<cr>
 nnoremap <silent> <leader><leader>j <cmd>lua require'hop'.hint_lines()<cr>
 nnoremap <silent> <leader><leader>s <cmd>lua require'hop'.hint_char1()<cr>
-" compe
-inoremap <silent><expr> <C-Space> compe#complete()
-inoremap <silent><expr> <CR>      compe#confirm('<CR>')
-inoremap <silent><expr> <C-e>     compe#close('<C-e>')
-inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
-inoremap <silent><expr> <C-b>     compe#scroll({ 'delta': -4 })
+" " compe
+" inoremap <silent><expr> <C-Space> compe#complete()
+" inoremap <silent><expr> <CR>      compe#confirm('<CR>')
+" inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+" inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
+" inoremap <silent><expr> <C-b>     compe#scroll({ 'delta': -4 })
 
-" -- `code_action` is a superset of vim.lsp.buf.code_action and you'll be able to
-" -- use this mapping also with other language servers
-nnoremap <A-CR> <Cmd>lua require('jdtls').code_action()<CR>
-vnoremap <A-CR> <Esc><Cmd>lua require('jdtls').code_action(true)<CR>
-nnoremap <leader>r <Cmd>lua require('jdtls').code_action(false, 'refactor')<CR>
+" Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-nnoremap <A-o> <Cmd>lua require'jdtls'.organize_imports()<CR>
-nnoremap crv <Cmd>lua require('jdtls').extract_variable()<CR>
-vnoremap crv <Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>
-nnoremap crc <Cmd>lua require('jdtls').extract_constant()<CR>
-vnoremap crc <Esc><Cmd>lua require('jdtls').extract_constant(true)<CR>
-vnoremap crm <Esc><Cmd>lua require('jdtls').extract_method(true)<CR>
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
 
-
-" -- If using nvim-dap
-" -- This requires java-debug and vscode-java-test bundles, see install steps in this README further below.
-nnoremap <leader>df <Cmd>lua require'jdtls'.test_class()<CR>
-nnoremap <leader>dn <Cmd>lua require'jdtls'.test_nearest_method()<CR>
+" Avoid showing message extra message when using completion
+set shortmess+=c

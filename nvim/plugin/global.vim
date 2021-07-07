@@ -88,3 +88,10 @@ let g:dashboard_custom_header = [
 \ ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
 \ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
 \]
+let g:completion_chain_complete_list = {
+    \ 'default': [
+    \    {'complete_items': ['lsp', 'tabnine', 'tags', 'snippet',  ]},
+    \    {'mode': '<c-p>'},
+    \    {'mode': '<c-n>'}
+    \]
+\}

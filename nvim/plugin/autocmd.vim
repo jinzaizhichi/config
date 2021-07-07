@@ -5,3 +5,5 @@ au BufLeave * if &readonly==0 && filereadable(bufname('%')) | silent update | en
 " auto vimdiff wrap
 au VimEnter * if &diff | execute 'windo set wrap' | endif
 
+" Use completion-nvim in every buffer
+autocmd BufEnter * lua require'completion'.on_attach()

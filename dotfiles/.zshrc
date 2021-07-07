@@ -165,6 +165,7 @@ PATH=$PATH:$HOME/.local/bin/:$GOPATH/bin:$HOME/.config/nvim/lua/lsp/bin/
 # export QT_IM_MODULE=ibus
 # java
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
+export LUA_PATH="~/.config/nvim/lua/;;"
 # export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 # tmux params
 export TERM='xterm-256color'
