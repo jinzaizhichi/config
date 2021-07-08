@@ -411,7 +411,9 @@ local function setup_servers()
         }
     end
 
-    require'lspconfig'[server].setup(config)
+    if server ~= 'java' then
+        require'lspconfig'[server].setup(config)
+    end
   end
 end
 
