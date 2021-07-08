@@ -351,6 +351,16 @@ local function setup_servers()
       config.filetypes = {"c", "cpp"}; -- we don't want objective-c and objective-cpp!
     end
     if server == "java" then
+
+        --[[ local util = require "lspconfig/util"
+        local path = util.path
+      local install_path = require"lspinstall/util".install_path("java")
+      -- print(vim.api.nvim_command('pwd'))
+      local workspace_name, _ = string.gsub(vim.fn.fnamemodify('/h', ":p"), "/", "-")
+      config.cmd = {
+        path.join { install_path, "jdtls.sh" },
+        path.join { install_path, "workspace", '-home-hewenjin-project-fulu-fightdata_api-' },
+      } ]]
         config.settings = {
             ['java.format.settings.url'] = "/home/hewenjin/project/java-google-formatter.xml",
             ['java.format.settings.profile'] = "GoogleStyle",
@@ -379,11 +389,17 @@ local function setup_servers()
                   template = "${object.className}{${member.name()}=${member.value}, ${otherMembers}}"
                 }
               };
+              home = "/usr/lib/jvm/java-11-openjdk/",
               configuration = {
                 runtimes = {
                   {
                     name = "JavaSE-11",
                     path = "/usr/lib/jvm/java-11-openjdk/",
+                  },
+                  {
+                    name = "JavaSE-1.8",
+                    path = "/usr/lib/jvm/java-8-openjdk/",
+                    default = true
                   },
                   --[[ {
                     name = "JavaSE-14",
