@@ -130,6 +130,7 @@ function M.setup()
         };
         capabilities = capabilities,
         on_attach = on_attach,
+        filetypes = {'java'}
     }
 
     config.settings = {
@@ -174,7 +175,7 @@ function M.setup()
           };
         };
     }
-    config.cmd = {'jdtls', workspace_folder}
+    config.cmd = {'jdtls.sh', workspace_folder}
     config.on_attach = on_attach
     config.on_init = function(client, _)
         client.notify('workspace/didChangeConfiguration', { settings = config.settings })
