@@ -46,7 +46,7 @@ return require('packer').startup(function(use)
   use {'kristijanhusak/vim-dadbod-ui'}
   -- incsearch
   use {'kevinhwang91/nvim-hlslens'}
-  use 'tpope/vim-surround' 
+  use {'tpope/vim-surround'} 
   use {'akinsho/nvim-toggleterm.lua', config = function()
     require('toggleterm').setup(require('plugins.nvim-toggleterm'))
   end}
