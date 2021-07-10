@@ -15,11 +15,11 @@ return require('packer').startup(function(use)
   use 'kyazdani42/nvim-tree.lua'
   use {'kyazdani42/nvim-web-devicons'}
   use {'akinsho/nvim-bufferline.lua', config = function()
-      require("bufferline").setup(require('plugins.nvim-bufferline'))
+      require('bufferline').setup(require('plugins.nvim-bufferline'))
   end}
-  use {'glepnir/galaxyline.nvim', branch = 'main', config = function() require('eviline') end, }
+  use {'glepnir/galaxyline.nvim', branch = 'main', config = function() require('eviline') end}
   -- treesitter and treesitter base plug
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = function()
+  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = function()
       require('nvim-treesitter.configs').setup(require('plugins.nvim-treesitter'))
   end}
   use {'nvim-treesitter/nvim-treesitter-textobjects'}
@@ -27,16 +27,14 @@ return require('packer').startup(function(use)
   -- git
   use { 'lewis6991/gitsigns.nvim', config = function() require('gitsigns').setup() end }
   use {'kdheepak/lazygit.nvim'}
-  use {'sindrets/diffview.nvim', config = function()
-      require('diffview').setup(require('plugins.diffview'))
-  end}
+  use {'sindrets/diffview.nvim', config = function() require('diffview').setup(require('plugins.diffview')) end}
   -- translator
   use {'voldikss/vim-translator'}
   -- toggle tansparent
   use {'xiyaowong/nvim-transparent'}
   -- comment
   use {'b3nj5m1n/kommentary'}
-  use {'folke/todo-comments.nvim', config = function() require("todo-comments").setup{} end}
+  use {'folke/todo-comments.nvim', config = function() require('todo-comments').setup{} end}
   -- highlight different word at same time
   use {'lfv89/vim-interestingwords'}
   -- project task manage
@@ -48,9 +46,9 @@ return require('packer').startup(function(use)
   use {'kristijanhusak/vim-dadbod-ui'}
   -- incsearch
   use {'kevinhwang91/nvim-hlslens'}
-  use 'tpope/vim-surround'
+  use 'tpope/vim-surround' 
   use {'akinsho/nvim-toggleterm.lua', config = function()
-    require("toggleterm").setup(require('plugins.nvim-toggleterm'))
+    require('toggleterm').setup(require('plugins.nvim-toggleterm'))
   end}
   -- editing
   use {'windwp/nvim-autopairs', config = function() require('nvim-autopairs').setup() end}
@@ -69,9 +67,9 @@ return require('packer').startup(function(use)
   -- rest client
   use {'NTBBloodbath/rest.nvim', config = function() require('rest-nvim').setup() end}
   -- auto change root dir
-  use {'ahmedkhalf/lsp-rooter.nvim', config = function() require("lsp-rooter").setup() end}
+  use {'ahmedkhalf/lsp-rooter.nvim', config = function() require('lsp-rooter').setup() end}
   -- markdown preview
-  use {'npxbr/glow.nvim', run = ":GlowInstall"}
+  use {'npxbr/glow.nvim', run = ':GlowInstall'}
   -- lsp auto completion
   use {'haorenW1025/completion-nvim' }
   use {'hrsh7th/vim-vsnip'}
@@ -86,7 +84,7 @@ return require('packer').startup(function(use)
   use {'rcarriga/nvim-dap-ui'}
   use {'theHamsta/nvim-dap-virtual-text'}
   -- which keys
-  use {'folke/which-key.nvim', config = function() require("which-key").setup() end}
+  use {'folke/which-key.nvim', config = function() require('which-key').setup() end}
   -- lsp setup
   use {'mhartington/formatter.nvim', config = function() require('formatter').setup(require('plugins.formatter')) end}
   use {'neovim/nvim-lspconfig'}
@@ -95,7 +93,7 @@ return require('packer').startup(function(use)
     -- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
     require('lspinstall').post_install_hook = function ()
       require('plugins.lspinstall').setup_servers() -- reload installed servers
-      vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
+      vim.cmd('bufdo e') -- this triggers the FileType autocmd that starts the server
     end
   end}
   use {'glepnir/lspsaga.nvim', config = function() require'lspsaga'.init_lsp_saga() end}
