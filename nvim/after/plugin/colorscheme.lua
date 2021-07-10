@@ -4,15 +4,17 @@ require("colorbuddy").colorscheme("onebuddy")
 -- require("colorizer").setup()
 
 local Color, c, Group, g, s = require("colorbuddy").setup()
+local ul = s.underline
+local no = s.NONE
 -- local c = require("colorbuddy.color").colors
 -- local Group = require("colorbuddy.group").Group
 -- local g = require("colorbuddy.group").groups
 -- local s = require("colorbuddy.style").styles
 Color.new("mono_5", "#202328")
 Color.new("lsp_hint", "#50a14f")
-Color.new("lsp_info", "#0db9d7")
-Color.new("lsp_warning", "#986801")
-Color.new("lsp_error", "#ca1243")
+Color.new("lsp_info", "#75beff")
+Color.new("lsp_warning", "#d19a66")
+Color.new("lsp_error", "#c24038")
 Group.new('StatusLine', c.mono_1, c.mono_5, no)
 Group.new("comment", c.mono_3, nil, nil)
 Group.new('vimLineComment', c.mono_3, c.none, no)
