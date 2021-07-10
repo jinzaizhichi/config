@@ -80,9 +80,13 @@ return require('packer').startup(function(use)
   use {'nvim-treesitter/completion-treesitter'}
   use {'kristijanhusak/completion-tags'}
   -- use neovim in browser
-  use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
+  -- use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
+  -- nvim debug tool
   use {'mfussenegger/nvim-dap'}
-
+  use {'rcarriga/nvim-dap-ui'}
+  use {'theHamsta/nvim-dap-virtual-text'}
+  -- which keys
+  use {'folke/which-key.nvim', config = function() require("which-key").setup() end}
   -- lsp setup
   use {'mhartington/formatter.nvim', config = function() require('formatter').setup(require('plugins.formatter')) end}
   use {'neovim/nvim-lspconfig'}

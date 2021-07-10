@@ -69,6 +69,22 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["asyncrun.extra"] = {
+    loaded = true,
+    path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/asyncrun.extra"
+  },
+  ["asyncrun.vim"] = {
+    loaded = true,
+    path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/asyncrun.vim"
+  },
+  ["asynctasks.vim"] = {
+    loaded = true,
+    path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/asynctasks.vim"
+  },
+  ["clever-f.vim"] = {
+    loaded = true,
+    path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/clever-f.vim"
+  },
   ["colorbuddy.vim"] = {
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/colorbuddy.vim"
@@ -97,10 +113,6 @@ _G.packer_plugins = {
     config = { "\27LJ\1\2S\0\0\3\0\4\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0004\1\0\0%\2\3\0>\1\2\0=\0\0\1G\0\1\0\21plugins.diffview\nsetup\rdiffview\frequire\0" },
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/diffview.nvim"
-  },
-  firenvim = {
-    loaded = true,
-    path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/firenvim"
   },
   ["formatter.nvim"] = {
     config = { "\27LJ\1\2U\0\0\3\0\4\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0004\1\0\0%\2\3\0>\1\2\0=\0\0\1G\0\1\0\22plugins.formatter\nsetup\14formatter\frequire\0" },
@@ -170,6 +182,14 @@ _G.packer_plugins = {
   ["nvim-dap"] = {
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/nvim-dap"
+  },
+  ["nvim-dap-ui"] = {
+    loaded = true,
+    path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/nvim-dap-ui"
+  },
+  ["nvim-dap-virtual-text"] = {
+    loaded = true,
+    path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/nvim-dap-virtual-text"
   },
   ["nvim-hlslens"] = {
     loaded = true,
@@ -276,6 +296,18 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/vim-cursorword"
   },
+  ["vim-dadbod"] = {
+    loaded = true,
+    path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/vim-dadbod"
+  },
+  ["vim-dadbod-ui"] = {
+    loaded = true,
+    path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/vim-dadbod-ui"
+  },
+  ["vim-interestingwords"] = {
+    loaded = true,
+    path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/vim-interestingwords"
+  },
   ["vim-matchup"] = {
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/vim-matchup"
@@ -295,6 +327,11 @@ _G.packer_plugins = {
   ["vim-vsnip-integ"] = {
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ"
+  },
+  ["which-key.nvim"] = {
+    config = { "\27LJ\1\0027\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\14which-key\frequire\0" },
+    loaded = true,
+    path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/which-key.nvim"
   }
 }
 
@@ -307,6 +344,10 @@ time([[Config for formatter.nvim]], false)
 time([[Config for nvim-treesitter]], true)
 try_loadstring("\27LJ\1\2i\0\0\3\0\4\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0004\1\0\0%\2\3\0>\1\2\0=\0\0\1G\0\1\0\28plugins.nvim-treesitter\nsetup\28nvim-treesitter.configs\frequire\0", "config", "nvim-treesitter")
 time([[Config for nvim-treesitter]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+try_loadstring("\27LJ\1\0027\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
+time([[Config for which-key.nvim]], false)
 -- Config for: sqls.nvim
 time([[Config for sqls.nvim]], true)
 try_loadstring("\27LJ\1\2Y\0\0\3\0\5\0\n4\0\0\0%\1\1\0>\0\2\0027\0\2\0007\0\3\0004\1\0\0%\2\4\0>\1\2\0=\0\0\1G\0\1\0\17plugins.sqls\nsetup\tsqls\14lspconfig\frequire\0", "config", "sqls.nvim")
@@ -343,10 +384,10 @@ time([[Config for nvim-autopairs]], false)
 time([[Config for hop]], true)
 try_loadstring("\27LJ\1\0021\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\bhop\frequire\0", "config", "hop")
 time([[Config for hop]], false)
--- Config for: nvim-toggleterm.lua
-time([[Config for nvim-toggleterm.lua]], true)
-try_loadstring("\27LJ\1\2\\\0\0\3\0\4\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0004\1\0\0%\2\3\0>\1\2\0=\0\0\1G\0\1\0\28plugins.nvim-toggleterm\nsetup\15toggleterm\frequire\0", "config", "nvim-toggleterm.lua")
-time([[Config for nvim-toggleterm.lua]], false)
+-- Config for: nvim-bufferline.lua
+time([[Config for nvim-bufferline.lua]], true)
+try_loadstring("\27LJ\1\2\\\0\0\3\0\4\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0004\1\0\0%\2\3\0>\1\2\0=\0\0\1G\0\1\0\28plugins.nvim-bufferline\nsetup\15bufferline\frequire\0", "config", "nvim-bufferline.lua")
+time([[Config for nvim-bufferline.lua]], false)
 -- Config for: lsp-rooter.nvim
 time([[Config for lsp-rooter.nvim]], true)
 try_loadstring("\27LJ\1\0028\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\15lsp-rooter\frequire\0", "config", "lsp-rooter.nvim")
@@ -367,10 +408,10 @@ time([[Config for gitsigns.nvim]], false)
 time([[Config for todo-comments.nvim]], true)
 try_loadstring("\27LJ\1\2?\0\0\2\0\3\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0002\1\0\0>\0\2\1G\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
 time([[Config for todo-comments.nvim]], false)
--- Config for: nvim-bufferline.lua
-time([[Config for nvim-bufferline.lua]], true)
-try_loadstring("\27LJ\1\2\\\0\0\3\0\4\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0004\1\0\0%\2\3\0>\1\2\0=\0\0\1G\0\1\0\28plugins.nvim-bufferline\nsetup\15bufferline\frequire\0", "config", "nvim-bufferline.lua")
-time([[Config for nvim-bufferline.lua]], false)
+-- Config for: nvim-toggleterm.lua
+time([[Config for nvim-toggleterm.lua]], true)
+try_loadstring("\27LJ\1\2\\\0\0\3\0\4\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0004\1\0\0%\2\3\0>\1\2\0=\0\0\1G\0\1\0\28plugins.nvim-toggleterm\nsetup\15toggleterm\frequire\0", "config", "nvim-toggleterm.lua")
+time([[Config for nvim-toggleterm.lua]], false)
 -- Config for: nvim-lspinstall
 time([[Config for nvim-lspinstall]], true)
 try_loadstring("\27LJ\1\2h\0\0\2\0\6\0\n4\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\0014\0\3\0007\0\4\0%\1\5\0>\0\2\1G\0\1\0\fbufdo e\bcmd\bvim\18setup_servers\23plugins.lspinstall\frequirez\1\0\2\0\6\0\v4\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\0014\0\0\0%\1\3\0>\0\2\0021\1\5\0:\1\4\0G\0\1\0\0\22post_install_hook\15lspinstall\18setup_servers\23plugins.lspinstall\frequire\0", "config", "nvim-lspinstall")
