@@ -4,6 +4,7 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "norma
 au BufLeave * if &readonly==0 && filereadable(bufname('%')) | silent update | endif
 " auto vimdiff wrap
 au VimEnter * if &diff | execute 'windo set wrap' | endif
-
 " Use completion-nvim in every buffer
-autocmd BufEnter * lua require'completion'.on_attach()
+au BufEnter * lua require'completion'.on_attach()
+" auto run PackerCompile whether plugins.lua is updated
+au BufWritePost *.lua source <afile> | PackerCompile

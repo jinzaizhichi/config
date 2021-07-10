@@ -95,3 +95,5 @@ let g:completion_chain_complete_list = {
     \    {'mode': '<c-n>'}
     \]
 \}
+
+let g:db_ui_winwidth = 30

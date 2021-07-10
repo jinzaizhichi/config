@@ -3,6 +3,12 @@
 nnoremap <silent><c-n> :BufferLineCycleNext<CR>
 nnoremap <silent><c-p> :BufferLineCyclePrev<CR>
 
+" copy to system clipboard
+vmap <leader><leader>y "+y
+
+" paste to vim register
+nnoremap <leader><leader>p "+p
+
 " These commands will move the current buffer backwards or forwards in the bufferline
 nnoremap <silent><leader>bn :BufferLineMoveNext<CR>
 nnoremap <silent><leader>bp :BufferLineMovePrev<CR>
@@ -11,7 +17,7 @@ nnoremap <silent><leader>bp :BufferLineMovePrev<CR>
 nnoremap <silent><leader>be :BufferLineSortByExtension<CR>
 nnoremap <silent><leader>bd :BufferLineSortByDirectory<CR>
 nnoremap <silent><leader>bs :lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.id < buf_b.id end)<CR>
-nnoremap <silent><leader>m <Cmd>exe v:count1 . "ToggleTerm"<CR>
+nnoremap <silent><leader><leader>m <Cmd>exe v:count1 . "ToggleTerm"<CR>
 tnoremap <silent><leader><leader>m <Cmd>exe v:count1 . "ToggleTerm"<CR>
 
 noremap <silent> n <Cmd>execute('normal! ' . v:count1 . 'n')<CR>
@@ -56,7 +62,7 @@ inoremap <c-j> <cmd>lua return require'snippets'.advance_snippet(-1)<CR>
 nnoremap <silent> <leader>gg :LazyGit<CR>
 nnoremap <silent> <leader>gf :DiffviewOpen<CR>
 " Provided by setup function
-nnoremap <silent> <leader>i :Format<CR>
+nnoremap <silent> <leader>fm :Format<CR>
 
 " lsp provider to find the cursor word definition and reference
 nnoremap <silent> gh <cmd>lua require'lspsaga.provider'.lsp_finder()<CR>
@@ -120,8 +126,21 @@ nnoremap <silent> <leader><leader>s <cmd>lua require'hop'.hint_char1()<cr>
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-" Set completeopt to have a better completion experience
-set completeopt=menuone,noinsert,noselect
+" Echo translation in the cmdline
+nmap <silent> <leader>tc <Plug>Translate
+vmap <silent> <leader>tc <Plug>TranslateV
+" Display translation in a window
+nmap <silent> <leader>tt <Plug>TranslateW
+vmap <silent> <leader>tt <Plug>TranslateWV
+" Replace the text with translation
+nmap <silent> <leader>tr <Plug>TranslateR
+vmap <silent> <leader>tr <Plug>TranslateRV
+" Translate the text in clipboard
+nmap <silent> <leader>tx <Plug>TranslateX
 
-" Avoid showing message extra message when using completion
-set shortmess+=c
+" DB
+nnoremap <silent> <leader>dd :DBUIToggle<cr>
+
+" clever-f
+map ; <Plug>(clever-f-repeat-forward)
+map , <Plug>(clever-f-repeat-back)

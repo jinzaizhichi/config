@@ -15,7 +15,6 @@ set whichwrap+=<,>,h,l
 set ttimeoutlen=0
 " set timeoutlen=500
 set virtualedit=block,onemore
-set completeopt=menuone,noselect
 
 " ignore filetype when file search
 set wildignore+=*/tmp/*,*.so,*.swp,*.png,*.jpg,*.jpeg,*.gif,*.zip,*.rar,*.class,*.jar,*.pyc,*.pyd
@@ -94,3 +93,8 @@ endif
 set hidden
 set termguicolors
 
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
+
+" Avoid showing message extra message when using completion
+set shortmess+=c

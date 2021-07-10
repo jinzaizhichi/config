@@ -14,7 +14,8 @@ local Color, c, Group, g, s = require("colorbuddy").setup()
 -- local s = require("colorbuddy.style").styles
 Color.new("mono_5", "#202328")
 Group.new('StatusLine',   c.mono_1, c.mono_5,  no)
-Group.new("comment", c.gray:dark(), nil, nil)
+Group.new("comment", c.mono_3, nil, nil)
+Group.new('vimLineComment',  c.mono_3, c.none, no)
 
 -- I don't think I like highlights for text
 -- Group.new("LspReferenceText", nil, c.gray0:light(), s.bold)
