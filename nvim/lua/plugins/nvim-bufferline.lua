@@ -18,6 +18,6 @@ return {
       end
       return s
     end,
-    offsets = {{filetype = "NvimTree", text = "NvimTree"}}
+    -- offsets = {{filetype = "NvimTree", text = "NvimTree"}}
   }
 }

@@ -141,6 +141,7 @@ alias ll='ls -la'
 alias la='ls -a'
 alias pc='proxychains'
 alias py='python'
+alias rr='ranger'
 alias lg='lazygit'
 # alias vi='vim'
 alias javac="javac -J-Dfile.encoding=utf8"

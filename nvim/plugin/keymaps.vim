@@ -1,3 +1,4 @@
+cnoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 " These commands will navigate through buffers in order regardless of which mode you are using
 " e.g. if you change the order of buffers :bnext and :bprevious will not respect the custom ordering
 nnoremap <silent><c-n> :BufferLineCycleNext<CR>
@@ -12,6 +13,7 @@ nnoremap <leader><leader>p "+p
 " These commands will move the current buffer backwards or forwards in the bufferline
 nnoremap <silent><leader>bn :BufferLineMoveNext<CR>
 nnoremap <silent><leader>bp :BufferLineMovePrev<CR>
+nnoremap <silent><leader>x :bd<CR>
 
 " These commands will sort buffers by directory, language, or a custom criteria
 nnoremap <silent><leader>be :BufferLineSortByExtension<CR>
@@ -144,3 +146,4 @@ nnoremap <silent> <leader>dd :DBUIToggle<cr>
 " clever-f
 map ; <Plug>(clever-f-repeat-forward)
 map , <Plug>(clever-f-repeat-back)
+
