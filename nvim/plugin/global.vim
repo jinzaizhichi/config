@@ -88,12 +88,16 @@ let g:dashboard_custom_header = [
 \ ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
 \ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
 \]
-let g:completion_chain_complete_list = {
-    \ 'default': [
-    \    {'complete_items': ['lsp', 'tabnine', 'tags', 'snippet',  ]},
-    \    {'mode': '<c-p>'},
-    \    {'mode': '<c-n>'}
-    \]
-\}
+" let g:completion_chain_complete_list = {
+"     \ 'default': [
+"     \    {'complete_items': ['lsp', 'tabnine', 'tags', 'snippet',  ]},
+"     \    {'mode': '<c-p>'},
+"     \    {'mode': '<c-n>'}
+"     \]
+" \}
 
 let g:db_ui_winwidth = 30
+
+" let g:completion_matching_strategy_list = ['fuzzy', 'exact', 'substring', 'all']
+" let g:completion_matching_smart_case = 1
+" let g:completion_trigger_on_delete = 1

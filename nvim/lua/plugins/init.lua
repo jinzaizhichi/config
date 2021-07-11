@@ -71,12 +71,15 @@ return require('packer').startup(function(use)
   -- markdown preview
   use {'npxbr/glow.nvim', run = ':GlowInstall'}
   -- lsp auto completion
-  use {'haorenW1025/completion-nvim' }
+  use {'hrsh7th/nvim-compe', config = function() require('compe').setup(require('plugins.compe')) end}
   use {'hrsh7th/vim-vsnip'}
+  use {'tzachar/compe-tabnine', run='./install.sh'}
+  use {'kristijanhusak/vim-dadbod-completion'}
   use {'hrsh7th/vim-vsnip-integ'}
-  use {'aca/completion-tabnine', run='./install.sh'}
-  use {'nvim-treesitter/completion-treesitter'}
-  use {'kristijanhusak/completion-tags'}
+  -- use {'haorenW1025/completion-nvim' }
+  -- use {'aca/completion-tabnine', run='./install.sh'}
+  -- use {'nvim-treesitter/completion-treesitter'}
+  -- use {'kristijanhusak/completion-tags'}
   -- use neovim in browser
   -- use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
   -- nvim debug tool
@@ -102,6 +105,6 @@ return require('packer').startup(function(use)
   use {'nanotee/sqls.nvim', config = function() require('lspconfig').sqls.setup(require('plugins.sqls')) end}
   use {'onsails/lspkind-nvim', config = function() require('lspkind').init(require('plugins.lspkind')) end}
   -- this jdtls intergation is not good enough for me now
-  -- use {'mfussenegger/nvim-jdtls'}
+  use {'mfussenegger/nvim-jdtls'}
 
 end)

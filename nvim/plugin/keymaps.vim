@@ -73,13 +73,8 @@ nnoremap <silent> gh :Lspsaga lsp_finder<CR>
 " code action
 nnoremap <silent><leader>ca <cmd>lua require('lspsaga.codeaction').code_action()<CR>
 vnoremap <silent><leader>ca :<C-U>lua require('lspsaga.codeaction').range_code_action()<CR>
-" or use command
-nnoremap <silent><leader>ca :Lspsaga code_action<CR>
-vnoremap <silent><leader>ca :<C-U>Lspsaga range_code_action<CR>
 " show hover doc
 nnoremap <silent> K <cmd>lua require('lspsaga.hover').render_hover_doc()<CR>
-" or use command
-nnoremap <silent>K :Lspsaga hover_doc<CR>
 
 " scroll down hover doc or scroll in definition preview
 nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
@@ -87,42 +82,32 @@ nnoremap <silent> <C-f> <cmd>lua require('lspsaga.action').smart_scroll_with_sag
 nnoremap <silent> <C-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
 " show signature help
 nnoremap <silent> gs <cmd>lua require('lspsaga.signaturehelp').signature_help()<CR>
-" or command
-nnoremap <silent> gs :Lspsaga signature_help<CR>
 " rename
-nnoremap <silent>gr <cmd>lua require('lspsaga.rename').rename()<CR>
-" or command
-nnoremap <silent>gr :Lspsaga rename<CR>
+nnoremap <silent><leader>rn <cmd>lua require('lspsaga.rename').rename()<CR>
 " close rename win use <C-c> in insert mode or `q` in noremal mode or `:q`
 
 " preview definition
 nnoremap <silent> gd <cmd>lua require'lspsaga.provider'.preview_definition()<CR>
-" or use command
-nnoremap <silent> gd :Lspsaga preview_definition<CR>
 " show
 nnoremap <silent><leader>cd <cmd>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>
 
-nnoremap <silent> <leader>cd :Lspsaga show_line_diagnostics<CR>
 " only show diagnostic if cursor is over the area
 nnoremap <silent><leader>cc <cmd>lua require'lspsaga.diagnostic'.show_cursor_diagnostics()<CR>
 
 " jump diagnostic
-nnoremap <silent> [e <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<CR>
-nnoremap <silent> ]e <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<CR>
-" or use command
-nnoremap <silent> [e :Lspsaga diagnostic_jump_next<CR>
-nnoremap <silent> ]e :Lspsaga diagnostic_jump_prev<CR>
+nnoremap <silent> [d <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<CR>
+nnoremap <silent> ]d <cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<CR>
 
 nnoremap <silent> <leader><leader>w <cmd>lua require'hop'.hint_words()<cr>
 nnoremap <silent> <leader><leader>p <cmd>lua require'hop'.hint_patterns()<cr>
 nnoremap <silent> <leader><leader>j <cmd>lua require'hop'.hint_lines()<cr>
 nnoremap <silent> <leader><leader>s <cmd>lua require'hop'.hint_char1()<cr>
 " " compe
-" inoremap <silent><expr> <C-Space> compe#complete()
-" inoremap <silent><expr> <CR>      compe#confirm('<CR>')
-" inoremap <silent><expr> <C-e>     compe#close('<C-e>')
-" inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
-" inoremap <silent><expr> <C-b>     compe#scroll({ 'delta': -4 })
+inoremap <silent><expr> <C-Space> compe#complete()
+inoremap <silent><expr> <CR>      compe#confirm(luaeval("require 'nvim-autopairs'.autopairs_cr()"))
+inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
+inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
 
 " Use <Tab> and <S-Tab> to navigate through popup menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"

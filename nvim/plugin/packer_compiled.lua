@@ -7,7 +7,7 @@ end
 
 vim.api.nvim_command('packadd packer.nvim')
 
-local no_errors = pcall(function()
+local no_errors, error_msg = pcall(function()
 
   local time
   local profile_info
@@ -89,21 +89,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/colorbuddy.vim"
   },
-  ["completion-nvim"] = {
+  ["compe-tabnine"] = {
     loaded = true,
-    path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/completion-nvim"
-  },
-  ["completion-tabnine"] = {
-    loaded = true,
-    path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/completion-tabnine"
-  },
-  ["completion-tags"] = {
-    loaded = true,
-    path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/completion-tags"
-  },
-  ["completion-treesitter"] = {
-    loaded = true,
-    path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/completion-treesitter"
+    path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/compe-tabnine"
   },
   ["dashboard-nvim"] = {
     loaded = true,
@@ -179,6 +167,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
   },
+  ["nvim-compe"] = {
+    config = { "\27LJ\1\2M\0\0\3\0\4\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0004\1\0\0%\2\3\0>\1\2\0=\0\0\1G\0\1\0\18plugins.compe\nsetup\ncompe\frequire\0" },
+    loaded = true,
+    path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/nvim-compe"
+  },
   ["nvim-dap"] = {
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/nvim-dap"
@@ -194,6 +187,10 @@ _G.packer_plugins = {
   ["nvim-hlslens"] = {
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/nvim-hlslens"
+  },
+  ["nvim-jdtls"] = {
+    loaded = true,
+    path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/nvim-jdtls"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -300,6 +297,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/vim-dadbod"
   },
+  ["vim-dadbod-completion"] = {
+    loaded = true,
+    path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/vim-dadbod-completion"
+  },
   ["vim-dadbod-ui"] = {
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/vim-dadbod-ui"
@@ -392,6 +393,10 @@ time([[Config for nvim-bufferline.lua]], false)
 time([[Config for lsp-rooter.nvim]], true)
 try_loadstring("\27LJ\1\0028\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\15lsp-rooter\frequire\0", "config", "lsp-rooter.nvim")
 time([[Config for lsp-rooter.nvim]], false)
+-- Config for: nvim-compe
+time([[Config for nvim-compe]], true)
+try_loadstring("\27LJ\1\2M\0\0\3\0\4\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0004\1\0\0%\2\3\0>\1\2\0=\0\0\1G\0\1\0\18plugins.compe\nsetup\ncompe\frequire\0", "config", "nvim-compe")
+time([[Config for nvim-compe]], false)
 -- Config for: spellsitter.nvim
 time([[Config for spellsitter.nvim]], true)
 try_loadstring("\27LJ\1\0029\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\16spellsitter\frequire\0", "config", "spellsitter.nvim")
@@ -421,5 +426,5 @@ if should_profile then save_profiles() end
 end)
 
 if not no_errors then
-  vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: ".v:exception | echom "Please check your config for correctness" | echohl None')
+  vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
 end

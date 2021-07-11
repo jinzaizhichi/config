@@ -9,4 +9,10 @@ delete this line
   -Xbootclasspath/a:/home/hewenjin/.local/share/nvim/lspinstall/java/lombok.jar \
 ```
 
+When use nvim-jdtls, my local setting need to set a symbollink to `~/.local/bin` directory
+
+```
+ln -s ~/.config/nvim/lua/lsp/java/java-lsp.sh java-lsp.sh
+```
+
 the LSP will be work well. But the neovim lsp build-in code action still not working. I should fix it some time.
