@@ -93,6 +93,7 @@ M.setup_servers = function()
       local javaconf = require('lsp.java.settings')
       config.init_options = javaconf.init_options
       config.settings = javaconf.settings
+      config.handlers = javaconf.handlers
     end
     require'lspconfig'[server].setup(config)
     -- java lsp setting is specific by nvim-jdtls

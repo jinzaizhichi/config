@@ -52,7 +52,6 @@ set wildmenu
 " preview  Show extra information about the currently selected
 " completion in the preview window.  Only works in
 " combination with "menu" or "menuone".
-set completeopt-=preview
 
 " search
 set hlsearch
