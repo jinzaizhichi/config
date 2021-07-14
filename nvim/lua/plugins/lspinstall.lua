@@ -1,13 +1,14 @@
 local M = {}
+
+local opts = {noremap = true, silent = true}
+local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 -- keymaps
 local on_attach = function(client, bufnr)
-  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- Mappings.
-  local opts = {noremap = true, silent = true}
   buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   -- buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
   -- buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
@@ -90,6 +91,20 @@ M.setup_servers = function()
       config.filetypes = {"c", "cpp"}; -- we don't want objective-c and objective-cpp!
     end
     if server == "java" then
+      buf_set_keymap('n', '<leader>ca', "<Cmd>lua require('jdtls').code_action()<CR>", opts)
+      buf_set_keymap('v', '<leader>ca', "<Cmd>lua require('jdtls').code_action(true)<CR>", opts)
+      buf_set_keymap('n', '<leader>cr', "<Cmd>lua require('jdtls').code_action(false, 'refactor')<CR>", opts)
+      buf_set_keymap('n', '<leader>co', "<Cmd>lua require('jdtls').organize_imports()<CR>", opts)
+      buf_set_keymap('n', '<leader>cv', "<Cmd>lua require('jdtls').extract_variable()<CR>", opts)
+      buf_set_keymap('v', '<leader>cv', "<Cmd>lua require('jdtls').extract_variable(true)<CR>", opts)
+      buf_set_keymap('n', '<leader>ct', "<Cmd>lua require('jdtls').extract_constant()<CR>", opts)
+      buf_set_keymap('v', '<leader>ct', "<Cmd>lua require('jdtls').extract_constant(true)<CR>", opts)
+      buf_set_keymap('v', '<leader>cm', "<Cmd>lua require('jdtls').extract_method(true)<CR>", opts)
+      -- If using nvim-dap
+      -- This requires java-debug and vscode-java-test bundles, see install steps in this README further below.
+      buf_set_keymap('n', '<leader>jt', "<Cmd>lua require('jdtls').test_class()<CR>", opts)
+      buf_set_keymap('n', '<leader>jn', "<Cmd>lua require('jdtls').test_nearest_method()<CR>", opts)
+
       local javaconf = require('lsp.java.settings')
       config.init_options = javaconf.init_options
       config.settings = javaconf.settings
