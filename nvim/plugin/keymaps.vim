@@ -19,8 +19,8 @@ nnoremap <silent><leader>x :bd<CR>
 nnoremap <silent><leader>be :BufferLineSortByExtension<CR>
 nnoremap <silent><leader>bd :BufferLineSortByDirectory<CR>
 nnoremap <silent><leader>bs :lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.id < buf_b.id end)<CR>
-nnoremap <silent><leader><leader>m <Cmd>exe v:count1 . "ToggleTerm"<CR>
-tnoremap <silent><leader><leader>m <Cmd>exe v:count1 . "ToggleTerm"<CR>
+nnoremap <silent><C-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
+tnoremap <silent><C-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
 
 noremap <silent> n <Cmd>execute('normal! ' . v:count1 . 'n')<CR>
             \<Cmd>lua require('hlslens').start()<CR>
