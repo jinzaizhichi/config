@@ -5,10 +5,10 @@ nnoremap <silent><c-n> :BufferLineCycleNext<CR>
 nnoremap <silent><c-p> :BufferLineCyclePrev<CR>
 
 " copy to system clipboard
-vmap <leader><leader>y "+y
+vmap <leader>y "+y
 
 " paste to vim register
-nnoremap <leader><leader>p "+p
+nnoremap <leader>p "+p
 
 " These commands will move the current buffer backwards or forwards in the bufferline
 nnoremap <silent><leader>bn :BufferLineMoveNext<CR>
@@ -19,8 +19,11 @@ nnoremap <silent><leader>x :bd<CR>
 nnoremap <silent><leader>be :BufferLineSortByExtension<CR>
 nnoremap <silent><leader>bd :BufferLineSortByDirectory<CR>
 nnoremap <silent><leader>bs :lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.id < buf_b.id end)<CR>
+
+" terminal
 nnoremap <silent><C-t><C-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
 tnoremap <silent><C-t><C-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
+tnoremap <silent><C-t><C-r> <C-\><C-n>
 
 noremap <silent> n <Cmd>execute('normal! ' . v:count1 . 'n')<CR>
             \<Cmd>lua require('hlslens').start()<CR>
