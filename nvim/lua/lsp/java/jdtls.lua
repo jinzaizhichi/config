@@ -2,12 +2,12 @@ local M = {}
 
 function M.setup()
   local on_attach = function(client, bufnr)
-    require'jdtls.setup'.add_commands()
     require'jdtls'.setup_dap({hotcodereplace = 'auto'})
-    require'lsp-status'.register_progress()
+    require'jdtls.setup'.add_commands()
+    -- require'lsp-status'.register_progress()
     require'lspkind'.init()
-    require'lspsaga'.init_lsp_saga()
-    require'completion'.on_attach()
+    -- require'lspsaga'.init_lsp_saga()
+    -- require'completion'.on_attach()
 
     local function buf_set_keymap(...)
       vim.api.nvim_buf_set_keymap(bufnr, ...)
@@ -21,8 +21,8 @@ function M.setup()
     -- Mappings.
     local opts = {noremap = true, silent = true}
     buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-    -- buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-    -- buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+    buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+    buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
     buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
     buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>',
                    opts)
@@ -141,7 +141,7 @@ function M.setup()
                   {settings = config.settings})
   end
 
-  local jar_patterns = {
+  --[[ local jar_patterns = {
     '~/.config/nvim/lua/lsp/java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar',
     -- '/dev/dgileadi/vscode-java-decompiler/server/*.jar',
     '~/.config/nvim/lua/lsp/java/vscode-java-test/server/*.jar'
@@ -154,7 +154,11 @@ function M.setup()
         table.insert(bundles, bundle)
       end
     end
-  end
+  end ]]
+local bundles = {
+  vim.fn.glob(home ..  '/.config/nvim/lua/lsp/java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar'),
+}
+vim.list_extend(bundles, vim.split(vim.fn.glob(home ..  '/.config/nvim/lua/lsp/java/vscode-java-test/server/*.jar'), '\n'))
 
   local extendedClientCapabilities = require'jdtls'.extendedClientCapabilities
   extendedClientCapabilities.resolveAdditionalTextEditsSupport = true

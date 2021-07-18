@@ -17,7 +17,7 @@ set ttimeoutlen=0
 set virtualedit=block,onemore
 
 " ignore filetype when file search
-set wildignore+=*/tmp/*,*.so,*.swp,*.png,*.jpg,*.jpeg,*.gif,*.zip,*.rar,*.class,*.jar,*.pyc,*.pyd
+set wildignore+=*/tmp/*,*.so,*.swp,*.png,*.jpg,*.jpeg,*.gif,*.class,*.pyc,*.pyd
 
 " code indent
 set autoindent

@@ -1,54 +1,32 @@
 local M = {}
 local home = os.getenv('HOME')
-local jar_patterns = {
+--[[ local jar_patterns = {
   home ..
       '/.config/nvim/lua/lsp/java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar',
   -- '/dev/dgileadi/vscode-java-decompiler/server/*.jar',
   home .. '/.config/nvim/lua/lsp/java/vscode-java-test/server/*.jar'
-}
+} ]]
 
-local bundles = {}
-for _, jar_pattern in ipairs(jar_patterns) do
+--[[ for _, jar_pattern in ipairs(jar_patterns) do
   for _, bundle in ipairs(vim.split(vim.fn.glob(home .. jar_pattern), '\n')) do
     if not vim.endswith(bundle, 'com.microsoft.java.test.runner.jar') then
       table.insert(bundles, bundle)
     end
   end
-end
+end ]]
 
-local extendedClientCapabilities = {}
+local bundles = {
+  vim.fn.glob(home ..  '/.config/nvim/lua/lsp/java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar'),
+}
+vim.list_extend(bundles, vim.split(vim.fn.glob(home ..  '/.config/nvim/lua/lsp/java/vscode-java-test/server/*.jar'), '\n'))
+-- local extendedClientCapabilities = {}
+local extendedClientCapabilities = require'jdtls'.extendedClientCapabilities
 extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
 M.init_options = {
   bundles = bundles,
   extendedClientCapabilities = extendedClientCapabilities
 }
-M.handlers = {
-  --[[ ["language/status"] = function(err, _, actions, client_id)
-    print("status action")
-  end,
-  ["textDocument/codeAction"] = function(err, _, actions, client_id)
-    vim.lsp.buf_request(0, 'textDocument/codeAction', code_action_params,
-                        function(err, _, actions, client_id)
-      print("code action")
-      print(err)
-      print(_)
-      print(actions)
-      print(client_id)
-    end)
-  end,
-  ["workspace/executeClientCommand'"] = function()
-    print("java.apply.workspaceEdit action");
-  end,
-  ["textDocument/rename"] = function(err, _, actions, client_id)
-    print("rename action")
-  end,
-  ["workspace/applyEdit"] = function(command)
-    print("applyEdit")
-    for _, argument in ipairs(command.arguments) do
-      vim.lsp.util.apply_workspace_edit(argument)
-    end
-  end ]]
-}
+
 M.settings = {
   ['java.format.settings.url'] = home .. "/project/java-google-formatter.xml",
   ['java.format.settings.profile'] = "GoogleStyle",

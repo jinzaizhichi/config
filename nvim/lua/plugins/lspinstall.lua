@@ -5,13 +5,15 @@ local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 -- keymaps
 local on_attach = function(client, bufnr)
+  require('jdtls').setup_dap({hotcodereplace = 'auto'})
+  require('jdtls.setup').add_commands()
 
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- Mappings.
   buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  -- buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  -- buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
   buf_set_keymap('n', '<leader>wa',
@@ -23,14 +25,39 @@ local on_attach = function(client, bufnr)
                  opts)
   buf_set_keymap('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>',
                  opts)
-  -- buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+  buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
   buf_set_keymap('n', '<leader>e',
                  '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
-  --[[ buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-  buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts) ]]
+  buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
+  buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<leader>q',
                  '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+  buf_set_keymap('n', '<leader>ca',
+                 "<Cmd>lua require('jdtls').code_action()<CR>", opts)
+  buf_set_keymap('v', '<leader>ca',
+                 "<Cmd>lua require('jdtls').code_action(true)<CR>", opts)
+  buf_set_keymap('n', '<leader>cr',
+                 "<Cmd>lua require('jdtls').code_action(false, 'refactor')<CR>",
+                 opts)
+  buf_set_keymap('n', '<leader>co',
+                 "<Cmd>lua require('jdtls').organize_imports()<CR>", opts)
+  buf_set_keymap('n', '<leader>cv',
+                 "<Cmd>lua require('jdtls').extract_variable()<CR>", opts)
+  buf_set_keymap('v', '<leader>cv',
+                 "<Cmd>lua require('jdtls').extract_variable(true)<CR>", opts)
+  buf_set_keymap('n', '<leader>ct',
+                 "<Cmd>lua require('jdtls').extract_constant()<CR>", opts)
+  buf_set_keymap('v', '<leader>ct',
+                 "<Cmd>lua require('jdtls').extract_constant(true)<CR>", opts)
+  buf_set_keymap('v', '<leader>cm',
+                 "<Cmd>lua require('jdtls').extract_method(true)<CR>", opts)
+  -- If using nvim-dap
+  -- This requires java-debug and vscode-java-test bundles, see install steps in this README further below.
+  buf_set_keymap('n', '<leader>jt',
+                 "<Cmd>lua require('jdtls').test_class()<CR>", opts)
+  buf_set_keymap('n', '<leader>jn',
+                 "<Cmd>lua require('jdtls').test_nearest_method()<CR>", opts)
   -- Set some keybinds conditional on server capabilities
   if client.resolved_capabilities.document_formatting then
     buf_set_keymap("n", "<leader>fm", "<cmd>lua vim.lsp.buf.formatting()<CR>",
@@ -91,24 +118,12 @@ M.setup_servers = function()
       config.filetypes = {"c", "cpp"}; -- we don't want objective-c and objective-cpp!
     end
     if server == "java" then
-      buf_set_keymap('n', '<leader>ca', "<Cmd>lua require('jdtls').code_action()<CR>", opts)
-      buf_set_keymap('v', '<leader>ca', "<Cmd>lua require('jdtls').code_action(true)<CR>", opts)
-      buf_set_keymap('n', '<leader>cr', "<Cmd>lua require('jdtls').code_action(false, 'refactor')<CR>", opts)
-      buf_set_keymap('n', '<leader>co', "<Cmd>lua require('jdtls').organize_imports()<CR>", opts)
-      buf_set_keymap('n', '<leader>cv', "<Cmd>lua require('jdtls').extract_variable()<CR>", opts)
-      buf_set_keymap('v', '<leader>cv', "<Cmd>lua require('jdtls').extract_variable(true)<CR>", opts)
-      buf_set_keymap('n', '<leader>ct', "<Cmd>lua require('jdtls').extract_constant()<CR>", opts)
-      buf_set_keymap('v', '<leader>ct', "<Cmd>lua require('jdtls').extract_constant(true)<CR>", opts)
-      buf_set_keymap('v', '<leader>cm', "<Cmd>lua require('jdtls').extract_method(true)<CR>", opts)
-      -- If using nvim-dap
-      -- This requires java-debug and vscode-java-test bundles, see install steps in this README further below.
-      buf_set_keymap('n', '<leader>jt', "<Cmd>lua require('jdtls').test_class()<CR>", opts)
-      buf_set_keymap('n', '<leader>jn', "<Cmd>lua require('jdtls').test_nearest_method()<CR>", opts)
 
       local javaconf = require('lsp.java.settings')
       config.init_options = javaconf.init_options
+      -- print(dump(config.init_options.bundles))
       config.settings = javaconf.settings
-      config.handlers = javaconf.handlers
+      -- config.handlers = javaconf.handlers
     end
     require'lspconfig'[server].setup(config)
     -- java lsp setting is specific by nvim-jdtls
