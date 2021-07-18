@@ -99,11 +99,8 @@ return require('packer').startup(function(use)
       vim.cmd('bufdo e') -- this triggers the FileType autocmd that starts the server
     end
   end}
-  --[[ use {'RishabhRD/popfix'}
-  use {'RishabhRD/nvim-lsputils'} ]]
-  use {'glepnir/lspsaga.nvim', config = function() require'lspsaga'.init_lsp_saga({
-    server_filetype_map = {jdtls = {'java'}}
-  }) end}
+  use {'RishabhRD/popfix'}
+  use {'RishabhRD/nvim-lsputils', config = function() require('plugins.lsputils') end}
   use {'norcalli/snippets.nvim', config = function() require'snippets'.use_suggested_mappings() end}
   use {'folke/trouble.nvim', config = function() require('trouble').setup() end}
   use {'nanotee/sqls.nvim', config = function() require('lspconfig').sqls.setup(require('plugins.sqls')) end}

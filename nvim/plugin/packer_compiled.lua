@@ -144,11 +144,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
   },
-  ["lspsaga.nvim"] = {
-    config = { "\27LJ\1\2z\0\0\4\0\b\0\v4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\6\0003\2\4\0003\3\3\0:\3\5\2:\2\a\1>\0\2\1G\0\1\0\24server_filetype_map\1\0\0\njdtls\1\0\0\1\2\0\0\tjava\18init_lsp_saga\flspsaga\frequire\0" },
-    loaded = true,
-    path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
-  },
   ["nvim-autopairs"] = {
     config = { "\27LJ\1\2<\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\19nvim-autopairs\frequire\0" },
     loaded = true,
@@ -201,6 +196,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
   },
+  ["nvim-lsputils"] = {
+    config = { "\27LJ\1\0020\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\21plugins.lsputils\frequire\0" },
+    loaded = true,
+    path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/nvim-lsputils"
+  },
   ["nvim-spectre"] = {
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/nvim-spectre"
@@ -250,6 +250,10 @@ _G.packer_plugins = {
   ["plenary.nvim"] = {
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+  },
+  popfix = {
+    loaded = true,
+    path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/popfix"
   },
   ["popup.nvim"] = {
     loaded = true,
@@ -369,10 +373,6 @@ time([[Config for snippets.nvim]], false)
 time([[Config for trouble.nvim]], true)
 try_loadstring("\27LJ\1\0025\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
 time([[Config for trouble.nvim]], false)
--- Config for: lspsaga.nvim
-time([[Config for lspsaga.nvim]], true)
-try_loadstring("\27LJ\1\2z\0\0\4\0\b\0\v4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\6\0003\2\4\0003\3\3\0:\3\5\2:\2\a\1>\0\2\1G\0\1\0\24server_filetype_map\1\0\0\njdtls\1\0\0\1\2\0\0\tjava\18init_lsp_saga\flspsaga\frequire\0", "config", "lspsaga.nvim")
-time([[Config for lspsaga.nvim]], false)
 -- Config for: galaxyline.nvim
 time([[Config for galaxyline.nvim]], true)
 try_loadstring("\27LJ\1\2'\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\feviline\frequire\0", "config", "galaxyline.nvim")
@@ -417,6 +417,10 @@ time([[Config for todo-comments.nvim]], false)
 time([[Config for nvim-toggleterm.lua]], true)
 try_loadstring("\27LJ\1\2\\\0\0\3\0\4\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0004\1\0\0%\2\3\0>\1\2\0=\0\0\1G\0\1\0\28plugins.nvim-toggleterm\nsetup\15toggleterm\frequire\0", "config", "nvim-toggleterm.lua")
 time([[Config for nvim-toggleterm.lua]], false)
+-- Config for: nvim-lsputils
+time([[Config for nvim-lsputils]], true)
+try_loadstring("\27LJ\1\0020\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\21plugins.lsputils\frequire\0", "config", "nvim-lsputils")
+time([[Config for nvim-lsputils]], false)
 -- Config for: nvim-lspinstall
 time([[Config for nvim-lspinstall]], true)
 try_loadstring("\27LJ\1\2h\0\0\2\0\6\0\n4\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\0014\0\3\0007\0\4\0%\1\5\0>\0\2\1G\0\1\0\fbufdo e\bcmd\bvim\18setup_servers\23plugins.lspinstall\frequirez\1\0\2\0\6\0\v4\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\0014\0\0\0%\1\3\0>\0\2\0021\1\5\0:\1\4\0G\0\1\0\0\22post_install_hook\15lspinstall\18setup_servers\23plugins.lspinstall\frequire\0", "config", "nvim-lspinstall")
