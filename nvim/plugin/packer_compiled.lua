@@ -172,6 +172,7 @@ _G.packer_plugins = {
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/nvim-dap"
   },
   ["nvim-dap-ui"] = {
+    config = { "\27LJ\1\0023\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\ndapui\frequire\0" },
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/nvim-dap-ui"
   },
@@ -389,6 +390,10 @@ time([[Config for hop]], false)
 time([[Config for nvim-bufferline.lua]], true)
 try_loadstring("\27LJ\1\2\\\0\0\3\0\4\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0004\1\0\0%\2\3\0>\1\2\0=\0\0\1G\0\1\0\28plugins.nvim-bufferline\nsetup\15bufferline\frequire\0", "config", "nvim-bufferline.lua")
 time([[Config for nvim-bufferline.lua]], false)
+-- Config for: nvim-dap-ui
+time([[Config for nvim-dap-ui]], true)
+try_loadstring("\27LJ\1\0023\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\ndapui\frequire\0", "config", "nvim-dap-ui")
+time([[Config for nvim-dap-ui]], false)
 -- Config for: lsp-rooter.nvim
 time([[Config for lsp-rooter.nvim]], true)
 try_loadstring("\27LJ\1\0028\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\15lsp-rooter\frequire\0", "config", "lsp-rooter.nvim")

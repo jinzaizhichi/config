@@ -1,5 +1,18 @@
 local M = {}
+local root_markers = {'gradlew', 'pom.xml'}
+local root_dir = require('jdtls.setup').find_root(root_markers)
 local home = os.getenv('HOME')
+--[[ local workspace_name, _ = string.gsub(vim.fn.fnamemodify(new_root_dir, ":p"),
+                                      "/", "-") ]]
+--[[ local workspace_folder =
+    home .. "/.local/share/nvim/lspinstall/java/workspace/" ..
+        vim.fn.fnamemodify(root_dir, ":p:h:t") ]]
+local workspace_name, _ = string.gsub(vim.fn.fnamemodify(root_dir, ":p"), "/", "-")
+M.cmd = {home .. '/.local/share/nvim/lspinstall/java/jdtls.sh', home .. "/.local/share/nvim/lspinstall/java/workspace/" .. workspace_name}
+M.capabilities = {
+  workspace = {configuration = true},
+  textDocument = {completion = {completionItem = {snippetSupport = true}}}
+}
 --[[ local jar_patterns = {
   home ..
       '/.config/nvim/lua/lsp/java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar',
@@ -16,9 +29,12 @@ local home = os.getenv('HOME')
 end ]]
 
 local bundles = {
-  vim.fn.glob(home ..  '/.config/nvim/lua/lsp/java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar'),
+  vim.fn.glob(home ..
+                  '/.config/nvim/lua/lsp/java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar')
 }
-vim.list_extend(bundles, vim.split(vim.fn.glob(home ..  '/.config/nvim/lua/lsp/java/vscode-java-test/server/*.jar'), '\n'))
+vim.list_extend(bundles, vim.split(vim.fn.glob(home ..
+                                                   '/.config/nvim/lua/lsp/java/vscode-java-test/server/*.jar'),
+                                   '\n'))
 -- local extendedClientCapabilities = {}
 local extendedClientCapabilities = require'jdtls'.extendedClientCapabilities
 extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
@@ -49,7 +65,7 @@ M.settings = {
         template = "${object.className}{${member.name()}=${member.value}, ${otherMembers}}"
       }
     },
-    home = "/usr/lib/jvm/java-11-openjdk/",
+    home = "/usr/lib/jvm/java-8-openjdk/",
     configuration = {
       runtimes = {
         {name = "JavaSE-11", path = "/usr/lib/jvm/java-11-openjdk/"},
@@ -66,5 +82,9 @@ M.settings = {
     }
   }
 }
+
+M.on_init = function(client, _)
+  client.notify('workspace/didChangeConfiguration', {settings = M.settings})
+end
 
 return M

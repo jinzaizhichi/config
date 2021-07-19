@@ -5,8 +5,11 @@ local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 -- keymaps
 local on_attach = function(client, bufnr)
-  require('jdtls').setup_dap({hotcodereplace = 'auto'})
-  require('jdtls.setup').add_commands()
+  if client.name == 'java' then
+    require('jdtls.dap').setup_dap_main_class_configs()
+    require('jdtls').setup_dap({hotcodereplace = 'auto'})
+    require('jdtls.setup').add_commands()
+  end
 
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -121,8 +124,12 @@ M.setup_servers = function()
 
       local javaconf = require('lsp.java.settings')
       config.init_options = javaconf.init_options
-      -- print(dump(config.init_options.bundles))
       config.settings = javaconf.settings
+      config.on_init = javaconf.on_init
+      config.capabilities = javaconf.capabilities
+      config.cmd = javaconf.cmd
+      config.filetypes = {'java'}
+      config.flags = {allow_incremental_sync = true}
       -- config.handlers = javaconf.handlers
     end
     require'lspconfig'[server].setup(config)

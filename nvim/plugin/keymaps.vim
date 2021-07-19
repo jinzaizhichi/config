@@ -97,9 +97,22 @@ vmap <silent> <leader>tr <Plug>TranslateRV
 nmap <silent> <leader>tx <Plug>TranslateX
 
 " DB
-nnoremap <silent> <leader>dd :DBUIToggle<cr>
+nnoremap <silent> <leader><leader>d :DBUIToggle<cr>
 
 " clever-f
 map ; <Plug>(clever-f-repeat-forward)
 map , <Plug>(clever-f-repeat-back)
 
+" nvim-dap
+nnoremap <silent> <leader>db <cmd>lua require'dap'.toggle_breakpoint()<cr>
+nnoremap <silent> <leader>dc <cmd>lua require'dap'.continue()<cr>
+nnoremap <silent> <leader>do <cmd>lua require'dap'.step_over()<cr>
+nnoremap <silent> <leader>di <cmd>lua require'dap'.step_into()<cr>
+nnoremap <silent> <leader>dB <cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
+nnoremap <silent> <leader>dlb <cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
+nnoremap <silent> <leader>dr <cmd>lua require'dap'.repl.open()<CR>
+nnoremap <silent> <leader>dl <cmd>lua require'dap'.run_last()<CR>
+nnoremap <silent> <leader>duu <cmd>lua require("dapui").toggle()<CR>
+nnoremap <silent> <leader>duc <cmd>lua require("dapui").close()<CR>
+nnoremap <silent> <leader>df <cmd>lua require("dapui").float_element()<CR>
+nnoremap <silent> <leader>de <cmd>lua require("dapui").eval()<CR>
