@@ -14,5 +14,3 @@ When use nvim-jdtls, my local setting need to set a symbollink to `~/.local/bin`
 ```
 ln -s ~/.config/nvim/lua/lsp/java/java-lsp.sh java-lsp.sh
 ```
-
-the LSP will be work well. But the neovim lsp build-in code action still not working. I should fix it some time.

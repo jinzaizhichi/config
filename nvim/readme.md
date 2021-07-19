@@ -1,18 +1,18 @@
-My nvim configuration
+Personal nvim configuration
 
 #### Directory function notes
 
-./plugin  
+`./plugin`  
 This is where I put vim base settings
 
-./lua/lsp  
+`./lua/lsp`  
 LSP config
 
-./lua/plugins  
+`./lua/plugins`  
 plugins with settings
 
-./after  
-just some filetype and colorscheme
+`./after`  
+just some filetype and colorscheme settings
 
 #### Things to be done before first install
 I use [lazygit](https://github.com/jesseduffield/lazygit) and [lazygit.nvim](https://github.com/kdheepak/lazygit.nvim) to execute git commands in neovim, so before you run `PackerInstal`, install lazygit first.
