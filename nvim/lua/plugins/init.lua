@@ -37,10 +37,6 @@ return require('packer').startup(function(use)
   use {'folke/todo-comments.nvim', config = function() require('todo-comments').setup{} end}
   -- highlight different word at same time
   use {'lfv89/vim-interestingwords'}
-  -- project task manage
-  use {'skywind3000/asynctasks.vim'}
-  use {'skywind3000/asyncrun.vim'}
-  use {'skywind3000/asyncrun.extra'}
   -- db manage
   use {'tpope/vim-dadbod'}
   use {'kristijanhusak/vim-dadbod-ui'}
@@ -105,7 +101,7 @@ return require('packer').startup(function(use)
   use {'folke/trouble.nvim', config = function() require('trouble').setup() end}
   use {'nanotee/sqls.nvim', config = function() require('lspconfig').sqls.setup(require('plugins.sqls')) end}
   use {'onsails/lspkind-nvim', config = function() require('lspkind').init(require('plugins.lspkind')) end}
-  -- this jdtls intergation is not good enough for me now
+  -- wrapper for jdtls
   use {'mfussenegger/nvim-jdtls'}
 
 end)

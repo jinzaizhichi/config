@@ -35,7 +35,7 @@ noremap g* g*<Cmd>lua require('hlslens').start()<CR>
 noremap g# g#<Cmd>lua require('hlslens').start()<CR>
 
 " use : instead of <Cmd>
-nnoremap <silent> <leader>l :noh<CR>
+nnoremap <silent> <leader><leader>h <cmd>noh<CR>
 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
@@ -116,3 +116,11 @@ nnoremap <silent> <leader>duu <cmd>lua require("dapui").toggle()<CR>
 nnoremap <silent> <leader>duc <cmd>lua require("dapui").close()<CR>
 nnoremap <silent> <leader>df <cmd>lua require("dapui").float_element()<CR>
 nnoremap <silent> <leader>de <cmd>lua require("dapui").eval()<CR>
+
+" trouble nvim
+nnoremap <leader>lt <cmd>TroubleToggle<cr>
+nnoremap <leader>lw <cmd>TroubleToggle lsp_workspace_diagnostics<cr>
+nnoremap <leader>ld <cmd>TroubleToggle lsp_document_diagnostics<cr>
+nnoremap <leader>lq <cmd>TroubleToggle quickfix<cr>
+nnoremap <leader>ll <cmd>TroubleToggle loclist<cr>
+nnoremap gR <cmd>TroubleToggle lsp_references<cr>
