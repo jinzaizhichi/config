@@ -2,11 +2,6 @@ local M = {}
 local root_markers = {'gradlew', 'pom.xml'}
 local root_dir = require('jdtls.setup').find_root(root_markers)
 local home = os.getenv('HOME')
---[[ local workspace_name, _ = string.gsub(vim.fn.fnamemodify(new_root_dir, ":p"),
-                                      "/", "-") ]]
---[[ local workspace_folder =
-    home .. "/.local/share/nvim/lspinstall/java/workspace/" ..
-        vim.fn.fnamemodify(root_dir, ":p:h:t") ]]
 local workspace_name, _ = string.gsub(vim.fn.fnamemodify(root_dir, ":p"), "/", "-")
 M.cmd = {home .. '/.local/share/nvim/lspinstall/java/jdtls.sh', home .. "/.local/share/nvim/lspinstall/java/workspace/" .. workspace_name}
 M.capabilities = {
@@ -35,7 +30,6 @@ local bundles = {
 vim.list_extend(bundles, vim.split(vim.fn.glob(home ..
                                                    '/.config/nvim/lua/lsp/java/vscode-java-test/server/*.jar'),
                                    '\n'))
--- local extendedClientCapabilities = {}
 local extendedClientCapabilities = require'jdtls'.extendedClientCapabilities
 extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
 M.init_options = {

@@ -1,10 +1,10 @@
 local M = {}
 
 local opts = {noremap = true, silent = true}
-local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 -- keymaps
 local on_attach = function(client, bufnr)
+  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
   if client.name == 'java' then
     require('jdtls.dap').setup_dap_main_class_configs()
     require('jdtls').setup_dap({hotcodereplace = 'auto'})
@@ -113,7 +113,9 @@ M.setup_servers = function()
     local config = make_config()
 
     -- language specific config
-    if server == "lua" then config.settings = require('lsp.lua.settings') end
+    if server == "lua" then
+      config.settings = require('lsp.lua.settings')
+    end
     if server == "sourcekit" then
       config.filetypes = {"swift", "objective-c", "objective-cpp"}; -- we don't want c and cpp!
     end

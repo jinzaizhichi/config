@@ -124,3 +124,12 @@ nnoremap <leader>ld <cmd>TroubleToggle lsp_document_diagnostics<cr>
 nnoremap <leader>lq <cmd>TroubleToggle quickfix<cr>
 nnoremap <leader>ll <cmd>TroubleToggle loclist<cr>
 nnoremap gR <cmd>TroubleToggle lsp_references<cr>
+
+" telescope
+nnoremap <leader>fp <cmd>lua require'telescope'.extensions.project.project{}<cr>
+nnoremap <leader>fc <cmd>Cheatsheet<cr>
+nnoremap <leader>fdc <cmd>Telescope dap commands<cr>
+nnoremap <leader>fds <cmd>Telescope dap configurations<cr>
+nnoremap <leader>fdl <cmd>Telescope dap list_breakpoints<cr>
+nnoremap <leader>fdv <cmd>Telescope dap variables<cr>
+nnoremap <leader>fdf <cmd>Telescope dap frames<cr>

@@ -56,7 +56,14 @@ return require('packer').startup(function(use)
   -- powerful replace tool
   use {'windwp/nvim-spectre'}
   -- fuzzy finder
-  use 'nvim-telescope/telescope.nvim'
+  use {'sudormrfbin/cheatsheet.nvim'}
+  use {'nvim-telescope/telescope-dap.nvim'}
+  use {'nvim-telescope/telescope-project.nvim'}
+  use {'nvim-telescope/telescope.nvim', config = function()
+    require('telescope').setup()
+    require('telescope').load_extension('dap')
+    require('telescope').load_extension('project')
+  end}
   -- motion
   use {'phaazon/hop.nvim', as = 'hop', config = function() require('hop').setup() end}
   use {'rhysd/clever-f.vim'}
