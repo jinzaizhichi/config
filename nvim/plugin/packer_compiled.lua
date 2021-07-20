@@ -263,7 +263,7 @@ _G.packer_plugins = {
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/snippets.nvim"
   },
   ["spellsitter.nvim"] = {
-    config = { "\27LJ\1\0029\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\16spellsitter\frequire\0" },
+    config = { "\27LJ\1\2Y\0\0\3\0\4\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0004\1\0\0%\2\3\0>\1\2\0=\0\0\1G\0\1\0\24plugins.spellsitter\nsetup\16spellsitter\frequire\0" },
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/spellsitter.nvim"
   },
@@ -405,7 +405,7 @@ try_loadstring("\27LJ\1\2M\0\0\3\0\4\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0004\1\0\0%
 time([[Config for nvim-compe]], false)
 -- Config for: spellsitter.nvim
 time([[Config for spellsitter.nvim]], true)
-try_loadstring("\27LJ\1\0029\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\16spellsitter\frequire\0", "config", "spellsitter.nvim")
+try_loadstring("\27LJ\1\2Y\0\0\3\0\4\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0004\1\0\0%\2\3\0>\1\2\0=\0\0\1G\0\1\0\24plugins.spellsitter\nsetup\16spellsitter\frequire\0", "config", "spellsitter.nvim")
 time([[Config for spellsitter.nvim]], false)
 -- Config for: lspkind-nvim
 time([[Config for lspkind-nvim]], true)

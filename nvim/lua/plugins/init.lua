@@ -23,7 +23,7 @@ return require('packer').startup(function(use)
       require('nvim-treesitter.configs').setup(require('plugins.nvim-treesitter'))
   end}
   use {'nvim-treesitter/nvim-treesitter-textobjects'}
-  use {'lewis6991/spellsitter.nvim', config = function() require('spellsitter').setup() end}
+  use {'lewis6991/spellsitter.nvim', config = function() require('spellsitter').setup(require('plugins.spellsitter')) end}
   -- git
   use { 'lewis6991/gitsigns.nvim', config = function() require('gitsigns').setup() end }
   use {'kdheepak/lazygit.nvim'}

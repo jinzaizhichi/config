@@ -101,5 +101,5 @@ let g:db_ui_winwidth = 30
 " let g:completion_matching_strategy_list = ['fuzzy', 'exact', 'substring', 'all']
 " let g:completion_matching_smart_case = 1
 " let g:completion_trigger_on_delete = 1
-" let g:dap_virtual_text = 'all frames'
-let g:dap_virtual_text = v:true
+let g:dap_virtual_text = 'all frames'
+" let g:dap_virtual_text = v:true
