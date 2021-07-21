@@ -57,13 +57,12 @@ return require('packer').startup(function(use)
   use {'windwp/nvim-spectre'}
   -- fuzzy finder
   use {'sudormrfbin/cheatsheet.nvim'}
+  use {'nvim-telescope/telescope-hop.nvim'}
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use {'nvim-telescope/telescope-fzf-writer.nvim'}
   use {'nvim-telescope/telescope-dap.nvim'}
   use {'nvim-telescope/telescope-project.nvim'}
-  use {'nvim-telescope/telescope.nvim', config = function()
-    require('telescope').setup()
-    require('telescope').load_extension('dap')
-    require('telescope').load_extension('project')
-  end}
+  use {'nvim-telescope/telescope.nvim', config = require('plugins.telescope')}
   -- motion
   use {'phaazon/hop.nvim', as = 'hop', config = function() require('hop').setup() end}
   use {'rhysd/clever-f.vim'}

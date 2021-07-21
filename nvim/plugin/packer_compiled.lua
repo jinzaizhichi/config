@@ -276,12 +276,24 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/telescope-dap.nvim"
   },
+  ["telescope-fzf-native.nvim"] = {
+    loaded = true,
+    path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim"
+  },
+  ["telescope-fzf-writer.nvim"] = {
+    loaded = true,
+    path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/telescope-fzf-writer.nvim"
+  },
+  ["telescope-hop.nvim"] = {
+    loaded = true,
+    path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/telescope-hop.nvim"
+  },
   ["telescope-project.nvim"] = {
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/telescope-project.nvim"
   },
   ["telescope.nvim"] = {
-    config = { "\27LJ\1\2‚\1\0\0\2\0\6\0\0184\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\0014\0\0\0%\1\1\0>\0\2\0027\0\3\0%\1\4\0>\0\2\0014\0\0\0%\1\1\0>\0\2\0027\0\3\0%\1\5\0>\0\2\1G\0\1\0\fproject\bdap\19load_extension\nsetup\14telescope\frequire\0" },
+    config = { "\27LJ\1\2Û\1\0\1\5\0\v\0\0213\1\3\0004\2\0\0%\3\1\0>\2\2\0027\2\2\2:\2\4\0014\2\0\0%\3\1\0>\2\2\0027\2\5\2:\2\6\0014\2\0\0%\3\a\0>\2\2\0027\2\b\0027\2\t\0027\2\n\2\16\3\0\0\16\4\1\0>\2\3\1G\0\1\0\14_hop_loop\bhop\15extensions\14telescope\18loop_callback\28send_selected_to_qflist\rcallback\1\0\0\21toggle_selection\22telescope.actions\frequirež\4\1\0\a\0\25\00064\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\14\0003\2\f\0003\3\n\0003\4\6\0004\5\3\0%\6\1\0>\5\2\0027\5\4\0057\5\5\0057\5\5\5:\5\a\0041\5\b\0:\5\t\4:\4\v\3:\3\r\2:\2\15\0013\2\17\0003\3\16\0:\3\18\0023\3\19\0:\3\5\0023\3\20\0:\3\21\2:\2\4\1>\0\2\0014\0\0\0%\1\1\0>\0\2\0027\0\22\0%\1\23\0>\0\2\0014\0\0\0%\1\1\0>\0\2\0027\0\22\0%\1\24\0>\0\2\0014\0\0\0%\1\1\0>\0\2\0027\0\22\0%\1\18\0>\0\2\0014\0\0\0%\1\1\0>\0\2\0027\0\22\0%\1\5\0>\0\2\1G\0\1\0\fproject\bdap\19load_extension\15fzf_writer\1\0\3\28minimum_grep_characters\3\2\20use_highlighter\2\29minimum_files_characters\3\2\1\0\2\16trace_entry\2\20reset_selection\2\bfzf\1\0\0\1\0\4\28override_generic_sorter\1\14case_mode\15smart_case\25override_file_sorter\2\nfuzzy\2\rdefaults\1\0\0\rmappings\1\0\0\6i\1\0\0\14<C-space>\0\n<C-h>\1\0\0\bhop\15extensions\6R\nsetup\14telescope\frequire\0" },
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
@@ -387,10 +399,10 @@ time([[Config for nvim-autopairs]], false)
 time([[Config for hop]], true)
 try_loadstring("\27LJ\1\0021\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\bhop\frequire\0", "config", "hop")
 time([[Config for hop]], false)
--- Config for: nvim-toggleterm.lua
-time([[Config for nvim-toggleterm.lua]], true)
-try_loadstring("\27LJ\1\2\\\0\0\3\0\4\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0004\1\0\0%\2\3\0>\1\2\0=\0\0\1G\0\1\0\28plugins.nvim-toggleterm\nsetup\15toggleterm\frequire\0", "config", "nvim-toggleterm.lua")
-time([[Config for nvim-toggleterm.lua]], false)
+-- Config for: nvim-bufferline.lua
+time([[Config for nvim-bufferline.lua]], true)
+try_loadstring("\27LJ\1\2\\\0\0\3\0\4\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0004\1\0\0%\2\3\0>\1\2\0=\0\0\1G\0\1\0\28plugins.nvim-bufferline\nsetup\15bufferline\frequire\0", "config", "nvim-bufferline.lua")
+time([[Config for nvim-bufferline.lua]], false)
 -- Config for: nvim-dap-ui
 time([[Config for nvim-dap-ui]], true)
 try_loadstring("\27LJ\1\0023\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\ndapui\frequire\0", "config", "nvim-dap-ui")
@@ -415,22 +427,22 @@ time([[Config for lspkind-nvim]], false)
 time([[Config for gitsigns.nvim]], true)
 try_loadstring("\27LJ\1\0026\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
 time([[Config for gitsigns.nvim]], false)
+-- Config for: nvim-lsputils
+time([[Config for nvim-lsputils]], true)
+try_loadstring("\27LJ\1\0020\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\21plugins.lsputils\frequire\0", "config", "nvim-lsputils")
+time([[Config for nvim-lsputils]], false)
 -- Config for: todo-comments.nvim
 time([[Config for todo-comments.nvim]], true)
 try_loadstring("\27LJ\1\2?\0\0\2\0\3\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0002\1\0\0>\0\2\1G\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
 time([[Config for todo-comments.nvim]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
-try_loadstring("\27LJ\1\2‚\1\0\0\2\0\6\0\0184\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\0014\0\0\0%\1\1\0>\0\2\0027\0\3\0%\1\4\0>\0\2\0014\0\0\0%\1\1\0>\0\2\0027\0\3\0%\1\5\0>\0\2\1G\0\1\0\fproject\bdap\19load_extension\nsetup\14telescope\frequire\0", "config", "telescope.nvim")
+try_loadstring("\27LJ\1\2Û\1\0\1\5\0\v\0\0213\1\3\0004\2\0\0%\3\1\0>\2\2\0027\2\2\2:\2\4\0014\2\0\0%\3\1\0>\2\2\0027\2\5\2:\2\6\0014\2\0\0%\3\a\0>\2\2\0027\2\b\0027\2\t\0027\2\n\2\16\3\0\0\16\4\1\0>\2\3\1G\0\1\0\14_hop_loop\bhop\15extensions\14telescope\18loop_callback\28send_selected_to_qflist\rcallback\1\0\0\21toggle_selection\22telescope.actions\frequirež\4\1\0\a\0\25\00064\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\14\0003\2\f\0003\3\n\0003\4\6\0004\5\3\0%\6\1\0>\5\2\0027\5\4\0057\5\5\0057\5\5\5:\5\a\0041\5\b\0:\5\t\4:\4\v\3:\3\r\2:\2\15\0013\2\17\0003\3\16\0:\3\18\0023\3\19\0:\3\5\0023\3\20\0:\3\21\2:\2\4\1>\0\2\0014\0\0\0%\1\1\0>\0\2\0027\0\22\0%\1\23\0>\0\2\0014\0\0\0%\1\1\0>\0\2\0027\0\22\0%\1\24\0>\0\2\0014\0\0\0%\1\1\0>\0\2\0027\0\22\0%\1\18\0>\0\2\0014\0\0\0%\1\1\0>\0\2\0027\0\22\0%\1\5\0>\0\2\1G\0\1\0\fproject\bdap\19load_extension\15fzf_writer\1\0\3\28minimum_grep_characters\3\2\20use_highlighter\2\29minimum_files_characters\3\2\1\0\2\16trace_entry\2\20reset_selection\2\bfzf\1\0\0\1\0\4\28override_generic_sorter\1\14case_mode\15smart_case\25override_file_sorter\2\nfuzzy\2\rdefaults\1\0\0\rmappings\1\0\0\6i\1\0\0\14<C-space>\0\n<C-h>\1\0\0\bhop\15extensions\6R\nsetup\14telescope\frequire\0", "config", "telescope.nvim")
 time([[Config for telescope.nvim]], false)
--- Config for: nvim-lsputils
-time([[Config for nvim-lsputils]], true)
-try_loadstring("\27LJ\1\0020\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\21plugins.lsputils\frequire\0", "config", "nvim-lsputils")
-time([[Config for nvim-lsputils]], false)
--- Config for: nvim-bufferline.lua
-time([[Config for nvim-bufferline.lua]], true)
-try_loadstring("\27LJ\1\2\\\0\0\3\0\4\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0004\1\0\0%\2\3\0>\1\2\0=\0\0\1G\0\1\0\28plugins.nvim-bufferline\nsetup\15bufferline\frequire\0", "config", "nvim-bufferline.lua")
-time([[Config for nvim-bufferline.lua]], false)
+-- Config for: nvim-toggleterm.lua
+time([[Config for nvim-toggleterm.lua]], true)
+try_loadstring("\27LJ\1\2\\\0\0\3\0\4\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0004\1\0\0%\2\3\0>\1\2\0=\0\0\1G\0\1\0\28plugins.nvim-toggleterm\nsetup\15toggleterm\frequire\0", "config", "nvim-toggleterm.lua")
+time([[Config for nvim-toggleterm.lua]], false)
 -- Config for: nvim-lspinstall
 time([[Config for nvim-lspinstall]], true)
 try_loadstring("\27LJ\1\2h\0\0\2\0\6\0\n4\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\0014\0\3\0007\0\4\0%\1\5\0>\0\2\1G\0\1\0\fbufdo e\bcmd\bvim\18setup_servers\23plugins.lspinstall\frequirez\1\0\2\0\6\0\v4\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\0014\0\0\0%\1\3\0>\0\2\0021\1\5\0:\1\4\0G\0\1\0\0\22post_install_hook\15lspinstall\18setup_servers\23plugins.lspinstall\frequire\0", "config", "nvim-lspinstall")
