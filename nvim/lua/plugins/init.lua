@@ -41,7 +41,7 @@ return require('packer').startup(function(use)
   use {'tpope/vim-surround'}
   use {'akinsho/nvim-toggleterm.lua', config = require('plugins.nvim-toggleterm')}
   -- editing
-  use {'windwp/nvim-autopairs', config = function() require('nvim-autopairs').setup() end}
+  use {'windwp/nvim-autopairs', config = require('plugins.nvim-autopairs')}
   use {'itchyny/vim-cursorword'}
   use {'windwp/nvim-ts-autotag'}
   use {'andymass/vim-matchup'}
