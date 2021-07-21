@@ -38,12 +38,64 @@ M.init_options = {
 }
 
 M.settings = {
-  ['java.format.settings.url'] = home .. "/project/java-google-formatter.xml",
-  ['java.format.settings.profile'] = "GoogleStyle",
+  --[[ ['java.format.settings.url'] = home .. "/project/java-google-formatter.xml",
+  ['java.format.settings.profile'] = "GoogleStyle", ]]
   java = {
+    jdt = {
+      ls = {
+        vmargs = "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -XX:+UseStringDeduplication -javaagent:'" .. home .. "/.local/share/nvim/lspinstall/java/lombok.jar'"
+      }
+    },
+    eclipse = {
+      downloadSources = true,
+    },
+    format = {
+      comments = {
+        enabled = true
+      },
+      settings = {
+        url = home .. "/project/java-google-formatter.xml",
+        profile = "GoogleStyle",
+      }
+    },
+    maxConcurrentBuilds = 5,
+    saveActions = {
+      organizeImports = true,
+    },
+    trace = {
+      server = "messages"
+    },
+    referencesCodeLens = {enabled = true},
+    implementationsCodeLens = {enabled = true},
     signatureHelp = {enabled = true},
     contentProvider = {preferred = 'fernflower'},
+    templates = {
+      typeComment = {
+        "/**",
+        " * @Author: hewenjin",
+        " * @Date: ${date}",
+        " * @Description: ",
+        " */",
+      }
+    },
+    import = {
+      maven = {enabled = true},
+      exclusions = {
+        "**/node_modules/**",
+        "**/.metadata/**",
+        "**/archetype-resources/**",
+        "**/META-INF/maven/**",
+        "**/Frontend/**",
+        "**/CSV_Aggregator/**"
+      },
+    },
+    maven = {
+      downloadSources = true
+    },
+    autobuild = {enabled = true},
     completion = {
+      overwrite = false,
+      guessMethodArguments = true,
       favoriteStaticMembers = {
         "org.hamcrest.MatcherAssert.assertThat", "org.hamcrest.Matchers.*",
         "org.hamcrest.CoreMatchers.*", "org.junit.jupiter.api.Assertions.*",
@@ -55,14 +107,22 @@ M.settings = {
       organizeImports = {starThreshold = 9999, staticStarThreshold = 9999}
     },
     codeGeneration = {
+      generateComments = true,
+      useBlocks = true,
       toString = {
         template = "${object.className}{${member.name()}=${member.value}, ${otherMembers}}"
       }
     },
     home = "/usr/lib/jvm/java-8-openjdk/",
     configuration = {
+      maven = {
+        globalSettings = "/opt/maven/conf/settings.xml",
+      },
       runtimes = {
-        {name = "JavaSE-11", path = "/usr/lib/jvm/java-11-openjdk/"},
+        {
+          name = "JavaSE-11",
+          path = "/usr/lib/jvm/java-11-openjdk/"
+        },
         {
           name = "JavaSE-1.8",
           path = "/usr/lib/jvm/java-8-openjdk/",
