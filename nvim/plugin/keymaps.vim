@@ -1,19 +1,20 @@
 cnoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+nnoremap <silent> gb <c-^>
 " These commands will navigate through buffers in order regardless of which mode you are using
 " e.g. if you change the order of buffers :bnext and :bprevious will not respect the custom ordering
 nnoremap <silent><c-n> :BufferLineCycleNext<CR>
 nnoremap <silent><c-p> :BufferLineCyclePrev<CR>
+nnoremap <silent><leader><leader>b :BufferLinePick<CR>
+" These commands will move the current buffer backwards or forwards in the bufferline
+nnoremap <silent><leader>bn :BufferLineMoveNext<CR>
+nnoremap <silent><leader>bp :BufferLineMovePrev<CR>
+nnoremap <silent><leader>x :bd<CR>
 
 " copy to system clipboard
 vmap <leader>y "+y
 
 " paste to vim register
 nnoremap <leader>p "+p
-
-" These commands will move the current buffer backwards or forwards in the bufferline
-nnoremap <silent><leader>bn :BufferLineMoveNext<CR>
-nnoremap <silent><leader>bp :BufferLineMovePrev<CR>
-nnoremap <silent><leader>x :bd<CR>
 
 " These commands will sort buffers by directory, language, or a custom criteria
 nnoremap <silent><leader>be :BufferLineSortByExtension<CR>
@@ -25,6 +26,7 @@ nnoremap <silent><C-t><C-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
 tnoremap <silent><C-t><C-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
 tnoremap <silent><C-t><C-r> <C-\><C-n>
 
+" hlslens
 noremap <silent> n <Cmd>execute('normal! ' . v:count1 . 'n')<CR>
             \<Cmd>lua require('hlslens').start()<CR>
 noremap <silent> N <Cmd>execute('normal! ' . v:count1 . 'N')<CR>
@@ -42,6 +44,14 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+" telescope extensions
+nnoremap <leader>fp <cmd>lua require'telescope'.extensions.project.project{}<cr>
+nnoremap <leader>fc <cmd>Cheatsheet<cr>
+nnoremap <leader>fdc <cmd>Telescope dap commands<cr>
+nnoremap <leader>fds <cmd>Telescope dap configurations<cr>
+nnoremap <leader>fdl <cmd>Telescope dap list_breakpoints<cr>
+nnoremap <leader>fdv <cmd>Telescope dap variables<cr>
+nnoremap <leader>fdf <cmd>Telescope dap frames<cr>
 
 " nvim tree
 nnoremap <leader>n :NvimTreeToggle<CR>
@@ -50,10 +60,10 @@ nnoremap <leader><leader>nf :NvimTreeFindFile<CR>
 
 nnoremap <leader>fs :lua require('spectre').open()<CR>
 
-"search current word
+" search current word
 nnoremap <leader>fsw viw:lua require('spectre').open_visual()<CR>
 vnoremap <leader>fsv :lua require('spectre').open_visual()<CR>
-"  search in current file
+" search in current file
 nnoremap <leader>fsf viw:lua require('spectre').open_file_search()<cr>
 
 " <c-k> will either expand the current snippet at the word or try to jump to
@@ -125,11 +135,3 @@ nnoremap <leader>lq <cmd>TroubleToggle quickfix<cr>
 nnoremap <leader>ll <cmd>TroubleToggle loclist<cr>
 nnoremap gR <cmd>TroubleToggle lsp_references<cr>
 
-" telescope
-nnoremap <leader>fp <cmd>lua require'telescope'.extensions.project.project{}<cr>
-nnoremap <leader>fc <cmd>Cheatsheet<cr>
-nnoremap <leader>fdc <cmd>Telescope dap commands<cr>
-nnoremap <leader>fds <cmd>Telescope dap configurations<cr>
-nnoremap <leader>fdl <cmd>Telescope dap list_breakpoints<cr>
-nnoremap <leader>fdv <cmd>Telescope dap variables<cr>
-nnoremap <leader>fdf <cmd>Telescope dap frames<cr>
