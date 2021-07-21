@@ -2,7 +2,8 @@ local M = {}
 
 function M.setup()
   local on_attach = function(client, bufnr)
-    require'jdtls'.setup_dap({hotcodereplace = 'auto'})
+    -- require'jdtls'.setup_dap({hotcodereplace = 'auto'})
+    require'jdtls'.setup_dap()
     require('jdtls.dap').setup_dap_main_class_configs()
     require'jdtls.setup'.add_commands()
     -- require'lsp-status'.register_progress()

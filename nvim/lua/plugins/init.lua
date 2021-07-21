@@ -14,27 +14,23 @@ return require('packer').startup(function(use)
   use {'glepnir/dashboard-nvim'}
   use 'kyazdani42/nvim-tree.lua'
   use {'kyazdani42/nvim-web-devicons'}
-  use {'akinsho/nvim-bufferline.lua', config = function()
-      require('bufferline').setup(require('plugins.nvim-bufferline'))
-  end}
-  use {'glepnir/galaxyline.nvim', branch = 'main', config = function() require('eviline') end}
+  use {'akinsho/nvim-bufferline.lua', config = require('plugins.nvim-bufferline')}
+  use {'glepnir/galaxyline.nvim', branch = 'main', config = function() require('plugins.eviline') end}
   -- treesitter and treesitter base plug
-  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = function()
-      require('nvim-treesitter.configs').setup(require('plugins.nvim-treesitter'))
-  end}
+  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = require('plugins.nvim-treesitter')}
   use {'nvim-treesitter/nvim-treesitter-textobjects'}
-  use {'lewis6991/spellsitter.nvim', config = function() require('spellsitter').setup(require('plugins.spellsitter')) end}
+  use {'lewis6991/spellsitter.nvim', config = require('plugins.spellsitter')}
   -- git
   use { 'lewis6991/gitsigns.nvim', config = function() require('gitsigns').setup() end }
   use {'kdheepak/lazygit.nvim'}
-  use {'sindrets/diffview.nvim', config = function() require('diffview').setup(require('plugins.diffview')) end}
+  use {'sindrets/diffview.nvim', config = require('plugins.diffview')}
   -- translator
   use {'voldikss/vim-translator'}
   -- toggle tansparent
   use {'xiyaowong/nvim-transparent'}
   -- comment
   use {'b3nj5m1n/kommentary'}
-  use {'folke/todo-comments.nvim', config = function() require('todo-comments').setup{} end}
+  use {'folke/todo-comments.nvim', config = function() require('todo-comments').setup() end}
   -- highlight different word at same time
   use {'lfv89/vim-interestingwords'}
   -- db manage
@@ -43,9 +39,7 @@ return require('packer').startup(function(use)
   -- incsearch
   use {'kevinhwang91/nvim-hlslens'}
   use {'tpope/vim-surround'}
-  use {'akinsho/nvim-toggleterm.lua', config = function()
-    require('toggleterm').setup(require('plugins.nvim-toggleterm'))
-  end}
+  use {'akinsho/nvim-toggleterm.lua', config = require('plugins.nvim-toggleterm')}
   -- editing
   use {'windwp/nvim-autopairs', config = function() require('nvim-autopairs').setup() end}
   use {'itchyny/vim-cursorword'}
@@ -73,7 +67,7 @@ return require('packer').startup(function(use)
   -- markdown preview
   use {'npxbr/glow.nvim', run = ':GlowInstall'}
   -- lsp auto completion
-  use {'hrsh7th/nvim-compe', config = function() require('compe').setup(require('plugins.compe')) end}
+  use {'hrsh7th/nvim-compe', config = require('plugins.compe')}
   use {'hrsh7th/vim-vsnip'}
   use {'tzachar/compe-tabnine', run='./install.sh'}
   use {'kristijanhusak/vim-dadbod-completion'}
@@ -91,23 +85,15 @@ return require('packer').startup(function(use)
   -- which keys
   use {'folke/which-key.nvim', config = function() require('which-key').setup() end}
   -- lsp setup
-  use {'mhartington/formatter.nvim', config = function() require('formatter').setup(require('plugins.formatter')) end}
+  use {'mhartington/formatter.nvim', config = require('plugins.formatter')}
   use {'neovim/nvim-lspconfig'}
-  use {'kabouzeid/nvim-lspinstall', config = function()
-    require('plugins.lspinstall').setup_servers()
-    -- Automatically reload after `:LspInstall <server>` so we don't have to restart neovim
-    require('lspinstall').post_install_hook = function ()
-      require('plugins.lspinstall').setup_servers() -- reload installed servers
-      vim.cmd('bufdo e') -- this triggers the FileType autocmd that starts the server
-    end
-  end}
+  use {'kabouzeid/nvim-lspinstall', config = require('plugins.lspinstall')}
   use {'RishabhRD/popfix'}
   use {'RishabhRD/nvim-lsputils', config = function() require('plugins.lsputils') end}
-  use {'norcalli/snippets.nvim', config = function() require'snippets'.use_suggested_mappings() end}
+  use {'norcalli/snippets.nvim', config = function() require('snippets').use_suggested_mappings() end}
   use {'folke/trouble.nvim', config = function() require('trouble').setup() end}
-  use {'nanotee/sqls.nvim', config = function() require('lspconfig').sqls.setup(require('plugins.sqls')) end}
-  use {'onsails/lspkind-nvim', config = function() require('lspkind').init(require('plugins.lspkind')) end}
+  use {'nanotee/sqls.nvim', config = require('plugins.sqls')}
+  use {'onsails/lspkind-nvim', config = require('plugins.lspkind')}
   -- wrapper for jdtls
   use {'mfussenegger/nvim-jdtls'}
-
 end)
