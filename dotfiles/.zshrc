@@ -105,7 +105,6 @@ plugins=(
         z
         history
         extract
-        vi-mode
         fzf
         )
 
