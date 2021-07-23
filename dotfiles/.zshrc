@@ -98,13 +98,13 @@ plugins=(
         mvn
         zsh-autosuggestions
         zsh-syntax-highlighting
-        sudo
         archlinux
         docker
         wd
         z
         history
         extract
+        vi-mode
         fzf
         )
 
