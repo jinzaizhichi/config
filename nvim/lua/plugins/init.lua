@@ -11,6 +11,7 @@ return require('packer').startup(function(use)
   use {'norcalli/nvim-colorizer.lua', config = require('colorizer').setup()}
   use {'p00f/nvim-ts-rainbow'}
   -- buffer | statusline | icon | treeview | startup buffer
+  use {'lukas-reineke/indent-blankline.nvim'}
   use {'glepnir/dashboard-nvim'}
   use {'kyazdani42/nvim-tree.lua'}
   use {'kyazdani42/nvim-web-devicons'}
@@ -38,9 +39,10 @@ return require('packer').startup(function(use)
   use {'kristijanhusak/vim-dadbod-ui'}
   -- incsearch
   use {'kevinhwang91/nvim-hlslens'}
-  use {'tpope/vim-surround'}
+  -- terminal
   use {'akinsho/nvim-toggleterm.lua', config = require('plugins.nvim-toggleterm')}
   -- editing
+  use {'tpope/vim-surround'}
   use {'windwp/nvim-autopairs', config = require('plugins.nvim-autopairs')}
   use {'itchyny/vim-cursorword'}
   use {'windwp/nvim-ts-autotag'}

@@ -103,3 +103,17 @@ let g:db_ui_winwidth = 30
 " let g:completion_trigger_on_delete = 1
 let g:dap_virtual_text = 'all frames'
 " let g:dap_virtual_text = v:true
+let g:indent_blankline_use_treesitter = v:true
+let g:indent_blankline_show_current_context = v:true
+let g:indent_blankline_show_trailing_blankline_indent = v:false
+" let g:indent_blankline_char_highlight_list = ['IndentColor1', 'IndentColor2', 'IndentColor3', 'IndentColor4', 'IndentColor5', 'IndentColor6']
+" let g:indent_blankline_space_char_highlight_list = ['IndentColor1', 'IndentColor2', 'IndentColor3', 'IndentColor4', 'IndentColor5', 'IndentColor6']
+let g:indent_blankline_space_char_blankline_highlight_list = ['IndentColor1', 'IndentColor2', 'IndentColor3', 'IndentColor4', 'IndentColor5', 'IndentColor6']
+let g:indent_blankline_filetype_exclude = ['dashboard']
+" let g:indent_blankline_char_highlight_list = ['IndentBackGround1', 'IndentBackGround2', 'IndentBackGround3', 'IndentBackGround4', 'IndentBackGround5', 'IndentBackGround6']
+" let g:indent_blankline_space_char_highlight_list = ['IndentBackGround1', 'IndentBackGround2', 'IndentBackGround3', 'IndentBackGround4', 'IndentBackGround5', 'IndentBackGround6']
+
+" let g:indent_blankline_char = ' '
+let g:indent_blankline_space_char = ' '
+" let g:indent_blankline_strict_tabs = v:true
+
