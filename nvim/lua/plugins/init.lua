@@ -11,7 +11,6 @@ return require('packer').startup(function(use)
   use {'norcalli/nvim-colorizer.lua', config = require('colorizer').setup()}
   use {'p00f/nvim-ts-rainbow'}
   -- buffer | statusline | icon | treeview | startup buffer
-  use {'lukas-reineke/indent-blankline.nvim'}
   use {'glepnir/dashboard-nvim'}
   use {'kyazdani42/nvim-tree.lua'}
   use {'kyazdani42/nvim-web-devicons'}
