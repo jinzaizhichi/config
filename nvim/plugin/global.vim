@@ -76,8 +76,6 @@ let g:nvim_tree_icons = {
     \   }
     \ }
 
-" a list of groups can be found at `:help nvim_tree_highlight`
-highlight NvimTreeFolderIcon guibg=blue
 
 let g:dashboard_default_executive ='telescope'
 let g:dashboard_custom_header = [
