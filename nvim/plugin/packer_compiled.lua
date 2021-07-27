@@ -105,7 +105,7 @@ _G.packer_plugins = {
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
   },
   ["gitsigns.nvim"] = {
-    config = { "\27LJ\1\0026\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\rgitsigns\frequire\0" },
+    config = { "\27LJ\1\2m\0\0\2\0\4\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0>\0\2\1G\0\1\0\1\0\2\29current_line_blame_delay\3ô\3\23current_line_blame\2\nsetup\rgitsigns\frequire\0" },
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
   },
@@ -425,7 +425,7 @@ try_loadstring("\27LJ\1\2Ò\2\0\0\3\0\6\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\
 time([[Config for lspkind-nvim]], false)
 -- Config for: gitsigns.nvim
 time([[Config for gitsigns.nvim]], true)
-try_loadstring("\27LJ\1\0026\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
+try_loadstring("\27LJ\1\2m\0\0\2\0\4\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0>\0\2\1G\0\1\0\1\0\2\29current_line_blame_delay\3ô\3\23current_line_blame\2\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
 time([[Config for gitsigns.nvim]], false)
 -- Config for: nvim-lsputils
 time([[Config for nvim-lsputils]], true)
