@@ -108,6 +108,8 @@ nmap <silent> <leader>tx <Plug>TranslateX
 
 " DB
 nnoremap <silent> <leader><leader>d :DBUIToggle<cr>
+" markdown preview
+nnoremap <silent> <leader>mp :Glow<cr>
 
 " clever-f
 map ; <Plug>(clever-f-repeat-forward)
