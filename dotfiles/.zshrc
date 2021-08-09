@@ -145,7 +145,7 @@ alias lg='lazygit'
 # alias vi='vim'
 alias javac="javac -J-Dfile.encoding=utf8"
 alias grep="grep --color=auto"
-alias sudo='sudo env HOME=$HOME'
+alias sudo='sudo env HOME=$HOME '
 alias natapp='natapp -config=$HOME/.config/natapp/config'
 bindkey '^ ' autosuggest-accept
 export DISPLAY=:0
@@ -166,6 +166,7 @@ PATH=$PATH:$HOME/.local/bin/:$GOPATH/bin
 # java
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
 export LUA_PATH="~/.config/nvim/lua/;;"
+export GITLAB_HOME="$HOME/project/gitlab"
 # export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 # tmux params
 export TERM='xterm-256color'

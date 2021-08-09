@@ -137,3 +137,6 @@ nnoremap <leader>lq <cmd>TroubleToggle quickfix<cr>
 nnoremap <leader>ll <cmd>TroubleToggle loclist<cr>
 nnoremap gR <cmd>TroubleToggle lsp_references<cr>
 
+" rest nivim
+nnoremap <leader>rr <Plug>RestNvim<cr>
+nnoremap <leader>rp <Plug>RestNvimPreview<cr>
