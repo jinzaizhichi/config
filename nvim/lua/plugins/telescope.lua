@@ -14,6 +14,7 @@ return function()
         i = {
           -- IMPORTANT
           -- either hot-reloaded or `function(prompt_bufnr) telescope.extensions.hop.hop end`
+          ["<C-t>"] = actions.send_to_qflist + actions.open_qflist,
           ["<C-h>"] = R("telescope").extensions.hop.hop,  -- hop.hop_toggle_selection
           -- custom hop loop to multi selects and sending selected entries to quickfix list
           ["<C-space>"] = function(prompt_bufnr)

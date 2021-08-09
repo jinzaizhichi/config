@@ -140,3 +140,13 @@ nnoremap gR <cmd>TroubleToggle lsp_references<cr>
 " rest nivim
 nnoremap <leader>rr <Plug>RestNvim<cr>
 nnoremap <leader>rp <Plug>RestNvimPreview<cr>
+
+function! ToggleQuickFix()
+    if empty(filter(getwininfo(), 'v:val.quickfix'))
+        copen
+    else
+        cclose
+    endif
+endfunction
+
+nnoremap <silent> <leader><leader>l :call ToggleQuickFix()<cr>
