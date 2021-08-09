@@ -115,3 +115,12 @@ let g:indent_blankline_filetype_exclude = ['dashboard']
 let g:indent_blankline_space_char = ' '
 " let g:indent_blankline_strict_tabs = v:true
 
+let g:dashboard_custom_shortcut={
+\ 'last_session'       : 'SPC s l',
+\ 'find_history'       : 'SPC o h',
+\ 'find_file'          : 'SPC o f',
+\ 'new_file'           : 'SPC o n',
+\ 'find_word'          : 'SPC o a',
+\ 'book_marks'         : 'SPC o b',
+\ 'change_colorscheme' : 'SPC o c',
+\ }

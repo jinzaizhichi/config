@@ -150,3 +150,13 @@ function! ToggleQuickFix()
 endfunction
 
 nnoremap <silent> <leader><leader>l :call ToggleQuickFix()<cr>
+
+" dashboard
+nmap <Leader>ss :<C-u>SessionSave<CR>
+nmap <Leader>sl :<C-u>SessionLoad<CR>
+nnoremap <silent> <Leader>oh :DashboardFindHistory<CR>
+nnoremap <silent> <Leader>of :DashboardFindFile<CR>
+nnoremap <silent> <Leader>oc :DashboardChangeColorscheme<CR>
+nnoremap <silent> <Leader>oa :DashboardFindWord<CR>
+nnoremap <silent> <Leader>ob :DashboardJumpMark<CR>
+nnoremap <silent> <Leader>on :DashboardNewFile<CR>
