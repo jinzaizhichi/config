@@ -66,9 +66,9 @@ return function()
                    "<Cmd>lua require('jdtls').extract_method(true)<CR>", opts)
     -- If using nvim-dap
     -- This requires java-debug and vscode-java-test bundles, see install steps in this README further below.
-    buf_set_keymap('n', '<leader>jt',
+    buf_set_keymap('n', '<leader>cjt',
                    "<Cmd>lua require('jdtls').test_class()<CR>", opts)
-    buf_set_keymap('n', '<leader>jn',
+    buf_set_keymap('n', '<leader>cjn',
                    "<Cmd>lua require('jdtls').test_nearest_method()<CR>", opts)
     -- Set some keybinds conditional on server capabilities
     if client.resolved_capabilities.document_formatting then

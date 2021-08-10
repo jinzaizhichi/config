@@ -84,7 +84,7 @@ return require('packer').startup(function(use)
   use {'rcarriga/nvim-dap-ui', config = function() require("dapui").setup() end}
   use {'theHamsta/nvim-dap-virtual-text'}
   -- which keys
-  use {'folke/which-key.nvim', config = function() require('which-key').setup() end}
+  use {'folke/which-key.nvim', config = require('plugins.which-key')}
   -- lsp setup
   use {'mhartington/formatter.nvim', config = require('plugins.formatter')}
   use {'neovim/nvim-lspconfig'}
