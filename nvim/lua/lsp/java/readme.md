@@ -1,16 +1,10 @@
 Java LSP settings
 
-Currently I use jdtls base on [nvim-lspinstal](https://github.com/kabouzeid/nvim-lspinstall),
-But the auto generate script had some issue, Do not know why yet,
-to fix this, edit this sh file ~/.local/share/nvim/lspinstall/java/jdtls.sh
-delete this line
+Currently I use jdtls base on [nvim-lspinstall](https://github.com/kabouzeid/nvim-lspinstall),
+The `jdtls.sh` file in lspinstall have some issues when I use,
+So I edit it and backup this file in here.
+To let it work, execute these commands, change `~/project/my/config` to your path of this repo:
+```
+rm ~/.local/share/nvim/lspinstall/java/jdtls.sh && ln -s ~/project/my/config/nvim/lspinstall/java/jdtls.sh ~/.local/share/nvim/lspinstall/java/jdtls.sh 
+```
 
-```
-  -Xbootclasspath/a:/home/hewenjin/.local/share/nvim/lspinstall/java/lombok.jar \
-```
-
-When use nvim-jdtls, my local setting need to set a symbollink to `~/.local/bin` directory
-
-```
-ln -s ~/.config/nvim/lua/lsp/java/java-lsp.sh java-lsp.sh
-```
