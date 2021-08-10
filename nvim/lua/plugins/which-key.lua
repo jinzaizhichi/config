@@ -16,5 +16,6 @@ return function()
   t = { name = 'Translate' },
   w = { name = 'Workspace' },
   p = { name = 'Paste System Clipboard' },
+  g = { name = 'Git Action' },
 }, { prefix = '<leader>' })
 end
