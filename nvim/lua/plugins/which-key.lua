@@ -6,7 +6,7 @@ return function()
   f = { name = 'Find & Format' },
   b = { name = 'Buffer Operate' },
   c = { name = 'Code Action', j = { name = 'Java Code Action'}},
-  d = { name = 'DAP' },
+  d = { name = 'DAP Action' },
   x = { name = 'Close Current Buffer' },
   l = { name = 'List Of Trouble' },
   m = { name = 'Markdown' },
