@@ -1,3 +1,7 @@
+nnoremap j gj
+nnoremap gj j
+nnoremap k gk
+nnoremap gk k
 cnoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 nnoremap <silent> gb <c-^>
 " These commands will navigate through buffers in order regardless of which mode you are using
