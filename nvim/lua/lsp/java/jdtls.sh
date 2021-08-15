@@ -11,14 +11,14 @@ die () {
 
 case Linux in
   Linux)
-    CONFIG="/home/hewenjin/.local/share/nvim/lspinstall/java/config_linux"
+    CONFIG="$HOME/.local/share/nvim/lspinstall/java/config_linux"
     ;;
   Darwin)
-    CONFIG="/home/hewenjin/.local/share/nvim/lspinstall/java/config_mac"
+    CONFIG="$HOME/.local/share/nvim/lspinstall/java/config_mac"
     ;;
 esac
 
-JAR="/home/hewenjin/.local/share/nvim/lspinstall/java/plugins/org.eclipse.equinox.launcher_*.jar"
+JAR="$HOME/.local/share/nvim/lspinstall/java/plugins/org.eclipse.equinox.launcher_*.jar"
 
 # Determine the Java command to use to start the JVM.
 if [ -n "$JAVA_HOME" ] ; then
@@ -43,21 +43,20 @@ location of your Java installation."
 fi
 
   # -Xbootclasspath/a:/home/hewenjin/.local/share/nvim/lspinstall/java/lombok.jar \
+  # -Dlog.protocol=true \
+  # -Dlog.level=ALL \
 "$JAVACMD" \
-  -Dfile.encoding=utf8 \
+  --add-modules=ALL-SYSTEM \
+  --add-opens java.base/java.util=ALL-UNNAMED \
+  --add-opens java.base/java.lang=ALL-UNNAMED \
   -Declipse.application=org.eclipse.jdt.ls.core.id1 \
   -Dosgi.bundles.defaultStartLevel=4 \
   -Declipse.product=org.eclipse.jdt.ls.core.product \
-  -Dlog.protocol=true \
-  -Dlog.level=ALL \
+  -Dfile.encoding=utf-8 \
   -noverify \
-  -Xms1g \
+  -Xms1G \
   -Xmx2G \
-  -XX:+UseStringDeduplication \
-  -javaagent:/home/hewenjin/.local/share/nvim/lspinstall/java/lombok.jar \
+  -javaagent:$HOME/.local/share/nvim/lspinstall/java/lombok.jar \
   -jar $(echo "$JAR") \
   -configuration "$CONFIG" \
-  -data "$WORKSPACE" \
-  --add-modules=ALL-SYSTEM \
-  --add-opens java.base/java.util=ALL-UNNAMED \
-  --add-opens java.base/java.lang=ALL-UNNAMED
+  -data "$WORKSPACE"

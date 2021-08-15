@@ -38,8 +38,6 @@ M.init_options = {
 }
 
 M.settings = {
-  --[[ ['java.format.settings.url'] = home .. "/project/java-google-formatter.xml",
-  ['java.format.settings.profile'] = "GoogleStyle", ]]
   java = {
     jdt = {
       ls = {
@@ -54,7 +52,7 @@ M.settings = {
         enabled = true
       },
       settings = {
-        url = home .. "/project/java-google-formatter.xml",
+        url = 'file://' .. home .. "/project/java-google-formatter.xml",
         profile = "GoogleStyle",
       }
     },
@@ -63,7 +61,7 @@ M.settings = {
       organizeImports = true,
     },
     trace = {
-      server = "messages"
+      server = "verbose"
     },
     referencesCodeLens = {enabled = true},
     implementationsCodeLens = {enabled = true},
@@ -113,7 +111,7 @@ M.settings = {
         template = "${object.className}{${member.name()}=${member.value}, ${otherMembers}}"
       }
     },
-    home = "/usr/lib/jvm/java-8-openjdk/",
+    home = "/usr/lib/jvm/java-11-openjdk/",
     configuration = {
       maven = {
         globalSettings = "/opt/maven/conf/settings.xml",
