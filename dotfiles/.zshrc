@@ -136,6 +136,9 @@ export LANG=zh_CN.UTF-8
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias cls='clear'
 alias nv='nvim'
+alias kc='kubectl'
+# alias mk='minikube --registry-mirror=https://registry.docker-cn.com'
+alias mk='minikube'
 alias ll='ls -lah'
 alias la='ls -a'
 alias pc='proxychains'
@@ -183,11 +186,11 @@ export VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 
 #export TERM='st-256color'
 # proxy
-#export http_proxy=sock5://127.0.0.1:1090/
-#export https_proxy=$http_proxy
+# export HTTP_PROXY=http://127.0.0.1:8118
+# export HTTPS_PROXY=$HTTP_PROXY
+# export NO_PROXY=localhost,127.0.0.1,localaddress,.localdomain.com,10.96.0.0/12,192.168.99.0/24,192.168.39.0/24,192.168.49.2/24
 #export ftp_proxy=$http_proxy
 #export rsync_proxy=$http_proxy
-#export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
 if type bat &> /dev/null; then
     export FZF_DEFAULT_OPTS='--preview "bat --style=numbers --color=always --line-range :500 {}"'
 fi
@@ -195,4 +198,58 @@ fi
 if type rg &> /dev/null; then
     export FZF_DEFAULT_COMMAND='rg --files --smart-case --hidden'
 fi
-eval $(thefuck --alias)
+if type fuck &> /dev/null; then
+    eval $(thefuck --alias)
+fi
+PROXY_ENV=(http_proxy ftp_proxy https_proxy all_proxy HTTP_PROXY HTTPS_PROXY FTP_PROXY ALL_PROXY)
+NO_PROXY_ENV=(no_proxy NO_PROXY)
+proxy_value=http://127.0.0.1:8118
+no_proxy_value=localhost,127.0.0.1,localaddress,.localdomain.com,10.96.0.0/12,192.168.99.0/24,192.168.39.0/24,192.168.49.2/24
+
+proxyIsSet(){
+    for envar in $PROXY_ENV
+    do
+        eval temp=$(echo \$$envar)
+        if [ $temp ]; then
+            return 0
+        fi
+    done
+    return 1
+
+}
+
+assignProxy(){
+    for envar in $PROXY_ENV
+    do
+       export $envar=$1
+    done
+    for envar in $NO_PROXY_ENV
+    do
+       export $envar=$2
+    done
+    echo "set all proxy env successfull"
+    echo "proxy value is:"
+    echo ${proxy_value}
+    echo "no proxy value is:"
+    echo ${no_proxy_value}
+}
+
+clrProxy(){
+    for envar in $PROXY_ENV
+    do
+        unset $envar
+    done
+    echo "cleaned all proxy env"
+}
+
+toggleProxy(){
+    if proxyIsSet 
+    then
+        clrProxy
+    else
+        # user=YourUserName
+        # read -p "Password: " -s pass &&  echo -e " "
+        # proxy_value="http://$user:$pass@ProxyServerAddress:Port"
+        assignProxy $proxy_value $no_proxy_value
+    fi
+}
