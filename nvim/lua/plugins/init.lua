@@ -8,7 +8,7 @@ return require('packer').startup(function(use)
   -- theme and color
   use {'tjdevries/colorbuddy.vim'}
   use {'Th3Whit3Wolf/onebuddy'}
-  use {'norcalli/nvim-colorizer.lua', config = require('colorizer').setup()}
+  use {'norcalli/nvim-colorizer.lua', config = function() require('colorizer').setup() end}
   use {'p00f/nvim-ts-rainbow'}
   -- buffer | statusline | icon | treeview | startup buffer
   use {'glepnir/dashboard-nvim'}

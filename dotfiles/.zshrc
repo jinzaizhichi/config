@@ -12,14 +12,18 @@ fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+if [[ -d "/usr/share/oh-my-zsh" ]]; then
+    export ZSH=/usr/share/oh-my-zsh
+  else
+    export ZSH=$HOME/.oh-my-zsh
+fi
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_DISABLE_COMPFIX=true
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -33,6 +37,10 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+ZSH_CACHE_DIR=$HOME/.cache/oh-my-zsh
+if [[ ! -d $ZSH_CACHE_DIR ]]; then
+  mkdir $ZSH_CACHE_DIR
+fi
 # [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -48,7 +56,7 @@ fi
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to automatically update without prompting.
 # DISABLE_UPDATE_PROMPT="true"
@@ -96,8 +104,6 @@ plugins=(
         git
         svn
         mvn
-        zsh-autosuggestions
-        zsh-syntax-highlighting
         archlinux
         docker
         wd
@@ -109,12 +115,15 @@ plugins=(
         )
 
 source $ZSH/oh-my-zsh.sh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-export LANG=zh_CN.UTF-8
+# export LANG=zh_CN.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -154,10 +163,12 @@ alias natapp='natapp -config=$HOME/.config/natapp/config'
 bindkey '^ ' autosuggest-accept
 export DISPLAY=:0
 export GOPATH=$HOME/project/dev.d/go
-# enable go module
-go env -w GO111MODULE=on
-# go proxy
-go env -w GOPROXY=https://goproxy.cn,direct
+if type go &> /dev/null; then
+    # enable go module
+    go env -w GO111MODULE=on
+    # go proxy
+    go env -w GOPROXY=https://goproxy.cn,direct
+fi
 #export GOPROXY=https://mirrors.aliyun.com/goproxy/,direct
 PATH=$PATH:$HOME/.local/bin/:$GOPATH/bin
 # source ~/.oh-my-zsh/plugins/incr/incr*.zsh
