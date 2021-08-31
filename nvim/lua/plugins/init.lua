@@ -19,6 +19,7 @@ return require('packer').startup(function(use)
   -- treesitter and treesitter base plug
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = require('plugins.nvim-treesitter')}
   use {'nvim-treesitter/nvim-treesitter-textobjects'}
+  use {'nvim-treesitter/nvim-treesitter-refactor'}
   use {'lewis6991/spellsitter.nvim', config = require('plugins.spellsitter')}
   -- git
   use { 'lewis6991/gitsigns.nvim', config = require('plugins.gitsigns')}
@@ -92,6 +93,8 @@ return require('packer').startup(function(use)
   -- which keys
   use {'folke/which-key.nvim', config = require('plugins.which-key')}
   -- lsp setup
+  use {'simrat39/symbols-outline.nvim'}
+  use {'ray-x/lsp_signature.nvim', config = require('plugins.lsp_signature')}
   use {'mhartington/formatter.nvim', config = require('plugins.formatter')}
   use {'neovim/nvim-lspconfig'}
   use {'kabouzeid/nvim-lspinstall', config = require('plugins.lspinstall')}

@@ -83,6 +83,8 @@ nnoremap <silent> <leader>gf :DiffviewOpen<CR>
 " Provided by setup function
 nnoremap <silent> <leader>fm :Format<CR>
 
+nnoremap <silent> <leader>cs :SymbolsOutline<CR>
+
 nnoremap <silent> <leader><leader>w <cmd>lua require'hop'.hint_words()<cr>
 nnoremap <silent> <leader><leader>p <cmd>lua require'hop'.hint_patterns()<cr>
 nnoremap <silent> <leader><leader>j <cmd>lua require'hop'.hint_lines()<cr>
