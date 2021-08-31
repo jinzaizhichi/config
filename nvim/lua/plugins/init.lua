@@ -68,11 +68,17 @@ return require('packer').startup(function(use)
   -- markdown preview
   use {'npxbr/glow.nvim', run = ':GlowInstall'}
   -- lsp auto completion
-  use {'hrsh7th/nvim-compe', config = require('plugins.compe')}
+  -- use {'hrsh7th/nvim-compe', config = require('plugins.compe')}
   use {'hrsh7th/vim-vsnip'}
-  use {'tzachar/compe-tabnine', run='./install.sh'}
-  use {'kristijanhusak/vim-dadbod-completion'}
   use {'hrsh7th/vim-vsnip-integ'}
+  use {'hrsh7th/cmp-vsnip'}
+  use {'hrsh7th/cmp-buffer'}
+  use {'hrsh7th/cmp-nvim-lsp'}
+  use {'hrsh7th/cmp-path'}
+  use {'f3fora/cmp-spell'}
+  use {'tzachar/cmp-tabnine', run='./install.sh'}
+  use {'kristijanhusak/vim-dadbod-completion'}
+  use {'hrsh7th/nvim-cmp', config = require('plugins.cmp')}
   -- use {'haorenW1025/completion-nvim' }
   -- use {'aca/completion-tabnine', run='./install.sh'}
   -- use {'nvim-treesitter/completion-treesitter'}

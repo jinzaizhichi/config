@@ -12,7 +12,8 @@ return function()
     end
     if client.name == 'java' then
       require('jdtls.dap').setup_dap_main_class_configs()
-      require('jdtls').setup_dap({hotcodereplace = 'auto'})
+      -- require('jdtls').setup_dap({hotcodereplace = 'auto'})
+      require('jdtls').setup_dap()
       require('jdtls.setup').add_commands()
     end
 
@@ -95,7 +96,9 @@ return function()
 
   -- config that activates keymaps and enables snippet support
   local function make_config()
+    -- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
     local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
     capabilities.textDocument.completion.completionItem.snippetSupport = true
     capabilities.textDocument.completion.completionItem.resolveSupport = {
       properties = {'documentation', 'detail', 'additionalTextEdits'}
@@ -135,7 +138,8 @@ return function()
         config.init_options = javaconf.init_options
         config.settings = javaconf.settings
         config.on_init = javaconf.on_init
-        config.capabilities = javaconf.capabilities
+        -- config.capabilities = javaconf.capabilities
+        config.capabilities.workspace.configuration = true
         config.cmd = javaconf.cmd
         config.filetypes = {'java'}
         config.flags = {allow_incremental_sync = true}
