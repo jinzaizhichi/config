@@ -110,7 +110,7 @@ _G.packer_plugins = {
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/dashboard-nvim"
   },
   ["diffview.nvim"] = {
-    config = { "\27LJ\1\2u\0\0\3\0\6\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0003\2\4\0:\2\5\1>\0\2\1G\0\1\0\15file_panel\1\0\2\nwidth\3#\14use_icons\2\1\0\1\18diff_binaries\1\nsetup\rdiffview\frequire\0" },
+    config = { "\27LJ\1\2u\0\0\3\0\6\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0003\2\4\0:\2\5\1>\0\2\1G\0\1\0\15file_panel\1\0\1\nwidth\3#\1\0\2\18diff_binaries\1\14use_icons\2\nsetup\rdiffview\frequire\0" },
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/diffview.nvim"
   },
@@ -415,7 +415,7 @@ try_loadstring("\27LJ\1\0027\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\
 time([[Config for rest.nvim]], false)
 -- Config for: diffview.nvim
 time([[Config for diffview.nvim]], true)
-try_loadstring("\27LJ\1\2u\0\0\3\0\6\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0003\2\4\0:\2\5\1>\0\2\1G\0\1\0\15file_panel\1\0\2\nwidth\3#\14use_icons\2\1\0\1\18diff_binaries\1\nsetup\rdiffview\frequire\0", "config", "diffview.nvim")
+try_loadstring("\27LJ\1\2u\0\0\3\0\6\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0003\2\4\0:\2\5\1>\0\2\1G\0\1\0\15file_panel\1\0\1\nwidth\3#\1\0\2\18diff_binaries\1\14use_icons\2\nsetup\rdiffview\frequire\0", "config", "diffview.nvim")
 time([[Config for diffview.nvim]], false)
 -- Config for: snippets.nvim
 time([[Config for snippets.nvim]], true)
