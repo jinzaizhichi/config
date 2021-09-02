@@ -14,10 +14,10 @@ return require('packer').startup(function(use)
   use {'glepnir/dashboard-nvim'}
   use {'kyazdani42/nvim-tree.lua'}
   use {'kyazdani42/nvim-web-devicons'}
-  use {'akinsho/nvim-bufferline.lua', config = require('plugins.nvim-bufferline')}
+  use {'akinsho/nvim-bufferline.lua', config = require('plugins.bufferline')}
   use {'glepnir/galaxyline.nvim', branch = 'main', config = function() require('plugins.eviline') end}
   -- treesitter and treesitter base plug
-  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = require('plugins.nvim-treesitter')}
+  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = require('plugins.treesitter')}
   use {'nvim-treesitter/nvim-treesitter-textobjects'}
   use {'nvim-treesitter/nvim-treesitter-refactor'}
   use {'lewis6991/spellsitter.nvim', config = require('plugins.spellsitter')}
@@ -40,10 +40,10 @@ return require('packer').startup(function(use)
   -- incsearch
   use {'kevinhwang91/nvim-hlslens'}
   -- terminal
-  use {'akinsho/nvim-toggleterm.lua', config = require('plugins.nvim-toggleterm')}
+  use {'akinsho/nvim-toggleterm.lua', config = require('plugins.toggleterm')}
   -- editing
   use {'tpope/vim-surround'}
-  use {'windwp/nvim-autopairs', config = require('plugins.nvim-autopairs')}
+  use {'windwp/nvim-autopairs', config = require('plugins.autopairs')}
   use {'itchyny/vim-cursorword'}
   use {'windwp/nvim-ts-autotag'}
   use {'andymass/vim-matchup'}
@@ -69,7 +69,6 @@ return require('packer').startup(function(use)
   -- markdown preview
   use {'npxbr/glow.nvim', run = ':GlowInstall'}
   -- lsp auto completion
-  -- use {'hrsh7th/nvim-compe', config = require('plugins.compe')}
   use {'hrsh7th/vim-vsnip'}
   use {'hrsh7th/vim-vsnip-integ'}
   use {'hrsh7th/cmp-vsnip'}
@@ -80,10 +79,6 @@ return require('packer').startup(function(use)
   use {'tzachar/cmp-tabnine', run='./install.sh'}
   use {'kristijanhusak/vim-dadbod-completion'}
   use {'hrsh7th/nvim-cmp', config = require('plugins.cmp')}
-  -- use {'haorenW1025/completion-nvim' }
-  -- use {'aca/completion-tabnine', run='./install.sh'}
-  -- use {'nvim-treesitter/completion-treesitter'}
-  -- use {'kristijanhusak/completion-tags'}
   -- use neovim in browser
   -- use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
   -- nvim debug tool

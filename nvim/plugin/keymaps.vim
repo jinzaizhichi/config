@@ -79,7 +79,7 @@ inoremap <c-k> <cmd>lua return require'snippets'.expand_or_advance(1)<CR>
 inoremap <c-j> <cmd>lua return require'snippets'.advance_snippet(-1)<CR>
 " setup mapping to call :LazyGit
 nnoremap <silent> <leader>gg :LazyGit<CR>
-nnoremap <silent> <leader>gf :DiffviewOpen<CR>
+nnoremap <silent> <leader>gd :DiffviewOpen<CR>
 " Provided by setup function
 nnoremap <silent> <leader>fm :Format<CR>
 
