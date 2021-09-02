@@ -175,9 +175,9 @@ PATH=$PATH:$HOME/.local/bin/:$GOPATH/bin
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # ibus
-# export GTK_IM_MODULE=ibus
-# export XMODIFIERS=@im=ibus
-# export QT_IM_MODULE=ibus
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
 # java
 export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
 export LUA_PATH="~/.config/nvim/lua/;;"
