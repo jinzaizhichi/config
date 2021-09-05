@@ -152,7 +152,7 @@ _G.packer_plugins = {
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/lsp-rooter.nvim"
   },
   ["lsp_signature.nvim"] = {
-    config = { "\27LJ\1\2w\0\0\3\0\6\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\4\0003\2\3\0:\2\5\1>\0\2\1G\0\1\0\17handler_opts\1\0\1\15toggle_key\n<M-s>\1\0\1\vborder\tnone\nsetup\18lsp_signature\frequire\0" },
+    config = { "\27LJ\1\2ˆ\1\0\0\3\0\6\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\4\0003\2\3\0:\2\5\1>\0\2\1G\0\1\0\17handler_opts\1\0\2\16hint_prefix\tîž› \15toggle_key\n<M-s>\1\0\1\vborder\tnone\nsetup\18lsp_signature\frequire\0" },
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim"
   },
@@ -483,7 +483,7 @@ try_loadstring("\27LJ\1\2»\1\0\1\5\1\n\0\0173\1\1\0+\2\0\0007\2\0\2:\2\2\1+\2\0\
 time([[Config for telescope.nvim]], false)
 -- Config for: lsp_signature.nvim
 time([[Config for lsp_signature.nvim]], true)
-try_loadstring("\27LJ\1\2w\0\0\3\0\6\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\4\0003\2\3\0:\2\5\1>\0\2\1G\0\1\0\17handler_opts\1\0\1\15toggle_key\n<M-s>\1\0\1\vborder\tnone\nsetup\18lsp_signature\frequire\0", "config", "lsp_signature.nvim")
+try_loadstring("\27LJ\1\2ˆ\1\0\0\3\0\6\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\4\0003\2\3\0:\2\5\1>\0\2\1G\0\1\0\17handler_opts\1\0\2\16hint_prefix\tîž› \15toggle_key\n<M-s>\1\0\1\vborder\tnone\nsetup\18lsp_signature\frequire\0", "config", "lsp_signature.nvim")
 time([[Config for lsp_signature.nvim]], false)
 -- Config for: nvim-lspinstall
 time([[Config for nvim-lspinstall]], true)
