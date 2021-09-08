@@ -298,7 +298,7 @@ _G.packer_plugins = {
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/spellsitter.nvim"
   },
   ["sqls.nvim"] = {
-    config = { "\27LJ\1\2d\0\1\3\0\5\0\t7\1\0\0)\2\2\0:\2\1\0014\1\2\0%\2\3\0>\1\2\0027\1\4\1>\1\1\1G\0\1\0\nsetup\tsqls\frequire\20execute_command\26resolved_capabilitiesZ\1\0\3\0\a\0\n4\0\0\0%\1\1\0>\0\2\0027\0\2\0007\0\3\0003\1\5\0001\2\4\0:\2\6\1>\0\2\1G\0\1\0\14on_attach\1\0\0\0\nsetup\tsqls\14lspconfig\frequire\0" },
+    config = { "\27LJ\1\2d\0\1\3\0\5\0\t7\1\0\0)\2\2\0:\2\1\0014\1\2\0%\2\3\0>\1\2\0027\1\4\1>\1\1\1G\0\1\0\nsetup\tsqls\frequire\20execute_command\26resolved_capabilities…\1\1\0\4\0\t\0\0144\0\0\0%\1\1\0>\0\2\0027\0\2\0007\0\3\0003\1\5\0001\2\4\0:\2\6\0014\2\0\0%\3\a\0>\2\2\2:\2\b\1>\0\2\1G\0\1\0\rsettings\22lsp.sqls.settings\14on_attach\1\0\0\0\nsetup\tsqls\14lspconfig\frequire\0" },
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/sqls.nvim"
   },
@@ -407,7 +407,7 @@ try_loadstring('\27LJ\1\2í\4\0\0\5\0$\0+4\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\0014
 time([[Config for which-key.nvim]], false)
 -- Config for: sqls.nvim
 time([[Config for sqls.nvim]], true)
-try_loadstring("\27LJ\1\2d\0\1\3\0\5\0\t7\1\0\0)\2\2\0:\2\1\0014\1\2\0%\2\3\0>\1\2\0027\1\4\1>\1\1\1G\0\1\0\nsetup\tsqls\frequire\20execute_command\26resolved_capabilitiesZ\1\0\3\0\a\0\n4\0\0\0%\1\1\0>\0\2\0027\0\2\0007\0\3\0003\1\5\0001\2\4\0:\2\6\1>\0\2\1G\0\1\0\14on_attach\1\0\0\0\nsetup\tsqls\14lspconfig\frequire\0", "config", "sqls.nvim")
+try_loadstring("\27LJ\1\2d\0\1\3\0\5\0\t7\1\0\0)\2\2\0:\2\1\0014\1\2\0%\2\3\0>\1\2\0027\1\4\1>\1\1\1G\0\1\0\nsetup\tsqls\frequire\20execute_command\26resolved_capabilities…\1\1\0\4\0\t\0\0144\0\0\0%\1\1\0>\0\2\0027\0\2\0007\0\3\0003\1\5\0001\2\4\0:\2\6\0014\2\0\0%\3\a\0>\2\2\2:\2\b\1>\0\2\1G\0\1\0\rsettings\22lsp.sqls.settings\14on_attach\1\0\0\0\nsetup\tsqls\14lspconfig\frequire\0", "config", "sqls.nvim")
 time([[Config for sqls.nvim]], false)
 -- Config for: rest.nvim
 time([[Config for rest.nvim]], true)
