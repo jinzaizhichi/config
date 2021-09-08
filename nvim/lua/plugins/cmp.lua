@@ -47,6 +47,8 @@ return function ()
       { name = 'path' },
       { name = 'buffer' },
       { name = 'vim-dadbod-completion' },
+      { name = 'look' },
+      { name = 'treesitter' },
     },
     formatting = {
       format = function(entry, vim_item)

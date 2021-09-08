@@ -76,6 +76,8 @@ return require('packer').startup(function(use)
   use {'hrsh7th/cmp-nvim-lsp'}
   use {'hrsh7th/cmp-path'}
   use {'f3fora/cmp-spell'}
+  use {'octaltree/cmp-look'}
+  use {'ray-x/cmp-treesitter'}
   use {'tzachar/cmp-tabnine', run='./install.sh'}
   use {'kristijanhusak/vim-dadbod-completion'}
   use {'hrsh7th/nvim-cmp', config = require('plugins.cmp')}
