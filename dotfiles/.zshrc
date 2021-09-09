@@ -143,7 +143,7 @@ export LANG=en_US.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias cls='clear'
+alias clr='clear'
 alias nv='nvim'
 alias kc='kubectl'
 # alias mk='minikube --registry-mirror=https://registry.docker-cn.com'

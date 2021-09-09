@@ -99,7 +99,6 @@ return require('packer').startup(function(use)
   use {'RishabhRD/nvim-lsputils', config = function() require('plugins.lsputils') end}
   use {'norcalli/snippets.nvim', config = function() require('snippets').use_suggested_mappings() end}
   use {'folke/trouble.nvim', config = function() require('trouble').setup() end}
-  use {'nanotee/sqls.nvim', config = require('plugins.sqls')}
   use {'onsails/lspkind-nvim', config = require('plugins.lspkind')}
   -- wrapper for jdtls
   use {'mfussenegger/nvim-jdtls'}

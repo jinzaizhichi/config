@@ -23,6 +23,7 @@ return function()
       Interface = 'ﰮ',
       Module = '',
       Property = '',
+      DB = '',
       Unit = '',
       Value = '',
       Enum = '了',
