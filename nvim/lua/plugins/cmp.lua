@@ -53,10 +53,6 @@ return function ()
     formatting = {
       format = function(entry, vim_item)
         vim_item.kind = lspkind.presets.default[vim_item.kind]
-        -- set a name for each source
-        vim_item.menu = ({
-          ['vim-dadbod-completion'] = "",
-        })[entry.source.name]
         return vim_item
       end
     }
