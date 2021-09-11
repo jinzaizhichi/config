@@ -69,7 +69,8 @@ return require('packer').startup(function(use)
   use {'ahmedkhalf/lsp-rooter.nvim', config = function() require('lsp-rooter').setup() end}
   -- markdown preview
   use {'npxbr/glow.nvim', run = ':GlowInstall'}
-  -- lsp auto completion
+  -- lsp auto completion & snip
+  use {'rafamadriz/friendly-snippets'}
   use {'hrsh7th/vim-vsnip'}
   use {'hrsh7th/vim-vsnip-integ'}
   use {'hrsh7th/cmp-vsnip'}
