@@ -58,9 +58,9 @@ nnoremap <leader>fdv <cmd>Telescope dap variables<cr>
 nnoremap <leader>fdf <cmd>Telescope dap frames<cr>
 
 " nvim tree
-nnoremap <leader>n :NvimTreeToggle<CR>
-nnoremap <leader><leader>nr :NvimTreeRefresh<CR>
-nnoremap <leader><leader>nf :NvimTreeFindFile<CR>
+" nnoremap <leader>n :NvimTreeToggle<CR>
+" nnoremap <leader><leader>nr :NvimTreeRefresh<CR>
+" nnoremap <leader><leader>nf :NvimTreeFindFile<CR>
 
 nnoremap <leader>fs :lua require('spectre').open()<CR>
 
@@ -138,7 +138,7 @@ nnoremap <leader>ll <cmd>TroubleToggle loclist<cr>
 nnoremap gR <cmd>TroubleToggle lsp_references<cr>
 
 " rest nivim
-nnoremap <leader>rr <Plug>RestNvim<cr>
+nnoremap <leader>re <Plug>RestNvim<cr>
 nnoremap <leader>rp <Plug>RestNvimPreview<cr>
 
 function! ToggleQuickFix()
@@ -160,3 +160,7 @@ nnoremap <silent> <Leader>oc :DashboardChangeColorscheme<CR>
 nnoremap <silent> <Leader>oa :DashboardFindWord<CR>
 nnoremap <silent> <Leader>ob :DashboardJumpMark<CR>
 nnoremap <silent> <Leader>on :DashboardNewFile<CR>
+
+tnoremap <silent> <C-r><C-e> <C-\><C-n>:RnvimrResize<CR>
+nnoremap <silent> <leader>rr :RnvimrToggle<CR>
+tnoremap <silent> <C-r><C-r> <C-\><C-n>:RnvimrToggle<CR>

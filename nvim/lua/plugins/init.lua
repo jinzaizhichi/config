@@ -12,7 +12,8 @@ return require('packer').startup(function(use)
   use {'p00f/nvim-ts-rainbow'}
   -- buffer | statusline | icon | treeview | startup buffer
   use {'glepnir/dashboard-nvim'}
-  use {'kyazdani42/nvim-tree.lua'}
+  use {'kevinhwang91/rnvimr'}
+  -- use {'kyazdani42/nvim-tree.lua'}
   use {'kyazdani42/nvim-web-devicons'}
   use {'akinsho/nvim-bufferline.lua', config = require('plugins.bufferline')}
   use {'glepnir/galaxyline.nvim', branch = 'main', config = function() require('plugins.eviline') end}

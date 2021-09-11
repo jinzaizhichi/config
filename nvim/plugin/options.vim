@@ -71,24 +71,6 @@ set termencoding=utf-8
 set encoding=utf8
 set fileencodings=utf8,ucs-bom,gbk,cp936,gb2312,gb18030
 
-
-" gvim/macvim
-if has("gui_running")
-    let system = system('uname -s')
-    if system == "Darwin\n"
-        set guifont=Droid\ Sans\ Mono\ Nerd\ Font\ Complete:h18
-    else
-        set guifont=DroidSansMono\ Nerd\ Font\ Regular\ 18
-    endif
-    set guioptions-=m
-    set guioptions-=T
-    set guioptions-=L
-    set guioptions-=r
-    set guioptions-=b
-    set showtabline=0
-    set guicursor=n-v-c:ver5
-endif
-
 set hidden
 set termguicolors
 
