@@ -37,7 +37,7 @@ let g:vim_dadbod_completion_mark = ''
 let g:db_ui_save_location = '~/.local/share/nvim/db_ui_queries'
 
 let g:dashboard_custom_shortcut={
-\ 'last_session'       : 'SPC s l',
+\ 'last_session'       : 'SPC s r',
 \ 'find_history'       : 'SPC o h',
 \ 'find_file'          : 'SPC o f',
 \ 'new_file'           : 'SPC o n',
