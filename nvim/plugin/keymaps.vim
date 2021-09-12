@@ -157,12 +157,12 @@ nnoremap <silent> <Leader>sr <cmd>RestoreSession<CR>
 nnoremap <silent> <Leader>sd <cmd>DeleteSession<CR>
 
 " dashboard
-" nnoremap <silent> <Leader>oh :DashboardFindHistory<CR>
-" nnoremap <silent> <Leader>of :DashboardFindFile<CR>
-" nnoremap <silent> <Leader>oc :DashboardChangeColorscheme<CR>
-" nnoremap <silent> <Leader>oa :DashboardFindWord<CR>
-" nnoremap <silent> <Leader>ob :DashboardJumpMark<CR>
-" nnoremap <silent> <Leader>on :DashboardNewFile<CR>
+nnoremap <silent> <Leader>oh :DashboardFindHistory<CR>
+nnoremap <silent> <Leader>of :DashboardFindFile<CR>
+nnoremap <silent> <Leader>oc :DashboardChangeColorscheme<CR>
+nnoremap <silent> <Leader>oa :DashboardFindWord<CR>
+nnoremap <silent> <Leader>ob :DashboardJumpMark<CR>
+nnoremap <silent> <Leader>on :DashboardNewFile<CR>
 
 tnoremap <silent> <C-r><C-e> <C-\><C-n>:RnvimrResize<CR>
 nnoremap <silent> <leader>rr :RnvimrToggle<CR>

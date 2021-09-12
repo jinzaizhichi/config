@@ -26,7 +26,7 @@ return require('packer').startup(function(use)
   use {'nvim-treesitter/nvim-treesitter-refactor'}
   use {'lewis6991/spellsitter.nvim', config = require('plugins.spellsitter')}
   -- git
-  use { 'lewis6991/gitsigns.nvim', config = require('plugins.gitsigns')}
+  use {'lewis6991/gitsigns.nvim', config = require('plugins.gitsigns')}
   use {'kdheepak/lazygit.nvim'}
   use {'sindrets/diffview.nvim', config = require('plugins.diffview')}
   -- translator
