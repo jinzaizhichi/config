@@ -12,7 +12,7 @@ return function()
   m = { name = 'Markdown' },
   o = { name = 'Operate Dashboard Action' },
   r = { name = 'Ranger & Rename & Rest' },
-  s = { name = 'Session Dashboard Action' },
+  s = { name = 'Session & Spectre Action' },
   t = { name = 'Translate' },
   w = { name = 'Workspace' },
   p = { name = 'Paste System Clipboard' },

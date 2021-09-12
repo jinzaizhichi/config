@@ -19,4 +19,3 @@ just some filetype and colorscheme settings
 2. install [ripgrep](https://github.com/BurntSushi/ripgrep) to your system, telescope depend on it.
 3. recommend [tmux](https://github.com/tmux/tmux) & [oh-my-tmux](https://github.com/gpakosz/.tmux) to manage your terminal.
 
-### NOTE: the [auto-session](https://github.com/rmagatti/auto-session) make every session auto save, but when you edit nvim config, old session will not be update to newtest config, so every time you edit nvim config, be sure you clear the session directory `~/.local/share/nvim/sessions` to 

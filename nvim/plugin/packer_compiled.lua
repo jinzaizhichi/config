@@ -70,7 +70,7 @@ time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["auto-session"] = {
-    config = { "\27LJ\1\2\1\0\0\2\0\4\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0>\0\2\1G\0\1\0\1\0\4\22auto_save_enabled\2\14log_level\tinfo\25auto_session_enabled\2\25auto_restore_enabled\2\nsetup\17auto-session\frequire\0" },
+    config = { "\27LJ\1\2¹\1\0\0\3\0\6\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\4\0003\2\3\0:\2\5\1>\0\2\1G\0\1\0\22post_restore_cmds\1\0\4\25auto_session_enabled\2\25auto_restore_enabled\2\22auto_save_enabled\2\14log_level\tinfo\1\2\0\0\16so $MYVIMRC\nsetup\17auto-session\frequire\0" },
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/auto-session"
   },
@@ -398,7 +398,7 @@ _G.packer_plugins = {
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ"
   },
   ["which-key.nvim"] = {
-    config = { '\27LJ\1\2ò\4\0\0\5\0$\0+4\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\0014\0\0\0%\1\1\0>\0\2\0027\1\3\0003\2\5\0003\3\4\0:\3\6\0023\3\a\0:\3\b\0023\3\t\0003\4\n\0:\4\v\3:\3\f\0023\3\r\0:\3\14\0023\3\15\0:\3\16\0023\3\17\0:\3\18\0023\3\19\0:\3\20\0023\3\21\0:\3\22\0023\3\23\0:\3\24\0023\3\25\0:\3\26\0023\3\27\0:\3\28\0023\3\29\0:\3\30\0023\3\31\0:\3 \0023\3!\0:\3"\0023\3#\0>\1\3\1G\0\1\0\1\0\1\vprefix\r<leader>\6g\1\0\1\tname\15Git Action\6p\1\0\1\tname\27Paste System Clipboard\6w\1\0\1\tname\14Workspace\6t\1\0\1\tname\14Translate\6s\1\0\1\tname\29Session Dashboard Action\6r\1\0\1\tname\27Ranger & Rename & Rest\6o\1\0\1\tname\29Operate Dashboard Action\6m\1\0\1\tname\rMarkdown\6l\1\0\1\tname\20List Of Trouble\6x\1\0\1\tname\25Close Current Buffer\6d\1\0\1\tname\15DAP Action\6c\6j\1\0\1\tname\21Java Code Action\1\0\1\tname\16Code Action\6b\1\0\1\tname\19Buffer Operate\6f\1\0\0\1\0\1\tname\18Find & Format\rregister\nsetup\14which-key\frequire\0' },
+    config = { '\27LJ\1\2ò\4\0\0\5\0$\0+4\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\0014\0\0\0%\1\1\0>\0\2\0027\1\3\0003\2\5\0003\3\4\0:\3\6\0023\3\a\0:\3\b\0023\3\t\0003\4\n\0:\4\v\3:\3\f\0023\3\r\0:\3\14\0023\3\15\0:\3\16\0023\3\17\0:\3\18\0023\3\19\0:\3\20\0023\3\21\0:\3\22\0023\3\23\0:\3\24\0023\3\25\0:\3\26\0023\3\27\0:\3\28\0023\3\29\0:\3\30\0023\3\31\0:\3 \0023\3!\0:\3"\0023\3#\0>\1\3\1G\0\1\0\1\0\1\vprefix\r<leader>\6g\1\0\1\tname\15Git Action\6p\1\0\1\tname\27Paste System Clipboard\6w\1\0\1\tname\14Workspace\6t\1\0\1\tname\14Translate\6s\1\0\1\tname\29Session & Spectre Action\6r\1\0\1\tname\27Ranger & Rename & Rest\6o\1\0\1\tname\29Operate Dashboard Action\6m\1\0\1\tname\rMarkdown\6l\1\0\1\tname\20List Of Trouble\6x\1\0\1\tname\25Close Current Buffer\6d\1\0\1\tname\15DAP Action\6c\6j\1\0\1\tname\21Java Code Action\1\0\1\tname\16Code Action\6b\1\0\1\tname\19Buffer Operate\6f\1\0\0\1\0\1\tname\18Find & Format\rregister\nsetup\14which-key\frequire\0' },
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/which-key.nvim"
   }
@@ -415,11 +415,11 @@ try_loadstring('\27LJ\1\2Ê\6\0\0\5\0$\0+4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\6\00
 time([[Config for nvim-treesitter]], false)
 -- Config for: auto-session
 time([[Config for auto-session]], true)
-try_loadstring("\27LJ\1\2\1\0\0\2\0\4\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0>\0\2\1G\0\1\0\1\0\4\22auto_save_enabled\2\14log_level\tinfo\25auto_session_enabled\2\25auto_restore_enabled\2\nsetup\17auto-session\frequire\0", "config", "auto-session")
+try_loadstring("\27LJ\1\2¹\1\0\0\3\0\6\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\4\0003\2\3\0:\2\5\1>\0\2\1G\0\1\0\22post_restore_cmds\1\0\4\25auto_session_enabled\2\25auto_restore_enabled\2\22auto_save_enabled\2\14log_level\tinfo\1\2\0\0\16so $MYVIMRC\nsetup\17auto-session\frequire\0", "config", "auto-session")
 time([[Config for auto-session]], false)
 -- Config for: which-key.nvim
 time([[Config for which-key.nvim]], true)
-try_loadstring('\27LJ\1\2ò\4\0\0\5\0$\0+4\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\0014\0\0\0%\1\1\0>\0\2\0027\1\3\0003\2\5\0003\3\4\0:\3\6\0023\3\a\0:\3\b\0023\3\t\0003\4\n\0:\4\v\3:\3\f\0023\3\r\0:\3\14\0023\3\15\0:\3\16\0023\3\17\0:\3\18\0023\3\19\0:\3\20\0023\3\21\0:\3\22\0023\3\23\0:\3\24\0023\3\25\0:\3\26\0023\3\27\0:\3\28\0023\3\29\0:\3\30\0023\3\31\0:\3 \0023\3!\0:\3"\0023\3#\0>\1\3\1G\0\1\0\1\0\1\vprefix\r<leader>\6g\1\0\1\tname\15Git Action\6p\1\0\1\tname\27Paste System Clipboard\6w\1\0\1\tname\14Workspace\6t\1\0\1\tname\14Translate\6s\1\0\1\tname\29Session Dashboard Action\6r\1\0\1\tname\27Ranger & Rename & Rest\6o\1\0\1\tname\29Operate Dashboard Action\6m\1\0\1\tname\rMarkdown\6l\1\0\1\tname\20List Of Trouble\6x\1\0\1\tname\25Close Current Buffer\6d\1\0\1\tname\15DAP Action\6c\6j\1\0\1\tname\21Java Code Action\1\0\1\tname\16Code Action\6b\1\0\1\tname\19Buffer Operate\6f\1\0\0\1\0\1\tname\18Find & Format\rregister\nsetup\14which-key\frequire\0', "config", "which-key.nvim")
+try_loadstring('\27LJ\1\2ò\4\0\0\5\0$\0+4\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\0014\0\0\0%\1\1\0>\0\2\0027\1\3\0003\2\5\0003\3\4\0:\3\6\0023\3\a\0:\3\b\0023\3\t\0003\4\n\0:\4\v\3:\3\f\0023\3\r\0:\3\14\0023\3\15\0:\3\16\0023\3\17\0:\3\18\0023\3\19\0:\3\20\0023\3\21\0:\3\22\0023\3\23\0:\3\24\0023\3\25\0:\3\26\0023\3\27\0:\3\28\0023\3\29\0:\3\30\0023\3\31\0:\3 \0023\3!\0:\3"\0023\3#\0>\1\3\1G\0\1\0\1\0\1\vprefix\r<leader>\6g\1\0\1\tname\15Git Action\6p\1\0\1\tname\27Paste System Clipboard\6w\1\0\1\tname\14Workspace\6t\1\0\1\tname\14Translate\6s\1\0\1\tname\29Session & Spectre Action\6r\1\0\1\tname\27Ranger & Rename & Rest\6o\1\0\1\tname\29Operate Dashboard Action\6m\1\0\1\tname\rMarkdown\6l\1\0\1\tname\20List Of Trouble\6x\1\0\1\tname\25Close Current Buffer\6d\1\0\1\tname\15DAP Action\6c\6j\1\0\1\tname\21Java Code Action\1\0\1\tname\16Code Action\6b\1\0\1\tname\19Buffer Operate\6f\1\0\0\1\0\1\tname\18Find & Format\rregister\nsetup\14which-key\frequire\0', "config", "which-key.nvim")
 time([[Config for which-key.nvim]], false)
 -- Config for: rest.nvim
 time([[Config for rest.nvim]], true)
