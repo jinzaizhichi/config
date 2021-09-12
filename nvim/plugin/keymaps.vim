@@ -43,15 +43,48 @@ noremap g# g#<Cmd>lua require('hlslens').start()<CR>
 " use : instead of <Cmd>
 nnoremap <silent> <leader><leader>h <cmd>noh<CR>
 
+" Provided by setup function
+nnoremap <silent> <leader>fmm :Format<CR>
+
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fs <cmd>Telescope session-lens search_session<cr>
+nnoremap <leader>fo <cmd>Telescope oldfiles<cr>
+nnoremap <leader>fc <cmd>Telescope commands<cr>
+nnoremap <leader>fa <cmd>Telescope autocommands<cr>
+nnoremap <leader>fk <cmd>Telescope keymaps<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fq <cmd>Telescope quickfix<cr>
+nnoremap <leader>fr <cmd>Telescope registers<cr>
+nnoremap <leader>fl <cmd>Telescope loclist<cr>
+nnoremap <leader>fj <cmd>Telescope jumplist<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>fii <cmd>Telescope builtin<cr>
+nnoremap <leader>fir <cmd>Telescope reloader<cr>
+nnoremap <leader>fmk <cmd>Telescope marks<cr>
+nnoremap <leader>fmp <cmd>Telescope man_pages<cr>
+nnoremap <leader>fhh <cmd>Telescope help_tags<cr>
+nnoremap <leader>fhr <cmd>Telescope resume<cr>
+nnoremap <leader>fhp <cmd>Telescope pickers<cr>
+nnoremap <leader>fhl <cmd>Telescope highlights<cr>
+nnoremap <leader>fht <cmd>Telescope tags<cr>
+nnoremap <leader>fhc <cmd>Telescope command_history<cr>
+nnoremap <leader>fhs <cmd>Telescope search_history<cr>
+nnoremap <leader>ftt <cmd>Telescope treesitter<cr>
+nnoremap <leader>ftp <cmd>Telescope filetypes<cr>
+nnoremap <leader>fws <cmd>Telescope lsp_document_symbols<cr>
+nnoremap <leader>fwn <cmd>Telescope lsp_document_diagnostics<cr>
+nnoremap <leader>fws <cmd>Telescope lsp_dynamic_workspace_symbols<cr>
+nnoremap <leader>fwr <cmd>Telescope lsp_references<cr>
+nnoremap <leader>fwa <cmd>Telescope lsp_code_actions<cr>
+vnoremap <leader>fwa <cmd>Telescope lsp_range_code_actions<cr>
+nnoremap <leader>fgc <cmd>Telescope git_commits<cr>
+nnoremap <leader>fgs <cmd>Telescope git_bcommits<cr>
+nnoremap <leader>fgb <cmd>Telescope git_branches<cr>
+nnoremap <leader>fgh <cmd>Telescope git_stash<cr>
 " telescope extensions
-nnoremap <leader>fp <cmd>lua require'telescope'.extensions.project.project{}<cr>
-nnoremap <leader>fc <cmd>Cheatsheet<cr>
+nnoremap <leader>fpp <cmd>lua require'telescope'.extensions.project.project{}<cr>
+nnoremap <leader>fpc <cmd>Cheatsheet<cr>
 nnoremap <leader>fdc <cmd>Telescope dap commands<cr>
 nnoremap <leader>fds <cmd>Telescope dap configurations<cr>
 nnoremap <leader>fdl <cmd>Telescope dap list_breakpoints<cr>
@@ -81,8 +114,6 @@ inoremap <c-j> <cmd>lua return require'snippets'.advance_snippet(-1)<CR>
 " setup mapping to call :LazyGit
 nnoremap <silent> <leader>gg :LazyGit<CR>
 nnoremap <silent> <leader>gd :DiffviewOpen<CR>
-" Provided by setup function
-nnoremap <silent> <leader>fm :Format<CR>
 
 nnoremap <silent> <leader>cs :SymbolsOutline<CR>
 
