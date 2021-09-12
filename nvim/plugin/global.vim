@@ -1,4 +1,5 @@
 let g:dashboard_default_executive ='telescope'
+let g:dashboard_session_directory = '~/.local/share/nvim/sessions/'
 let g:dashboard_custom_header = [
 \ ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
 \ ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
@@ -48,7 +49,7 @@ let g:dashboard_custom_shortcut={
 " Make Ranger replace Netrw and be the file explorer
 let g:rnvimr_enable_ex = 1
 " Make Ranger to be hidden after picking a file
-let g:rnvimr_enable_picker = 1
+let g:rnvimr_enable_picker = 0
 " Disable a border for floating window
 let g:rnvimr_draw_border = 1
 " Hide the files included in gitignore

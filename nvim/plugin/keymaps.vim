@@ -45,6 +45,7 @@ nnoremap <silent> <leader><leader>h <cmd>noh<CR>
 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fs <cmd>Telescope session-lens search_session<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
@@ -62,13 +63,13 @@ nnoremap <leader>fdf <cmd>Telescope dap frames<cr>
 " nnoremap <leader><leader>nr :NvimTreeRefresh<CR>
 " nnoremap <leader><leader>nf :NvimTreeFindFile<CR>
 
-nnoremap <leader>fs :lua require('spectre').open()<CR>
+nnoremap <leader>ss :lua require('spectre').open()<CR>
 
 " search current word
-nnoremap <leader>fsw viw:lua require('spectre').open_visual()<CR>
-vnoremap <leader>fsv :lua require('spectre').open_visual()<CR>
+nnoremap <leader>sw viw:lua require('spectre').open_visual()<CR>
+vnoremap <leader>sv :lua require('spectre').open_visual()<CR>
 " search in current file
-nnoremap <leader>fsf viw:lua require('spectre').open_file_search()<cr>
+nnoremap <leader>sf viw:lua require('spectre').open_file_search()<cr>
 
 " <c-k> will either expand the current snippet at the word or try to jump to
 " the next position for the snippet.

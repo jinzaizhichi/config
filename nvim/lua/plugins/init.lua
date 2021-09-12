@@ -13,6 +13,9 @@ return require('packer').startup(function(use)
   -- buffer | statusline | icon | treeview | startup buffer
   use {'glepnir/dashboard-nvim'}
   use {'kevinhwang91/rnvimr'}
+  -- session manager
+  use {'rmagatti/auto-session', config = require('plugins.auto-session') }
+  use {'rmagatti/session-lens'}
   -- use {'kyazdani42/nvim-tree.lua'}
   use {'kyazdani42/nvim-web-devicons'}
   use {'akinsho/nvim-bufferline.lua', config = require('plugins.bufferline')}
@@ -65,8 +68,8 @@ return require('packer').startup(function(use)
   use {'rhysd/clever-f.vim'}
   -- rest client
   use {'NTBBloodbath/rest.nvim', config = function() require('rest-nvim').setup() end}
-  -- auto change root dir
-  use {'ahmedkhalf/lsp-rooter.nvim', config = function() require('lsp-rooter').setup() end}
+  -- project manager
+  use {'ahmedkhalf/project.nvim', config = require('plugins.project')}
   -- markdown preview
   use {'npxbr/glow.nvim', run = ':GlowInstall'}
   -- lsp auto completion & snip

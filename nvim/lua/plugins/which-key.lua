@@ -11,7 +11,7 @@ return function()
   l = { name = 'List Of Trouble' },
   m = { name = 'Markdown' },
   o = { name = 'Operate Dashboard Action' },
-  r = { name = 'Rename & RestNvim' },
+  r = { name = 'Ranger & Rename & Rest' },
   s = { name = 'Session Dashboard Action' },
   t = { name = 'Translate' },
   w = { name = 'Workspace' },
