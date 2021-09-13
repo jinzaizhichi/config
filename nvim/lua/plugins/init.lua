@@ -13,9 +13,6 @@ return require('packer').startup(function(use)
   -- buffer | statusline | icon | treeview | startup buffer
   use {'glepnir/dashboard-nvim'}
   use {'kevinhwang91/rnvimr'}
-  -- session manager
-  use {'rmagatti/auto-session', config = require('plugins.auto-session') }
-  use {'rmagatti/session-lens'}
   -- use {'kyazdani42/nvim-tree.lua'}
   use {'kyazdani42/nvim-web-devicons'}
   use {'akinsho/nvim-bufferline.lua', config = require('plugins.bufferline')}
@@ -61,7 +58,6 @@ return require('packer').startup(function(use)
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use {'nvim-telescope/telescope-fzf-writer.nvim'}
   use {'nvim-telescope/telescope-dap.nvim'}
-  use {'nvim-telescope/telescope-project.nvim'}
   use {'nvim-telescope/telescope.nvim', config = require('plugins.telescope')}
   -- motion
   use {'phaazon/hop.nvim', as = 'hop', config = function() require('hop').setup() end}
@@ -95,7 +91,6 @@ return require('packer').startup(function(use)
   -- which keys
   use {'folke/which-key.nvim', config = require('plugins.which-key')}
   -- lsp setup
-  use {'simrat39/symbols-outline.nvim'}
   use {'ray-x/lsp_signature.nvim', config = require('plugins.lsp_signature')}
   use {'mhartington/formatter.nvim', config = require('plugins.formatter')}
   use {'neovim/nvim-lspconfig'}

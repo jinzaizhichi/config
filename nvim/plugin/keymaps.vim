@@ -44,25 +44,24 @@ noremap g# g#<Cmd>lua require('hlslens').start()<CR>
 nnoremap <silent> <leader><leader>h <cmd>noh<CR>
 
 " Provided by setup function
-nnoremap <silent> <leader>fmm :Format<CR>
+nnoremap <silent> <leader>fm :Format<CR>
 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fs <cmd>Telescope session-lens search_session<cr>
 nnoremap <leader>fo <cmd>Telescope oldfiles<cr>
 nnoremap <leader>fc <cmd>Telescope commands<cr>
 nnoremap <leader>fa <cmd>Telescope autocommands<cr>
 nnoremap <leader>fk <cmd>Telescope keymaps<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fl <cmd>Telescope live_grep<cr>
 nnoremap <leader>fq <cmd>Telescope quickfix<cr>
 nnoremap <leader>fr <cmd>Telescope registers<cr>
-nnoremap <leader>fl <cmd>Telescope loclist<cr>
+nnoremap <leader>fi <cmd>Telescope loclist<cr>
 nnoremap <leader>fj <cmd>Telescope jumplist<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fii <cmd>Telescope builtin<cr>
 nnoremap <leader>fir <cmd>Telescope reloader<cr>
-nnoremap <leader>fmk <cmd>Telescope marks<cr>
-nnoremap <leader>fmp <cmd>Telescope man_pages<cr>
+nnoremap <leader>fim <cmd>Telescope marks<cr>
+nnoremap <leader>fip <cmd>Telescope man_pages<cr>
 nnoremap <leader>fhh <cmd>Telescope help_tags<cr>
 nnoremap <leader>fhr <cmd>Telescope resume<cr>
 nnoremap <leader>fhp <cmd>Telescope pickers<cr>
@@ -72,7 +71,7 @@ nnoremap <leader>fhc <cmd>Telescope command_history<cr>
 nnoremap <leader>fhs <cmd>Telescope search_history<cr>
 nnoremap <leader>ftt <cmd>Telescope treesitter<cr>
 nnoremap <leader>ftp <cmd>Telescope filetypes<cr>
-nnoremap <leader>fws <cmd>Telescope lsp_document_symbols<cr>
+nnoremap <leader>fwd <cmd>Telescope lsp_document_symbols<cr>
 nnoremap <leader>fwn <cmd>Telescope lsp_document_diagnostics<cr>
 nnoremap <leader>fws <cmd>Telescope lsp_dynamic_workspace_symbols<cr>
 nnoremap <leader>fwr <cmd>Telescope lsp_references<cr>
@@ -96,13 +95,13 @@ nnoremap <leader>fdf <cmd>Telescope dap frames<cr>
 " nnoremap <leader><leader>nr :NvimTreeRefresh<CR>
 " nnoremap <leader><leader>nf :NvimTreeFindFile<CR>
 
-nnoremap <leader>ss :lua require('spectre').open()<CR>
+nnoremap <leader>fss :lua require('spectre').open()<CR>
 
 " search current word
-nnoremap <leader>sw viw:lua require('spectre').open_visual()<CR>
-vnoremap <leader>sv :lua require('spectre').open_visual()<CR>
+nnoremap <leader>fsw viw:lua require('spectre').open_visual()<CR>
+vnoremap <leader>fsv :lua require('spectre').open_visual()<CR>
 " search in current file
-nnoremap <leader>sf viw:lua require('spectre').open_file_search()<cr>
+nnoremap <leader>fsf viw:lua require('spectre').open_file_search()<cr>
 
 " <c-k> will either expand the current snippet at the word or try to jump to
 " the next position for the snippet.
@@ -115,16 +114,14 @@ inoremap <c-j> <cmd>lua return require'snippets'.advance_snippet(-1)<CR>
 nnoremap <silent> <leader>gg :LazyGit<CR>
 nnoremap <silent> <leader>gd :DiffviewOpen<CR>
 
-nnoremap <silent> <leader>cs :SymbolsOutline<CR>
-
 nnoremap <silent> <leader><leader>w <cmd>lua require'hop'.hint_words()<cr>
 nnoremap <silent> <leader><leader>p <cmd>lua require'hop'.hint_patterns()<cr>
 nnoremap <silent> <leader><leader>j <cmd>lua require'hop'.hint_lines()<cr>
 nnoremap <silent> <leader><leader>s <cmd>lua require'hop'.hint_char1()<cr>
 
 " Use <Tab> and <S-Tab> to navigate through popup menu
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " Echo translation in the cmdline
 nmap <silent> <leader>tc <Plug>Translate
@@ -183,11 +180,10 @@ endfunction
 
 nnoremap <silent> <leader><leader>l :call ToggleQuickFix()<cr>
 
-nnoremap <silent> <Leader>ss <cmd>SaveSession<CR>
-nnoremap <silent> <Leader>sr <cmd>RestoreSession<CR>
-nnoremap <silent> <Leader>sd <cmd>DeleteSession<CR>
 
 " dashboard
+nnoremap <silent> <Leader>ss :<C-u>SessionSave<CR>
+nnoremap <silent> <Leader>sl :<C-u>SessionLoad<CR>
 nnoremap <silent> <Leader>oh :DashboardFindHistory<CR>
 nnoremap <silent> <Leader>of :DashboardFindFile<CR>
 nnoremap <silent> <Leader>oc :DashboardChangeColorscheme<CR>

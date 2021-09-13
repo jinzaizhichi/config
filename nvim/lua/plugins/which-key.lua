@@ -11,6 +11,7 @@ return function()
       t = {name = 'TreeSitter & FileTypes'},
       w = {name = 'Workspace & LSP Action'},
       g = {name = 'Git Action'},
+      s = {name = 'Spectre'},
       d = {name = 'DAP Telescope Action'},
       p = {name = 'Plug Action'}
     },
