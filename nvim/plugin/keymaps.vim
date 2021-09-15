@@ -1,3 +1,6 @@
+" NOTE: some keymap base on plug setting, you can find those in following file:
+" cmp.lua | gitsigns.lua | lsp_sinature.lua | lspinstall.lua | telescope.lua |
+" treesitter.lua
 nnoremap j gj
 nnoremap gj j
 nnoremap k gk
