@@ -140,7 +140,7 @@ return function()
         config.on_init = javaconf.on_init
         -- config.capabilities = javaconf.capabilities
         config.capabilities.workspace.configuration = true
-        config.capabilities.textDocument.codeAction = {
+        --[[ config.capabilities.textDocument.codeAction = {
           dataSupport = true;
           resolveSupport = {
             properties = {'edit',}
@@ -154,7 +154,7 @@ return function()
               };
             };
           };
-        }
+        } ]]
         config.cmd = javaconf.cmd
         config.filetypes = {'java'}
         config.flags = {allow_incremental_sync = true}
