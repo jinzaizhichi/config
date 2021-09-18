@@ -95,11 +95,9 @@ return require('packer').startup(function(use)
   use {'mhartington/formatter.nvim', config = require('plugins.formatter')}
   use {'neovim/nvim-lspconfig'}
   use {'kabouzeid/nvim-lspinstall', config = require('plugins.lspinstall')}
-  use {'RishabhRD/popfix'}
-  use {'RishabhRD/nvim-lsputils', config = function() require('plugins.lsputils') end}
   use {'norcalli/snippets.nvim', config = function() require('snippets').use_suggested_mappings() end}
   use {'folke/trouble.nvim', config = function() require('trouble').setup() end}
   use {'onsails/lspkind-nvim', config = require('plugins.lspkind')}
   -- wrapper for jdtls
-  use {'mfussenegger/nvim-jdtls'}
+  use {'mfussenegger/nvim-jdtls', config = require('plugins.nvim-jdtls')}
 end)
