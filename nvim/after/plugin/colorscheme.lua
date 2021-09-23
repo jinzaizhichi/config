@@ -1,15 +1,13 @@
 if not pcall(require, "colorbuddy") then return end
 
-require("colorbuddy").colorscheme("onebuddy")
+-- vim.g.material_style = "deep ocean"
+--[[ require("colorbuddy").colorscheme("onebuddy")
 -- require("colorizer").setup()
 
 local Color, c, Group, g, s = require("colorbuddy").setup()
 local ul = s.underline
 local no = s.NONE
--- local c = require("colorbuddy.color").colors
--- local Group = require("colorbuddy.group").Group
--- local g = require("colorbuddy.group").groups
--- local s = require("colorbuddy.style").styles
+
 Color.new("mono_5", "#202328")
 Color.new("lsp_hint", "#50a14f")
 Color.new("lsp_info", "#75beff")
@@ -38,7 +36,13 @@ Group.new('LspDiagnosticsFloatingHint',           c.lsp_hint,   g.pmenu, ul)
 Group.new('LspDiagnosticsSignError',              c.lsp_error,   c.none,  no)
 Group.new('LspDiagnosticsSignWarning',            c.lsp_warning, c.none,  no)
 Group.new('LspDiagnosticsSignInformation',        c.lsp_info,   c.none,  no)
-Group.new('LspDiagnosticsSignHint',               c.lsp_hint,   c.none,  no)
+Group.new('LspDiagnosticsSignHint',               c.lsp_hint,   c.none,  no) ]]
+
+
+-- local c = require("colorbuddy.color").colors
+-- local Group = require("colorbuddy.group").Group
+-- local g = require("colorbuddy.group").groups
+-- local s = require("colorbuddy.style").styles
 
 -- I don't think I like highlights for text
 -- Group.new("LspReferenceText", nil, c.gray0:light(), s.bold)

@@ -10,4 +10,3 @@ if fn.empty(fn.glob(install_path)) > 0 then
   vim.cmd 'packadd packer.nvim'
 end
 require('plugins')
-

@@ -6,8 +6,8 @@ return require('packer').startup(function(use)
   use {'nvim-lua/plenary.nvim'}
   use {'nvim-lua/popup.nvim'}
   -- theme and color
-  use {'tjdevries/colorbuddy.vim'}
-  use {'Th3Whit3Wolf/onebuddy'}
+  -- use {'tjdevries/colorbuddy.vim'}
+  use {'navarasu/onedark.nvim'}
   use {'norcalli/nvim-colorizer.lua', config = function() require('colorizer').setup() end}
   use {'p00f/nvim-ts-rainbow'}
   -- buffer | statusline | icon | treeview | startup buffer
@@ -16,7 +16,7 @@ return require('packer').startup(function(use)
   -- use {'kyazdani42/nvim-tree.lua'}
   use {'kyazdani42/nvim-web-devicons'}
   use {'akinsho/nvim-bufferline.lua', config = require('plugins.bufferline')}
-  use {'glepnir/galaxyline.nvim', branch = 'main', config = function() require('plugins.eviline') end}
+  use {'hoob3rt/lualine.nvim', config = require('plugins.lualine')}
   -- treesitter and treesitter base plug
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = require('plugins.treesitter')}
   use {'nvim-treesitter/nvim-treesitter-textobjects'}
