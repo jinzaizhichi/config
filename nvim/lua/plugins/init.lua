@@ -9,7 +9,6 @@ return require('packer').startup(function(use)
   -- use {'tjdevries/colorbuddy.vim'}
   use {'navarasu/onedark.nvim'}
   use {'norcalli/nvim-colorizer.lua', config = function() require('colorizer').setup() end}
-  use {'p00f/nvim-ts-rainbow'}
   -- buffer | statusline | icon | treeview | startup buffer
   use {'glepnir/dashboard-nvim'}
   use {'kevinhwang91/rnvimr'}
@@ -22,6 +21,12 @@ return require('packer').startup(function(use)
   use {'nvim-treesitter/nvim-treesitter-textobjects'}
   use {'nvim-treesitter/nvim-treesitter-refactor'}
   use {'lewis6991/spellsitter.nvim', config = require('plugins.spellsitter')}
+  use {'p00f/nvim-ts-rainbow'}
+  use {'windwp/nvim-ts-autotag'}
+  use {'windwp/nvim-autopairs', config = require('plugins.autopairs')}
+  -- editing
+  use {'tpope/vim-surround'}
+  use {'mhartington/formatter.nvim', config = require('plugins.formatter')}
   -- git
   use {'lewis6991/gitsigns.nvim', config = require('plugins.gitsigns')}
   use {'kdheepak/lazygit.nvim'}
@@ -40,11 +45,8 @@ return require('packer').startup(function(use)
   use {'kevinhwang91/nvim-hlslens'}
   -- terminal
   use {'akinsho/nvim-toggleterm.lua', config = require('plugins.toggleterm')}
-  -- editing
-  use {'tpope/vim-surround'}
-  use {'windwp/nvim-autopairs', config = require('plugins.autopairs')}
-  use {'itchyny/vim-cursorword'}
-  use {'windwp/nvim-ts-autotag'}
+  -- match help
+  -- use {'itchyny/vim-cursorword'}
   use {'andymass/vim-matchup'}
   -- batter quickfix window
   use {'kevinhwang91/nvim-bqf'}
@@ -90,10 +92,8 @@ return require('packer').startup(function(use)
   use {'folke/which-key.nvim', config = require('plugins.which-key')}
   -- lsp setup
   use {'ray-x/lsp_signature.nvim', config = require('plugins.lsp_signature')}
-  use {'mhartington/formatter.nvim', config = require('plugins.formatter')}
   use {'neovim/nvim-lspconfig'}
   use {'kabouzeid/nvim-lspinstall', config = require('plugins.lspinstall')}
-  use {'norcalli/snippets.nvim', config = function() require('snippets').use_suggested_mappings() end}
   use {'folke/trouble.nvim', config = function() require('trouble').setup() end}
   use {'onsails/lspkind-nvim', config = require('plugins.lspkind')}
   -- wrapper for jdtls
