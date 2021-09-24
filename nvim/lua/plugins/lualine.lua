@@ -142,17 +142,21 @@ return function ()
     color = {fg = colors.magenta, gui = 'bold'}
   }
 
-  ins_left {'location'}
-
-  ins_left {'progress', color = {fg = colors.fg, gui = 'bold'}}
+  ins_left {
+    'branch',
+    icon = '',
+    condition = conditions.check_git_workspace,
+    color = {fg = colors.violet, gui = 'bold'}
+  }
 
   ins_left {
-    'diagnostics',
-    sources = {'nvim_lsp'},
-    symbols = {error = ' ', warn = ' ', info = ' '},
-    color_error = colors.red,
-    color_warn = colors.yellow,
-    color_info = colors.cyan
+    'diff',
+    -- Is it me or the symbol for modified us really weird
+    symbols = {added = ' ', modified = '柳 ', removed = ' '},
+    color_added = colors.green,
+    color_modified = colors.orange,
+    color_removed = colors.red,
+    condition = conditions.hide_in_width
   }
 
   -- Insert mid section. You can make any number of sections in neovim :)
@@ -179,20 +183,12 @@ return function ()
   }
 
   ins_right {
-    'branch',
-    icon = '',
-    condition = conditions.check_git_workspace,
-    color = {fg = colors.violet, gui = 'bold'}
-  }
-
-  ins_right {
-    'diff',
-    -- Is it me or the symbol for modified us really weird
-    symbols = {added = ' ', modified = '柳 ', removed = ' '},
-    color_added = colors.green,
-    color_modified = colors.orange,
-    color_removed = colors.red,
-    condition = conditions.hide_in_width
+    'diagnostics',
+    sources = {'nvim_lsp'},
+    symbols = {error = ' ', warn = ' ', info = ' '},
+    color_error = colors.red,
+    color_warn = colors.yellow,
+    color_info = colors.cyan
   }
 
   -- Add components to right sections
@@ -209,6 +205,10 @@ return function ()
     icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
     color = {fg = colors.green, gui = 'bold'}
   }
+
+  ins_right {'location'}
+
+  ins_right {'progress', color = {fg = colors.fg, gui = 'bold'}}
 
   ins_right {
     function() return '▊' end,

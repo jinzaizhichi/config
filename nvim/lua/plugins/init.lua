@@ -28,8 +28,6 @@ return require('packer').startup(function(use)
   use {'sindrets/diffview.nvim', config = require('plugins.diffview')}
   -- translator
   use {'voldikss/vim-translator'}
-  -- toggle tansparent
-  use {'xiyaowong/nvim-transparent'}
   -- comment
   use {'b3nj5m1n/kommentary'}
   use {'folke/todo-comments.nvim', config = function() require('todo-comments').setup() end}

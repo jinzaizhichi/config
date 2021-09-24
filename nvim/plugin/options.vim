@@ -34,7 +34,8 @@ set smarttab
 set backspace=2
 set sidescroll=10
 set list
-set listchars=tab:>~,space:·,precedes:«,extends:»,trail:·,eol:↴
+" set listchars=tab:>~,space:·,precedes:«,extends:»,trail:·,eol:↴
+set listchars=tab:>-,precedes:«,extends:»,trail:·,lead:·,eol:↴
 set undofile
 set undodir=~/.vim/undodir
 set noshowmode
