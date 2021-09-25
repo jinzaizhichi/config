@@ -1,6 +1,5 @@
 " NOTE: some keymap base on plug setting, you can find those in following file:
-" cmp.lua | gitsigns.lua | lsp_sinature.lua | lspinstall.lua | telescope.lua |
-" treesitter.lua
+" cmp.lua | gitsigns.lua | lsp_sinature.lua | lspinstall.lua | telescope.lua | treesitter.lua
 nnoremap j gj
 nnoremap gj j
 nnoremap k gk
@@ -106,13 +105,6 @@ vnoremap <leader>fsv :lua require('spectre').open_visual()<CR>
 " search in current file
 nnoremap <leader>fsf viw:lua require('spectre').open_file_search()<cr>
 
-" <c-k> will either expand the current snippet at the word or try to jump to
-" the next position for the snippet.
-inoremap <c-k> <cmd>lua return require'snippets'.expand_or_advance(1)<CR>
-
-" <c-j> will jump backwards to the previous field.
-" If you jump before the first field, it will cancel the snippet.
-inoremap <c-j> <cmd>lua return require'snippets'.advance_snippet(-1)<CR>
 " setup mapping to call :LazyGit
 nnoremap <silent> <leader>gg :LazyGit<CR>
 nnoremap <silent> <leader>gd :DiffviewOpen<CR>
