@@ -83,7 +83,10 @@ return require('packer').startup(function(use)
   use {'kristijanhusak/vim-dadbod-completion'}
   use {'hrsh7th/nvim-cmp', config = require('plugins.cmp')}
   -- use neovim in browser
-  -- use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
+  -- when use microsoft edge in linux, it only has beta and dev version for now, so to let firenvim work, needs to
+  -- replace some 'microsoft-edge' text to 'microsoft-edge-beta' or 'microsoft-edge-dev' in
+  -- this ~/.local/share/nvim/site/pack/packer/start/firenvim/autoload/firenvim.vim file
+  use {'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end}
   -- nvim debug tool
   use {'mfussenegger/nvim-dap'}
   use {'rcarriga/nvim-dap-ui', config = function() require("dapui").setup() end}
