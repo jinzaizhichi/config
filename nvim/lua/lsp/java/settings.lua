@@ -30,6 +30,9 @@ local bundles = {
 vim.list_extend(bundles, vim.split(vim.fn.glob(home ..
                                                    '/.config/nvim/lua/lsp/java/vscode-java-test/server/*.jar'),
                                    '\n'))
+vim.list_extend(bundles, vim.split(vim.fn.glob(home ..
+                                                   '/.config/nvim/lua/lsp/java/vscode-java-decompiler/server/*.jar'),
+                                   '\n'))
 local extendedClientCapabilities = require'jdtls'.extendedClientCapabilities
 extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
 M.init_options = {
@@ -70,9 +73,9 @@ M.settings = {
     templates = {
       typeComment = {
         "/**",
-        " * @Author: hewenjin",
-        " * @Date: ${date}",
-        " * @Description: ",
+        " * @author: hewenjin",
+        " * @date: ${date}",
+        " * @description: ",
         " */",
       }
     },
@@ -109,6 +112,11 @@ M.settings = {
       useBlocks = true,
       toString = {
         template = "${object.className}{${member.name()}=${member.value}, ${otherMembers}}"
+      }
+    },
+    decompiler = {
+      fernflower = {
+        asc = t
       }
     },
     home = "/usr/lib/jvm/java-11-openjdk/",
