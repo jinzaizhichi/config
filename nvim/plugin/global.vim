@@ -7,31 +7,11 @@ let g:dashboard_custom_header = [
 \ ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
 \ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
 \]
-" let g:completion_chain_complete_list = {
-"     \ 'default': [
-"     \    {'complete_items': ['lsp', 'tabnine', 'tags', 'snippet',  ]},
-"     \    {'mode': '<c-p>'},
-"     \    {'mode': '<c-n>'}
-"     \]
-" \}
 
 let g:db_ui_winwidth = 30
 
-" let g:completion_matching_strategy_list = ['fuzzy', 'exact', 'substring', 'all']
-" let g:completion_matching_smart_case = 1
-" let g:completion_trigger_on_delete = 1
 let g:dap_virtual_text = 'all frames'
 " let g:dap_virtual_text = v:true
-" " Source is automatically added, you just need to include it in the chain complete list
-let g:completion_chain_complete_list = {
-    \   'sql': [
-    \    {'complete_items': ['vim-dadbod-completion']},
-    \   ],
-    \ }
-" Make sure `substring` is part of this list. Other items are optional for this completion source
-let g:completion_matching_strategy_list = ['exact', 'substring']
-" Useful if there's a lot of camel case items
-let g:completion_matching_ignore_case = 1
 let g:vim_dadbod_completion_mark = ''
 let g:db_ui_save_location = '~/.local/share/nvim/db_ui_queries'
 
