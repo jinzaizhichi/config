@@ -1,5 +1,5 @@
 local M = {}
-local root_markers = {'gradlew', 'pom.xml'}
+local root_markers = {'.git', 'mvnw', 'gradlew'}
 local root_dir = require('jdtls.setup').find_root(root_markers)
 local home = os.getenv('HOME')
 local workspace_name, _ = string.gsub(vim.fn.fnamemodify(root_dir, ":p"), "/", "-")
@@ -55,7 +55,7 @@ M.settings = {
         enabled = true
       },
       settings = {
-        url = 'file://' .. home .. "/project/java-google-formatter.xml",
+        url = 'file://' .. home .. "/project/my/config/nvim/lua/lsp/java/eclipse-java-google-style.xml",
         profile = "GoogleStyle",
       }
     },

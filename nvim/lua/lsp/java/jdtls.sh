@@ -43,14 +43,14 @@ location of your Java installation."
 fi
 
   # -Xbootclasspath/a:/home/hewenjin/.local/share/nvim/lspinstall/java/lombok.jar \
-  # -Dlog.protocol=true \
-  # -Dlog.level=ALL \
 "$JAVACMD" \
   --add-modules=ALL-SYSTEM \
   --add-opens java.base/java.util=ALL-UNNAMED \
   --add-opens java.base/java.lang=ALL-UNNAMED \
   -Declipse.application=org.eclipse.jdt.ls.core.id1 \
   -Dosgi.bundles.defaultStartLevel=4 \
+  -Dlog.protocol=true \
+  -Dlog.level=ALL \
   -Declipse.product=org.eclipse.jdt.ls.core.product \
   -Dfile.encoding=utf-8 \
   -noverify \

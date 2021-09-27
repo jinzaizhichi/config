@@ -10,12 +10,6 @@ return function()
     local function buf_set_option(...)
       vim.api.nvim_buf_set_option(bufnr, ...)
     end
-    if client.name == 'java' then
-      require('jdtls.dap').setup_dap_main_class_configs()
-      -- require('jdtls').setup_dap({hotcodereplace = 'auto'})
-      require('jdtls').setup_dap()
-      require('jdtls.setup').add_commands()
-    end
 
     buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -132,39 +126,11 @@ return function()
       if server == "clangd" then
         config.filetypes = {"c", "cpp"}; -- we don't want objective-c and objective-cpp!
       end
-      if server == "java" then
-
-        local javaconf = require('lsp.java.settings')
-        config.init_options = javaconf.init_options
-        config.settings = javaconf.settings
-        config.on_init = javaconf.on_init
-        -- config.capabilities = javaconf.capabilities
-        config.capabilities.workspace.configuration = true
-        --[[ config.capabilities.textDocument.codeAction = {
-          dataSupport = true;
-          resolveSupport = {
-            properties = {'edit',}
-          };
-          codeActionLiteralSupport = {
-            codeActionKind = {
-              valueSet = {
-                  "source.generate.toString",
-                  "source.generate.hashCodeEquals",
-                  "source.organizeImports",
-              };
-            };
-          };
-        } ]]
-        config.cmd = javaconf.cmd
-        config.filetypes = {'java'}
-        config.flags = {allow_incremental_sync = true}
-        -- config.handlers = javaconf.handlers
-      end
-      require'lspconfig'[server].setup(config)
+      -- require'lspconfig'[server].setup(config)
       -- java lsp setting is specific by nvim-jdtls
-      --[[ if server ~= "java" then
-      require'lspconfig'[server].setup(config)
-    end ]]
+      if server ~= "java" then
+        require'lspconfig'[server].setup(config)
+      end
     end
   end
   M.setup_servers()
