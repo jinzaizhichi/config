@@ -116,7 +116,7 @@ M.settings = {
     },
     decompiler = {
       fernflower = {
-        asc = true
+        asc = 1
       }
     },
     home = "/usr/lib/jvm/java-11-openjdk/",
