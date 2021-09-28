@@ -43,16 +43,34 @@ return function ()
     sources = {
       { name = 'nvim_lsp' },
       { name = 'cmp_tabnine' },
-      { name = 'vsnip' },
-      { name = 'path' },
-      { name = 'buffer' },
-      { name = 'vim-dadbod-completion' },
-      { name = 'look' },
       { name = 'treesitter' },
+      { name = 'vim-dadbod-completion' },
+      { name = 'vsnip' },
+      { name = 'buffer' },
+      { name = 'path' },
+      { name = 'look' },
     },
     formatting = {
+      deprecated = true,
       format = function(entry, vim_item)
-        vim_item.kind = lspkind.presets.default[vim_item.kind]
+        --[[ vim_item.kind = lspkind.presets.default[vim_item.kind]
+        return vim_item ]]
+            -- fancy icons and a name of kind
+        vim_item.kind = require("lspkind").presets.default[vim_item.kind] .. " " .. vim_item.kind
+
+        -- set a name for each source
+        vim_item.menu = ({
+          buffer = "[Buffer]",
+          nvim_lsp = "[LSP]",
+          vsnip = "[VSnip]",
+          path = "[Path]",
+          cmp_tabnine = "[Tabnine]",
+          look = "[Look]",
+          treesitter = "[Treesitter]",
+          nvim_lua = "[Lua]",
+          latex_symbols = "[Latex]",
+          ['vim-dadbod-completion'] = "[Dadbod]",
+        })[entry.source.name]
         return vim_item
       end
     }
