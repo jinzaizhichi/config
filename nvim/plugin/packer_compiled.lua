@@ -159,7 +159,7 @@ _G.packer_plugins = {
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim"
   },
   ["lspkind-nvim"] = {
-    config = { "\27LJ\1\2�\2\0\0\3\0\6\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0003\2\4\0:\2\5\1>\0\2\1G\0\1\0\15symbol_map\1\0\21\tText\b\rFunction\b\nClass\b\nColor\b\14Interface\bﰮ\vModule\b\rConstant\b\vMethod\aƒ\tUnit\b\15EnumMember\b\vFolder\b\rProperty\b\vStruct\b\rVariable\b\fSnippet\b﬌\aDB\b\tFile\b\nValue\b\16Constructor\b\tEnum\b了\fKeyword\b\1\0\2\vpreset\rcodicons\14with_text\2\tinit\flspkind\frequire\0" },
+    config = { "\27LJ\1\2U\0\0\2\0\4\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0>\0\2\1G\0\1\0\1\0\2\vpreset\fdefault\14with_text\2\tinit\flspkind\frequire\0" },
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/lspkind-nvim"
   },
@@ -429,7 +429,7 @@ try_loadstring("\27LJ\1\2]\0\0\3\0\5\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\00
 time([[Config for spellsitter.nvim]], false)
 -- Config for: lspkind-nvim
 time([[Config for lspkind-nvim]], true)
-try_loadstring("\27LJ\1\2�\2\0\0\3\0\6\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0003\2\4\0:\2\5\1>\0\2\1G\0\1\0\15symbol_map\1\0\21\tText\b\rFunction\b\nClass\b\nColor\b\14Interface\bﰮ\vModule\b\rConstant\b\vMethod\aƒ\tUnit\b\15EnumMember\b\vFolder\b\rProperty\b\vStruct\b\rVariable\b\fSnippet\b﬌\aDB\b\tFile\b\nValue\b\16Constructor\b\tEnum\b了\fKeyword\b\1\0\2\vpreset\rcodicons\14with_text\2\tinit\flspkind\frequire\0", "config", "lspkind-nvim")
+try_loadstring("\27LJ\1\2U\0\0\2\0\4\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0>\0\2\1G\0\1\0\1\0\2\vpreset\fdefault\14with_text\2\tinit\flspkind\frequire\0", "config", "lspkind-nvim")
 time([[Config for lspkind-nvim]], false)
 -- Config for: nvim-dap-ui
 time([[Config for nvim-dap-ui]], true)
