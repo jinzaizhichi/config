@@ -38,8 +38,11 @@ return function()
     for _, server in pairs(servers) do
       local config = make_config()
 
+      local settings = 'lsp.' .. server .. '.settings'
+      if pcall(require, settings) then
+        config.settings = require(settings)
+      end
       -- language specific config
-      if server == "lua" then config.settings = require('lsp.lua.settings') end
       if server == "sourcekit" then
         config.filetypes = {"swift", "objective-c", "objective-cpp"}; -- we don't want c and cpp!
       end
