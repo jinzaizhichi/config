@@ -145,6 +145,7 @@ export LANG=en_US.UTF-8
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias clr='clear'
 alias nv='nvim'
+alias ev='expressvpn'
 alias kc='kubectl'
 # alias mk='minikube --registry-mirror=https://registry.docker-cn.com'
 alias mks='minikube start --docker-env HTTP_PROXY=http://192.168.31.13:8118 --docker-env HTTPS_PROXY=http://192.168.31.13:8118 --docker-env NO_PROXY=localhost,127.0.0.1,localaddress,.localdomain.com,10.96.0.0/12,192.168.99.0/24,192.168.39.0/24,192.168.49.2/24'
