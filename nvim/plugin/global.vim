@@ -50,3 +50,19 @@ let g:onedark_darker_diagnostics = 0
 " let g:onedark_transparent_background = 1
 " let g:onedark_disable_toggle_style = 1
 " let g:onedark_diagnostics_undercurl = 0
+let g:firenvim_config = { 
+    \ 'globalSettings': {
+        \ 'alt': 'all',
+    \  },
+    \ 'localSettings': {
+        \ '.*': {
+            \ 'cmdline': 'neovim',
+            \ 'content': 'text',
+            \ 'priority': 0,
+            \ 'selector': 'textarea',
+            \ 'takeover': 'always',
+        \ },
+    \ }
+    \ }
+let fc = g:firenvim_config['localSettings']
+let fc['.*'] = { 'takeover': 'never' }

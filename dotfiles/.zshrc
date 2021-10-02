@@ -146,6 +146,7 @@ export LANG=en_US.UTF-8
 alias clr='clear'
 alias nv='nvim'
 alias ev='expressvpn'
+alias evr='expressvpn disconnect && expressvpn connect'
 alias kc='kubectl'
 # alias mk='minikube --registry-mirror=https://registry.docker-cn.com'
 alias mks='minikube start --docker-env HTTP_PROXY=http://192.168.31.13:8118 --docker-env HTTPS_PROXY=http://192.168.31.13:8118 --docker-env NO_PROXY=localhost,127.0.0.1,localaddress,.localdomain.com,10.96.0.0/12,192.168.99.0/24,192.168.39.0/24,192.168.49.2/24'
@@ -213,6 +214,9 @@ if type rg &> /dev/null; then
 fi
 if type fuck &> /dev/null; then
     eval $(thefuck --alias)
+fi
+if type lsd &> /dev/null; then
+    alias ll='lsd -lah'
 fi
 PROXY_ENV=(http_proxy ftp_proxy https_proxy all_proxy HTTP_PROXY HTTPS_PROXY FTP_PROXY ALL_PROXY)
 NO_PROXY_ENV=(no_proxy NO_PROXY)
