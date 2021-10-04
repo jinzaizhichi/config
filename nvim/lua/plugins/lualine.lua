@@ -29,6 +29,39 @@ return function ()
     end
   }
 
+local mode_names = {
+    ['n'] = 'NORMAL',
+    ['i'] = 'INSERT',
+    ['ic'] = 'I-COMPLE',
+    ['v'] = 'VISUAL',
+    [''] = 'V-BLOCK',
+    ['V'] = 'V-LINE',
+    ['c'] = 'COMMAND',
+    ['cv'] = 'EX-COMMAND',
+    ['ce'] = 'EX-NORMAL',
+    ['no'] = 'O-PANDING',
+    ['s'] = 'SELECT',
+    ['S'] = 'S-LINE',
+    [''] = 'S_CHAR',
+    ['R'] = 'REPLACE',
+    ['Rv'] = 'V-REPLACE',
+    ['r'] = 'H-PROMPT',
+    ['rm'] = 'M-PROMPT',
+    ['r?'] = 'C-PROMPT',
+    ['t'] = 'TERMINAL',
+    ['!'] = 'EXECTING',
+}
+
+  local get_mode = function()
+    return vim.api.nvim_get_mode()['mode']
+  end
+
+  local vi_mode = function()
+    local mode = get_mode()
+    local alias = mode_names[mode]
+    return alias
+  end
+
   -- Config
   local config = {
     options = {
@@ -85,7 +118,7 @@ return function ()
     function()
       -- auto change color according to neovims mode
       local mode_color = {
-        n = colors.red,
+        n = colors.cyan,
         i = colors.green,
         v = colors.blue,
         [''] = colors.blue,
@@ -107,9 +140,10 @@ return function ()
         t = colors.red
       }
       vim.api.nvim_command(
-          'hi! LualineMode guifg=' .. mode_color[vim.fn.mode()] .. " guibg=" ..
+          'hi! LualineMode gui=bold guifg=' .. mode_color[vim.fn.mode()] .. " guibg=" ..
               colors.bg)
-      return ''
+      -- return ''
+      return vi_mode()
     end,
     color = "LualineMode",
     left_padding = 0
