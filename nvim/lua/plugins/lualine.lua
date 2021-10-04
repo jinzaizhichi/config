@@ -32,9 +32,9 @@ return function ()
 local mode_names = {
     ['n'] = 'NORMAL',
     ['i'] = 'INSERT',
-    ['ic'] = 'I-COMPLE',
+    ['ic'] = 'I-COMP',
     ['v'] = 'VISUAL',
-    [''] = 'V-BLOCK',
+    [''] = 'V-BLOC',
     ['V'] = 'V-LINE',
     ['c'] = 'COMMAND',
     ['cv'] = 'EX-COMMAND',
@@ -42,7 +42,7 @@ local mode_names = {
     ['no'] = 'O-PANDING',
     ['s'] = 'SELECT',
     ['S'] = 'S-LINE',
-    [''] = 'S_CHAR',
+    [''] = 'S-CHAR',
     ['R'] = 'REPLACE',
     ['Rv'] = 'V-REPLACE',
     ['r'] = 'H-PROMPT',
@@ -118,7 +118,7 @@ local mode_names = {
     function()
       -- auto change color according to neovims mode
       local mode_color = {
-        n = colors.cyan,
+        n = colors.violet,
         i = colors.green,
         v = colors.blue,
         [''] = colors.blue,
@@ -213,7 +213,7 @@ local mode_names = {
       return msg
     end,
     icon = ' LSP:',
-    color = {fg = colors.fg, gui = 'bold'}
+    color = {fg = colors.cyan, gui = 'bold'}
   }
 
   ins_right {
