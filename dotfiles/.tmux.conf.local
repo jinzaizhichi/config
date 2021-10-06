@@ -57,7 +57,7 @@ tmux_conf_theme_colour_9="#e5c07b"    # yellow
 tmux_conf_theme_colour_10="#c678dd"   # pink
 tmux_conf_theme_colour_11="#98be65"   # green
 tmux_conf_theme_colour_12="#8a8a8a"   # light gray
-tmux_conf_theme_colour_13="#bbc2cf"   # white
+tmux_conf_theme_colour_13="#a9a1e1"   # white
 tmux_conf_theme_colour_14="#202328"   # dark gray
 tmux_conf_theme_colour_15="#202328"   # dark gray
 tmux_conf_theme_colour_16="#ec5f67"   # red
@@ -229,7 +229,7 @@ tmux_conf_theme_right_separator_sub=""
 #     - #{username}
 #     - #{username_ssh}
 tmux_conf_theme_status_left=" ❐ #S | ↑#{?uptime_y, #{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} "
-tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , R #{ram_percentage}, C #{cpu_percentage}, D #{download_speed}, U #{upload_speed}, %R , %m-%d %A | #{username}#{root} | #{hostname} "
+tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , R #{ram_percentage}, C #{cpu_percentage}, D #{download_speed}, U #{upload_speed} | %m-%d %a %R, | #{username}#{root} | #{hostname} "
 # tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #{online_status} #{?battery_status, #{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , %R , %m/%d %A | #{username}#{root} | #{hostname} '
 
 # status left style
@@ -238,9 +238,9 @@ tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_9,$tmux_conf_theme_colou
 tmux_conf_theme_status_left_attr="bold,bold,bold"
 
 # status right style
-tmux_conf_theme_status_right_bg="$tmux_conf_theme_colour_14,$tmux_conf_theme_colour_14,$tmux_conf_theme_colour_14"
-tmux_conf_theme_status_right_fg="$tmux_conf_theme_colour_18,$tmux_conf_theme_colour_11,$tmux_conf_theme_colour_16"
-tmux_conf_theme_status_right_attr="bold,bold,bold"
+tmux_conf_theme_status_right_bg="$tmux_conf_theme_colour_14,$tmux_conf_theme_colour_14,$tmux_conf_theme_colour_14,$tmux_conf_theme_colour_14"
+tmux_conf_theme_status_right_fg="$tmux_conf_theme_colour_18,$tmux_conf_theme_colour_13,$tmux_conf_theme_colour_11,$tmux_conf_theme_colour_16"
+tmux_conf_theme_status_right_attr="bold,bold,bold,bold"
 
 # pairing indicator
 tmux_conf_theme_pairing="⚇"                 # U+2687
@@ -419,7 +419,7 @@ set -g default-terminal "xterm-256color" # colors!
 #
 # then, use #{foo} in e.g. the 'tmux_conf_theme_status_left' or the
 # 'tmux_conf_theme_status_right' variables.
-#set -g status-interval 1
+set -g status-interval 5
 setw -g automatic-rename off
 setw -g allow-rename off
 
