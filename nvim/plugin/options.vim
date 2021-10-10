@@ -43,8 +43,8 @@ set wrap
 set foldmethod=marker
 set foldlevelstart=99
 colorscheme onedark
-" set relativenumber  
-" set mouse=a
+set relativenumber  
+set mouse=a
 " set cursorcolumn
 " let g:indentLine_enabled = 1
 
