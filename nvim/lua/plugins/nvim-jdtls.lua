@@ -2,6 +2,7 @@ return function()
   local finders = require 'telescope.finders'
   local sorters = require 'telescope.sorters'
   local actions = require 'telescope.actions'
+  local state = require 'telescope.actions.state'
   local pickers = require 'telescope.pickers'
   require('jdtls.ui').pick_one_async = function(items, prompt, label_fn, cb)
     local opts = {}
@@ -20,7 +21,7 @@ return function()
       sorter = sorters.get_generic_fuzzy_sorter(),
       attach_mappings = function(prompt_bufnr)
         actions.select_default:replace(function()
-          local selection = actions.get_selected_entry(prompt_bufnr)
+          local selection = state.get_selected_entry(prompt_bufnr)
           actions.close(prompt_bufnr)
 
           cb(selection.value)
