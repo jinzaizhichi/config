@@ -2,6 +2,8 @@
 
 WORKSPACE="$1"
 
+JDTLS_PATH="$HOME/.local/share/nvim/lsp_servers/jdtls/"
+
 die () {
   echo
   echo ""
@@ -11,14 +13,14 @@ die () {
 
 case Linux in
   Linux)
-    CONFIG="$HOME/.local/share/nvim/lspinstall/java/config_linux"
+    CONFIG="$JDTLS_PATH/config_linux"
     ;;
   Darwin)
-    CONFIG="$HOME/.local/share/nvim/lspinstall/java/config_mac"
+    CONFIG="$JDTLS_PATH/config_mac"
     ;;
 esac
 
-JAR="$HOME/.local/share/nvim/lspinstall/java/plugins/org.eclipse.equinox.launcher_*.jar"
+JAR="$JDTLS_PATH/plugins/org.eclipse.equinox.launcher_*.jar"
 
 # Determine the Java command to use to start the JVM.
 if [ -n "$JAVA_HOME" ] ; then
@@ -56,7 +58,7 @@ fi
   -noverify \
   -Xms1G \
   -Xmx2G \
-  -javaagent:$HOME/.local/share/nvim/lspinstall/java/lombok.jar \
+  -javaagent:$JDTLS_PATH/lombok.jar \
   -jar $(echo "$JAR") \
   -configuration "$CONFIG" \
   -data "$WORKSPACE"

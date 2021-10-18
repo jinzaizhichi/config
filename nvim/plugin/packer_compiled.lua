@@ -214,14 +214,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/nvim-jdtls"
   },
+  ["nvim-lsp-installer"] = {
+    config = { "\27LJ\1\0021\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\blsp\frequire\0" },
+    loaded = true,
+    path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
-  },
-  ["nvim-lspinstall"] = {
-    config = { "\27LJ\1\2@\0\2\5\0\3\0\b4\2\0\0%\3\1\0>\2\2\0027\2\2\2\16\3\0\0\16\4\1\0>\2\3\1G\0\1\0\nsetup\15lsp.common\frequireê\2\0\0\4\1\18\0\0294\0\0\0007\0\1\0007\0\2\0007\0\3\0>\0\1\0024\1\4\0%\2\5\0>\1\2\0027\1\6\1\16\2\0\0>\1\2\2\16\0\1\0007\1\a\0007\1\b\0017\1\t\1)\2\2\0:\2\n\0017\1\a\0007\1\b\0017\1\t\0013\2\r\0003\3\f\0:\3\14\2:\2\v\0013\1\15\0:\0\16\1+\2\0\0:\2\17\1H\1\2\0\1À\14on_attach\17capabilities\1\0\0\15properties\1\0\0\1\4\0\0\18documentation\vdetail\24additionalTextEdits\19resolveSupport\19snippetSupport\19completionItem\15completion\17textDocument\24update_capabilities\17cmp_nvim_lsp\frequire\29make_client_capabilities\rprotocol\blsp\bvimê\4\0\0\v\1\22\0C4\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\0014\0\0\0%\1\1\0>\0\2\0027\0\3\0>\0\1\0024\1\4\0007\1\5\1\16\2\0\0%\3\6\0>\1\3\0014\1\4\0007\1\5\1\16\2\0\0%\3\a\0>\1\3\0014\1\b\0\16\2\0\0>\1\2\4D\4(€+\6\0\0>\6\1\2%\a\t\0\16\b\5\0%\t\n\0$\a\t\a4\b\v\0004\t\0\0\16\n\a\0>\b\3\2\15\0\b\0T\t\4€4\b\0\0\16\t\a\0>\b\2\2:\b\f\6\a\5\a\0T\b\2€3\b\14\0:\b\r\6\a\5\6\0T\b\2€3\b\15\0:\b\r\6\6\5\16\0T\b\b€4\b\0\0%\t\17\0>\b\2\0026\b\5\b7\b\2\b\16\t\6\0>\b\2\1T\b\6€4\b\18\0007\b\19\b7\b\20\b%\t\21\0)\n\1\0>\b\3\1B\4\3\3N\4ÖG\0\1\0\2À’\1        augroup jdtls_lsp\n          autocmd!\n          autocmd FileType java lua require('lsp.java.jdtls').setup()\n        augroup end\n      \14nvim_exec\bapi\bvim\14lspconfig\tjava\1\3\0\0\6c\bcpp\1\4\0\0\nswift\16objective-c\18objective-cpp\14filetypes\rsettings\npcall\14.settings\tlsp.\npairs\14sourcekit\vclangd\vinsert\ntable\22installed_servers\nsetup\15lspinstall\frequireG\0\0\2\1\4\0\b+\0\0\0007\0\0\0>\0\1\0014\0\1\0007\0\2\0%\1\3\0>\0\2\1G\0\1\0\0À\fbufdo e\bcmd\bvim\18setup_serversv\1\0\5\0\b\0\0142\0\0\0001\1\0\0001\2\1\0001\3\3\0:\3\2\0007\3\2\0>\3\1\0014\3\4\0%\4\5\0>\3\2\0021\4\a\0:\4\6\0030\0\0€G\0\1\0\0\22post_install_hook\15lspinstall\frequire\0\18setup_servers\0\0\0" },
-    loaded = true,
-    path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
   },
   ["nvim-spectre"] = {
     loaded = true,
@@ -443,6 +443,10 @@ time([[Config for gitsigns.nvim]], false)
 time([[Config for todo-comments.nvim]], true)
 try_loadstring("\27LJ\1\2;\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
 time([[Config for todo-comments.nvim]], false)
+-- Config for: nvim-lsp-installer
+time([[Config for nvim-lsp-installer]], true)
+try_loadstring("\27LJ\1\0021\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\blsp\frequire\0", "config", "nvim-lsp-installer")
+time([[Config for nvim-lsp-installer]], false)
 -- Config for: nvim-jdtls
 time([[Config for nvim-jdtls]], true)
 try_loadstring("\27LJ\1\2N\0\1\4\1\4\0\v3\1\0\0:\0\1\1+\2\0\0\16\3\0\0>\2\2\2:\2\2\1+\2\0\0\16\3\0\0>\2\2\2:\2\3\1H\1\2\0\2À\fordinal\fdisplay\nvalue\1\0\0^\0\0\3\4\3\0\f+\0\0\0007\0\0\0+\1\1\0>\0\2\2+\1\2\0007\1\1\1+\2\1\0>\1\2\1+\1\3\0007\2\2\0>\1\2\1G\0\1\0\1\0\0À\0\0\2\0\nvalue\nclose\23get_selected_entryI\1\1\4\3\3\0\t+\1\0\0007\1\0\1\16\2\1\0007\1\1\0011\3\2\0>\1\3\1)\1\2\0000\0\0€H\1\2\0\3\0\4\0\3À\0\freplace\19select_defaultì\1\1\4\v\5\14\0\0262\4\0\0+\5\0\0007\5\0\5\16\6\4\0003\a\1\0:\1\2\a+\b\1\0007\b\3\b3\t\4\0:\0\5\t1\n\6\0:\n\a\t>\b\2\2:\b\b\a+\b\2\0007\b\t\b>\b\1\2:\b\n\a1\b\v\0:\b\f\a>\5\3\2\16\6\5\0007\5\r\5>\5\2\0010\0\0€G\0\1\0\4À\0À\1À\2À\3À\tfind\20attach_mappings\0\vsorter\29get_generic_fuzzy_sorter\vfinder\16entry_maker\0\fresults\1\0\0\14new_table\17prompt_title\1\0\0\bnewà\1\1\0\a\0\t\0\0224\0\0\0%\1\1\0>\0\2\0024\1\0\0%\2\2\0>\1\2\0024\2\0\0%\3\3\0>\2\2\0024\3\0\0%\4\4\0>\3\2\0024\4\0\0%\5\5\0>\4\2\0024\5\0\0%\6\6\0>\5\2\0021\6\b\0:\6\a\0050\0\0€G\0\1\0\0\19pick_one_async\rjdtls.ui\22telescope.pickers\28telescope.actions.state\22telescope.actions\22telescope.sorters\22telescope.finders\frequire\0", "config", "nvim-jdtls")
@@ -455,10 +459,6 @@ time([[Config for project.nvim]], false)
 time([[Config for lsp_signature.nvim]], true)
 try_loadstring("\27LJ\1\2ˆ\1\0\0\3\0\6\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\4\0003\2\3\0:\2\5\1>\0\2\1G\0\1\0\17handler_opts\1\0\2\16hint_prefix\tîž› \15toggle_key\n<M-s>\1\0\1\vborder\tnone\nsetup\18lsp_signature\frequire\0", "config", "lsp_signature.nvim")
 time([[Config for lsp_signature.nvim]], false)
--- Config for: nvim-lspinstall
-time([[Config for nvim-lspinstall]], true)
-try_loadstring("\27LJ\1\2@\0\2\5\0\3\0\b4\2\0\0%\3\1\0>\2\2\0027\2\2\2\16\3\0\0\16\4\1\0>\2\3\1G\0\1\0\nsetup\15lsp.common\frequireê\2\0\0\4\1\18\0\0294\0\0\0007\0\1\0007\0\2\0007\0\3\0>\0\1\0024\1\4\0%\2\5\0>\1\2\0027\1\6\1\16\2\0\0>\1\2\2\16\0\1\0007\1\a\0007\1\b\0017\1\t\1)\2\2\0:\2\n\0017\1\a\0007\1\b\0017\1\t\0013\2\r\0003\3\f\0:\3\14\2:\2\v\0013\1\15\0:\0\16\1+\2\0\0:\2\17\1H\1\2\0\1À\14on_attach\17capabilities\1\0\0\15properties\1\0\0\1\4\0\0\18documentation\vdetail\24additionalTextEdits\19resolveSupport\19snippetSupport\19completionItem\15completion\17textDocument\24update_capabilities\17cmp_nvim_lsp\frequire\29make_client_capabilities\rprotocol\blsp\bvimê\4\0\0\v\1\22\0C4\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\0014\0\0\0%\1\1\0>\0\2\0027\0\3\0>\0\1\0024\1\4\0007\1\5\1\16\2\0\0%\3\6\0>\1\3\0014\1\4\0007\1\5\1\16\2\0\0%\3\a\0>\1\3\0014\1\b\0\16\2\0\0>\1\2\4D\4(€+\6\0\0>\6\1\2%\a\t\0\16\b\5\0%\t\n\0$\a\t\a4\b\v\0004\t\0\0\16\n\a\0>\b\3\2\15\0\b\0T\t\4€4\b\0\0\16\t\a\0>\b\2\2:\b\f\6\a\5\a\0T\b\2€3\b\14\0:\b\r\6\a\5\6\0T\b\2€3\b\15\0:\b\r\6\6\5\16\0T\b\b€4\b\0\0%\t\17\0>\b\2\0026\b\5\b7\b\2\b\16\t\6\0>\b\2\1T\b\6€4\b\18\0007\b\19\b7\b\20\b%\t\21\0)\n\1\0>\b\3\1B\4\3\3N\4ÖG\0\1\0\2À’\1        augroup jdtls_lsp\n          autocmd!\n          autocmd FileType java lua require('lsp.java.jdtls').setup()\n        augroup end\n      \14nvim_exec\bapi\bvim\14lspconfig\tjava\1\3\0\0\6c\bcpp\1\4\0\0\nswift\16objective-c\18objective-cpp\14filetypes\rsettings\npcall\14.settings\tlsp.\npairs\14sourcekit\vclangd\vinsert\ntable\22installed_servers\nsetup\15lspinstall\frequireG\0\0\2\1\4\0\b+\0\0\0007\0\0\0>\0\1\0014\0\1\0007\0\2\0%\1\3\0>\0\2\1G\0\1\0\0À\fbufdo e\bcmd\bvim\18setup_serversv\1\0\5\0\b\0\0142\0\0\0001\1\0\0001\2\1\0001\3\3\0:\3\2\0007\3\2\0>\3\1\0014\3\4\0%\4\5\0>\3\2\0021\4\a\0:\4\6\0030\0\0€G\0\1\0\0\22post_install_hook\15lspinstall\frequire\0\18setup_servers\0\0\0", "config", "nvim-lspinstall")
-time([[Config for nvim-lspinstall]], false)
 if should_profile then save_profiles() end
 
 end)

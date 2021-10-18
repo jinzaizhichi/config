@@ -32,29 +32,31 @@ function M.setup()
   local root_markers = {'.git', 'mvnw', 'gradlew'}
   local root_dir = require('jdtls.setup').find_root(root_markers)
   local home = os.getenv('HOME')
-  local workspace_name, _ = string.gsub(vim.fn.fnamemodify(root_dir, ":p"), "/", "-")
+  local workspace_name, _ = string.gsub(vim.fn.fnamemodify(root_dir, ":p"), "/", "_")
+  local jdtls_path = vim.fn.stdpath('data') .. '/lsp_servers'
+  local config_path = home .. '/.config/nvim/lua/lsp/jdtls/'
 
   local bundles = {
-    vim.fn.glob(home ..  '/.config/nvim/lua/lsp/java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar')
+    vim.fn.glob(config_path ..  '/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar')
   }
-  vim.list_extend(bundles, vim.split(vim.fn.glob(home ..  '/.config/nvim/lua/lsp/java/vscode-java-test/server/*.jar'), '\n'))
-  vim.list_extend(bundles, vim.split(vim.fn.glob(home ..  '/.config/nvim/lua/lsp/java/vscode-java-decompiler/server/*.jar'), '\n'))
+  vim.list_extend(bundles, vim.split(vim.fn.glob(config_path .. '/vscode-java-test/server/*.jar'), '\n'))
+  vim.list_extend(bundles, vim.split(vim.fn.glob(config_path ..  '/vscode-java-decompiler/server/*.jar'), '\n'))
   local extendedClientCapabilities = require('jdtls').extendedClientCapabilities
   extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
 
   local config = {
     flags = {allow_incremental_sync = true},
     capabilities = capabilities,
-    name = 'java',
     on_attach = on_attach,
+    name = 'jdtls',
     filetypes = {'java'},
     cmd = {
-      home .. '/.local/share/nvim/lspinstall/java/jdtls.sh',
-      home .. "/.local/share/nvim/lspinstall/java/workspace/" .. workspace_name
+      config_path .. '/jdtls.sh',
+      jdtls_path .. '/workspace/' .. workspace_name
     }
   }
 
-  config.settings = require('lsp.java.settings')
+  config.settings = require('lsp.jdtls.settings')
   config.on_attach = on_attach
   config.on_init = function(client, _)
     client.notify('workspace/didChangeConfiguration', {settings = config.settings})
