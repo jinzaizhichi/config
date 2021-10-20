@@ -33,7 +33,7 @@ function M.setup()
   local root_dir = require('jdtls.setup').find_root(root_markers)
   local home = os.getenv('HOME')
   local workspace_name, _ = string.gsub(vim.fn.fnamemodify(root_dir, ":p"), "/", "_")
-  local jdtls_path = vim.fn.stdpath('data') .. '/lsp_servers'
+  local jdtls_path = vim.fn.stdpath('data') .. '/lsp_servers/jdtls'
   local config_path = home .. '/.config/nvim/lua/lsp/jdtls/'
 
   local bundles = {
