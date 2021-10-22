@@ -16,7 +16,7 @@ return require('packer').startup(function(use)
   use {'kyazdani42/nvim-web-devicons'}
   use {'akinsho/nvim-bufferline.lua', config = require('plugins.bufferline')}
   -- use {'hoob3rt/lualine.nvim', config = require('plugins.lualine')}
-  use {'shadmansaleh/lualine.nvim', config = require('plugins.lualine')}
+  use {'nvim-lualine/lualine.nvim', config = require('plugins.lualine')}
   -- treesitter and treesitter base plug
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = require('plugins.treesitter')}
   use {'nvim-treesitter/nvim-treesitter-textobjects'}
