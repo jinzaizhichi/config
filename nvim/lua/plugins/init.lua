@@ -80,7 +80,7 @@ return require('packer').startup(function(use)
   use {'f3fora/cmp-spell'}
   use {'octaltree/cmp-look'}
   use {'ray-x/cmp-treesitter'}
-  use {'tzachar/cmp-tabnine', run='./install.sh'}
+  -- use {'tzachar/cmp-tabnine', run='./install.sh'}
   use {'kristijanhusak/vim-dadbod-completion'}
   use {'hrsh7th/nvim-cmp', config = require('plugins.cmp')}
   -- use neovim in browser
