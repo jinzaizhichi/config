@@ -39,6 +39,8 @@ return require('packer').startup(function(use)
   use {'folke/todo-comments.nvim', config = function() require('todo-comments').setup() end}
   -- highlight different word at same time
   use {'lfv89/vim-interestingwords'}
+  -- better marks
+  use {'chentau/marks.nvim', config = require('plugins.marks')}
   -- db manage
   use {'tpope/vim-dadbod'}
   use {'kristijanhusak/vim-dadbod-ui'}
