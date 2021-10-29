@@ -2,7 +2,7 @@
 	name = hewenjin
 	email = hewenjin94@outlook.com
 [credential]
-	helper = "!f() { /home/hewenjin/.vscode-server/bin/6cba118ac49a1b88332f312a8f67186f7f3c1643/node /tmp/vscode-remote-containers-0a958f572074cbe2e422a264ba8b802ad0082762.js $*; }; f"
+    helper = store
 [merge]
 	tool = vimdiff
 [diff]
