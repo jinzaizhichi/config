@@ -45,11 +45,12 @@ let g:rnvimr_enable_bw = 0
 let g:loaded_netrw       = 1
 let g:loaded_netrwPlugin = 1
 " let g:onedark_style = 'darker'
-let g:onedark_italic_comment = 0
-let g:onedark_darker_diagnostics = 0
+let g:onedark_italic_comment = v:false
+" let g:onedark_darker_diagnostics = 0
 " let g:onedark_transparent_background = 1
 " let g:onedark_disable_toggle_style = 1
-" let g:onedark_diagnostics_undercurl = 0
+" l
+" let g:onedark_diagnostics_undercurl = v:true
 let g:firenvim_config = { 
     \ 'globalSettings': {
         \ 'alt': 'all',
