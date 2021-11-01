@@ -10,8 +10,6 @@ let g:dashboard_custom_header = [
 
 let g:db_ui_winwidth = 30
 
-let g:dap_virtual_text = 'all frames'
-" let g:dap_virtual_text = v:true
 let g:vim_dadbod_completion_mark = ''
 let g:db_ui_save_location = '~/.local/share/nvim/db_ui_queries'
 
