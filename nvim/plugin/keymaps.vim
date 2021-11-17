@@ -8,6 +8,10 @@ nnoremap <silent> <C-h> <cmd>wincmd h<CR>
 nnoremap <silent> <C-j> <cmd>wincmd j<CR>
 nnoremap <silent> <C-k> <cmd>wincmd k<CR>
 nnoremap <silent> <C-l> <cmd>wincmd l<CR>
+nnoremap <silent> <M-h> <cmd>wincmd <<CR>
+nnoremap <silent> <M-j> <cmd>wincmd +<CR>
+nnoremap <silent> <M-k> <cmd>wincmd -<CR>
+nnoremap <silent> <M-l> <cmd>wincmd ><CR>
 cnoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 nnoremap <silent> gb <c-^>
 " These commands will navigate through buffers in order regardless of which mode you are using
