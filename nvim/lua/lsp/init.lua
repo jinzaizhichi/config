@@ -6,6 +6,14 @@ function M.setup()
     log_level = vim.log.levels.DEBUG,
   }
 
+  -- jdtls special operation
+  vim.api.nvim_exec([[
+    augroup jdtls_lsp
+      autocmd!
+      autocmd FileType java lua require('lsp.jdtls').setup()
+    augroup end
+  ]], false)
+
   lsp_installer.on_server_ready(function(server)
     -- (optional) Customize the options passed to the server
     -- if server.name == "tsserver" then
@@ -49,13 +57,6 @@ function M.setup()
       -- This setup() function is exactly the same as lspconfig's setup function (:help lspconfig-quickstart)
       server:setup(config)
     else
-      -- jdtls special operator
-      vim.api.nvim_exec([[
-      augroup jdtls_lsp
-        autocmd!
-        autocmd FileType java lua require('lsp.jdtls').setup()
-      augroup end
-    ]], false)
     end
 
     vim.cmd [[ do User LspAttachBuffers ]]
