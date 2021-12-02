@@ -56,6 +56,10 @@ M.settings = {
     },
     autobuild = {enabled = true},
     completion = {
+      filteredTypes = {
+        "java.awt.List",
+        "com.sun.*"
+      },
       overwrite = false,
       guessMethodArguments = true,
       favoriteStaticMembers = {
