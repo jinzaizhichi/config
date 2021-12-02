@@ -40,7 +40,8 @@ return require('packer').startup(function(use)
   -- highlight different word at same time
   use {'lfv89/vim-interestingwords'}
   -- better marks
-  use {'chentau/marks.nvim', config = require('plugins.marks')}
+  -- not work well with some plug now
+  -- use {'chentau/marks.nvim', config = require('plugins.marks')}
   -- db manage
   use {'tpope/vim-dadbod'}
   use {'kristijanhusak/vim-dadbod-ui'}
