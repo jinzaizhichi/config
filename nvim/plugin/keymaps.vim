@@ -62,7 +62,7 @@ noremap g# g#<Cmd>lua require('hlslens').start()<CR>
 nnoremap <silent> <leader><leader>h <cmd>noh<CR>
 
 " Provided by setup function
-nnoremap <silent> <leader>fm :Format<CR>
+nnoremap <silent> <leader>mm :Format<CR>
 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
@@ -78,7 +78,7 @@ nnoremap <leader>fj <cmd>Telescope jumplist<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fii <cmd>Telescope builtin<cr>
 nnoremap <leader>fir <cmd>Telescope reloader<cr>
-nnoremap <leader>fim <cmd>Telescope marks<cr>
+nnoremap <leader>fm <cmd>Telescope marks<cr>
 nnoremap <leader>fip <cmd>Telescope man_pages<cr>
 nnoremap <leader>fhh <cmd>Telescope help_tags<cr>
 nnoremap <leader>fhr <cmd>Telescope resume<cr>
@@ -100,8 +100,7 @@ nnoremap <leader>fgs <cmd>Telescope git_bcommits<cr>
 nnoremap <leader>fgb <cmd>Telescope git_branches<cr>
 nnoremap <leader>fgh <cmd>Telescope git_stash<cr>
 " telescope extensions
-nnoremap <leader>fpp <cmd>lua require'telescope'.extensions.project.project{}<cr>
-nnoremap <leader>fpc <cmd>Cheatsheet<cr>
+nnoremap <leader>fp <cmd>Telescope projects<cr>
 nnoremap <leader>fdc <cmd>Telescope dap commands<cr>
 nnoremap <leader>fds <cmd>Telescope dap configurations<cr>
 nnoremap <leader>fdl <cmd>Telescope dap list_breakpoints<cr>

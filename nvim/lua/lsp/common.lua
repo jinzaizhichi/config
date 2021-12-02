@@ -34,10 +34,10 @@ function M.setup(client, bufnr)
     M.set_keymap(bufnr, 'n', '<leader>cr', "<Cmd>lua require('jdtls').code_action(false, 'refactor')<CR>", opts)
     -- Set some keybinds conditional on server capabilities
     if client.resolved_capabilities.document_formatting then
-      M.set_keymap(bufnr, "n", "<leader>fm", "<cmd>lua vim.lsp.buf.formatting()<CR>",
+      M.set_keymap(bufnr, "n", "<leader>mm", "<cmd>lua vim.lsp.buf.formatting()<CR>",
                      opts)
     elseif client.resolved_capabilities.document_range_formatting then
-      M.set_keymap(bufnr, "n", "<leader>fm",
+      M.set_keymap(bufnr, "n", "<leader>mm",
                      "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
     end
 
