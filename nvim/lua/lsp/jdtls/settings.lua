@@ -1,7 +1,5 @@
-local M = {}
-
 local home = os.getenv('HOME')
-M.settings = {
+local M = {
   java = {
     jdt = {
       ls = {
@@ -81,7 +79,8 @@ M.settings = {
     },
     decompiler = {
       fernflower = {
-        asc = 1
+        asc = 1,
+        ind = "    "
       }
     },
     home = "/usr/lib/jvm/java-11-openjdk/",
