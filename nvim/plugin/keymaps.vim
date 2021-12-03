@@ -20,7 +20,7 @@ tnoremap <silent> <tab>w <cmd>tabnew<cr>
 tnoremap <silent> <tab>c <cmd>tabclose<cr>
 tnoremap <silent> <tab>n <cmd>tabn<cr>
 tnoremap <silent> <tab>p <cmd>tabp<cr>
-cnoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+" cnoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 nnoremap <silent> gb <c-^>
 " These commands will navigate through buffers in order regardless of which mode you are using
 " e.g. if you change the order of buffers :bnext and :bprevious will not respect the custom ordering

@@ -1,5 +1,6 @@
 return function()
   require('spellsitter').setup({
+    enable = true,
     hl = 'SpellBad',
     captures = {} -- set to {} to spellcheck everything
   })
