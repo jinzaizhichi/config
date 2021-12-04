@@ -1,5 +1,6 @@
 return function ()
   local cmp = require('cmp')
+  local menu_source_width = 50
   local feedkey = function(key, mode)
     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
   end
@@ -70,6 +71,9 @@ return function ()
         --[[ vim_item.kind = lspkind.presets.default[vim_item.kind]
         return vim_item ]]
             -- fancy icons and a name of kind
+        if string.len(vim_item.abbr) > menu_source_width then
+          vim_item.abbr = string.sub(vim_item.abbr, 1, menu_source_width) .. '...'
+        end
         vim_item.kind = require("lspkind").presets.default[vim_item.kind] .. " " .. vim_item.kind
 
         -- set a name for each source
