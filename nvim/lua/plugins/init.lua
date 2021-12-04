@@ -92,6 +92,7 @@ return require('packer').startup(function(use)
   use {'mfussenegger/nvim-dap'}
   use {'rcarriga/nvim-dap-ui', config = function() require("dapui").setup() end}
   use {'theHamsta/nvim-dap-virtual-text', config = require('plugins.nvim-dap-virtual-text')}
+  use {'Pocco81/DAPInstall.nvim'}
   -- which keys
   use {'folke/which-key.nvim', config = require('plugins.which-key')}
   -- lsp setup
