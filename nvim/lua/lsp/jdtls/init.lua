@@ -34,7 +34,7 @@ function M.setup()
   local home = os.getenv('HOME')
   local workspace_name, _ = string.gsub(vim.fn.fnamemodify(root_dir, ":p"), "/", "_")
   local jdtls_path = vim.fn.stdpath('data') .. '/lsp_servers/jdtls'
-  local config_path = home .. '/.config/nvim/lua/lsp/jdtls/'
+  local config_path = home .. '/.config/nvim/lua/lsp/jdtls'
 
   local bundles = {
     vim.fn.glob(config_path ..  '/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar')

@@ -190,7 +190,8 @@ endfunction
 
 nnoremap <silent> <leader><leader>l :call ToggleQuickFix()<cr>
 
-
+" source config
+nnoremap <silent> <Leader>sc <cmd>source $MYVIMRC<CR>
 " dashboard
 nnoremap <silent> <Leader>ss :<C-u>SessionSave<CR>
 nnoremap <silent> <Leader>sl :<C-u>SessionLoad<CR>

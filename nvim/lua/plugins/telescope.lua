@@ -8,13 +8,14 @@ if pcall(require, "plenary") then
 end
 return function()
   local actions = require('telescope.actions')
+  local trouble = require("trouble.providers.telescope")
   require('telescope').setup({
     defaults = {
       mappings = {
         i = {
           -- IMPORTANT
           -- either hot-reloaded or `function(prompt_bufnr) telescope.extensions.hop.hop end`
-          ["<C-t>"] = actions.send_to_qflist + actions.open_qflist,
+          ["<C-t>"] = trouble.open_with_trouble,
           ["<C-h>"] = R("telescope").extensions.hop.hop,  -- hop.hop_toggle_selection
           -- custom hop loop to multi selects and sending selected entries to quickfix list
           ["<C-space>"] = function(prompt_bufnr)
@@ -25,6 +26,18 @@ return function()
             require("telescope").extensions.hop._hop_loop(prompt_bufnr, opts)
           end,
         },
+        n = {
+          ["<C-t>"] = trouble.open_with_trouble,
+          ["<C-h>"] = R("telescope").extensions.hop.hop,  -- hop.hop_toggle_selection
+          -- custom hop loop to multi selects and sending selected entries to quickfix list
+          ["<C-space>"] = function(prompt_bufnr)
+            local opts = {
+              callback = actions.toggle_selection,
+              loop_callback = actions.send_selected_to_qflist,
+            }
+            require("telescope").extensions.hop._hop_loop(prompt_bufnr, opts)
+          end,
+        }
       },
     },
     extensions = {

@@ -52,8 +52,6 @@ return require('packer').startup(function(use)
   -- match help
   -- use {'itchyny/vim-cursorword'}
   use {'andymass/vim-matchup'}
-  -- batter quickfix window
-  use {'kevinhwang91/nvim-bqf'}
   -- powerful replace tool
   use {'windwp/nvim-spectre'}
   -- fuzzy finder
