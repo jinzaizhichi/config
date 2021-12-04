@@ -72,7 +72,7 @@ return function ()
         return vim_item ]]
             -- fancy icons and a name of kind
         if string.len(vim_item.abbr) > menu_source_width then
-          vim_item.abbr = string.sub(vim_item.abbr, 1, menu_source_width) .. '...'
+          vim_item.abbr = string.sub(vim_item.abbr, 1, menu_source_width) .. ''
         end
         vim_item.kind = require("lspkind").presets.default[vim_item.kind] .. " " .. vim_item.kind
 
