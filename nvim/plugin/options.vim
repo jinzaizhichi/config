@@ -79,6 +79,7 @@ set termguicolors
 
 " Set completeopt to have a better completion experience
 set completeopt=menuone,noinsert,noselect
+set pumheight=20
 
 " Avoid showing message extra message when using completion
 set shortmess+=c

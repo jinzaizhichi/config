@@ -14,7 +14,7 @@ local M = {
         enabled = true
       },
       settings = {
-        url = 'file://' .. home .. "/project/my/config/nvim/lua/lsp/java/eclipse-java-google-style.xml",
+        url = 'file://' .. home .. "/project/my/config/nvim/lua/lsp/jdtls/eclipse-java-google-style.xml",
         profile = "GoogleStyle",
       }
     },

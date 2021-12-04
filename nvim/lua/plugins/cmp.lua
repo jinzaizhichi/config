@@ -12,6 +12,9 @@ return function ()
     completion = {
       completeopt = 'menu,menuone,noinsert',
     },
+    --[[ experimental = {
+      ghost_text = true
+    }, ]]
     snippet = {
       expand = function(args)
         vim.fn["vsnip#anonymous"](args.body)
@@ -53,14 +56,13 @@ return function ()
       end, { "i", "s" }),
     },
     sources = {
-      { name = 'nvim_lsp' },
-      -- { name = 'cmp_tabnine' },
-      { name = 'treesitter' },
-      { name = 'vim-dadbod-completion' },
       { name = 'vsnip' },
+      { name = 'nvim_lsp' },
       { name = 'buffer' },
       { name = 'path' },
-      { name = 'look' },
+      { name = 'look', max_item_count = 5, keyword_length = 2, optiona = { convert_case = true, loud = true }},
+      { name = 'treesitter', max_item_count = 5},
+      { name = 'vim-dadbod-completion' },
     },
     formatting = {
       deprecated = true,
