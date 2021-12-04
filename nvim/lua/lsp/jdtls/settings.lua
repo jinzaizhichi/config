@@ -3,7 +3,7 @@ local M = {
   java = {
     jdt = {
       ls = {
-        vmargs = "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -XX:+UseStringDeduplication -javaagent:'" .. home .. "/.local/share/nvim/lspinstall/java/lombok.jar'"
+        vmargs = "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -XX:+UseStringDeduplication -javaagent:'" .. home .. "/.local/share/nvim/lsp_servers/jdtls/lombok.jar'"
       }
     },
     eclipse = {
