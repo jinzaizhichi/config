@@ -67,6 +67,7 @@ nnoremap <silent> <leader>mm :Format<CR>
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fo <cmd>Telescope oldfiles<cr>
+nnoremap <leader>fe <cmd>Telescope file_browser<cr>
 nnoremap <leader>fc <cmd>Telescope commands<cr>
 nnoremap <leader>fa <cmd>Telescope autocommands<cr>
 nnoremap <leader>fk <cmd>Telescope keymaps<cr>
@@ -77,6 +78,10 @@ nnoremap <leader>fi <cmd>Telescope loclist<cr>
 nnoremap <leader>fj <cmd>Telescope jumplist<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fii <cmd>Telescope builtin<cr>
+nnoremap <leader>fic <cmd>Telescope colorscheme<cr>
+nnoremap <leader>fio <cmd>Telescope vim_options<cr>
+nnoremap <leader>fib <cmd>Telescope current_buffer_fuzzy_find<cr>
+nnoremap <leader>fis <cmd>Telescope spell_suggest<cr>
 nnoremap <leader>fir <cmd>Telescope reloader<cr>
 nnoremap <leader>fm <cmd>Telescope marks<cr>
 nnoremap <leader>fip <cmd>Telescope man_pages<cr>
