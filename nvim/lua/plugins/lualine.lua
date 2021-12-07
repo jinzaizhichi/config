@@ -64,6 +64,9 @@ return function ()
     local vi_mode = function()
       local mode = get_mode()
       local alias = mode_names[mode]
+      if not alias then
+        return ''
+      end
       return alias
     end
 
