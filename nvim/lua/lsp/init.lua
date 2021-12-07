@@ -13,6 +13,8 @@ function M.setup()
       autocmd FileType java lua require('lsp.jdtls').setup()
     augroup end
   ]], false)
+  -- make jdtls dap extends vscode launch.json config, but it will auto start a debug session at background?
+  -- require('dap.ext.vscode').load_launchjs()
 
   lsp_installer.on_server_ready(function(server)
     -- (optional) Customize the options passed to the server

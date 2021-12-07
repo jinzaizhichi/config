@@ -1,7 +1,6 @@
 local M = {}
 
 function M.setup()
-  require('dap.ext.vscode').load_launchjs()
   local on_attach = function(client, bufnr)
     -- require'jdtls'.setup_dap({hotcodereplace = 'auto'})
     require('jdtls').setup_dap()
