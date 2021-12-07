@@ -37,7 +37,7 @@ set list
 " set listchars=tab:>~,space:·,precedes:«,extends:»,trail:·,eol:↴
 set listchars=tab:>-,precedes:«,extends:»,trail:·,lead:·,eol:↴
 set undofile
-set undodir=~/.vim/undodir
+set undodir=~/.local/share/nvim/undodir
 set noshowmode
 set wrap
 set foldmethod=marker

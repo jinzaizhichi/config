@@ -169,6 +169,8 @@ nnoremap <silent> <leader>dp <cmd>lua require'dap'.set_breakpoint(nil, nil, vim.
 nnoremap <silent> <leader>dr <cmd>lua require'dap'.repl.open()<CR>
 nnoremap <silent> <leader>dl <cmd>lua require'dap'.run_last()<CR>
 nnoremap <silent> <leader>du <cmd>lua require("dapui").toggle()<CR>
+nnoremap <silent> <leader>dt <cmd>DapVirtualTextToggle<CR>
+nnoremap <silent> <leader>ds <cmd>DapVirtualTextForceRefresh<CR>
 nnoremap <silent> <leader>df <cmd>lua require("dapui").float_element()<CR>
 nnoremap <silent> <leader>de <cmd>lua require("dapui").eval()<CR>
 
