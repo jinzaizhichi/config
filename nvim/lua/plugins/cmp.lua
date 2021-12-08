@@ -62,7 +62,6 @@ return function ()
       { name = 'buffer', max_item_count = 10},
       { name = 'path' },
       { name = 'look', max_item_count = 5, keyword_length = 2, optiona = { convert_case = true, loud = true }},
-      { name = 'treesitter', max_item_count = 5},
       { name = 'vim-dadbod-completion' },
     },
     formatting = {
