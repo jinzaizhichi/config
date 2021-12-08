@@ -21,6 +21,8 @@ return require('packer').startup(function(use)
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = require('plugins.treesitter')}
   use {'nvim-treesitter/nvim-treesitter-textobjects'}
   use {'nvim-treesitter/nvim-treesitter-refactor'}
+  use {'JoosepAlviste/nvim-ts-context-commentstring'}
+  use {'romgrk/nvim-treesitter-context', config = require('plugins.treesitter-context')}
   use {'lewis6991/spellsitter.nvim', config = require('plugins.spellsitter')}
   use {'p00f/nvim-ts-rainbow'}
   use {'windwp/nvim-ts-autotag'}
@@ -35,7 +37,7 @@ return require('packer').startup(function(use)
   -- translator
   use {'voldikss/vim-translator'}
   -- comment
-  use {'b3nj5m1n/kommentary'}
+  use {'b3nj5m1n/kommentary', config = require('plugins.kommentary')}
   use {'folke/todo-comments.nvim', config = function() require('todo-comments').setup() end}
   -- highlight different word at same time
   use {'lfv89/vim-interestingwords'}
