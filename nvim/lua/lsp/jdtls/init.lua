@@ -41,8 +41,11 @@ function M.setup()
   }
   vim.list_extend(bundles, vim.split(vim.fn.glob(config_path .. '/vscode-java-test/server/*.jar'), '\n'))
   vim.list_extend(bundles, vim.split(vim.fn.glob(config_path ..  '/vscode-java-decompiler/server/*.jar'), '\n'))
-  local extendedClientCapabilities = require('jdtls').extendedClientCapabilities
-  extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
+  local extendedClientCapabilities = {
+    progressReportProvider = true;
+    classFileContentsSupport = true;
+    resolveAdditionalTextEditsSupport = true;
+  };
 
   local config = {
     flags = {allow_incremental_sync = true},

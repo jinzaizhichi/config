@@ -8,6 +8,7 @@ if pcall(require, "plenary") then
 end
 return function()
   local actions = require('telescope.actions')
+  local layout = require('telescope.actions.layout')
   local trouble = require("trouble.providers.telescope")
   require('telescope').setup({
     defaults = {
@@ -15,7 +16,8 @@ return function()
         i = {
           -- IMPORTANT
           -- either hot-reloaded or `function(prompt_bufnr) telescope.extensions.hop.hop end`
-          ["<C-t>"] = trouble.open_with_trouble,
+          ["<C-o>"] = trouble.open_with_trouble,
+          ["<C-i>"] = function () layout.toggle_preview(vim.fn.bufnr()) end,
           ["<C-h>"] = R("telescope").extensions.hop.hop,  -- hop.hop_toggle_selection
           -- custom hop loop to multi selects and sending selected entries to quickfix list
           ["<C-space>"] = function(prompt_bufnr)
@@ -27,7 +29,8 @@ return function()
           end,
         },
         n = {
-          ["<C-t>"] = trouble.open_with_trouble,
+          ["<C-o>"] = trouble.open_with_trouble,
+          ["<C-i>"] = function () layout.toggle_preview(vim.fn.bufnr()) end,
           ["<C-h>"] = R("telescope").extensions.hop.hop,  -- hop.hop_toggle_selection
           -- custom hop loop to multi selects and sending selected entries to quickfix list
           ["<C-space>"] = function(prompt_bufnr)
