@@ -54,6 +54,7 @@ return function ()
       ['rm'] = 'M-PROMPT',
       ['r?'] = 'C-PROMPT',
       ['t'] = 'TERMINAL',
+      ['nt'] = 'N-TERMINAL',
       ['!'] = 'EXECTING',
   }
 
@@ -157,6 +158,7 @@ return function ()
         ['r?'] = colors.cyan,
         ['!'] = colors.red,
         t = colors.red,
+        nt = colors.red,
       }
       vim.api.nvim_command('hi! LualineMode gui=bold guifg=' .. mode_color[vim.fn.mode()] .. ' guibg=' .. colors.bg)
       -- return ''
