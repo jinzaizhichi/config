@@ -32,7 +32,7 @@ return function ()
       }),
       ['<CR>'] = cmp.mapping {
         i = cmp.mapping.confirm {
-          behavior = cmp.ConfirmBehavior.Replace,
+          behavior = cmp.ConfirmBehavior.Insert,
           select = true,
         },
         c = cmp.mapping.confirm { select = false },
