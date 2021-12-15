@@ -25,8 +25,13 @@ highlight! CmpItemKindMethod guibg=NONE guifg=#C586C0
 highlight! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4
 highlight! CmpItemKindProperty guibg=NONE guifg=#D4D4D4
 highlight! CmpItemKindUnit guibg=NONE guifg=#D4D4D4
+highlight! CmpItemKindSnippet guibg=NONE guifg=#D4D4D4
 " yellow
 highlight! CmpItemKindEnum guibg=NONE guifg=#DF9428
 highlight! CmpItemKindClass guibg=NONE guifg=#DF9428
+highlight! CmpItemKindModule guibg=NONE guifg=#DF9428
+highlight! CmpItemKindConstant guibg=NONE guifg=#DF9428
+
+highlight! CmpItemKindFolder guibg=NONE guifg=#C09553
 
 highlight PmenuSel ctermfg=242 ctermbg=0 guifg=NONE guibg=#393f4a

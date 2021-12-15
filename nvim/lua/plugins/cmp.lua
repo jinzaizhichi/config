@@ -22,6 +22,8 @@ return function ()
       end,
     },
     mapping = {
+      ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }), { 'i', 'c'}),
+      ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }), { 'i', 'c'}),
       ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
       ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
       ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
@@ -35,7 +37,7 @@ return function ()
           behavior = cmp.ConfirmBehavior.Insert,
           select = true,
         },
-        c = cmp.mapping.confirm { select = false },
+        c = cmp.mapping.confirm { select = true },
       },
       ["<Tab>"] = cmp.mapping(function(fallback)
         if cmp.visible() then
