@@ -16,6 +16,7 @@ highlight! CmpItemAbbrMatch gui=bold guibg=NONE guifg=#569CD6
 highlight! CmpItemAbbrMatchFuzzy gui=bold guibg=NONE guifg=#569CD6
 " light blue
 highlight! CmpItemKindVariable guibg=NONE guifg=#9CDCFE
+highlight! CmpItemKindField guibg=NONE guifg=#9CDCFE
 highlight! CmpItemKindInterface guibg=NONE guifg=#9CDCFE
 highlight! CmpItemKindText guibg=NONE guifg=#9CDCFE
 " pink
