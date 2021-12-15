@@ -32,7 +32,7 @@ function M.setup(client, bufnr)
     --[[ M.set_keymap(bufnr, 'n', '<leader>ca', "<Cmd>lua vim.lsp.buf.code_action()<CR>", opts)
     M.set_keymap(bufnr, 'v', '<leader>ca', "<Cmd>lua vim.lsp.buf.range_code_action()<CR>", opts) ]]
     M.set_keymap(bufnr, 'n', '<leader>ca', "<Cmd>Telescope lsp_code_actions layout_config={height=20,width=70}<CR>", opts)
-    M.set_keymap(bufnr, 'v', '<leader>ca', "<Cmd>Telescope lsp_range_code_actions layout_config={height=20,width=70}<CR>", opts)
+    M.set_keymap(bufnr, 'v', '<leader>ca', ":<C-u>'<,'>Telescope lsp_range_code_actions layout_config={height=20,width=70}<CR>", opts)
     M.set_keymap(bufnr, 'n', '<leader>cr', "<Cmd>lua require('jdtls').code_action(false, 'refactor')<CR>", opts)
     -- Set some keybinds conditional on server capabilities
     if client.resolved_capabilities.document_formatting then
