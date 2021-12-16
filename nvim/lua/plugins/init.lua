@@ -101,5 +101,5 @@ return require('packer').startup(function(use)
   use {'folke/trouble.nvim', config = function() require('trouble').setup() end}
   use {'onsails/lspkind-nvim', config = require('plugins.lspkind')}
   -- wrapper for jdtls
-  use {'mfussenegger/nvim-jdtls', config = require('plugins.nvim-jdtls')}
+  use {'mfussenegger/nvim-jdtls'}
 end)

@@ -234,7 +234,6 @@ _G.packer_plugins = {
     url = "https://github.com/kevinhwang91/nvim-hlslens"
   },
   ["nvim-jdtls"] = {
-    config = { "\27LJ\1\2N\0\1\4\1\4\0\v3\1\0\0:\0\1\1+\2\0\0\16\3\0\0>\2\2\2:\2\2\1+\2\0\0\16\3\0\0>\2\2\2:\2\3\1H\1\2\0\2À\fordinal\fdisplay\nvalue\1\0\0^\0\0\3\4\3\0\f+\0\0\0007\0\0\0+\1\1\0>\0\2\2+\1\2\0007\1\1\1+\2\1\0>\1\2\1+\1\3\0007\2\2\0>\1\2\1G\0\1\0\1\0\0À\0\0\2\0\nvalue\nclose\23get_selected_entryI\1\1\4\3\3\0\t+\1\0\0007\1\0\1\16\2\1\0007\1\1\0011\3\2\0>\1\3\1)\1\2\0000\0\0€H\1\2\0\3\0\4\0\3À\0\freplace\19select_defaultì\1\1\4\v\5\14\0\0262\4\0\0+\5\0\0007\5\0\5\16\6\4\0003\a\1\0:\1\2\a+\b\1\0007\b\3\b3\t\4\0:\0\5\t1\n\6\0:\n\a\t>\b\2\2:\b\b\a+\b\2\0007\b\t\b>\b\1\2:\b\n\a1\b\v\0:\b\f\a>\5\3\2\16\6\5\0007\5\r\5>\5\2\0010\0\0€G\0\1\0\4À\0À\1À\2À\3À\tfind\20attach_mappings\0\vsorter\29get_generic_fuzzy_sorter\vfinder\16entry_maker\0\fresults\1\0\0\14new_table\17prompt_title\1\0\0\bnewà\1\1\0\a\0\t\0\0224\0\0\0%\1\1\0>\0\2\0024\1\0\0%\2\2\0>\1\2\0024\2\0\0%\3\3\0>\2\2\0024\3\0\0%\4\4\0>\3\2\0024\4\0\0%\5\5\0>\4\2\0024\5\0\0%\6\6\0>\5\2\0021\6\b\0:\6\a\0050\0\0€G\0\1\0\0\19pick_one_async\rjdtls.ui\22telescope.pickers\28telescope.actions.state\22telescope.actions\22telescope.sorters\22telescope.finders\frequire\0" },
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/nvim-jdtls",
     url = "https://github.com/mfussenegger/nvim-jdtls"
@@ -502,10 +501,6 @@ time([[Config for nvim-colorizer.lua]], false)
 time([[Config for nvim-dap-ui]], true)
 try_loadstring("\27LJ\1\0023\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\ndapui\frequire\0", "config", "nvim-dap-ui")
 time([[Config for nvim-dap-ui]], false)
--- Config for: nvim-jdtls
-time([[Config for nvim-jdtls]], true)
-try_loadstring("\27LJ\1\2N\0\1\4\1\4\0\v3\1\0\0:\0\1\1+\2\0\0\16\3\0\0>\2\2\2:\2\2\1+\2\0\0\16\3\0\0>\2\2\2:\2\3\1H\1\2\0\2À\fordinal\fdisplay\nvalue\1\0\0^\0\0\3\4\3\0\f+\0\0\0007\0\0\0+\1\1\0>\0\2\2+\1\2\0007\1\1\1+\2\1\0>\1\2\1+\1\3\0007\2\2\0>\1\2\1G\0\1\0\1\0\0À\0\0\2\0\nvalue\nclose\23get_selected_entryI\1\1\4\3\3\0\t+\1\0\0007\1\0\1\16\2\1\0007\1\1\0011\3\2\0>\1\3\1)\1\2\0000\0\0€H\1\2\0\3\0\4\0\3À\0\freplace\19select_defaultì\1\1\4\v\5\14\0\0262\4\0\0+\5\0\0007\5\0\5\16\6\4\0003\a\1\0:\1\2\a+\b\1\0007\b\3\b3\t\4\0:\0\5\t1\n\6\0:\n\a\t>\b\2\2:\b\b\a+\b\2\0007\b\t\b>\b\1\2:\b\n\a1\b\v\0:\b\f\a>\5\3\2\16\6\5\0007\5\r\5>\5\2\0010\0\0€G\0\1\0\4À\0À\1À\2À\3À\tfind\20attach_mappings\0\vsorter\29get_generic_fuzzy_sorter\vfinder\16entry_maker\0\fresults\1\0\0\14new_table\17prompt_title\1\0\0\bnewà\1\1\0\a\0\t\0\0224\0\0\0%\1\1\0>\0\2\0024\1\0\0%\2\2\0>\1\2\0024\2\0\0%\3\3\0>\2\2\0024\3\0\0%\4\4\0>\3\2\0024\4\0\0%\5\5\0>\4\2\0024\5\0\0%\6\6\0>\5\2\0021\6\b\0:\6\a\0050\0\0€G\0\1\0\0\19pick_one_async\rjdtls.ui\22telescope.pickers\28telescope.actions.state\22telescope.actions\22telescope.sorters\22telescope.finders\frequire\0", "config", "nvim-jdtls")
-time([[Config for nvim-jdtls]], false)
 -- Config for: spellsitter.nvim
 time([[Config for spellsitter.nvim]], true)
 try_loadstring("\27LJ\1\2e\0\0\3\0\5\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0002\2\0\0:\2\4\1>\0\2\1G\0\1\0\rcaptures\1\0\2\ahl\rSpellBad\venable\2\nsetup\16spellsitter\frequire\0", "config", "spellsitter.nvim")
