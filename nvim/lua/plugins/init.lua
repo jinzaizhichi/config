@@ -95,7 +95,6 @@ return require('packer').startup(function(use)
   -- which keys
   use {'folke/which-key.nvim', config = require('plugins.which-key')}
   -- lsp setup
-  use {'ray-x/lsp_signature.nvim', config = require('plugins.lsp_signature')}
   use {'neovim/nvim-lspconfig'}
   use {'williamboman/nvim-lsp-installer', config = function() require('lsp').setup() end}
   use {'folke/trouble.nvim', config = function() require('trouble').setup() end}
