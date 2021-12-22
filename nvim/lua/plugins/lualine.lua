@@ -72,18 +72,18 @@ return function ()
       ['t']    = 'TERMINAL',
   }
 
-    local get_mode = function()
-      return vim.api.nvim_get_mode()['mode']
-    end
+  local get_mode = function()
+    return vim.api.nvim_get_mode()['mode']
+  end
 
-    local vi_mode = function()
-      local mode = get_mode()
-      local alias = mode_names[mode]
-      if not alias then
-        return ''
-      end
-      return alias
+  local vi_mode = function()
+    local mode = get_mode()
+    local alias = mode_names[mode]
+    if not alias then
+      return ''
     end
+    return alias
+  end
 
   -- Config
   local config = {
