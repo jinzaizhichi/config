@@ -182,8 +182,12 @@ nnoremap <leader>ll <cmd>TroubleToggle loclist<cr>
 nnoremap gR <cmd>TroubleToggle lsp_references<cr>
 
 " rest nivim
-nnoremap <leader>re <Plug>RestNvim<cr>
-nnoremap <leader>rp <Plug>RestNvimPreview<cr>
+command RestNvim :lua require('rest-nvim').run()<CR>
+command RestNvimPreview :lua require('rest-nvim').run(true)<CR>
+command RestNvimLast :lua require('rest-nvim').last()<CR>
+nnoremap <leader>re <cmd>RestNvim<CR>
+nnoremap <leader>rp <cmd>RestNvimPreview<CR>
+nnoremap <leader>rl <cmd>RestNvimLast<CR>
 
 function! ToggleQuickFix()
     if empty(filter(getwininfo(), 'v:val.quickfix'))
