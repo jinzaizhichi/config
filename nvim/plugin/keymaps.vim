@@ -12,14 +12,10 @@ nnoremap <silent> <M-h> <cmd>wincmd <<CR>
 nnoremap <silent> <M-j> <cmd>wincmd +<CR>
 nnoremap <silent> <M-k> <cmd>wincmd -<CR>
 nnoremap <silent> <M-l> <cmd>wincmd ><CR>
-noremap <silent> <tab>w :tabnew<cr>
-noremap <silent> <tab>c :tabclose<cr>
-noremap <silent> <tab>n :tabn<cr>
-noremap <silent> <tab>p :tabp<cr>
-tnoremap <silent> <tab>w <cmd>tabnew<cr>
-tnoremap <silent> <tab>c <cmd>tabclose<cr>
-tnoremap <silent> <tab>n <cmd>tabn<cr>
-tnoremap <silent> <tab>p <cmd>tabp<cr>
+noremap <silent> <M-n> :tabn<cr>
+noremap <silent> <M-p> :tabp<cr>
+tnoremap <silent> <M-n> <cmd>tabn<cr>
+tnoremap <silent> <M-p> <cmd>tabp<cr>
 " cnoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 nnoremap <silent> gb <c-^>
 " These commands will navigate through buffers in order regardless of which mode you are using
