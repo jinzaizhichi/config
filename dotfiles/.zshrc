@@ -270,3 +270,15 @@ toggleProxy(){
         assignProxy $proxy_value $no_proxy_value
     fi
 }
+
+timestamp(){
+    current=`date "+%Y-%m-%d %H:%M:%S"`
+    if [ $1 ] ;then
+        current=$1
+        echo $current
+    fi
+
+    timeStamp=`date -d "$current" +%s`
+    currentTimeStamp=$((timeStamp*1000+`date "+%N"`/1000000))
+    echo $currentTimeStamp
+}

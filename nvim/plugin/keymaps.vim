@@ -176,7 +176,7 @@ nnoremap <silent> <leader>de <cmd>lua require("dapui").eval()<CR>
 " trouble nvim
 nnoremap <leader>lt <cmd>TroubleToggle<cr>
 nnoremap <leader>lw <cmd>TroubleToggle lsp_workspace_diagnostics<cr>
-nnoremap <leader>ld <cmd>TroubleToggle lsp_document_diagnostics<cr>
+nnoremap <leader>ld <cmd>TroubleToggle document_diagnostics<cr>
 nnoremap <leader>lq <cmd>TroubleToggle quickfix<cr>
 nnoremap <leader>ll <cmd>TroubleToggle loclist<cr>
 nnoremap gR <cmd>TroubleToggle lsp_references<cr>
