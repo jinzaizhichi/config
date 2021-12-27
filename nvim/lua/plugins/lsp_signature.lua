@@ -4,6 +4,7 @@ return function ()
     handler_opts = {
       border = "single"   -- double, rounded, single, shadow, none
     },
+    always_trigger = false,
     hint_enable = false,
     hint_prefix = " ",
     toggle_key = '<M-s>'

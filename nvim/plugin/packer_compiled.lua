@@ -170,7 +170,7 @@ _G.packer_plugins = {
     url = "https://github.com/kdheepak/lazygit.nvim"
   },
   ["lsp_signature.nvim"] = {
-    config = { "\27LJ\1\2¨\1\0\0\3\0\6\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0003\2\4\0:\2\5\1>\0\2\1G\0\1\0\17handler_opts\1\0\1\vborder\vsingle\1\0\4\20floating_window\2\16hint_prefix\tîž› \16hint_enable\1\15toggle_key\n<M-s>\nsetup\18lsp_signature\frequire\0" },
+    config = { "\27LJ\1\2¸\1\0\0\3\0\6\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0003\2\4\0:\2\5\1>\0\2\1G\0\1\0\17handler_opts\1\0\1\vborder\vsingle\1\0\5\15toggle_key\n<M-s>\20floating_window\2\16hint_prefix\tîž› \16hint_enable\1\19always_trigger\1\nsetup\18lsp_signature\frequire\0" },
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
     url = "https://github.com/ray-x/lsp_signature.nvim"
@@ -255,7 +255,7 @@ _G.packer_plugins = {
     url = "https://github.com/windwp/nvim-spectre"
   },
   ["nvim-toggleterm.lua"] = {
-    config = { "\27LJ\1\2Î\1\0\0\3\0\a\0\v4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0004\2\4\0007\2\5\0027\2\6\2:\2\6\1>\0\2\1G\0\1\0\nshell\6o\bvim\1\0\b\20shade_terminals\1\20insert_mappings\1\tsize\3\15\17persist_size\2\20start_in_insert\2\14direction\btab\18close_on_exit\2\17hide_numbers\1\nsetup\15toggleterm\frequire\0" },
+    config = { "\27LJ\1\2Ð\1\0\0\3\0\a\0\v4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0004\2\4\0007\2\5\0027\2\6\2:\2\6\1>\0\2\1G\0\1\0\nshell\6o\bvim\1\0\b\20shade_terminals\1\20insert_mappings\1\tsize\3\15\17persist_size\2\20start_in_insert\2\14direction\nfloat\18close_on_exit\2\17hide_numbers\1\nsetup\15toggleterm\frequire\0" },
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/nvim-toggleterm.lua",
     url = "https://github.com/akinsho/nvim-toggleterm.lua"
@@ -499,7 +499,7 @@ try_loadstring("\27LJ\1\0027\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\
 time([[Config for nvim-colorizer.lua]], false)
 -- Config for: nvim-toggleterm.lua
 time([[Config for nvim-toggleterm.lua]], true)
-try_loadstring("\27LJ\1\2Î\1\0\0\3\0\a\0\v4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0004\2\4\0007\2\5\0027\2\6\2:\2\6\1>\0\2\1G\0\1\0\nshell\6o\bvim\1\0\b\20shade_terminals\1\20insert_mappings\1\tsize\3\15\17persist_size\2\20start_in_insert\2\14direction\btab\18close_on_exit\2\17hide_numbers\1\nsetup\15toggleterm\frequire\0", "config", "nvim-toggleterm.lua")
+try_loadstring("\27LJ\1\2Ð\1\0\0\3\0\a\0\v4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0004\2\4\0007\2\5\0027\2\6\2:\2\6\1>\0\2\1G\0\1\0\nshell\6o\bvim\1\0\b\20shade_terminals\1\20insert_mappings\1\tsize\3\15\17persist_size\2\20start_in_insert\2\14direction\nfloat\18close_on_exit\2\17hide_numbers\1\nsetup\15toggleterm\frequire\0", "config", "nvim-toggleterm.lua")
 time([[Config for nvim-toggleterm.lua]], false)
 -- Config for: spellsitter.nvim
 time([[Config for spellsitter.nvim]], true)
@@ -535,7 +535,7 @@ try_loadstring("\27LJ\1\2Ë\1\0\0\3\0\b\0\v4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\4\
 time([[Config for project.nvim]], false)
 -- Config for: lsp_signature.nvim
 time([[Config for lsp_signature.nvim]], true)
-try_loadstring("\27LJ\1\2¨\1\0\0\3\0\6\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0003\2\4\0:\2\5\1>\0\2\1G\0\1\0\17handler_opts\1\0\1\vborder\vsingle\1\0\4\20floating_window\2\16hint_prefix\tîž› \16hint_enable\1\15toggle_key\n<M-s>\nsetup\18lsp_signature\frequire\0", "config", "lsp_signature.nvim")
+try_loadstring("\27LJ\1\2¸\1\0\0\3\0\6\0\t4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0003\2\4\0:\2\5\1>\0\2\1G\0\1\0\17handler_opts\1\0\1\vborder\vsingle\1\0\5\15toggle_key\n<M-s>\20floating_window\2\16hint_prefix\tîž› \16hint_enable\1\19always_trigger\1\nsetup\18lsp_signature\frequire\0", "config", "lsp_signature.nvim")
 time([[Config for lsp_signature.nvim]], false)
 if should_profile then save_profiles() end
 
