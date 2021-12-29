@@ -146,6 +146,7 @@ export LANG=en_US.UTF-8
 alias clr='clear'
 alias vi='nvim'
 alias ev='expressvpn'
+alias ap='create_ap --config /etc/create_ap.conf --freq-band 2.4'
 alias evr='expressvpn disconnect && expressvpn connect'
 alias kc='kubectl'
 # alias mk='minikube --registry-mirror=https://registry.docker-cn.com'
