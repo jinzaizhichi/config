@@ -89,7 +89,6 @@ return require('packer').startup(function(use)
   use {'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end}
   -- nvim debug tool
   use {'mfussenegger/nvim-dap'}
-  use {'rcarriga/nvim-dap-ui', config = function() require("dapui").setup() end}
   use {'theHamsta/nvim-dap-virtual-text', config = require('plugins.nvim-dap-virtual-text')}
   use {'Pocco81/DAPInstall.nvim'}
   -- which keys

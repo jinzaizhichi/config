@@ -167,11 +167,14 @@ nnoremap <silent> <leader>dB <cmd>lua require'dap'.set_breakpoint(vim.fn.input('
 nnoremap <silent> <leader>dp <cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
 nnoremap <silent> <leader>dr <cmd>lua require'dap'.repl.open()<CR>
 nnoremap <silent> <leader>dl <cmd>lua require'dap'.run_last()<CR>
-nnoremap <silent> <leader>du <cmd>lua require("dapui").toggle()<CR>
+command DapScopesFloat :lua require'dap.ui.widgets'.centered_float(require('dap.ui.widgets').scopes)<CR>
+command DapFramesFloat :lua require'dap.ui.widgets'.centered_float(require('dap.ui.widgets').frames)<CR>
+command DapExpressioinFloat :lua require'dap.ui.widgets'.centered_float(require('dap.ui.widgets').expression)<CR>
+nnoremap <silent> <leader>ds <cmd>DapScopesFloat<CR>
+nnoremap <silent> <leader>df <cmd>DapFramesFloat<CR>
+nnoremap <silent> <leader>de <cmd>DapExpressioinFloat<CR>
+nnoremap <silent> <leader>dh <cmd>lua require'dap.ui.widgets'.hover()<CR>
 nnoremap <silent> <leader>dt <cmd>DapVirtualTextToggle<CR>
-nnoremap <silent> <leader>ds <cmd>DapVirtualTextForceRefresh<CR>
-nnoremap <silent> <leader>df <cmd>lua require("dapui").float_element()<CR>
-nnoremap <silent> <leader>de <cmd>lua require("dapui").eval()<CR>
 
 " trouble nvim
 nnoremap <leader>lt <cmd>TroubleToggle<cr>
