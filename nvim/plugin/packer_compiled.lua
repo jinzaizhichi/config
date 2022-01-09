@@ -291,6 +291,7 @@ _G.packer_plugins = {
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["onedark.nvim"] = {
+    config = { "\27LJ\1\2‰\3\0\0\3\0\f\0\0174\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0003\2\4\0:\2\5\0013\2\6\0:\2\a\0012\2\0\0:\2\b\0012\2\0\0:\2\t\0013\2\n\0:\2\v\1>\0\2\1G\0\1\0\16diagnostics\1\0\3\14undercurl\2\vdarker\2\15background\2\15highlights\vcolors\15code_style\1\0\5\rcomments\vitalic\14variables\tnone\14functions\tnone\rkeywords\tnone\fstrings\tnone\22toggle_style_list\1\b\0\0\tdark\vdarker\tcool\tdeep\twarm\vwarmer\nlight\1\0\5\nstyle\tdark\16transparent\1\16term_colors\1\21toggle_style_key\15<leader>ts\18ending_tildes\1\nsetup\fonedark\frequire\0" },
     loaded = true,
     path = "/home/hewenjin/.local/share/nvim/site/pack/packer/start/onedark.nvim",
     url = "https://github.com/navarasu/onedark.nvim"
@@ -465,6 +466,10 @@ time([[Config for lualine.nvim]], false)
 time([[Config for nvim-dap-virtual-text]], true)
 try_loadstring("\27LJ\1\2V\0\0\2\0\4\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0>\0\2\1G\0\1\0\1\0\1\15all_frames\2\nsetup\26nvim-dap-virtual-text\frequire\0", "config", "nvim-dap-virtual-text")
 time([[Config for nvim-dap-virtual-text]], false)
+-- Config for: onedark.nvim
+time([[Config for onedark.nvim]], true)
+try_loadstring("\27LJ\1\2‰\3\0\0\3\0\f\0\0174\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0003\2\4\0:\2\5\0013\2\6\0:\2\a\0012\2\0\0:\2\b\0012\2\0\0:\2\t\0013\2\n\0:\2\v\1>\0\2\1G\0\1\0\16diagnostics\1\0\3\14undercurl\2\vdarker\2\15background\2\15highlights\vcolors\15code_style\1\0\5\rcomments\vitalic\14variables\tnone\14functions\tnone\rkeywords\tnone\fstrings\tnone\22toggle_style_list\1\b\0\0\tdark\vdarker\tcool\tdeep\twarm\vwarmer\nlight\1\0\5\nstyle\tdark\16transparent\1\16term_colors\1\21toggle_style_key\15<leader>ts\18ending_tildes\1\nsetup\fonedark\frequire\0", "config", "onedark.nvim")
+time([[Config for onedark.nvim]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\1\2M\0\0\2\0\4\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0003\1\3\0>\0\2\1G\0\1\0\1\0\1\rcheck_ts\2\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
