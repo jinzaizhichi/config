@@ -77,6 +77,14 @@ return function()
         -- Will probably slow down some aspects of the sorter, but can make color highlights.
         -- I will work on this more later.
         use_highlighter = true,
+      },
+      ["ui-select"] = {
+        --[[ require("telescope.themes").get_dropdown {
+        -- even more opts
+        layout_config = {
+          width = 20
+        }
+        } ]]
       }
     }
   })
@@ -84,4 +92,5 @@ return function()
   require('telescope').load_extension('projects')
   require('telescope').load_extension('fzf')
   require('telescope').load_extension('hop')
+  require("telescope").load_extension("ui-select")
 end
