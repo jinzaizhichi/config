@@ -98,7 +98,7 @@ return require('packer').startup(function(use)
   use {'neovim/nvim-lspconfig'}
   use {'williamboman/nvim-lsp-installer', config = function() require('lsp').setup() end}
   use {'folke/trouble.nvim', config = function() require('trouble').setup() end}
-  use {'onsails/lspkind-nvim', config = require('plugins.lspkind')}
+  use {'onsails/lspkind-nvim'}
   -- wrapper for jdtls
   use {'mfussenegger/nvim-jdtls'}
 end)
