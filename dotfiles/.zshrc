@@ -187,7 +187,7 @@ export LUA_PATH="~/.config/nvim/lua/;;"
 export GITLAB_HOME="$HOME/project/gitlab"
 # export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 # tmux params
-export TERM='xterm-256color'
+export TERM='tmux-256color'
 export EDITOR='nvim'
 export BAT_THEME='OneHalfDark'
 export DOWNGRADE_FROM_ALA=1
