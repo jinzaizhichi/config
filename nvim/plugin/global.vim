@@ -39,6 +39,7 @@ let g:rnvimr_enable_bw = 0
 " let g:rnvimr_shadow_winblend = 70
 " Draw border with both
 " let g:rnvimr_ranger_cmd = 'ranger --cmd="set draw_borders both"'
+let g:translator_default_engines = ['google']
 
 let g:onedark_config = {
   \ 'term_colors': v:false
