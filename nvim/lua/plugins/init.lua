@@ -29,7 +29,6 @@ return require('packer').startup(function(use)
   use {'windwp/nvim-autopairs', config = require('plugins.autopairs')}
   -- editing
   use {'tpope/vim-surround'}
-  use {'mhartington/formatter.nvim', config = require('plugins.formatter')}
   -- git
   use {'lewis6991/gitsigns.nvim', config = require('plugins.gitsigns')}
   use {'kdheepak/lazygit.nvim'}
@@ -99,6 +98,7 @@ return require('packer').startup(function(use)
   use {'williamboman/nvim-lsp-installer', config = function() require('lsp').setup() end}
   use {'folke/trouble.nvim', config = function() require('trouble').setup() end}
   use {'onsails/lspkind-nvim'}
+  use {'jose-elias-alvarez/null-ls.nvim', config = require('plugins.null-ls')}
   -- wrapper for jdtls
   use {'mfussenegger/nvim-jdtls'}
 end)
