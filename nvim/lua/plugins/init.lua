@@ -11,10 +11,11 @@ return require('packer').startup(function(use)
   use {'norcalli/nvim-colorizer.lua', config = function() require('colorizer').setup() end}
   -- buffer | statusline | icon | treeview | startup buffer
   -- use {'glepnir/dashboard-nvim'}
-  use {'goolord/alpha-nvim', config = function () require('alpha').setup(require'alpha.themes.theta'.config) end}
+  use {'goolord/alpha-nvim', config = function() require('alpha').setup(require'alpha.themes.theta'.config) end}
   use {'kevinhwang91/rnvimr'}
   -- session manager
   use {'rmagatti/auto-session', config = require('plugins.auto-session')}
+  use {'rmagatti/session-lens', config = function() require('session-lens').setup({--[[your custom config--]]}) end}
   -- use {'kyazdani42/nvim-tree.lua'}
   use {'kyazdani42/nvim-web-devicons'}
   use {'akinsho/nvim-bufferline.lua', config = require('plugins.bufferline')}

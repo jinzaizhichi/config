@@ -208,6 +208,11 @@ function! SourceMyConfigDir()
 endfunction
 
 nnoremap <silent> <Leader>sc <cmd>source $MYVIMRC<CR>
+nnoremap <silent> <Leader>ss <cmd>SaveSession<CR>
+nnoremap <silent> <Leader>sf <cmd>Telescope session-lens search_session<CR>
+nnoremap <silent> <Leader>se <cmd>SearchSession<CR>
+nnoremap <silent> <Leader>sr <cmd>RestoreSession<CR>
+nnoremap <silent> <Leader>sd <cmd>DeleteSession<CR>
 " dashboard
 " nnoremap <silent> <Leader>ss :<C-u>SessionSave<CR>
 " nnoremap <silent> <Leader>sl :<C-u>SessionLoad<CR>

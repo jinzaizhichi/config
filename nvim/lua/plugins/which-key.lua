@@ -4,7 +4,7 @@ return function()
   local wk = require('which-key')
   wk.register({
     f = {
-      name = 'Find By Telescope & Format',
+      name = 'Find By Telescope',
       i = {name = 'BuildIn & Reloader'},
       m = {name = 'Mark'},
       h = {name = 'History & Help & Highlight'},
@@ -19,9 +19,8 @@ return function()
     x = {name = 'Close Current Buffer'},
     l = {name = 'List Of Trouble'},
     m = {name = 'Markdown & Format'},
-    o = {name = 'Operate Dashboard Action'},
     r = {name = 'Ranger & Rename & Rest'},
-    s = {name = 'Session & Spectre Action'},
+    s = {name = 'Session Action'},
     t = {name = 'Translate'},
     w = {name = 'Workspace'},
     p = {name = 'Paste System Clipboard'},
