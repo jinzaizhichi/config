@@ -7,6 +7,7 @@ return function ()
       -- null_ls.builtins.completion.spell,
       -- NOTE: cspell needs to installed first by using npm install -g cspell
       null_ls.builtins.diagnostics.cspell.with{
+        filetypes = {},
         diagnostics_postprocess = function(diagnostic)
             diagnostic.severity = diagnostic.message:find("Unknown word")
                 and vim.diagnostic.severity["INFO"]

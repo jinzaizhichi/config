@@ -18,17 +18,17 @@ noremap <silent> <M-p> :tabp<cr>
 tnoremap <silent> <M-n> <cmd>tabn<cr>
 tnoremap <silent> <M-p> <cmd>tabp<cr>
 " cnoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
-nnoremap <silent> gb <c-^>
 " These commands will navigate through buffers in order regardless of which mode you are using
 " e.g. if you change the order of buffers :bnext and :bprevious will not respect the custom ordering
-" nnoremap <silent><c-n> :BufferLineCycleNext<CR>
-" nnoremap <silent><c-p> :BufferLineCyclePrev<CR>
+nnoremap <silent><c-n> :BufferLineCycleNext<CR>
+nnoremap <silent><c-p> :BufferLineCyclePrev<CR>
 nnoremap <silent><leader><leader>b :BufferLinePick<CR>
 " These commands will move the current buffer backwards or forwards in the bufferline
 nnoremap <silent><leader>bn :BufferLineMoveNext<CR>
 nnoremap <silent><leader>bp :BufferLineMovePrev<CR>
 nnoremap <silent><leader>x :bd<CR>
 nnoremap <silent><leader>a <cmd>Alpha<CR>
+nnoremap <silent><leader>bb <c-^>
 
 " copy to system clipboard
 vmap <leader>y "+y
@@ -55,7 +55,7 @@ noremap g# g#<Cmd>lua require('hlslens').start()<CR>
 nnoremap <silent> <leader><leader>h <cmd>noh<CR>
 
 " Provided by setup function
-nnoremap <silent> <leader>mm :Format<CR>
+nnoremap <silent> <leader>mm <cmd>lua vim.lsp.buf.formatting()<CR>
 
 " treesitter context
 nnoremap <leader>cc <cmd>TSContextToggle<cr>
