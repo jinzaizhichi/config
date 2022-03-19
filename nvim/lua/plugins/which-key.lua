@@ -5,12 +5,11 @@ return function()
   wk.register({
     f = {
       name = 'Find By Telescope & Format',
-      i = {name = 'Buildin & Reloader'},
+      i = {name = 'BuildIn & Reloader'},
       m = {name = 'Mark'},
       h = {name = 'History & Help & Highlight'},
       t = {name = 'TreeSitter & FileTypes'},
       w = {name = 'Workspace & LSP Action'},
-      g = {name = 'Git Action'},
       s = {name = 'Spectre'},
       d = {name = 'DAP Telescope Action'},
     },

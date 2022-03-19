@@ -10,8 +10,11 @@ return require('packer').startup(function(use)
   use {'navarasu/onedark.nvim'}
   use {'norcalli/nvim-colorizer.lua', config = function() require('colorizer').setup() end}
   -- buffer | statusline | icon | treeview | startup buffer
-  use {'glepnir/dashboard-nvim'}
+  -- use {'glepnir/dashboard-nvim'}
+  use {'goolord/alpha-nvim', config = function () require('alpha').setup(require'alpha.themes.theta'.config) end}
   use {'kevinhwang91/rnvimr'}
+  -- session manager
+  use {'rmagatti/auto-session', config = require('plugins.auto-session')}
   -- use {'kyazdani42/nvim-tree.lua'}
   use {'kyazdani42/nvim-web-devicons'}
   use {'akinsho/nvim-bufferline.lua', config = require('plugins.bufferline')}
@@ -59,7 +62,6 @@ return require('packer').startup(function(use)
   use {'sudormrfbin/cheatsheet.nvim'}
   use {'nvim-telescope/telescope-hop.nvim'}
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-  use {'nvim-telescope/telescope-fzf-writer.nvim'}
   use {'nvim-telescope/telescope-dap.nvim'}
   use {'nvim-telescope/telescope-ui-select.nvim'}
   use {'nvim-telescope/telescope.nvim', config = require('plugins.telescope')}

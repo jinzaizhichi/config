@@ -1,5 +1,6 @@
 " NOTE: some keymap base on plug setting, you can find those in following file:
-" cmp.lua | gitsigns.lua | lsp_sinature.lua | lua/lsp/common.lua | lua/lsp/jdtls.lua | telescope.lua | treesitter.lua
+" ../lua/plugins/cmp.lua | ../lua/plugins/gitsigns.lua | ../lua/plugins/lsp_sinature.lua 
+" ../lua/lsp/common.lua | ../lua/lsp/jdtls.lua | ../lua/plugins/telescope.lua | ../lua/plugins/treesitter.lua
 nnoremap j gj
 nnoremap gj j
 nnoremap k gk
@@ -20,13 +21,14 @@ tnoremap <silent> <M-p> <cmd>tabp<cr>
 nnoremap <silent> gb <c-^>
 " These commands will navigate through buffers in order regardless of which mode you are using
 " e.g. if you change the order of buffers :bnext and :bprevious will not respect the custom ordering
-nnoremap <silent><c-n> :BufferLineCycleNext<CR>
-nnoremap <silent><c-p> :BufferLineCyclePrev<CR>
+" nnoremap <silent><c-n> :BufferLineCycleNext<CR>
+" nnoremap <silent><c-p> :BufferLineCyclePrev<CR>
 nnoremap <silent><leader><leader>b :BufferLinePick<CR>
 " These commands will move the current buffer backwards or forwards in the bufferline
 nnoremap <silent><leader>bn :BufferLineMoveNext<CR>
 nnoremap <silent><leader>bp :BufferLineMovePrev<CR>
 nnoremap <silent><leader>x :bd<CR>
+nnoremap <silent><leader>a <cmd>Alpha<CR>
 
 " copy to system clipboard
 vmap <leader>y "+y
@@ -65,7 +67,7 @@ nnoremap <leader>fe <cmd>Telescope file_browser<cr>
 nnoremap <leader>fc <cmd>Telescope commands<cr>
 nnoremap <leader>fa <cmd>Telescope autocommands<cr>
 nnoremap <leader>fk <cmd>Telescope keymaps<cr>
-nnoremap <leader>fl <cmd>Telescope live_grep<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fq <cmd>Telescope quickfix<cr>
 nnoremap <leader>fr <cmd>Telescope registers<cr>
 nnoremap <leader>fi <cmd>Telescope loclist<cr>
@@ -94,10 +96,6 @@ nnoremap <leader>fws <cmd>Telescope lsp_dynamic_workspace_symbols<cr>
 nnoremap <leader>fwr <cmd>Telescope lsp_references<cr>
 nnoremap <leader>fwa <cmd>Telescope lsp_code_actions<cr>
 vnoremap <leader>fwa <cmd>Telescope lsp_range_code_actions<cr>
-nnoremap <leader>fgc <cmd>Telescope git_commits<cr>
-nnoremap <leader>fgs <cmd>Telescope git_bcommits<cr>
-nnoremap <leader>fgb <cmd>Telescope git_branches<cr>
-nnoremap <leader>fgh <cmd>Telescope git_stash<cr>
 " telescope extensions
 nnoremap <leader>fp <cmd>Telescope projects<cr>
 nnoremap <leader>fdc <cmd>Telescope dap commands<cr>
@@ -122,6 +120,10 @@ nnoremap <leader>fsf viw:lua require('spectre').open_file_search()<cr>
 " setup mapping to call :LazyGit
 nnoremap <silent> <leader>gg :LazyGit<CR>
 nnoremap <silent> <leader>gd :DiffviewOpen<CR>
+nnoremap <leader>gc <cmd>Telescope git_commits<cr>
+nnoremap <leader>glc <cmd>Telescope git_bcommits<cr>
+nnoremap <leader>gB <cmd>Telescope git_branches<cr>
+nnoremap <leader>gh <cmd>Telescope git_stash<cr>
 
 nnoremap <silent> <leader><leader>w <cmd>lua require'hop'.hint_words()<cr>
 nnoremap <silent> <leader><leader>p <cmd>lua require'hop'.hint_patterns()<cr>
@@ -198,16 +200,23 @@ endfunction
 nnoremap <silent> <leader><leader>l :call ToggleQuickFix()<cr>
 
 " source config
+function! SourceMyConfigDir()
+    for f in split(glob('~/.config/nvim/plugin/*.vim'), '\n')
+        exe 'source' f
+    endfor
+    source $MYVIMRC
+endfunction
+
 nnoremap <silent> <Leader>sc <cmd>source $MYVIMRC<CR>
 " dashboard
-nnoremap <silent> <Leader>ss :<C-u>SessionSave<CR>
-nnoremap <silent> <Leader>sl :<C-u>SessionLoad<CR>
-nnoremap <silent> <Leader>oh :DashboardFindHistory<CR>
-nnoremap <silent> <Leader>of :DashboardFindFile<CR>
-nnoremap <silent> <Leader>oc :DashboardChangeColorscheme<CR>
-nnoremap <silent> <Leader>oa :DashboardFindWord<CR>
-nnoremap <silent> <Leader>ob :DashboardJumpMark<CR>
-nnoremap <silent> <Leader>on :DashboardNewFile<CR>
+" nnoremap <silent> <Leader>ss :<C-u>SessionSave<CR>
+" nnoremap <silent> <Leader>sl :<C-u>SessionLoad<CR>
+" nnoremap <silent> <Leader>oh :DashboardFindHistory<CR>
+" nnoremap <silent> <Leader>of :DashboardFindFile<CR>
+" nnoremap <silent> <Leader>oc :DashboardChangeColorscheme<CR>
+" nnoremap <silent> <Leader>oa :DashboardFindWord<CR>
+" nnoremap <silent> <Leader>ob :DashboardJumpMark<CR>
+" nnoremap <silent> <Leader>on :DashboardNewFile<CR>
 
 tnoremap <silent> <C-r><C-e> <C-\><C-n>:RnvimrResize<CR>
 nnoremap <silent> <leader>rr :RnvimrToggle<CR>

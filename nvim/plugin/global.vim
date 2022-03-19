@@ -1,27 +1,10 @@
-let g:dashboard_default_executive ='telescope'
-let g:dashboard_custom_header = [
-\ ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
-\ ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
-\ ' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
-\ ' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
-\ ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
-\ ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
-\]
-
+if exists('g:started_by_firenvim')
+  let g:auto_session_enabled = v:false
+endif
 let g:db_ui_winwidth = 30
 
 let g:vim_dadbod_completion_mark = ''
 let g:db_ui_save_location = '~/.local/share/nvim/db_ui_queries'
-
-let g:dashboard_custom_shortcut={
-\ 'last_session'       : 'SPC s r',
-\ 'find_history'       : 'SPC o h',
-\ 'find_file'          : 'SPC o f',
-\ 'new_file'           : 'SPC o n',
-\ 'find_word'          : 'SPC o a',
-\ 'book_marks'         : 'SPC o b',
-\ 'change_colorscheme' : 'SPC o c',
-\ }
 
 " Make Ranger replace Netrw and be the file explorer
 let g:rnvimr_enable_ex = 1

@@ -69,22 +69,10 @@ return function()
         -- jump to entry where hoop loop was started from
         reset_selection = true,
       },
-      fzf_writer = {
-        minimum_grep_characters = 2,
-        minimum_files_characters = 2,
-
-        -- Disabled by default.
-        -- Will probably slow down some aspects of the sorter, but can make color highlights.
-        -- I will work on this more later.
-        use_highlighter = true,
-      },
       ["ui-select"] = {
-        --[[ require("telescope.themes").get_dropdown {
-        -- even more opts
-        layout_config = {
-          width = 20
+        require("telescope.themes").get_dropdown {
+          winblend = 10 
         }
-        } ]]
       }
     }
   })

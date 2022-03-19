@@ -83,4 +83,5 @@ set pumheight=20
 
 " Avoid showing message extra message when using completion
 set shortmess+=c
-set sessionoptions+=options,resize,winpos,terminal
+set sessionoptions+=winpos,terminal,folds
+" set sessionoptions+=options,resize,winpos,terminal
