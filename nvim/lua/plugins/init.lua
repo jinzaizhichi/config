@@ -15,7 +15,7 @@ return require('packer').startup(function(use)
   use {'kevinhwang91/rnvimr'}
   -- session manager
   use {'rmagatti/auto-session', config = require('plugins.auto-session')}
-  use {'rmagatti/session-lens', config = function() require('session-lens').setup({--[[your custom config--]]}) end}
+  use {'rmagatti/session-lens', config = function() require('session-lens').setup() end}
   -- use {'kyazdani42/nvim-tree.lua'}
   use {'kyazdani42/nvim-web-devicons'}
   use {'akinsho/nvim-bufferline.lua', config = require('plugins.bufferline')}
@@ -50,7 +50,6 @@ return require('packer').startup(function(use)
   -- terminal
   use {'akinsho/nvim-toggleterm.lua', config = require('plugins.toggleterm')}
   -- match help
-  -- use {'itchyny/vim-cursorword'}
   use {'andymass/vim-matchup'}
   -- powerful replace tool
   use {'windwp/nvim-spectre'}

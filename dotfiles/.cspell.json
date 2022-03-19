@@ -8,6 +8,18 @@
         "servlet",
         "cheatsheet",
         "nuonuo",
+        "nvim",
+        "lualine",
+        "treesitter",
+        "textobjects",
+        "commentstring",
+        "autotag",
+        "gitsigns",
+        "dadbod",
+        "hrsh7th",
+        "jdtls",
+        "lazygit",
+        "lazygit",
     ],
     // flagWords - list of words to be always considered incorrect
     // This is useful for offensive words and common spelling errors.
