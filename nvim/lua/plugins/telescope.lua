@@ -25,7 +25,6 @@ return function()
   require('telescope').load_extension('dap')
   require('telescope').load_extension('projects')
   require('telescope').load_extension('fzf')
-  require('telescope').load_extension('hop')
   require("telescope").load_extension("ui-select")
   require("telescope").load_extension("session-lens")
 end
