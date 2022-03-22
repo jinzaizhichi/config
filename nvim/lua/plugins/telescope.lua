@@ -1,12 +1,15 @@
 return function()
+  local layout = require('telescope.actions.layout')
   require('telescope').setup({
     defaults = {
       mappings = {
         i = {
           -- example
           -- ["<C-o>"] = trouble.open_with_trouble,
+          ["<C-o>"] = function () layout.toggle_preview(vim.fn.bufnr()) end,
         },
         n = {
+          ["<C-o>"] = function () layout.toggle_preview(vim.fn.bufnr()) end,
         }
       },
     },
