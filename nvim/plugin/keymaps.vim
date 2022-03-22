@@ -26,7 +26,7 @@ nnoremap <silent><leader><leader>b :BufferLinePick<CR>
 " These commands will move the current buffer backwards or forwards in the bufferline
 nnoremap <silent><leader>bn :BufferLineMoveNext<CR>
 nnoremap <silent><leader>bp :BufferLineMovePrev<CR>
-nnoremap <silent><leader>x :bd<CR>
+nnoremap <silent><leader>x :Bdelete<CR>
 nnoremap <silent><leader>a <cmd>Alpha<CR>
 nnoremap <silent><leader>bb <c-^>
 
@@ -208,20 +208,6 @@ function! SourceMyConfigDir()
 endfunction
 
 nnoremap <silent> <Leader>sc <cmd>source $MYVIMRC<CR>
-nnoremap <silent> <Leader>ss <cmd>SaveSession<CR>
-nnoremap <silent> <Leader>sf <cmd>Telescope session-lens search_session<CR>
-nnoremap <silent> <Leader>se <cmd>SearchSession<CR>
-nnoremap <silent> <Leader>sr <cmd>RestoreSession<CR>
-nnoremap <silent> <Leader>sd <cmd>DeleteSession<CR>
-" dashboard
-" nnoremap <silent> <Leader>ss :<C-u>SessionSave<CR>
-" nnoremap <silent> <Leader>sl :<C-u>SessionLoad<CR>
-" nnoremap <silent> <Leader>oh :DashboardFindHistory<CR>
-" nnoremap <silent> <Leader>of :DashboardFindFile<CR>
-" nnoremap <silent> <Leader>oc :DashboardChangeColorscheme<CR>
-" nnoremap <silent> <Leader>oa :DashboardFindWord<CR>
-" nnoremap <silent> <Leader>ob :DashboardJumpMark<CR>
-" nnoremap <silent> <Leader>on :DashboardNewFile<CR>
 
 tnoremap <silent> <C-r><C-e> <C-\><C-n>:RnvimrResize<CR>
 nnoremap <silent> <leader>rr :RnvimrToggle<CR>

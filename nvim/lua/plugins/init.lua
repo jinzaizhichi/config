@@ -13,9 +13,10 @@ return require('packer').startup(function(use)
   -- use {'glepnir/dashboard-nvim'}
   use {'goolord/alpha-nvim', config = function() require('alpha').setup(require'alpha.themes.theta'.config) end}
   use {'kevinhwang91/rnvimr'}
+  use {'famiu/bufdelete.nvim'}
   -- session manager
-  use {'rmagatti/auto-session', config = require('plugins.auto-session')}
-  use {'rmagatti/session-lens', config = function() require('session-lens').setup() end}
+  -- use {'rmagatti/auto-session', config = require('plugins.auto-session')}
+  -- use {'rmagatti/session-lens', config = function() require('session-lens').setup() end}
   -- use {'kyazdani42/nvim-tree.lua'}
   use {'kyazdani42/nvim-web-devicons'}
   use {'akinsho/nvim-bufferline.lua', config = require('plugins.bufferline')}
