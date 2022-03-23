@@ -24,6 +24,7 @@ return function ()
     'rnvimr',
     'toggleterm',
     'Term',
+    'lazygit',
     'zsh',
     ''
   },
