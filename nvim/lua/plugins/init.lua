@@ -34,7 +34,8 @@ return require('packer').startup(function(use)
   -- editing
   use {'tpope/vim-surround'}
   use {'mbbill/undotree'}
-  use {'kshenoy/vim-signature'}
+  -- better marks
+  use {'chentau/marks.nvim', config = require('plugins.marks')}
   -- git
   use {'lewis6991/gitsigns.nvim', config = require('plugins.gitsigns')}
   use {'kdheepak/lazygit.nvim'}

@@ -151,6 +151,10 @@ nnoremap <silent> <leader><leader>d :DBUIToggle<cr>
 " markdown preview
 nnoremap <silent> <leader>mp :Glow<cr>
 
+nnoremap <silent> <leader>uu :UndotreeToggle<cr>
+
+nnoremap <silent> <leader>mt :MarksToggleSigns<cr>
+
 " clever-f
 map ; <Plug>(clever-f-repeat-forward)
 map , <Plug>(clever-f-repeat-back)
