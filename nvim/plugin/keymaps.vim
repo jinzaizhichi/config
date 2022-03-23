@@ -118,12 +118,9 @@ vnoremap <leader>fsv :lua require('spectre').open_visual()<CR>
 " search in current file
 nnoremap <leader>fsf viw:lua require('spectre').open_file_search()<cr>
 
-" setup mapping to call :LazyGit
-nnoremap <silent> <leader>gg :LazyGit<CR>
-nnoremap <silent> <leader>gd :DiffviewOpen<CR>
 nnoremap <leader>gc <cmd>Telescope git_commits<cr>
-nnoremap <leader>glc <cmd>Telescope git_bcommits<cr>
-nnoremap <leader>gB <cmd>Telescope git_branches<cr>
+nnoremap <leader>gbc <cmd>Telescope git_bcommits<cr>
+nnoremap <leader>gbb <cmd>Telescope git_branches<cr>
 nnoremap <leader>gh <cmd>Telescope git_stash<cr>
 
 nnoremap <silent> <leader><leader>w <cmd>lua require'hop'.hint_words()<cr>

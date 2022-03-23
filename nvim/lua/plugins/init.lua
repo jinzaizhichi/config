@@ -38,8 +38,6 @@ return require('packer').startup(function(use)
   use {'chentau/marks.nvim', config = require('plugins.marks')}
   -- git
   use {'lewis6991/gitsigns.nvim', config = require('plugins.gitsigns')}
-  use {'kdheepak/lazygit.nvim'}
-  use {'sindrets/diffview.nvim', config = require('plugins.diffview')}
   -- translator
   use {'voldikss/vim-translator'}
   -- comment
@@ -96,7 +94,6 @@ return require('packer').startup(function(use)
   -- lsp setup
   use {'neovim/nvim-lspconfig'}
   use {'williamboman/nvim-lsp-installer', config = function() require('lsp').setup() end}
-  -- use {'folke/trouble.nvim', config = function() require('trouble').setup() end}
   use {'onsails/lspkind-nvim'}
   use {'jose-elias-alvarez/null-ls.nvim', config = require('plugins.null-ls')}
   -- wrapper for jdtls

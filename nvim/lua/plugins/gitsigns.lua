@@ -18,7 +18,7 @@ return function()
       ['v <leader>gr'] = '<cmd>lua require"gitsigns".reset_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
       ['n <leader>gR'] = '<cmd>lua require"gitsigns".reset_buffer()<CR>',
       ['n <leader>gp'] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
-      ['n <leader>gb'] = '<cmd>lua require"gitsigns".blame_line(true)<CR>',
+      ['n <leader>gbl'] = '<cmd>lua require"gitsigns".blame_line(true)<CR>',
 
       -- Text objects
       ['o ih'] = ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>',
