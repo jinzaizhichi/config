@@ -33,6 +33,8 @@ return require('packer').startup(function(use)
   use {'windwp/nvim-autopairs', config = require('plugins.autopairs')}
   -- editing
   use {'tpope/vim-surround'}
+  use {'mbbill/undotree'}
+  use {'kshenoy/vim-signature'}
   -- git
   use {'lewis6991/gitsigns.nvim', config = require('plugins.gitsigns')}
   use {'kdheepak/lazygit.nvim'}
