@@ -90,8 +90,9 @@ nnoremap <leader>fhc <cmd>Telescope command_history<cr>
 nnoremap <leader>fhs <cmd>Telescope search_history<cr>
 nnoremap <leader>ftt <cmd>Telescope treesitter<cr>
 nnoremap <leader>ftp <cmd>Telescope filetypes<cr>
-nnoremap <leader>fwd <cmd>Telescope lsp_document_symbols<cr>
-nnoremap <leader>fwn <cmd>Telescope lsp_document_diagnostics<cr>
+nnoremap <leader>fwy <cmd>Telescope lsp_document_symbols<cr>
+nnoremap <leader>fwn <cmd>Telescope diagnostics<cr>
+nnoremap <leader>fwd :lua require'telescope.builtin'.diagnostics{bufnr=0}<cr>
 nnoremap <leader>fws <cmd>Telescope lsp_dynamic_workspace_symbols<cr>
 nnoremap <leader>fwr <cmd>Telescope lsp_references<cr>
 nnoremap <leader>fwa <cmd>Telescope lsp_code_actions<cr>
