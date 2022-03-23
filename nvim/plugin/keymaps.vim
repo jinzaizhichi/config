@@ -178,14 +178,6 @@ nnoremap <silent> <leader>de <cmd>DapExpressioinFloat<CR>
 nnoremap <silent> <leader>dh <cmd>lua require'dap.ui.widgets'.hover()<CR>
 nnoremap <silent> <leader>dt <cmd>DapVirtualTextToggle<CR>
 
-" trouble nvim
-nnoremap <leader>lt <cmd>TroubleToggle<cr>
-nnoremap <leader>lw <cmd>TroubleToggle lsp_workspace_diagnostics<cr>
-nnoremap <leader>ld <cmd>TroubleToggle document_diagnostics<cr>
-nnoremap <leader>lq <cmd>TroubleToggle quickfix<cr>
-nnoremap <leader>ll <cmd>TroubleToggle loclist<cr>
-nnoremap gR <cmd>TroubleToggle lsp_references<cr>
-
 " rest nivim
 command RestNvim :lua require('rest-nvim').run()<CR>
 command RestNvimPreview :lua require('rest-nvim').run(true)<CR>
