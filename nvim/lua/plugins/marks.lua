@@ -27,6 +27,7 @@ return function ()
     'dap-float',
     'Term',
     'lazygit',
+    'lspinfo',
     'zsh',
     ''
   },
