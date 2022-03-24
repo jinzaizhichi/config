@@ -23,6 +23,8 @@ return function ()
     'TelescopePrompt',
     'rnvimr',
     'toggleterm',
+    'dap-repl',
+    'dap-float',
     'Term',
     'lazygit',
     'zsh',
