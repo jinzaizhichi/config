@@ -28,6 +28,7 @@ return function ()
     'Term',
     'lazygit',
     'lspinfo',
+    'help',
     'zsh',
     ''
   },
