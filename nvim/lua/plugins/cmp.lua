@@ -61,6 +61,7 @@ return function ()
     sources = {
       { name = 'vsnip' },
       { name = 'nvim_lsp' },
+      { name = 'nvim_lsp_signature_help' },
       { name = 'buffer', max_item_count = 10},
       { name = 'path' },
       { name = 'look', max_item_count = 5, keyword_length = 2, optiona = { convert_case = true, loud = true }},
@@ -82,6 +83,7 @@ return function ()
           buffer = "[Buffer]",
           nvim_lsp = "[LSP]",
           vsnip = "[VSnip]",
+          nvim_lsp_signature_help = "[Signature]",
           path = "[Path]",
           cmp_tabnine = "[Tabnine]",
           look = "[Look]",
