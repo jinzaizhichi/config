@@ -164,7 +164,7 @@ alias grep="grep --color=auto"
 alias sudo='sudo env HOME=$HOME '
 alias natapp='natapp -config=$HOME/.config/natapp/config'
 bindkey '^ ' autosuggest-accept
-export DISPLAY=:0
+export DISPLAY=10.0.81.97:0.0
 export GOPATH=$HOME/project/dev.d/go
 if type go &> /dev/null; then
     # enable go module
@@ -173,7 +173,7 @@ if type go &> /dev/null; then
     go env -w GOPROXY=https://goproxy.cn,direct
 fi
 #export GOPROXY=https://mirrors.aliyun.com/goproxy/,direct
-PATH=$PATH:$HOME/.local/bin/:$GOPATH/bin:$HOME/.local/share/gem/ruby/3.0.0/bin/
+PATH=$PATH:$HOME/.local/bin/:$GOPATH/bin:$HOME/.local/share/gem/ruby/3.0.0/bin/:$HOME/.cargo/bin/
 # source ~/.oh-my-zsh/plugins/incr/incr*.zsh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
