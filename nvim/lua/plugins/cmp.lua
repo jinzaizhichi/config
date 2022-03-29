@@ -59,12 +59,12 @@ return function ()
       end, { "i", "s" }),
     },
     sources = {
-      { name = 'vsnip' },
-      { name = 'nvim_lsp' },
+      { name = 'vsnip', max_item_count = 10 },
+      { name = 'nvim_lsp'},
       { name = 'nvim_lsp_signature_help' },
       { name = 'buffer', max_item_count = 10},
-      { name = 'path' },
-      { name = 'look', max_item_count = 5, keyword_length = 2, optiona = { convert_case = true, loud = true }},
+      { name = 'path', max_item_count = 10 },
+      { name = 'look', max_item_count = 5, keyword_length = 2, option = { convert_case = true, loud = true }},
       { name = 'vim-dadbod-completion' },
     },
     formatting = {
