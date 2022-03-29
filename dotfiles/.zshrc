@@ -164,8 +164,9 @@ alias grep="grep --color=auto"
 alias sudo='sudo env HOME=$HOME '
 alias natapp='natapp -config=$HOME/.config/natapp/config'
 bindkey '^ ' autosuggest-accept
-export DISPLAY=10.0.81.97:0.0
+export DISPLAY=:0
 export GOPATH=$HOME/project/dev.d/go
+eval "$(direnv hook zsh)"
 if type go &> /dev/null; then
     # enable go module
     go env -w GO111MODULE=on
