@@ -14,6 +14,13 @@ plugins with settings
 `./after`  
 just some filetype and colorscheme settings
 
+Support project environment setting by [direnv](https://github.com/direnv/direnv), to set project env, install direnv
+and add `.envrc` file to project root path, put your special variables to it.
+Language special env note:
+#### java
+JAVA_HOME
+MY_MAVEN_SETTINGS -- special maven `settings.xml`
+
 #### Things to be done before first install
 1. I use [lazygit](https://github.com/jesseduffield/lazygit) and [lazygit.nvim](https://github.com/kdheepak/lazygit.nvim) to execute git commands in neovim, so before you run `:PackerInstall`, install lazygit first.
 2. install [ripgrep](https://github.com/BurntSushi/ripgrep) to your system, telescope depend on it.
