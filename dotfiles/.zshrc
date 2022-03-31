@@ -57,6 +57,9 @@ fi
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 DISABLE_AUTO_UPDATE="true"
+HISTSIZE=99999
+SAVEHIST=$HISTSIZE
+setopt hist_ignore_all_dups
 
 # Uncomment the following line to automatically update without prompting.
 # DISABLE_UPDATE_PROMPT="true"
@@ -110,7 +113,7 @@ plugins=(
         z
         history
         extract
-        vi-mode
+        # vi-mode
         fzf
         )
 
