@@ -28,7 +28,7 @@ function M.setup(client, bufnr)
     M.set_keymap(bufnr, 'n', '<leader>i', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
     M.set_keymap(bufnr, 'n', '[i', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
     M.set_keymap(bufnr, 'n', ']i', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-    M.set_keymap(bufnr, 'n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+    M.set_keymap(bufnr, 'n', '<leader>q', '<cmd>lua vim.lsp.diagnostic.setloclist()<CR>', opts)
     --[[ M.set_keymap(bufnr, 'n', '<leader>ca', "<Cmd>lua vim.lsp.buf.code_action()<CR>", opts)
     M.set_keymap(bufnr, 'v', '<leader>ca', "<Cmd>lua vim.lsp.buf.range_code_action()<CR>", opts) ]]
     M.set_keymap(bufnr, 'n', '<leader>ca', "<Cmd>lua vim.lsp.buf.code_action()<CR>", opts)
