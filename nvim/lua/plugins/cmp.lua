@@ -13,9 +13,9 @@ return function ()
     completion = {
       completeopt = 'menu,menuone,noinsert',
     },
-    --[[ experimental = {
+    experimental = {
       ghost_text = true
-    }, ]]
+    },
     snippet = {
       expand = function(args)
         vim.fn["vsnip#anonymous"](args.body)
