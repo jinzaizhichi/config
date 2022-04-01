@@ -25,7 +25,10 @@ let g:rnvimr_enable_bw = 0
 let g:translator_default_engines = ['google']
 
 let g:onedark_config = {
-  \ 'term_colors': v:false
+    \ 'code_style': {
+        \ 'comments': 'none'
+        \},
+    \ 'term_colors': v:false
 \ }
 let g:loaded_netrw       = 1
 let g:loaded_netrwPlugin = 1
