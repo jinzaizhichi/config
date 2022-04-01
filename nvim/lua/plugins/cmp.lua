@@ -106,6 +106,10 @@ return function ()
     completion = {
       autocomplete = false,
     },
+    mapping = {
+      ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c'}),
+      ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c'}),
+    },
     sources = cmp.config.sources({
       { name = 'path' }
     }, {
@@ -113,6 +117,10 @@ return function ()
     })
   })
   cmp.setup.cmdline('/', {
+    mapping = {
+      ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c'}),
+      ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c'}),
+    },
     sources = cmp.config.sources({
       { name = 'nvim_lsp_document_symbol' }
     }, {
