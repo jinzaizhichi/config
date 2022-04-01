@@ -113,8 +113,10 @@ return function ()
     })
   })
   cmp.setup.cmdline('/', {
-    sources = {
+    sources = cmp.config.sources({
+      { name = 'nvim_lsp_document_symbol' }
+    }, {
       { name = 'buffer' }
-    }
+    })
   })
 end
