@@ -17,13 +17,13 @@ return function()
       -- offsets = {{filetype = "NvimTree", text = "NvimTree"}}
     },
     highlights = {
-        fill = {
-            guifg = '#282c34',
-            guibg = '#202328',
-        },
+        -- fill = {
+        --     guifg = '#282c34',
+        --     guibg = '#202328',
+        -- },
         indicator_selected = {
             guifg = '#51afef',
-            guibg = '#282c34'
+            -- guibg = '#282c34'
         },
         --[[ background = {
             guifg = '<color-value-here>',
