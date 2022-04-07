@@ -168,12 +168,14 @@ nnoremap <silent> <leader>dr <cmd>lua require'dap'.repl.open()<CR>
 nnoremap <silent> <leader>dl <cmd>lua require'dap'.run_last()<CR>
 command DapScopesFloat :lua require'dap.ui.widgets'.centered_float(require('dap.ui.widgets').scopes)<CR>
 command DapFramesFloat :lua require'dap.ui.widgets'.centered_float(require('dap.ui.widgets').frames)<CR>
-command DapExpressioinFloat :lua require'dap.ui.widgets'.centered_float(require('dap.ui.widgets').expression)<CR>
+command DapExpressionFloat :lua require'dap.ui.widgets'.centered_float(require('dap.ui.widgets').expression)<CR>
+command DapThreadsFloat :lua require'dap.ui.widgets'.centered_float(require('dap.ui.widgets').threads)<CR>
 nnoremap <silent> <leader>ds <cmd>DapScopesFloat<CR>
 nnoremap <silent> <leader>df <cmd>DapFramesFloat<CR>
-nnoremap <silent> <leader>de <cmd>DapExpressioinFloat<CR>
+nnoremap <silent> <leader>de <cmd>DapExpressionFloat<CR>
+nnoremap <silent> <leader>dt <cmd>DapThreadsFloat<CR>
 nnoremap <silent> <leader>dh <cmd>lua require'dap.ui.widgets'.hover()<CR>
-nnoremap <silent> <leader>dt <cmd>DapVirtualTextToggle<CR>
+nnoremap <silent> <leader>dv <cmd>DapVirtualTextToggle<CR>
 
 " rest nivim
 command RestNvim :lua require('rest-nvim').run()<CR>

@@ -3,6 +3,42 @@ local M = {}
 function M.setup()
   local on_attach = function(client, bufnr)
     -- require'jdtls'.setup_dap({hotcodereplace = 'auto'})
+  local dap = require('dap')
+  local util = require('jdtls.util')
+
+
+  dap.adapters.java = function(callback)
+    util.execute_command({command = 'vscode.java.startDebugSession'}, function(err0, port)
+      assert(not err0, vim.inspect(err0))
+      -- print("puerto:", port)
+      callback({
+        type = 'server';
+        host = '127.0.0.1';
+        port = port;
+      })
+    end)
+  end
+
+  local projectName = os.getenv('PROJECT_NAME')
+  dap.configurations.java = {
+    {
+      type = 'java',
+      request = 'attach',
+      projectName = projectName or nil,
+      name = "Java attach",
+      hostName = "127.0.0.1",
+      port = 5005
+    },
+  }
+  -- dap.configurations.java = {
+  --   {
+  --     type = 'java';
+  --     request = 'attach';
+  --     name = "Debug (Attach) - Remote";
+  --     hostName = "127.0.0.1";
+  --     port = 5005;
+  --   },
+  -- }
     require('jdtls').setup_dap()
     require('jdtls.dap').setup_dap_main_class_configs()
     require('jdtls.setup').add_commands()

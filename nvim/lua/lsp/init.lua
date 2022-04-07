@@ -15,39 +15,6 @@ function M.setup()
   ]], false)
   -- make jdtls dap extends vscode launch.json config, but it will auto start a debug session at background?
   -- require('dap.ext.vscode').load_launchjs()
-  local dap = require('dap')
-  local util = require('jdtls.util')
-
-  dap.adapters.java = function(callback)
-    util.execute_command({command = 'vscode.java.startDebugSession'}, function(err0, port)
-      assert(not err0, vim.inspect(err0))
-      -- print("puerto:", port)
-      callback({
-        type = 'server';
-        host = '127.0.0.1';
-        port = port;
-      })
-    end)
-  end
-
-  dap.configurations.java = {
-    {
-      type = 'java',
-      request = 'attach',
-      name = "Java attach",
-      hostName = "127.0.0.1",
-      port = 5005
-    },
-  }
-  -- dap.configurations.java = {
-  --   {
-  --     type = 'java';
-  --     request = 'attach';
-  --     name = "Debug (Attach) - Remote";
-  --     hostName = "127.0.0.1";
-  --     port = 5005;
-  --   },
-  -- }
 
   lsp_installer.on_server_ready(function(server)
     -- (optional) Customize the options passed to the server
