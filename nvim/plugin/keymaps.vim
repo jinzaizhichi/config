@@ -35,6 +35,7 @@ vmap <leader>y "+y
 
 " paste to vim register
 nnoremap <leader>p "+p
+vmap <leader>p "+p
 
 " These commands will sort buffers by directory, language, or a custom criteria
 nnoremap <silent><leader>be :BufferLineSortByExtension<CR>
