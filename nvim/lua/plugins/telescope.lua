@@ -7,7 +7,7 @@ return function()
      table.insert(fileIgnoreTable, pattern)
     end
   end
-  print(vim.inspect(fileIgnoreTable))
+  -- print(vim.inspect(fileIgnoreTable))
   local layout = require('telescope.actions.layout')
   require('telescope').setup({
     defaults = {
@@ -21,6 +21,21 @@ return function()
         n = {
           ["<C-o>"] = function () layout.toggle_preview(vim.fn.bufnr()) end,
         }
+      },
+      vimgrep_arguments = {
+        "rg",
+        "--color=never",
+        "--no-heading",
+        "--with-filename",
+        "--line-number",
+        "--column",
+        "--smart-case",
+        "--trim"
+      }
+    },
+    pickers = {
+      find_files = {
+        find_command = { "fd", "--type", "f", "--strip-cwd-prefix" }
       },
     },
     extensions = {
