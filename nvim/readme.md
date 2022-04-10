@@ -20,6 +20,7 @@ Language special env note:
 #### java
 JAVA_HOME
 MY_MAVEN_SETTINGS -- special maven `settings.xml`
+TELESCOPE_FILE_IGNORE_PATTERNS -- special file_ignore_patterns setting. see `:h file_ignore_patterns`
 
 #### Things to be done before first install
 1. I use [lazygit](https://github.com/jesseduffield/lazygit) and [lazygit.nvim](https://github.com/kdheepak/lazygit.nvim) to execute git commands in neovim, so before you run `:PackerInstall`, install lazygit first.
