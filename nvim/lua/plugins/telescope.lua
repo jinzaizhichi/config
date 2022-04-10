@@ -1,7 +1,17 @@
 return function()
+  local fileIgnorePatterns = os.getenv('TELESCOPE_FILE_IGNORE_PATTERNS')
+  local fileIgnoreTable = nil
+  if fileIgnorePatterns then
+    fileIgnoreTable = {}
+    for pattern in string.gmatch(fileIgnorePatterns, "%S+") do 
+     table.insert(fileIgnoreTable, pattern)
+    end
+  end
+  print(vim.inspect(fileIgnoreTable))
   local layout = require('telescope.actions.layout')
   require('telescope').setup({
     defaults = {
+      file_ignore_patterns = fileIgnoreTable or nil,
       mappings = {
         i = {
           -- example
