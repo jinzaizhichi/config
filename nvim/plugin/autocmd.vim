@@ -10,7 +10,7 @@ au VimEnter * if &diff | execute 'windo set wrap' | endif
 au FileType dap-repl lua require('dap.ext.autocompl').attach()
 " Auto generate tags file on file write of ctags supported languages file,
 " Languages Supported by Exuberant Ctags: http://ctags.sourceforge.net/languages.html
-au BufWritePost *.c,*.h,*.asp,*.awk,*.cpp,*.cs,*.html,*.java,*.js,*.lua,makefile,*.sql,*.py,*.vim,*.yml,*.json,*.ts,*.go,*.properties,*.lisp silent! !ctags . &
+au BufWritePost *.c,*.h,*.asp,*.awk,*.cpp,*.cs,*.html,*.java,*.js,*.lua,makefile,*.sql,*.py,*.vim,*.yml,*.json,*.ts,*.go,*.properties,*.lisp silent! !ctags -R &
 
 " firenvim setting
 function! s:IsFirenvimActive(event) abort
