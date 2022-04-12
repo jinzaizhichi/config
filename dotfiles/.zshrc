@@ -168,7 +168,7 @@ alias sudo='sudo env HOME=$HOME '
 alias natapp='natapp -config=$HOME/.config/natapp/config'
 bindkey '^ ' autosuggest-accept
 export DISPLAY=:0
-export GOPATH=$HOME/project/dev.d/go
+export GOPATH=$HOME/project/go
 eval "$(direnv hook zsh)"
 if type go &> /dev/null; then
     # enable go module
