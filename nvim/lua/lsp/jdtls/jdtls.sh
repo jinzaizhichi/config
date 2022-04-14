@@ -4,6 +4,12 @@ WORKSPACE="$1"
 
 JDTLS_PATH="$HOME/.local/share/nvim/lsp_servers/jdtls/"
 
+JAVA_HOME=$JAVA_HOME
+
+if [ -n "$JDTLS_JAVA_HOME" ] ; then
+    JAVA_HOME=$JDTLS_JAVA_HOME
+fi
+
 die () {
   echo
   echo ""
