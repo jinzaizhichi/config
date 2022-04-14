@@ -1,5 +1,5 @@
 local home = os.getenv('HOME')
-local myMavenSettings = os.getenv('MY_MAVEN_SETTINGS')
+local jdtlsMavenSettings = os.getenv('JDTLS_MAVEN_SETTINGS')
 local M = {
   java = {
     jdt = {
@@ -88,7 +88,7 @@ local M = {
     configuration = {
       maven = {
         globalSettings = "/opt/maven/conf/settings.xml",
-        userSettings = myMavenSettings or home .. "/.m2/settings.xml",
+        userSettings = jdtlsMavenSettings or home .. "/.m2/settings.xml",
       },
       runtimes = {
         {
