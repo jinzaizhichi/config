@@ -1,9 +1,8 @@
-highlight! FloatBorder guibg=none guisp=none
-highlight! NormalFloat guibg=none guisp=none
-highlight! link TranslatorBorder NormalFloat
-highlight! link TelescopePromptBorder NormalFloat
-highlight! link TelescopePreviewBorder NormalFloat
-highlight! link TelescopeResultsBorder NormalFloat
+highlight! FloatBorder guifg=#abb2bf guibg=none guisp=none
+highlight! link TranslatorBorder FloatBorder
+highlight! link TelescopePromptBorder FloatBorder
+highlight! link TelescopePreviewBorder FloatBorder
+highlight! link TelescopeResultsBorder FloatBorder
 highlight! HopNextKey  guifg=#ff007c gui=bold ctermfg=198 cterm=bold guibg=NONE
 highlight! HopNextKey1 guifg=#00dfff gui=bold ctermfg=45 cterm=bold guibg=NONE
 highlight! HopNextKey2 guifg=#2b8db3 ctermfg=33 guibg=NONE
