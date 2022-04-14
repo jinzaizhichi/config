@@ -12,6 +12,14 @@ return function()
   require('telescope').setup({
     defaults = {
       file_ignore_patterns = fileIgnoreTable or nil,
+      borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+      wrap_results = false,
+      sorting_strategy = "ascending",
+      layout_config = {
+        horizontal = {
+          prompt_position = "top"
+        },
+      },
       mappings = {
         i = {
           -- example
