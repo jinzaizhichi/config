@@ -13,6 +13,16 @@ return function ()
     completion = {
       completeopt = 'menu,menuone,noinsert',
     },
+    window = {
+      documentation = {
+        -- border = {'┌', '─', '┐', '│', '┘', '─', '└', '│'},
+        max_width = 70,
+      },
+      completion = {
+        -- border = {'┌', '─', '┐', '│', '┘', '─', '└', '│'},
+        -- winhighlight = 'Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None',
+      }
+    },
     experimental = {
       ghost_text = true
     },
@@ -21,7 +31,7 @@ return function ()
         vim.fn["vsnip#anonymous"](args.body)
       end,
     },
-    mapping = {
+    mapping = cmp.mapping.preset.insert({
       ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }), { 'i', 'c'}),
       ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }), { 'i', 'c'}),
       ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
@@ -57,7 +67,7 @@ return function ()
           feedkey("<Plug>(vsnip-jump-prev)", "")
         end
       end, { "i", "s" }),
-    },
+    }),
     sources = {
       { name = 'vsnip', max_item_count = 10 },
       { name = 'nvim_lsp'},
@@ -106,10 +116,31 @@ return function ()
     completion = {
       autocomplete = false,
     },
-    mapping = {
-      ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c'}),
-      ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c'}),
-    },
+    mapping = cmp.mapping.preset.cmdline({
+      -- Your configuration here.
+      ['<C-n>'] = cmp.mapping.select_next_item(),
+      ['<C-p>'] = cmp.mapping.select_prev_item(),
+      ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+      ['<C-f>'] = cmp.mapping.scroll_docs(4),
+      ['<C-Space>'] = cmp.mapping.complete(),
+      ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+      ['<C-e>'] = cmp.mapping.close(),
+      ['<CR>'] = cmp.mapping.confirm(),
+      ["<Tab>"] = cmp.mapping(function()
+        if cmp.visible() then
+          cmp.select_next_item()
+        else
+          cmp.complete()
+        end
+      end, { "i", "c" }),
+      ["<S-Tab>"] = cmp.mapping(function()
+        if cmp.visible() then
+          cmp.select_prev_item()
+        else
+          cmp.complete()
+        end
+      end),
+    }),
     sources = cmp.config.sources({
       { name = 'path' }
     }, {
@@ -117,10 +148,31 @@ return function ()
     })
   })
   cmp.setup.cmdline('/', {
-    mapping = {
-      ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c'}),
-      ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c'}),
-    },
+    mapping = cmp.mapping.preset.cmdline({
+      -- Your configuration here.
+      ['<C-n>'] = cmp.mapping.select_next_item(),
+      ['<C-p>'] = cmp.mapping.select_prev_item(),
+      ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+      ['<C-f>'] = cmp.mapping.scroll_docs(4),
+      ['<C-Space>'] = cmp.mapping.complete(),
+      ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+      ['<C-e>'] = cmp.mapping.close(),
+      ['<CR>'] = cmp.mapping.confirm(),
+      ["<Tab>"] = cmp.mapping(function()
+        if cmp.visible() then
+          cmp.select_next_item()
+        else
+          cmp.complete()
+        end
+      end, { "i", "c" }),
+      ["<S-Tab>"] = cmp.mapping(function()
+        if cmp.visible() then
+          cmp.select_prev_item()
+        else
+          cmp.complete()
+        end
+      end, { "i", "c" }),
+    }),
     sources = cmp.config.sources({
       { name = 'nvim_lsp_document_symbol' }
     }, {
