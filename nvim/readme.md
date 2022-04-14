@@ -20,7 +20,7 @@ Language special env note:
 #### java
 JAVA_HOME  
 
-MY_MAVEN_SETTINGS -- special maven `settings.xml`  
+JDTLS_MAVEN_SETTINGS -- jdtls user maven `settings.xml` location  
 
 TELESCOPE_FILE_IGNORE_PATTERNS -- special file_ignore_patterns setting. see `:h file_ignore_patterns`  
 
