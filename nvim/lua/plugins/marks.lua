@@ -20,6 +20,7 @@ return function ()
   sign_priority = { lower=10, upper=15, builtin=8, bookmark=20 },
   -- disables mark tracking for specific filetypes. default {}
   excluded_filetypes = {
+    'null-ls-info',
     'TelescopePrompt',
     'rnvimr',
     'toggleterm',
