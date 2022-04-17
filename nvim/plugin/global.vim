@@ -17,7 +17,13 @@ let g:rnvimr_hide_gitignore = 0
 " Change the border's color
 " let g:rnvimr_border_attr = {'fg': 14, 'bg': -1}
 " Make Neovim wipe the buffers corresponding to the files deleted by Ranger
-let g:rnvimr_enable_bw = 0
+let g:rnvimr_enable_bw = 1
+
+let g:rnvimr_presets = [ 
+            \ {'width': 0.850, 'height': 0.850},
+            \ {'width': 0.950, 'height': 0.950},
+            \ {'width': 0.700, 'height': 0.700},
+            \]
 " Add a shadow window, value is equal to 100 will disable shadow
 " let g:rnvimr_shadow_winblend = 70
 " Draw border with both
