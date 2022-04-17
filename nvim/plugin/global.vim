@@ -20,7 +20,7 @@ let g:rnvimr_hide_gitignore = 0
 let g:rnvimr_enable_bw = 1
 
 let g:rnvimr_presets = [ 
-            \ {'width': 0.850, 'height': 0.850},
+            \ {'width': 0.800, 'height': 0.850},
             \ {'width': 0.950, 'height': 0.950},
             \ {'width': 0.700, 'height': 0.700},
             \]
