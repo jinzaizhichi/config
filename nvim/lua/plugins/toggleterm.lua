@@ -1,4 +1,5 @@
 return function()
+
   require('toggleterm').setup({
     -- size can be a number or function which is passed the current terminal
     size = 15,
@@ -13,5 +14,10 @@ return function()
     direction = 'float',
     close_on_exit = true, -- close the terminal window when the process exits
     shell = vim.o.shell, -- change the default shell
+    float_opts = {
+      width = vim.api.nvim_eval('float2nr(0.8 * (&columns - 1))'),
+      height = vim.api.nvim_eval('float2nr(0.85 * (&lines - 2))')
+    }
+
   })
 end
