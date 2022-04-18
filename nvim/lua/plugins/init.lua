@@ -27,7 +27,6 @@ return require('packer').startup(function(use)
   use {'nvim-treesitter/nvim-treesitter-textobjects'}
   use {'nvim-treesitter/nvim-treesitter-refactor'}
   use {'JoosepAlviste/nvim-ts-context-commentstring'}
-  use {'romgrk/nvim-treesitter-context', config = require('plugins.treesitter-context')}
   use {'p00f/nvim-ts-rainbow'}
   use {'windwp/nvim-ts-autotag'}
   use {'windwp/nvim-autopairs', config = require('plugins.autopairs')}

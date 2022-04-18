@@ -59,7 +59,7 @@ nnoremap <silent> <leader><leader>h <cmd>noh<CR>
 nnoremap <silent> <leader>mm <cmd>lua vim.lsp.buf.formatting()<CR>
 
 " treesitter context
-nnoremap <leader>cc <cmd>TSContextToggle<cr>
+" nnoremap <leader>cc <cmd>TSContextToggle<cr>
 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
