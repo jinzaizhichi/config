@@ -7,7 +7,7 @@ return function ()
     --   use_console = "async",
     -- },
     sources = {
-      null_ls.builtins.code_actions.gitsigns,
+      -- null_ls.builtins.code_actions.gitsigns,
       -- null_ls.builtins.completion.spell,
       -- NOTE: cspell needs to installed first by using npm install -g cspell
       null_ls.builtins.diagnostics.cspell.with{
