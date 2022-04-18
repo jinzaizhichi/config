@@ -1,7 +1,11 @@
 local home = os.getenv('HOME')
 local jdtlsMavenSettings = os.getenv('JDTLS_MAVEN_SETTINGS')
+local config_path = vim.fn.stdpath('config')
 local M = {
   java = {
+    settings = {
+      url = config_path .. '/lua/lsp/jdtls/settings.prefs'
+    },
     jdt = {
       ls = {
         vmargs = "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -XX:+UseStringDeduplication -javaagent:'" .. home .. "/.local/share/nvim/lsp_servers/jdtls/lombok.jar'"
@@ -15,7 +19,7 @@ local M = {
         enabled = true
       },
       settings = {
-        url = 'file://' .. home .. "/project/my/config/nvim/lua/lsp/jdtls/eclipse-java-google-style.xml",
+        url = config_path .. '/lua/lsp/jdtls/eclipse-java-google-style.xml',
         profile = "GoogleStyle",
       }
     },
