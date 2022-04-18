@@ -1,8 +1,14 @@
 return function()
 
+  local get_height = function()
+    return math.floor(vim.o.lines * 0.5)
+  end
+  local get_width = function()
+    return math.floor(vim.o.columns * 0.80 - 1)
+  end
   require('toggleterm').setup({
     -- size can be a number or function which is passed the current terminal
-    size = 15,
+    size = get_height(),
     open_mapping = [[<c-\><c-\>]],
     hide_numbers = false, -- hide the number column in toggleterm buffers
     shade_terminals = false,
@@ -11,12 +17,12 @@ return function()
     insert_mappings = true, -- whether or not the open mapping applies in insert mode
     terminal_mappings = true, -- whether or not the open mapping applies in the opened terminals
     -- persist_size = true,
-    direction = 'float',
+    direction = 'horizontal',
     close_on_exit = true, -- close the terminal window when the process exits
     shell = vim.o.shell, -- change the default shell
     float_opts = {
-      width = vim.api.nvim_eval('float2nr(0.8 * (&columns - 1))'),
-      height = vim.api.nvim_eval('float2nr(0.85 * (&lines - 2))')
+      width = get_width(),
+      height = get_height()
     }
 
   })
