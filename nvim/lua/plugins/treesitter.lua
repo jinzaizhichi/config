@@ -15,7 +15,6 @@ return function()
     autopairs = {
       enable = true
     },
-    matchup = {enable = true},
     rainbow = {
       enable = true,
       extended_mode = true -- Highlight also non-parentheses delimiters, boolean or table: lang -> boolean
@@ -43,7 +42,6 @@ return function()
     },
     context_commentstring = {
       enable = true,
-      enable_autocmd = false
     },
     textobjects = {
       select = {

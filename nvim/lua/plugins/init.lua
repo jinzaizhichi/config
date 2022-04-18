@@ -52,7 +52,7 @@ return require('packer').startup(function(use)
   -- terminal
   use {'akinsho/nvim-toggleterm.lua', config = require('plugins.toggleterm')}
   -- match help
-  use {'andymass/vim-matchup'}
+  -- use {'andymass/vim-matchup'}
   -- powerful replace tool
   use {'windwp/nvim-spectre'}
   -- fuzzy finder
@@ -96,7 +96,7 @@ return require('packer').startup(function(use)
   -- lsp setup
   use {'neovim/nvim-lspconfig'}
   use {'williamboman/nvim-lsp-installer', config = function() require('lsp').setup() end}
-  use {'onsails/lspkind-nvim'}
+  use {'onsails/lspkind.nvim'}
   use {'jose-elias-alvarez/null-ls.nvim', config = require('plugins.null-ls')}
   -- wrapper for jdtls
   use {'mfussenegger/nvim-jdtls'}

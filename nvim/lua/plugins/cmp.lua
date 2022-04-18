@@ -1,5 +1,6 @@
 return function ()
   local cmp = require('cmp')
+  local lspkind = require('lspkind')
   local menu_source_width = 50
   local feedkey = function(key, mode)
     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
@@ -79,31 +80,42 @@ return function ()
     },
     formatting = {
       deprecated = true,
-      format = function(entry, vim_item)
-        --[[ vim_item.kind = lspkind.presets.default[vim_item.kind]
-        return vim_item ]]
-            -- fancy icons and a name of kind
-        if string.len(vim_item.abbr) > menu_source_width then
-          vim_item.abbr = string.sub(vim_item.abbr, 1, menu_source_width) .. ''
-        end
-        vim_item.kind = require("lspkind").presets.default[vim_item.kind] .. " " .. vim_item.kind
+      format = lspkind.cmp_format({
+        mode = 'symbol_text', -- show only symbol annotations
+        -- maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
 
-        -- set a name for each source
-        vim_item.menu = ({
-          buffer = "[Buffer]",
-          nvim_lsp = "[LSP]",
-          vsnip = "[VSnip]",
-          nvim_lsp_signature_help = "[Signature]",
-          path = "[Path]",
-          cmp_tabnine = "[Tabnine]",
-          look = "[Look]",
-          treesitter = "[Treesitter]",
-          nvim_lua = "[Lua]",
-          latex_symbols = "[Latex]",
-          ['vim-dadbod-completion'] = "[Dadbod]",
-        })[entry.source.name]
-        return vim_item
-      end
+        -- The function below will be called before any actual modifications from lspkind
+        -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+        before = function (entry, vim_item)
+
+          if string.len(vim_item.abbr) > menu_source_width then
+            vim_item.abbr = string.sub(vim_item.abbr, 1, menu_source_width) .. '…'
+          end
+          -- set a name for each source
+          vim_item.menu = ({
+            buffer = "[Buffer]",
+            nvim_lsp = "[LSP]",
+            vsnip = "[VSnip]",
+            nvim_lsp_signature_help = "[Signature]",
+            path = "[Path]",
+            cmp_tabnine = "[Tabnine]",
+            look = "[Look]",
+            treesitter = "[Treesitter]",
+            nvim_lua = "[Lua]",
+            latex_symbols = "[Latex]",
+            ['vim-dadbod-completion'] = "[Dadbod]",
+          })[entry.source.name]
+          return vim_item
+        end
+      })
+      -- format = function(entry, vim_item)
+      --   --[[ vim_item.kind = lspkind.presets.default[vim_item.kind]
+      --   return vim_item ]]
+      --       -- fancy icons and a name of kind
+      --   vim_item.kind = require("lspkind").presets.default[vim_item.kind] .. " " .. vim_item.kind
+      --
+      --   return vim_item
+      -- end
     }
   })
   -- If you want insert `(` after select function or method item
