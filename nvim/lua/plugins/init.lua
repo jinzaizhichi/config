@@ -27,7 +27,7 @@ return require('packer').startup(function(use)
   use {'nvim-treesitter/nvim-treesitter-textobjects'}
   use {'nvim-treesitter/nvim-treesitter-refactor'}
   use {'JoosepAlviste/nvim-ts-context-commentstring'}
-  use {'haringsrob/nvim_context_vt'}
+  -- use {'haringsrob/nvim_context_vt'}
   use {'p00f/nvim-ts-rainbow'}
   use {'windwp/nvim-ts-autotag'}
   use {'windwp/nvim-autopairs', config = require('plugins.autopairs')}
@@ -71,6 +71,7 @@ return require('packer').startup(function(use)
   -- markdown preview
   use {'npxbr/glow.nvim', run = ':GlowInstall'}
   -- lsp auto completion & snip
+  use {'SmiteshP/nvim-gps', config = function () require('nvim-gps').setup() end}
   use {'rafamadriz/friendly-snippets'}
   use {'hrsh7th/vim-vsnip'}
   use {'hrsh7th/vim-vsnip-integ'}

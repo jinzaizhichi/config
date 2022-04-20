@@ -1,4 +1,5 @@
 return function()
+  local gps = require('nvim-gps')
   require('bufferline').setup({
     options = {
       show_buffer_icons = true,
@@ -13,7 +14,16 @@ return function()
           s = s .. sym .. n
         end
         return s
-      end
+      end,
+      custom_areas = {
+        right = function()
+          local result = {}
+          if gps.is_available() then
+            table.insert(result, {text = gps.get_location(), guifg = "#a9a1e1"})
+          end
+          return result
+        end,
+      },
       -- offsets = {{filetype = "NvimTree", text = "NvimTree"}}
     },
     highlights = {
