@@ -19,7 +19,7 @@ return function()
         right = function()
           local result = {}
           if gps.is_available() then
-            table.insert(result, {text = gps.get_location(), guifg = "#a9a1e1"})
+            table.insert(result, {text = gps.get_location() .. ' ', guifg = "#a9a1e1"})
           end
           return result
         end,
