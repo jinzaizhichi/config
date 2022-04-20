@@ -245,8 +245,8 @@ return function ()
       end
       local clientnames = ''
       for _, client in ipairs(clients) do
-        local filetypes = client.config.filetypes
-        if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 and client.attached_buffers[vim.fn.bufnr()] ~= nil then
+        -- local filetypes = client.config.filetypes
+        if client.attached_buffers[vim.fn.bufnr()] ~= nil then
           clientnames = clientnames .. client.name .. ' '
         end
       end
