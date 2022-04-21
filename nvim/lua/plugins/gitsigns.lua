@@ -18,6 +18,9 @@ return function()
       ['v <leader>gr'] = '<cmd>lua require"gitsigns".reset_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
       ['n <leader>gR'] = '<cmd>lua require"gitsigns".reset_buffer()<CR>',
       ['n <leader>gp'] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
+      ['n <leader>gd'] = '<cmd>lua require"gitsigns".diffthis()<CR>',
+      ['n <leader>gD'] = '<cmd>lua require"gitsigns".diffthis("~")<CR>',
+      ['n <leader>gt'] = '<cmd>lua require"gitsigns".toggle_deleted()<CR>',
       ['n <leader>gbl'] = '<cmd>lua require"gitsigns".blame_line(true)<CR>',
 
       -- Text objects
