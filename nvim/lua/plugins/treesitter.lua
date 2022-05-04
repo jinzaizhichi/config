@@ -21,7 +21,11 @@ return function()
       -- max_file_lines = 1000, -- Do not enable for files with more than 1000 lines, int
     },
     refactor = {
-      highlight_definitions = { enable = true },
+      highlight_definitions = { 
+        enable = true,
+        -- Set to false if you have an `updatetime` of ~100.
+        clear_on_cursor_move = false
+      },
       highlight_current_scope = { enable = true },
       smart_rename = {
         enable = true,
