@@ -35,7 +35,7 @@ return require('packer').startup(function(use)
   use {'tpope/vim-surround'}
   use {'mbbill/undotree'}
   -- better marks
-  use {'chentau/marks.nvim', config = require('plugins.marks')}
+  use {'chentoast/marks.nvim', config = require('plugins.marks')}
   -- git
   use {'lewis6991/gitsigns.nvim', config = require('plugins.gitsigns')}
   -- translator
