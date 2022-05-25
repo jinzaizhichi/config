@@ -29,6 +29,9 @@ return function ()
     'Term',
     'lazygit',
     'lspinfo',
+    'translator',
+    'translatorborder',
+    'translator_history',
     'help',
     'zsh',
     ''
