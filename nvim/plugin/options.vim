@@ -65,7 +65,7 @@ set noswapfile
 set autoread
 set autowriteall
 set confirm
-set updatetime=0
+set updatetime=200
 
 " encodeing
 set langmenu=zh_CN.UTF-8
