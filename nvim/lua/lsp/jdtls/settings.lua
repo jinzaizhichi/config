@@ -35,11 +35,18 @@ local M = {
     signatureHelp = {enabled = true},
     contentProvider = {preferred = 'fernflower'},
     templates = {
+      fileHeader = {
+        "/**",
+        " * @author: ${user}",
+        " * @date: ${date}",
+        " * @description: ${file_name}",
+        " */",
+      },
       typeComment = {
         "/**",
-        " * @author: hewenjin",
+        " * @author: ${user}",
         " * @date: ${date}",
-        " * @description: ",
+        " * @description: ${type_name}",
         " */",
       }
     },
