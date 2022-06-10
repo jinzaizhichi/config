@@ -68,7 +68,8 @@ nnoremap <leader>fe <cmd>Telescope file_browser<cr>
 nnoremap <leader>fc <cmd>Telescope commands<cr>
 nnoremap <leader>fa <cmd>Telescope autocommands<cr>
 nnoremap <leader>fk <cmd>Telescope keymaps<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+" nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fg <cmd>lua require("telescope").extensions.live_grep_args.live_grep_args()<cr>
 nnoremap <leader>fq <cmd>Telescope quickfix<cr>
 nnoremap <leader>fr <cmd>Telescope registers<cr>
 nnoremap <leader>fi <cmd>Telescope loclist<cr>

@@ -60,6 +60,7 @@ return require('packer').startup(function(use)
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use {'nvim-telescope/telescope-dap.nvim'}
   use {'nvim-telescope/telescope-ui-select.nvim'}
+  use {'nvim-telescope/telescope-live-grep-args.nvim'}
   use {'nvim-telescope/telescope.nvim', config = require('plugins.telescope')}
   -- motion
   use {'phaazon/hop.nvim', as = 'hop', config = function() require('hop').setup() end}

@@ -32,6 +32,7 @@ return function ()
     'translator',
     'translatorborder',
     'translator_history',
+    'glowpreview',
     'help',
     'zsh',
     ''
