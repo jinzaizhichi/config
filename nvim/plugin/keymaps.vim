@@ -98,8 +98,6 @@ nnoremap <leader>fwd :lua require'telescope.builtin'.diagnostics{bufnr=0}<cr>
 nnoremap <leader>fws <cmd>Telescope lsp_dynamic_workspace_symbols<cr>
 nnoremap <leader>fwS <cmd>Telescope lsp_document_symbols<cr>
 nnoremap <leader>fwr <cmd>Telescope lsp_references<cr>
-nnoremap <leader>fwa <cmd>Telescope lsp_code_actions<cr>
-vnoremap <leader>fwa <cmd>Telescope lsp_range_code_actions<cr>
 " telescope extensions
 nnoremap <leader>fp <cmd>Telescope projects<cr>
 nnoremap <leader>fdc <cmd>Telescope dap commands<cr>
