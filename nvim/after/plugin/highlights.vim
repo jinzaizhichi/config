@@ -46,6 +46,6 @@ highlight! CmpItemAbbrMatchFuzzy gui=bold
 "
 " highlight! CmpItemKindFolder guibg=NONE guifg=#C09553
 " highlight! CmpItemKindFile guibg=NONE guifg=#C09553
-highlight! TSVariable guifg=#E86671
+highlight! link TSVariable TSParameter
 "
 highlight PmenuSel ctermfg=242 ctermbg=0 guifg=NONE guibg=#393f4a
