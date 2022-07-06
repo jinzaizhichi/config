@@ -1,5 +1,5 @@
 return function()
-  local gps = require('nvim-gps')
+  local navic = require('nvim-navic')
   require('bufferline').setup({
     options = {
       show_buffer_icons = true,
@@ -18,8 +18,8 @@ return function()
       custom_areas = {
         right = function()
           local result = {}
-          if gps.is_available() then
-            table.insert(result, {text = gps.get_location() .. ' ', guifg = "#a9a1e1"})
+          if navic.is_available() then
+            table.insert(result, {text = navic.get_location() .. ' ', guifg = "#a9a1e1"})
           end
           return result
         end,

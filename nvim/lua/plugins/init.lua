@@ -72,7 +72,7 @@ return require('packer').startup(function(use)
   -- markdown preview
   use {'npxbr/glow.nvim', run = ':GlowInstall'}
   -- lsp auto completion & snip
-  use {'SmiteshP/nvim-gps', config = function () require('nvim-gps').setup() end}
+  use {'SmiteshP/nvim-navic'}
   use {'rafamadriz/friendly-snippets'}
   use {'hrsh7th/vim-vsnip'}
   use {'hrsh7th/vim-vsnip-integ'}

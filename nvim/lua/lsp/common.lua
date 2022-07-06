@@ -12,6 +12,7 @@ local opts = {noremap = true, silent = true}
 M.opts = opts
 
 function M.setup(client, bufnr)
+    require('nvim-navic').attach(client, bufnr)
     M.set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
     -- Mappings.
     M.set_keymap(bufnr, 'n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
