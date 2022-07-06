@@ -61,7 +61,7 @@ set incsearch
 set ignorecase
 
 " buffers
-set noswapfile
+" set noswapfile
 set autoread
 set autowriteall
 set confirm
