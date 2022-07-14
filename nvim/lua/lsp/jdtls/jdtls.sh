@@ -50,7 +50,6 @@ Please set the JAVA_HOME variable in your environment to match the
 location of your Java installation."
 fi
 
-  # -Xbootclasspath/a:/home/hewenjin/.local/share/nvim/lspinstall/java/lombok.jar \
 "$JAVACMD" \
   --add-modules=ALL-SYSTEM \
   --add-opens java.base/java.util=ALL-UNNAMED \
@@ -61,7 +60,6 @@ fi
   -Dlog.level=ALL \
   -Declipse.product=org.eclipse.jdt.ls.core.product \
   -Dfile.encoding=utf-8 \
-  -noverify \
   -Xms1G \
   -Xmx2G \
   -javaagent:$JDTLS_PATH/lombok.jar \
