@@ -2,7 +2,7 @@
 
 WORKSPACE="$1"
 
-JDTLS_PATH="$HOME/.local/share/nvim/lsp_servers/jdtls/"
+JDTLS_PATH="$HOME/.local/share/nvim/mason/packages/jdtls/"
 
 JAVA_HOME=$JAVA_HOME
 

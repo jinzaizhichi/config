@@ -1,6 +1,7 @@
 local home = os.getenv('HOME')
 local jdtlsMavenSettings = os.getenv('JDTLS_MAVEN_SETTINGS')
 local config_path = vim.fn.stdpath('config')
+local data_path = vim.fn.stdpath('data')
 local M = {
   java = {
     settings = {
@@ -8,7 +9,8 @@ local M = {
     },
     jdt = {
       ls = {
-        vmargs = "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -XX:+UseStringDeduplication -javaagent:'" .. home .. "/.local/share/nvim/lsp_servers/jdtls/lombok.jar'"
+        vmargs = "-XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx2G -Xms1G -javaagent:'"
+            .. data_path .. "/mason/packages/jdtls/lombok.jar'"
       }
     },
     eclipse = {
@@ -30,10 +32,10 @@ local M = {
     trace = {
       server = "verbose"
     },
-    referencesCodeLens = {enabled = true},
-    implementationsCodeLens = {enabled = true},
-    signatureHelp = {enabled = true},
-    contentProvider = {preferred = 'fernflower'},
+    referencesCodeLens = { enabled = true },
+    implementationsCodeLens = { enabled = true },
+    signatureHelp = { enabled = true },
+    contentProvider = { preferred = 'fernflower' },
     templates = {
       fileHeader = {
         "/**",
@@ -51,7 +53,7 @@ local M = {
       }
     },
     import = {
-      maven = {enabled = true},
+      maven = { enabled = true },
       exclusions = {
         "**/node_modules/**",
         "**/.metadata/**",
@@ -64,7 +66,7 @@ local M = {
     maven = {
       downloadSources = true
     },
-    autobuild = {enabled = true},
+    autobuild = { enabled = true },
     completion = {
       filteredTypes = {
         "java.awt.List",
@@ -80,7 +82,7 @@ local M = {
       }
     },
     sources = {
-      organizeImports = {starThreshold = 9999, staticStarThreshold = 9999}
+      organizeImports = { starThreshold = 9999, staticStarThreshold = 9999 }
     },
     codeGeneration = {
       generateComments = true,
@@ -110,11 +112,11 @@ local M = {
           name = "JavaSE-1.8",
           path = "/usr/lib/jvm/java-8-openjdk/",
           default = true
-        }
-        --[[ {
-            name = "JavaSE-14",
-            path = home .. "/usr/lib/jvm/java-11-openjdk/",
-          }, ]]
+        },
+        {
+          name = "JavaSE-17",
+          path = "/usr/lib/jvm/java-17-openjdk/",
+        },
       }
     }
   }

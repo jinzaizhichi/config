@@ -69,8 +69,8 @@ function M.setup()
   local root_dir = require('jdtls.setup').find_root(root_markers)
   local home = os.getenv('HOME')
   local workspace_name, _ = string.gsub(vim.fn.fnamemodify(root_dir, ":p"), "/", "_")
-  local jdtls_path = vim.fn.stdpath('data') .. '/lsp_servers/jdtls'
-  local config_path = home .. '/.config/nvim/lua/lsp/jdtls'
+  local jdtls_path = vim.fn.stdpath('data') .. '/mason/packages/jdtls'
+  local config_path = vim.fn.stdpath('config') .. '/lua/lsp/jdtls'
 
   local bundles = {
     vim.fn.glob(config_path ..  '/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar')
