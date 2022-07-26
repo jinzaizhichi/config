@@ -6,7 +6,6 @@ return require('packer').startup(function(use)
   use {'nvim-lua/plenary.nvim'}
   use {'nvim-lua/popup.nvim'}
   -- theme and color
-  -- use {'tjdevries/colorbuddy.vim'}
   use {'navarasu/onedark.nvim'}
   use {'norcalli/nvim-colorizer.lua', config = function() require('colorizer').setup() end}
   -- buffer | statusline | icon | treeview | startup buffer
@@ -17,22 +16,20 @@ return require('packer').startup(function(use)
   -- session manager
   -- use {'rmagatti/auto-session', config = require('plugin.auto-session')}
   -- use {'rmagatti/session-lens', config = function() require('session-lens').setup() end}
-  -- use {'kyazdani42/nvim-tree.lua'}
   use {'kyazdani42/nvim-web-devicons'}
   use {'akinsho/nvim-bufferline.lua', config = require('plugin.bufferline')}
-  -- use {'hoob3rt/lualine.nvim', config = require('plugin.lualine')}
   use {'nvim-lualine/lualine.nvim', config = require('plugin.lualine')}
   -- treesitter and treesitter base plug
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = require('plugin.treesitter')}
   use {'nvim-treesitter/nvim-treesitter-textobjects'}
   use {'nvim-treesitter/nvim-treesitter-refactor'}
   use {'JoosepAlviste/nvim-ts-context-commentstring'}
-  -- use {'haringsrob/nvim_context_vt'}
   use {'p00f/nvim-ts-rainbow'}
   use {'windwp/nvim-ts-autotag'}
   use {'windwp/nvim-autopairs', config = require('plugin.autopairs')}
   -- editing
-  use {'tpope/vim-surround'}
+  -- use {'tpope/vim-surround'}
+  use {'kylechui/nvim-surround', config = function() require('nvim-surround').setup() end}
   use {'mbbill/undotree'}
   -- better marks
   use {'chentoast/marks.nvim', config = require('plugin.marks')}
@@ -51,8 +48,6 @@ return require('packer').startup(function(use)
   use {'kevinhwang91/nvim-hlslens'}
   -- terminal
   use {'akinsho/nvim-toggleterm.lua', config = require('plugin.toggleterm')}
-  -- match help
-  -- use {'andymass/vim-matchup'}
   -- powerful replace tool
   use {'windwp/nvim-spectre'}
   -- fuzzy finder
