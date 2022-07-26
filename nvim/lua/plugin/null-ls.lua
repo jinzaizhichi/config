@@ -1,5 +1,6 @@
 return function ()
   local null_ls = require('null-ls')
+  local perfer_local = vim.fn.stdpath('data') .. '/mason/bin'
   null_ls.setup({
     -- log = {
     --   enable = true,
@@ -11,7 +12,7 @@ return function ()
       -- null_ls.builtins.completion.spell,
       -- NOTE: cspell needs to installed first by using npm install -g cspell
       null_ls.builtins.diagnostics.cspell.with{
-        prefer_local = vim.fn.stdpath('data') .. 'mason/packages/cspell/node_modules/.bin',
+        prefer_local = perfer_local,
         diagnostics_postprocess = function(diagnostic)
             diagnostic.severity = diagnostic.message:find("Unknown word")
                 and vim.diagnostic.severity["INFO"]
@@ -20,7 +21,7 @@ return function ()
       -- null_ls.builtins.diagnostics.codespell,
       null_ls.builtins.formatting.nginx_beautifier,
       null_ls.builtins.formatting.prettier.with{
-        prefer_local = vim.fn.stdpath('data') .. 'mason/packages/prettier/node_modules/.bin'
+        prefer_local = perfer_local
       },
       null_ls.builtins.formatting.sqlformat,
       null_ls.builtins.formatting.stylelint,

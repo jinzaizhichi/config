@@ -177,7 +177,7 @@ if type go &> /dev/null; then
     go env -w GOPROXY=https://goproxy.cn,direct
 fi
 #export GOPROXY=https://mirrors.aliyun.com/goproxy/,direct
-PATH=$PATH:$HOME/.local/bin/:$GOPATH/bin:$HOME/.local/share/gem/ruby/3.0.0/bin/:$HOME/.cargo/bin/
+PATH=$PATH:$HOME/.local/bin/:$GOPATH/bin:$HOME/.local/share/gem/ruby/3.0.0/bin/:$HOME/.cargo/bin/:$HOME/.local/share/nvim/mason/bin/
 # source ~/.oh-my-zsh/plugins/incr/incr*.zsh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
