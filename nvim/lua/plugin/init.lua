@@ -67,7 +67,6 @@ return require('packer').startup(function(use)
   -- markdown preview
   use {'npxbr/glow.nvim', run = ':GlowInstall'}
   -- lsp auto completion & snip
-  use {'SmiteshP/nvim-navic'}
   use {'rafamadriz/friendly-snippets'}
   use {'hrsh7th/vim-vsnip'}
   use {'hrsh7th/vim-vsnip-integ'}
@@ -87,10 +86,10 @@ return require('packer').startup(function(use)
   -- nvim debug tool
   use {'mfussenegger/nvim-dap'}
   use {'theHamsta/nvim-dap-virtual-text', config = require('plugin.nvim-dap-virtual-text')}
-  use {'Pocco81/DAPInstall.nvim'}
   -- which keys
   use {'folke/which-key.nvim', config = require('plugin.which-key')}
   -- lsp setup
+  use {'SmiteshP/nvim-navic'}
   use {'williamboman/mason.nvim'}
   use {'williamboman/mason-lspconfig.nvim'}
   use {'neovim/nvim-lspconfig', config = require('plugin.lspconfig')}
