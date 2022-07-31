@@ -1,5 +1,5 @@
 local home = os.getenv('HOME')
-local jdtlsMavenSettings = os.getenv('JDTLS_MAVEN_SETTINGS')
+local jdtls_maven_settings = os.getenv('JDTLS_MAVEN_SETTINGS')
 local config_path = vim.fn.stdpath('config')
 local data_path = vim.fn.stdpath('data')
 local M = {
@@ -101,7 +101,7 @@ local M = {
     configuration = {
       maven = {
         globalSettings = "/opt/maven/conf/settings.xml",
-        userSettings = jdtlsMavenSettings or home .. "/.m2/settings.xml",
+        userSettings = jdtls_maven_settings or home .. "/.m2/settings.xml",
       },
       runtimes = {
         {
