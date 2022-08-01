@@ -21,7 +21,7 @@ return function()
     -- and will be called for each installed server that doesn't have
     -- a dedicated handler.
     function(server_name) -- default handler (optional)
-      vim.lsp.set_log_level('trace')
+      vim.lsp.set_log_level('debug')
 
       if server_name ~= "jdtls" then
         local capabilities = vim.lsp.protocol.make_client_capabilities()
