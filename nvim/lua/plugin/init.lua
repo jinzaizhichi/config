@@ -36,7 +36,7 @@ return require('packer').startup(function(use)
   -- git
   use {'lewis6991/gitsigns.nvim', config = require('plugin.gitsigns')}
   -- translator
-  use {'voldikss/vim-translator'}
+  use {'hewenjin/vim-translator'}
   -- comment
   use {'numToStr/Comment.nvim', config = function () require('Comment').setup() end}
   -- use {'b3nj5m1n/kommentary', config = require('plugin.kommentary')}
