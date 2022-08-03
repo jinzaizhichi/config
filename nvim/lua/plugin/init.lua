@@ -13,6 +13,8 @@ return require('packer').startup(function(use)
   use {'goolord/alpha-nvim', config = function() require('alpha').setup(require'alpha.themes.theta'.config) end}
   use {'kevinhwang91/rnvimr'}
   use {'famiu/bufdelete.nvim'}
+  -- fix CursorHold event performance see: https://github.com/neovim/neovim/issues/12587
+  use {'antoinemadec/FixCursorHold.nvim'}
   -- session manager
   -- use {'rmagatti/auto-session', config = require('plugin.auto-session')}
   -- use {'rmagatti/session-lens', config = function() require('session-lens').setup() end}

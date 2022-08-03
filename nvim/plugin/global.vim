@@ -54,3 +54,5 @@ let g:firenvim_config = {
     \ }
 let fc = g:firenvim_config['localSettings']
 let fc['.*'] = { 'takeover': 'never' }
+
+let g:cursorhold_updatetime = 500
