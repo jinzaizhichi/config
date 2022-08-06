@@ -99,4 +99,5 @@ return require('packer').startup(function(use)
   use {'jose-elias-alvarez/null-ls.nvim', config = require('plugin.null-ls')}
   -- wrapper for jdtls
   use {'mfussenegger/nvim-jdtls'}
+  use {'~/project/my/nvim-java-dependency'}
 end)
