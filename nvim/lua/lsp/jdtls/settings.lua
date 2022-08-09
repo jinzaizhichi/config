@@ -1,5 +1,7 @@
 local home = os.getenv('HOME')
 local jdtls_maven_settings = os.getenv('JDTLS_MAVEN_SETTINGS')
+local jdtls_java_home = os.getenv('JDTLS_JAVA_HOME')
+local java_home = os.getenv('JAVA_HOME')
 local config_path = vim.fn.stdpath('config')
 local data_path = vim.fn.stdpath('data')
 local M = {
@@ -9,6 +11,10 @@ local M = {
     },
     jdt = {
       ls = {
+        lombokSupport = { enabled = true},
+        java = {
+          home = jdtls_java_home or java_home
+        },
         vmargs = "-XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx2G -Xms1G -javaagent:'"
             .. data_path .. "/mason/packages/jdtls/lombok.jar'"
       }
@@ -16,8 +22,25 @@ local M = {
     eclipse = {
       downloadSources = true,
     },
+    symbols = {
+      includeSourceMethodDeclarations = true
+    },
+    quickfix = {
+      showAt = true
+    },
+    selectionRange = { enabled = true },
+    recommendations = {
+      dependency = {
+        analytics = {
+          show = true
+        }
+      }
+    },
     format = {
       comments = {
+        enabled = false
+      },
+      onType = {
         enabled = true
       },
       settings = {
@@ -34,7 +57,12 @@ local M = {
     },
     referencesCodeLens = { enabled = true },
     implementationsCodeLens = { enabled = true },
-    signatureHelp = { enabled = true },
+    signatureHelp = {
+      enabled = true,
+      description = {
+        enabled = true
+      }
+    },
     contentProvider = { preferred = 'fernflower' },
     templates = {
       fileHeader = {
@@ -53,6 +81,7 @@ local M = {
       }
     },
     import = {
+      generatesMetadataFilesAtProjectRoot = true,
       maven = { enabled = true },
       exclusions = {
         "**/node_modules/**",
@@ -99,6 +128,7 @@ local M = {
     },
     home = "/usr/lib/jvm/java-11-openjdk/",
     configuration = {
+      updateBuildConfiguration = 'automatic',
       maven = {
         globalSettings = "/opt/maven/conf/settings.xml",
         userSettings = jdtls_maven_settings or home .. "/.m2/settings.xml",
