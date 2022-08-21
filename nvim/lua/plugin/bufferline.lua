@@ -9,8 +9,8 @@ return function()
       diagnostics_indicator = function(count, level, diagnostics_dict, context)
         local s = " "
         for e, n in pairs(diagnostics_dict) do
-          local sym = e == "error" and "" or
-                          (e == "warning" and "" or "")
+          local sym = e == "error" and " " or
+                          (e == "warning" and " " or " ")
           s = s .. sym .. n
         end
         return s
@@ -19,7 +19,7 @@ return function()
         right = function()
           local result = {}
           if navic.is_available() then
-            table.insert(result, {text = navic.get_location() .. ' ', fg = "#a9a1e1"})
+            table.insert(result, {text = navic.get_location() .. ' ', fg = "#a9a1e1", bg = '#202328'})
           end
           return result
         end,

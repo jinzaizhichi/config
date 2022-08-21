@@ -1,8 +1,11 @@
 # TMUX
-if which tmux >/dev/null 2>&1; then
-    #if not inside a tmux session, and if no session is started, start a new session
-    test -z "$TMUX" && (tmux attach || tmux new-session)
+if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
+    tmux attach || tmux >/dev/null 2>&1
 fi
+# if which tmux >/dev/null 2>&1; then
+#     #if not inside a tmux session, and if no session is started, start a new session
+#     test -z "$TMUX" && (tmux attach || tmux new-session)
+# fi
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -56,7 +59,8 @@ fi
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="true"
+# DISABLE_AUTO_UPDATE="true"
+zstyle ':omz:update' mode disabled
 HISTSIZE=99999
 SAVEHIST=$HISTSIZE
 setopt hist_ignore_all_dups
@@ -80,7 +84,7 @@ setopt hist_ignore_all_dups
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -167,7 +171,6 @@ alias grep="grep --color=auto"
 alias sudo='sudo env HOME=$HOME '
 alias natapp='natapp -config=$HOME/.config/natapp/config'
 bindkey '^ ' autosuggest-accept
-export DISPLAY=:0
 export GOPATH=$HOME/project/go
 eval "$(direnv hook zsh)"
 if type go &> /dev/null; then
@@ -192,7 +195,7 @@ export LUA_PATH="~/.config/nvim/lua/;;"
 export GITLAB_HOME="$HOME/project/gitlab"
 # export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 # tmux params
-export TERM='tmux-256color'
+# export TERM='xterm-256color'
 export EDITOR='nvim'
 export BAT_THEME='OneHalfDark'
 export DOWNGRADE_FROM_ALA=1
