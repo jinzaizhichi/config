@@ -7,7 +7,7 @@ return require('packer').startup(function(use)
   use {'nvim-lua/popup.nvim'}
   -- theme and color
   use {'navarasu/onedark.nvim'}
-  use {'norcalli/nvim-colorizer.lua', config = function() require('colorizer').setup() end}
+  use {'NvChad/nvim-colorizer.lua', config = function() require('colorizer').setup() end}
   -- buffer | statusline | icon | treeview | startup buffer
   -- use {'glepnir/dashboard-nvim'}
   use {'goolord/alpha-nvim', config = function() require('alpha').setup(require'alpha.themes.theta'.config) end}
@@ -24,7 +24,6 @@ return require('packer').startup(function(use)
   -- treesitter and treesitter base plug
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = require('plugin.treesitter')}
   use {'nvim-treesitter/nvim-treesitter-textobjects'}
-  use {'nvim-treesitter/nvim-treesitter-refactor'}
   use {'JoosepAlviste/nvim-ts-context-commentstring'}
   use {'p00f/nvim-ts-rainbow'}
   use {'windwp/nvim-ts-autotag'}
@@ -46,8 +45,6 @@ return require('packer').startup(function(use)
   -- db manage
   use {'tpope/vim-dadbod'}
   use {'kristijanhusak/vim-dadbod-ui'}
-  -- incsearch
-  use {'kevinhwang91/nvim-hlslens'}
   -- terminal
   use {'akinsho/nvim-toggleterm.lua', config = require('plugin.toggleterm')}
   -- powerful replace tool
@@ -67,7 +64,7 @@ return require('packer').startup(function(use)
   -- project manager
   use {'ahmedkhalf/project.nvim', config = require('plugin.project')}
   -- markdown preview
-  use {'npxbr/glow.nvim', run = ':GlowInstall'}
+  use {'ellisonleao/glow.nvim'}
   -- lsp auto completion & snip
   use {'rafamadriz/friendly-snippets'}
   use {'hrsh7th/vim-vsnip'}
