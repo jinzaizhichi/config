@@ -123,17 +123,18 @@ nnoremap <silent> <leader><leader>s <cmd>lua require'hop'.hint_char1()<cr>
 " inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-" Echo translation in the cmdline
-nmap <silent> <leader>tc <Plug>Translate
-vmap <silent> <leader>tc <Plug>TranslateV
 " Display translation in a window
-nmap <silent> <leader>tt <Plug>TranslateW
-vmap <silent> <leader>tt <Plug>TranslateWV
+nnoremap <silent> <leader>tt <cmd>Translate ZH<CR>
+xnoremap <silent> <leader>tt <cmd>Translate ZH<CR>
 " Replace the text with translation
-nmap <silent> <leader>tr <Plug>TranslateR
-vmap <silent> <leader>tr <Plug>TranslateRV
-" Translate the text in clipboard
-nmap <silent> <leader>tx <Plug>TranslateX
+nnoremap <silent> <leader>tr <cmd>Translate ZH -output=replace<CR>
+xnoremap <silent> <leader>tr <cmd>Translate ZH -output=replace<CR>
+" Insert the text with translation
+nnoremap <silent> <leader>ti <cmd>Translate ZH -output=insert<CR>
+xnoremap <silent> <leader>ti <cmd>Translate ZH -output=insert<CR>
+" copy translation to register
+nnoremap <silent> <leader>ty <cmd>Translate ZH -output=register<CR>
+xnoremap <silent> <leader>ty <cmd>Translate ZH -output=register<CR>
 
 " DB
 nnoremap <silent> <leader><leader>d :DBUIToggle<cr>
