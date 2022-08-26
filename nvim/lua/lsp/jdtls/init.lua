@@ -52,6 +52,7 @@ function M.setup()
 
   local capabilities = vim.lsp.protocol.make_client_capabilities()
   capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+  capabilities.textDocument.completion.completionItem.snippetSupport = true
 
   local root_dir = require('jdtls.setup').find_root({'.git', 'mvnw', 'gradlew'})
   local workspace_name, _ = string.gsub(vim.fn.fnamemodify(root_dir, ":p"), "/", "_")
