@@ -1,10 +1,10 @@
 " NOTE: some keymap base on plug setting, you can find those in following file:
-" ../lua/plugins/cmp.lua | ../lua/plugins/gitsigns.lua | ../lua/plugins/lsp_sinature.lua 
-" ../lua/lsp/common.lua | ../lua/lsp/jdtls.lua | ../lua/plugins/telescope.lua | ../lua/plugins/treesitter.lua
-nnoremap j gj
-nnoremap gj j
-nnoremap k gk
-nnoremap gk k
+" ../lua/plugin/cmp.lua | ../lua/plugin/gitsigns.lua | ../lua/plugin/lsp_sinature.lua 
+" ../lua/lsp/common.lua | ../lua/lsp/jdtls.lua | ../lua/plugin/telescope.lua | ../lua/plugin/treesitter.lua
+nnoremap <silent> j gj
+nnoremap <silent> gj j
+nnoremap <silent> k gk
+nnoremap <silent> gk k
 nnoremap <silent> <C-h> <cmd>wincmd h<CR>
 nnoremap <silent> <C-j> <cmd>wincmd j<CR>
 nnoremap <silent> <C-k> <cmd>wincmd k<CR>
@@ -41,16 +41,6 @@ vmap <leader>p "+p
 nnoremap <silent><leader>be :BufferLineSortByExtension<CR>
 nnoremap <silent><leader>bd :BufferLineSortByDirectory<CR>
 nnoremap <silent><leader>bs :lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.id < buf_b.id end)<CR>
-
-" hlslens
-noremap <silent> n <Cmd>execute('normal! ' . v:count1 . 'n')<CR>
-            \<Cmd>lua require('hlslens').start()<CR>
-noremap <silent> N <Cmd>execute('normal! ' . v:count1 . 'N')<CR>
-            \<Cmd>lua require('hlslens').start()<CR>
-noremap * *<Cmd>lua require('hlslens').start()<CR>
-noremap # #<Cmd>lua require('hlslens').start()<CR>
-noremap g* g*<Cmd>lua require('hlslens').start()<CR>
-noremap g# g#<Cmd>lua require('hlslens').start()<CR>
 
 " use : instead of <Cmd>
 nnoremap <silent> <leader><leader>h <cmd>noh<CR>
