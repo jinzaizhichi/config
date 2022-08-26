@@ -26,7 +26,7 @@ nnoremap <silent><leader><leader>b :BufferLinePick<CR>
 " These commands will move the current buffer backwards or forwards in the bufferline
 nnoremap <silent><leader>bn :BufferLineMoveNext<CR>
 nnoremap <silent><leader>bp :BufferLineMovePrev<CR>
-nnoremap <silent><leader>x :Bdelete<CR>
+nnoremap <silent><leader>x :BufferDelete<CR>
 nnoremap <silent><leader>a <cmd>Alpha<CR>
 nnoremap <silent><leader>bb <c-^>
 
