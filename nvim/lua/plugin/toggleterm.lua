@@ -10,7 +10,7 @@ return function()
     -- size can be a number or function which is passed the current terminal
     size = get_height(),
     open_mapping = [[<c-\><c-\>]],
-    hide_numbers = false, -- hide the number column in toggleterm buffers
+    hide_numbers = true, -- hide the number column in toggleterm buffers
     shade_terminals = false,
     shading_factor = 3, -- the degree by which to darken to terminal colour, default: 1 for dark backgrounds, 3 for light
     start_in_insert = true,
