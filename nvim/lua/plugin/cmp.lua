@@ -45,7 +45,7 @@ return function ()
       }),
       ['<CR>'] = cmp.mapping {
         i = cmp.mapping.confirm {
-          behavior = cmp.ConfirmBehavior.Replace,
+          -- behavior = cmp.ConfirmBehavior.Replace,
           select = true,
         },
         c = cmp.mapping.confirm { select = true },
@@ -119,12 +119,12 @@ return function ()
     }
   })
   -- If you want insert `(` after select function or method item
-  local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-  local cmp = require('cmp')
-  cmp.event:on(
-    'confirm_done',
-    cmp_autopairs.on_confirm_done()
-  )
+  -- local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+  -- local cmp = require('cmp')
+  -- cmp.event:on(
+  --   'confirm_done',
+  --   cmp_autopairs.on_confirm_done()
+  -- )
     -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
   cmp.setup.cmdline(':', {
     completion = {
