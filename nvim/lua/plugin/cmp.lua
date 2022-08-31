@@ -70,9 +70,10 @@ return function ()
       end, { "i", "s" }),
     }),
     sources = {
-      { name = 'vsnip', max_item_count = 10 },
+      { name = 'vsnip', max_item_count = 10},
       { name = 'nvim_lsp'},
-      { name = 'nvim_lsp_signature_help' },
+      { name = 'nvim_lsp_signature_help'},
+      { name = 'git'},
       { name = 'buffer', max_item_count = 10},
       { name = 'path', max_item_count = 10 },
       { name = 'look', max_item_count = 5, keyword_length = 2, option = { convert_case = true, loud = true }},
@@ -103,6 +104,7 @@ return function ()
             treesitter = "[Treesitter]",
             nvim_lua = "[Lua]",
             latex_symbols = "[Latex]",
+            git = "[Git]",
             ['vim-dadbod-completion'] = "[Dadbod]",
           })[entry.source.name]
           return vim_item
