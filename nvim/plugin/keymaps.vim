@@ -27,7 +27,7 @@ nnoremap <silent><leader><leader>b :BufferLinePick<CR>
 nnoremap <silent><leader>bn :BufferLineMoveNext<CR>
 nnoremap <silent><leader>bp :BufferLineMovePrev<CR>
 nnoremap <silent><leader>x :BufferDelete<CR>
-nnoremap <silent><leader>a <cmd>Alpha<CR>
+" nnoremap <silent><leader>a <cmd>Alpha<CR>
 nnoremap <silent><leader>bb <c-^>
 
 " copy to system clipboard
