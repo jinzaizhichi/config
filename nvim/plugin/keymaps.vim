@@ -46,7 +46,7 @@ nnoremap <silent><leader>bs :lua require'bufferline'.sort_buffers_by(function (b
 nnoremap <silent> <leader><leader>h <cmd>noh<CR>
 
 " Provided by setup function
-nnoremap <silent> <leader>mm <cmd>lua vim.lsp.buf.formatting()<CR>
+nnoremap <silent> <leader>mm <cmd>lua vim.lsp.buf.format { async = true }<CR>
 
 " treesitter context
 " nnoremap <leader>cc <cmd>TSContextToggle<cr>
