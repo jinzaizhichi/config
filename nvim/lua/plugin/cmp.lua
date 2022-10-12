@@ -195,4 +195,5 @@ return function ()
       { name = 'buffer' }
     })
   })
+  require('cmp_git').setup()
 end
