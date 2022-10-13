@@ -37,27 +37,17 @@ function M.setup(client, bufnr)
   M.set_keymap(bufnr, 'n', '<leader>ca', "<Cmd>lua vim.lsp.buf.code_action()<CR>", opts)
   M.set_keymap(bufnr, 'v', '<leader>ca', ":'<,'>lua vim.lsp.buf.range_code_action()<CR>", opts)
   M.set_keymap(bufnr, 'n', '<leader>cr', "<Cmd>lua require('jdtls').code_action(false, 'refactor')<CR>", opts)
-  -- Set some keybinds conditional on server capabilities
-  if client.server_capabilities.document_formatting then
-    M.set_keymap(bufnr, "n", "<leader>mm", "<cmd>lua vim.lsp.buf.format({async = true})<CR>",
-      opts)
-  end
-  if client.server_capabilities.document_range_formatting then
-    M.set_keymap(bufnr, "v", "<leader>mm",
-      "<cmd>lua vim.lsp.buf.format({async = true})<CR>", opts)
-  end
+  M.set_keymap(bufnr, "n", "<leader>mm", "<cmd>lua vim.lsp.buf.format({async = true})<CR>", opts)
+  M.set_keymap(bufnr, "v", "<leader>mm", "<cmd>lua vim.lsp.buf.format({async = true})<CR>", opts)
+  vim.api.nvim_exec([[
+  augroup lsp_document_highlight
+  autocmd! * <buffer>
+  autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+  autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()
+  autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+  augroup END
+  ]], false)
 
-  -- Set autocommands conditional on server_capabilities
-  if client.server_capabilities.document_highlight then
-    vim.api.nvim_exec([[
-    augroup lsp_document_highlight
-    autocmd! * <buffer>
-    autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-    autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()
-    autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-    augroup END
-    ]], false)
-  end
 end
 
 return M

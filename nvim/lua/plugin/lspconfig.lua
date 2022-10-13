@@ -10,7 +10,32 @@ return function()
 
   if install_confirm == 'y' then
     vim.cmd([[
-      MasonInstall typescript-language-server dot-language-server cspell vim-language-server emmet-ls prettier sqls python-lsp-server yaml-language-server lemminx luaformatter lua-language-server marksman vetur-vls jdtls pyright bash-language-server eslint-lsp
+      MasonInstall
+      \ typescript-language-server
+      \ dot-language-server
+      \ cspell
+      \ vim-language-server
+      \ emmet-ls
+      \ prettier
+      \ sqls
+      \ python-lsp-server
+      \ yaml-language-server
+      \ lemminx
+      \ luaformatter
+      \ lua-language-server
+      \ marksman
+      \ vetur-vls
+      \ jdtls
+      \ pyright
+      \ bash-language-server
+      \ eslint-lsp
+      \ eslint-lsp
+      \ rust-analyzer
+      \ clang-format
+      \ clangd
+      \ codelldb
+      \ cpplint
+      \ cpptools
     ]])
 
   end
