@@ -165,10 +165,10 @@ alias lg='lazygit'
 # alias vi='vim'
 alias javac="javac -J-Dfile.encoding=utf8"
 alias grep="grep --color=auto"
-alias sudo='sudo env HOME=$HOME '
+alias sudo='sudo -E '
 alias natapp='natapp -config=$HOME/.config/natapp/config'
 bindkey '^ ' autosuggest-accept
-export GOPATH=$HOME/project/go
+export GOPATH=$HOME/.go
 eval "$(direnv hook zsh)"
 if type go &> /dev/null; then
     # enable go module
@@ -185,6 +185,7 @@ PATH=$PATH:$HOME/.local/bin/:$GOPATH/bin:$HOME/.local/share/gem/ruby/3.0.0/bin/:
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
+export IBUS_USE_PORTAL=1
 # java
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 export JDTLS_JAVA_HOME=/usr/lib/jvm/java-17-openjdk
@@ -197,7 +198,7 @@ export EDITOR='nvim'
 export BAT_THEME='OneHalfDark'
 export DOWNGRADE_FROM_ALA=1
 export MUTTER_ALLOW_HYBRID_GPUS=1
-# export QT_STYLE_OVERRIDE=nordic
+# export QT_STYLE_OVERRIDE=adwaita
 export QT_QPA_PLATFORMTHEME=qgnomeplatform
 export VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 # export FZF_BASE=/usr/lib/fzf
