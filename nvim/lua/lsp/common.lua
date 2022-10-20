@@ -39,14 +39,16 @@ function M.setup(client, bufnr)
   M.set_keymap(bufnr, 'n', '<leader>cr', "<Cmd>lua require('jdtls').code_action(false, 'refactor')<CR>", opts)
   M.set_keymap(bufnr, "n", "<leader>mm", "<cmd>lua vim.lsp.buf.format({async = true})<CR>", opts)
   M.set_keymap(bufnr, "v", "<leader>mm", "<cmd>lua vim.lsp.buf.format({async = true})<CR>", opts)
-  vim.api.nvim_exec([[
-  augroup lsp_document_highlight
-  autocmd! * <buffer>
-  autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-  autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()
-  autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-  augroup END
-  ]], false)
+  if client.server_capabilities.documentHighlightProvider then
+    vim.api.nvim_exec([[
+    augroup lsp_document_highlight
+    autocmd! * <buffer>
+    autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+    autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()
+    autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+    augroup END
+    ]], false)
+  end
 
 end
 
