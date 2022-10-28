@@ -158,7 +158,7 @@ alias mks='minikube start --docker-env HTTP_PROXY=http://192.168.31.13:8118 --do
 alias mk='minikube'
 alias ll='ls -lah'
 alias la='ls -a'
-alias pc='proxychains'
+alias p='proxychains '
 alias py='python'
 alias rr='ranger'
 alias lg='lazygit'
@@ -227,7 +227,7 @@ if type lsd &> /dev/null; then
 fi
 PROXY_ENV=(http_proxy ftp_proxy https_proxy all_proxy HTTP_PROXY HTTPS_PROXY FTP_PROXY ALL_PROXY)
 NO_PROXY_ENV=(no_proxy NO_PROXY)
-proxy_value=http://127.0.0.1:8118
+proxy_value=http://127.0.0.1:7890
 no_proxy_value=localhost,127.0.0.1,localaddress,.localdomain.com,10.96.0.0/12,192.168.99.0/24,192.168.39.0/24,192.168.49.2/24
 
 proxyIsSet(){
