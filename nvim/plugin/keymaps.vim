@@ -96,6 +96,30 @@ nnoremap <leader>fdl <cmd>Telescope dap list_breakpoints<cr>
 nnoremap <leader>fdv <cmd>Telescope dap variables<cr>
 nnoremap <leader>fdf <cmd>Telescope dap frames<cr>
 
+" lsp
+nnoremap gD <Cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap gd <Cmd>Telescope lsp_definitions<CR>
+nnoremap K <Cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap gi <cmd>Telescope lsp_implementations<CR>
+nnoremap gI <cmd>Telescope lsp_incoming_calls<CR>
+nnoremap gO <cmd>Telescope lsp_outgoing_calls<CR>
+nnoremap <leader>k <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <leader>wa <cmd>lua vim.lsp.buf.add_workspace_folder()<CR>
+nnoremap <leader>wr <cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>
+nnoremap <leader>wl <cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>
+nnoremap <leader>D <cmd>Telescope lsp_type_definitions<CR>
+nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
+nnoremap gr <cmd>Telescope lsp_references<CR>
+nnoremap <leader>i <cmd>lua vim.diagnostic.open_float()<CR>
+nnoremap [i <cmd>lua vim.diagnostic.goto_prev()<CR>
+nnoremap ]i <cmd>lua vim.diagnostic.goto_next()<CR>
+nnoremap <leader>q <cmd>lua vim.diagnostic.setloclist()<CR>
+nnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
+nnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
+nnoremap <leader>cr <Cmd>lua require('jdtls').code_action(false, 'refactor')<CR>
+nnoremap <leader>mm <cmd>lua vim.lsp.buf.format({async = true})<CR>
+nnoremap <leader>mm <cmd>lua vim.lsp.buf.format({async = true})<CR>
+
 " nvim tree
 " nnoremap <leader>n :NvimTreeToggle<CR>
 " nnoremap <leader><leader>nr :NvimTreeRefresh<CR>

@@ -200,6 +200,7 @@ export DOWNGRADE_FROM_ALA=1
 export MUTTER_ALLOW_HYBRID_GPUS=1
 # export QT_STYLE_OVERRIDE=adwaita
 export QT_QPA_PLATFORMTHEME=qgnomeplatform
+export QT_QPA_PLATFORMTHEME=gtk3
 export VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 # export FZF_BASE=/usr/lib/fzf
 # export DISABLE_FZF_KEY_BINDINGS=false
