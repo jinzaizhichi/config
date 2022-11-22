@@ -81,6 +81,7 @@ local M = {
       }
     },
     import = {
+      gradle = { enabled = true },
       generatesMetadataFilesAtProjectRoot = true,
       maven = { enabled = true },
       exclusions = {
