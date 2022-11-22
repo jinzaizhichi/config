@@ -183,7 +183,7 @@ export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 export IBUS_USE_PORTAL=1
 # java
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+# export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 export JDTLS_JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 export LUA_PATH="~/.config/nvim/lua/;;"
 export GITLAB_HOME="$HOME/project/gitlab"
