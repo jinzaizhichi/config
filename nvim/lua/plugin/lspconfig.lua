@@ -88,5 +88,10 @@ return function()
     -- ["rust_analyzer"] = function ()
     --     require("rust-tools").setup {}
     -- end
+    ["groovyls"] = function ()
+        require("lspconfig")['groovyls'].setup {
+          root_dir = require('lspconfig.util').find_git_ancestor
+        }
+    end
   })
 end
