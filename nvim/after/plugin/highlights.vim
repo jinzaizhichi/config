@@ -49,3 +49,4 @@
 " highlight! link @variable @parameter
 " "
 " highlight PmenuSel ctermfg=242 ctermbg=0 guifg=NONE guibg=#393f4a
+highlight! BufferLineFill guibg=#101010

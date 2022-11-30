@@ -27,11 +27,11 @@ return function()
       },
       -- offsets = {{filetype = "NvimTree", text = "NvimTree"}}
     },
-    -- highlights = {
-    --     fill = {
-    --         -- fg = '#101010',
-    --         -- bg = '#101010',
-    --     },
-    -- }
+    highlights = {
+        fill = {
+            -- fg = '#101010',
+            bg = '#101010',
+        },
+    }
   })
 end
