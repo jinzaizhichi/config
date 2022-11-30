@@ -6,7 +6,7 @@ return require('packer').startup(function(use)
   use {'nvim-lua/plenary.nvim'}
   use {'nvim-lua/popup.nvim'}
   -- theme and color
-  use {'navarasu/onedark.nvim'}
+  use {'Mofiqul/vscode.nvim'}
   use {'NvChad/nvim-colorizer.lua', config = function() require('colorizer').setup() end}
   -- buffer | statusline | icon | treeview | startup buffer
   -- use {'glepnir/dashboard-nvim'}

@@ -1,7 +1,7 @@
 return function()
 
   local get_height = function()
-    return math.floor(vim.o.lines * 0.5)
+    return math.floor(vim.o.lines * 0.80 + 1)
   end
   local get_width = function()
     return math.floor(vim.o.columns * 0.80 - 1)
@@ -17,7 +17,7 @@ return function()
     insert_mappings = true, -- whether or not the open mapping applies in insert mode
     terminal_mappings = true, -- whether or not the open mapping applies in the opened terminals
     -- persist_size = true,
-    direction = 'horizontal',
+    direction = 'float',
     close_on_exit = true, -- close the terminal window when the process exits
     shell = vim.o.shell, -- change the default shell
     float_opts = {

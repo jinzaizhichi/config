@@ -42,7 +42,7 @@ set noshowmode
 set wrap
 set foldmethod=marker
 set foldlevelstart=99
-colorscheme onedark
+colorscheme vscode
 set relativenumber  
 set mouse=
 " set mouse=a
