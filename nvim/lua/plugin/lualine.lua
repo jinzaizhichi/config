@@ -38,6 +38,10 @@ return function()
     tabline = {},
     winbar = {},
     inactive_winbar = {},
-    extensions = {}
+    extensions = {
+      'quickfix',
+      'man',
+      'toggleterm',
+    }
   })
 end
