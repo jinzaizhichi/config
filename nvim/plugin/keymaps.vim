@@ -52,7 +52,7 @@ nnoremap <silent> <leader>mm <cmd>lua vim.lsp.buf.format { async = true }<CR>
 " nnoremap <leader>cc <cmd>TSContextToggle<cr>
 
 " Find files using Telescope command-line sugar.
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>ff <cmd>Telescope find_files hidden=true<cr>
 nnoremap <leader>fo <cmd>Telescope oldfiles<cr>
 nnoremap <leader>fe <cmd>Telescope file_browser<cr>
 nnoremap <leader>fc <cmd>Telescope commands<cr>
