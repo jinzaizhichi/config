@@ -1,9 +1,5 @@
 return function()
-  require('which-key').setup({
-    plugins = {
-      registers = false
-    }
-  })
+  require('which-key').setup()
 
   local wk = require('which-key')
   wk.register({
