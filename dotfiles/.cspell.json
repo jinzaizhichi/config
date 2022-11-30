@@ -27,6 +27,16 @@
         "lspconfig",
         "augroup",
         "tujidui",
+        "nnoremap",
+        "tnoremap",
+        "wincmd",
+        "tabn",
+        "tabp",
+        "bufferline",
+        "vmap",
+        "oldfiles",
+        "autocommands",
+        "quickfix",
     ],
     // flagWords - list of words to be always considered incorrect
     // This is useful for offensive words and common spelling errors.
