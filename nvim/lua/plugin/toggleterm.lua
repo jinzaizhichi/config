@@ -1,7 +1,7 @@
 return function()
 
   local get_height = function()
-    return math.floor(vim.o.lines * 0.80 + 1)
+    return math.floor(vim.o.lines * 0.80 + 2)
   end
   local get_width = function()
     return math.floor(vim.o.columns * 0.80 - 1)
