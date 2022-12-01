@@ -19,7 +19,7 @@ return function()
     x = {name = 'Close Current Buffer'},
     m = {name = 'Markdown & Format'},
     r = {name = 'Ranger & Rename & Rest'},
-    s = {name = 'Source Config'},
+    s = {name = 'Source & Session'},
     t = {name = 'Translate'},
     w = {name = 'Workspace'},
     p = {name = 'Paste System Clipboard'},

@@ -29,8 +29,10 @@ return function()
     },
     highlights = {
         fill = {
-            -- fg = '#101010',
-            bg = '#101010',
+            bg = {
+              attribute = 'bg',
+              highlight = '#101010'
+            },
         },
     }
   })

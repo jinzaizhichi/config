@@ -120,12 +120,10 @@ nnoremap <leader>cr <Cmd>lua require('jdtls').code_action(false, 'refactor')<CR>
 nnoremap <leader>mm <cmd>lua vim.lsp.buf.format({async = true})<CR>
 nnoremap <leader>mm <cmd>lua vim.lsp.buf.format({async = true})<CR>
 
-" nvim tree
-" nnoremap <leader>n :NvimTreeToggle<CR>
-" nnoremap <leader><leader>nr :NvimTreeRefresh<CR>
-" nnoremap <leader><leader>nf :NvimTreeFindFile<CR>
+nnoremap <leader>fsl <cmd>Telescope session-lens search_session<CR>
 
 nnoremap <leader>fss :lua require('spectre').open()<CR>
+
 
 " search current word
 nnoremap <leader>fsw viw:lua require('spectre').open_visual()<CR>
@@ -212,14 +210,21 @@ endfunction
 nnoremap <silent> <leader><leader>l :call ToggleQuickFix()<cr>
 
 " source config
-function! SourceMyConfigDir()
-    for f in split(glob('~/.config/nvim/plugin/*.vim'), '\n')
-        exe 'source' f
-    endfor
-    source $MYVIMRC
-endfunction
+if !exists('*SourceMyConfig')
+    function SourceMyConfig()
+        for f in split(glob('~/.config/nvim/plugin/*.vim'), '\n')
+            exe 'source' f
+        endfor
+        source $MYVIMRC
+    endfunction
+endif
 
-nnoremap <silent> <Leader>sc <cmd>source $MYVIMRC<CR>
+nnoremap <silent> <Leader>sc <cmd>call SourceMyConfig()<CR>
+
+" auto session
+nnoremap <silent> <Leader>ss <cmd>SaveSession<CR>
+nnoremap <silent> <Leader>sr <cmd>RestoreSession<CR>
+nnoremap <silent> <Leader>sd <cmd>DeleteSession<CR>
 
 tnoremap <silent> <C-r><C-e> <C-\><C-n>:RnvimrResize<CR>
 nnoremap <silent> <leader>rr :RnvimrToggle<CR>

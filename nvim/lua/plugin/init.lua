@@ -16,8 +16,8 @@ return require('packer').startup(function(use)
   -- fix CursorHold event performance see: https://github.com/neovim/neovim/issues/12587
   use {'antoinemadec/FixCursorHold.nvim'}
   -- session manager
-  -- use {'rmagatti/auto-session', config = require('plugin.auto-session')}
-  -- use {'rmagatti/session-lens', config = function() require('session-lens').setup() end}
+  use {'rmagatti/auto-session', config = require('plugin.auto-session')}
+  use {'rmagatti/session-lens'}
   use {'kyazdani42/nvim-web-devicons'}
   use {'akinsho/nvim-bufferline.lua', config = require('plugin.bufferline')}
   use {'nvim-lualine/lualine.nvim', config = require('plugin.lualine')}
