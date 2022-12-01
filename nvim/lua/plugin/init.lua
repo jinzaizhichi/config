@@ -89,7 +89,7 @@ return require('packer').startup(function(use)
   -- which keys
   use {'folke/which-key.nvim', config = require('plugin.which-key')}
   -- lsp setup
-  use {'SmiteshP/nvim-navic'}
+  use {'SmiteshP/nvim-navic', config = require('plugin.navic')}
   use {'williamboman/mason.nvim'}
   use {'williamboman/mason-lspconfig.nvim'}
   use {'neovim/nvim-lspconfig', config = require('plugin.lspconfig')}
