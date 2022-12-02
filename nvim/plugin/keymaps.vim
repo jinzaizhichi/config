@@ -20,13 +20,10 @@ tnoremap <silent> <M-p> <cmd>tabp<cr>
 " cnoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 " These commands will navigate through buffers in order regardless of which mode you are using
 " e.g. if you change the order of buffers :bnext and :bprevious will not respect the custom ordering
-nnoremap <silent><c-n> :BufferLineCycleNext<CR>
-nnoremap <silent><c-p> :BufferLineCyclePrev<CR>
-nnoremap <silent><leader><leader>b :BufferLinePick<CR>
 " These commands will move the current buffer backwards or forwards in the bufferline
-nnoremap <silent><leader>bn :BufferLineMoveNext<CR>
-nnoremap <silent><leader>bp :BufferLineMovePrev<CR>
-nnoremap <silent><leader>x :BufferDelete<CR>
+nnoremap <silent><c-n> <cmd>bn<CR>
+nnoremap <silent><c-p> <cmd>bp<CR>
+nnoremap <silent><leader>x <cmd>BufferDelete<CR>
 " nnoremap <silent><leader>a <cmd>Alpha<CR>
 nnoremap <silent><leader>bb <c-^>
 
@@ -212,10 +209,15 @@ nnoremap <silent> <leader><leader>l :call ToggleQuickFix()<cr>
 " source config
 if !exists('*SourceMyConfig')
     function SourceMyConfig()
-        for f in split(glob('~/.config/nvim/plugin/*.vim'), '\n')
+        let configs = split(glob('~/.config/nvim/plugin/*.vim'))
+        call extend(configs, split(glob('~/.config/nvim/after/plugin/*.vim')))
+        call extend(configs, split(glob('~/.config/nvim/after/ftplugin/*.vim')))
+        " for f in split(glob(configs), '\n')
+        for f in configs
             exe 'source' f
         endfor
         source $MYVIMRC
+        PackerCompile
     endfunction
 endif
 
