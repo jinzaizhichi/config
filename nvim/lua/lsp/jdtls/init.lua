@@ -50,8 +50,10 @@ function M.setup()
     common.set_keymap(bufnr, 'n', '<leader>dn', "<Cmd>lua require('jdtls').test_nearest_method()<CR>", opts)
   end
 
+  local lsp_status = require('lsp-status')
   local capabilities = vim.lsp.protocol.make_client_capabilities()
   capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+  capabilities = vim.tbl_extend('keep', capabilities, lsp_status.capabilities)
   capabilities.textDocument.completion.completionItem.snippetSupport = true
 
   local root_dir = require('jdtls.setup').find_root({'.git', 'mvnw', 'gradlew'})

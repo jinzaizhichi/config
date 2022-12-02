@@ -9,17 +9,14 @@ return require('packer').startup(function(use)
   use {'Mofiqul/vscode.nvim'}
   use {'NvChad/nvim-colorizer.lua', config = function() require('colorizer').setup() end}
   -- buffer | statusline | icon | treeview | startup buffer
-  -- use {'glepnir/dashboard-nvim'}
   use {'goolord/alpha-nvim', config = function() require('alpha').setup(require'alpha.themes.theta'.config) end}
   use {'kevinhwang91/rnvimr'}
-  -- use {'famiu/bufdelete.nvim'}
   -- fix CursorHold event performance see: https://github.com/neovim/neovim/issues/12587
   use {'antoinemadec/FixCursorHold.nvim'}
   -- session manager
   use {'rmagatti/auto-session', config = require('plugin.auto-session')}
   use {'rmagatti/session-lens'}
   use {'kyazdani42/nvim-web-devicons'}
-  use {'akinsho/nvim-bufferline.lua', config = require('plugin.bufferline')}
   use {'nvim-lualine/lualine.nvim', config = require('plugin.lualine')}
   -- treesitter and treesitter base plug
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = require('plugin.treesitter')}
@@ -90,6 +87,7 @@ return require('packer').startup(function(use)
   use {'folke/which-key.nvim', config = require('plugin.which-key')}
   -- lsp setup
   use {'SmiteshP/nvim-navic', config = require('plugin.navic')}
+  use {'nvim-lua/lsp-status.nvim'}
   use {'williamboman/mason.nvim'}
   use {'williamboman/mason-lspconfig.nvim'}
   use {'neovim/nvim-lspconfig', config = require('plugin.lspconfig')}

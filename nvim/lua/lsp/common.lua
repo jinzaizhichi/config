@@ -13,6 +13,7 @@ M.opts = opts
 
 function M.setup(client, bufnr)
   require('nvim-navic').attach(client, bufnr)
+  require('lsp-status').on_attach(client)
   if client.server_capabilities.documentHighlightProvider then
     vim.api.nvim_exec([[
     augroup lsp_document_highlight

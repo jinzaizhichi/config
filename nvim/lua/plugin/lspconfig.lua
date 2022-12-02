@@ -40,6 +40,14 @@ return function()
 
   end
 
+  local lsp_status = require('lsp-status')
+  lsp_status.config({
+    diagnostics = false,
+    show_filename = false,
+    current_function = false
+  })
+  lsp_status.register_progress()
+
   require("mason-lspconfig").setup()
   require("mason-lspconfig").setup_handlers({
     -- The first entry (without a key) will be the default handler
@@ -50,10 +58,11 @@ return function()
         return
       end
 
-      vim.lsp.set_log_level('debug')
+      -- vim.lsp.set_log_level('debug')
 
       if server_name ~= "jdtls" then
         local capabilities = vim.lsp.protocol.make_client_capabilities()
+        capabilities = vim.tbl_extend('keep', capabilities, lsp_status.capabilities)
         capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
         -- capabilities.textDocument.completion.completionItem.snippetSupport = true
         -- capabilities.textDocument.completion.completionItem.resolveSupport = {
@@ -92,6 +101,13 @@ return function()
         require("lspconfig")['groovyls'].setup {
           root_dir = require('lspconfig.util').find_git_ancestor
         }
-    end
+    end,
+    ["clangd"] = function ()
+      lsp_status.extensions.clangd.setup()
+    end,
+    ["pylsp"] = function ()
+      lsp_status.extensions.pyls_ms.setup()
+    end,
+
   })
 end
