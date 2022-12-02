@@ -24,7 +24,7 @@ tnoremap <silent> <M-p> <cmd>tabp<cr>
 nnoremap <silent><c-n> <cmd>bn<CR>
 nnoremap <silent><c-p> <cmd>bp<CR>
 nnoremap <silent><leader>x <cmd>BufferDelete<CR>
-" nnoremap <silent><leader>a <cmd>Alpha<CR>
+nnoremap <silent><leader>a <cmd>Alpha<CR>
 nnoremap <silent><leader>bb <c-^>
 
 " copy to system clipboard
