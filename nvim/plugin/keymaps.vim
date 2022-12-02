@@ -34,12 +34,6 @@ vmap <leader>y "+y
 nnoremap <leader>p "+p
 vmap <leader>p "+p
 
-" These commands will sort buffers by directory, language, or a custom criteria
-nnoremap <silent><leader>be :BufferLineSortByExtension<CR>
-nnoremap <silent><leader>bd :BufferLineSortByDirectory<CR>
-nnoremap <silent><leader>bs :lua require'bufferline'.sort_buffers_by(function (buf_a, buf_b) return buf_a.id < buf_b.id end)<CR>
-
-" use : instead of <Cmd>
 nnoremap <silent> <leader><leader>h <cmd>noh<CR>
 
 " Provided by setup function
@@ -92,6 +86,7 @@ nnoremap <leader>fds <cmd>Telescope dap configurations<cr>
 nnoremap <leader>fdl <cmd>Telescope dap list_breakpoints<cr>
 nnoremap <leader>fdv <cmd>Telescope dap variables<cr>
 nnoremap <leader>fdf <cmd>Telescope dap frames<cr>
+nnoremap <leader>fsl <cmd>Telescope session-lens search_session<CR>
 
 " lsp
 nnoremap gD <Cmd>lua vim.lsp.buf.declaration()<CR>
@@ -116,8 +111,6 @@ nnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <leader>cr <Cmd>lua require('jdtls').code_action(false, 'refactor')<CR>
 nnoremap <leader>mm <cmd>lua vim.lsp.buf.format({async = true})<CR>
 nnoremap <leader>mm <cmd>lua vim.lsp.buf.format({async = true})<CR>
-
-nnoremap <leader>fsl <cmd>Telescope session-lens search_session<CR>
 
 nnoremap <leader>fss :lua require('spectre').open()<CR>
 
@@ -228,6 +221,7 @@ nnoremap <silent> <Leader>ss <cmd>SaveSession<CR>
 nnoremap <silent> <Leader>sr <cmd>RestoreSession<CR>
 nnoremap <silent> <Leader>sd <cmd>DeleteSession<CR>
 
+"
 tnoremap <silent> <C-r><C-e> <C-\><C-n>:RnvimrResize<CR>
 nnoremap <silent> <leader>rr :RnvimrToggle<CR>
 tnoremap <silent> <C-r><C-r> <C-\><C-n>:RnvimrToggle<CR>
