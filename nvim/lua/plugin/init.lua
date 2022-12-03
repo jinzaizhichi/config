@@ -74,7 +74,7 @@ return require('packer').startup(function(use)
   use {'hrsh7th/cmp-cmdline'}
   use {'hrsh7th/cmp-nvim-lsp-signature-help'}
   use {'hrsh7th/cmp-nvim-lsp-document-symbol'}
-  use {'octaltree/cmp-look'}
+  use {'f3fora/cmp-spell'}
   use {'petertriho/cmp-git'}
   -- use {'tzachar/cmp-tabnine', run='./install.sh'}
   use {'kristijanhusak/vim-dadbod-completion'}
@@ -93,7 +93,6 @@ return require('packer').startup(function(use)
   use {'williamboman/mason-lspconfig.nvim'}
   use {'neovim/nvim-lspconfig', config = require('plugin.lspconfig')}
   use {'onsails/lspkind.nvim'}
-  use {'jose-elias-alvarez/null-ls.nvim', config = require('plugin.null-ls')}
   -- wrapper for jdtls
   use {'mfussenegger/nvim-jdtls'}
 end)
