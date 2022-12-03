@@ -4,7 +4,8 @@ return require('packer').startup(function(use)
   -- base plugin
   use {'wbthomason/packer.nvim'}
   use {'nvim-lua/plenary.nvim'}
-  use {'nvim-lua/popup.nvim'}
+  -- I forgot what plugin require this
+  -- use {'nvim-lua/popup.nvim'}
   -- theme and color
   use {'Mofiqul/vscode.nvim'}
   use {'NvChad/nvim-colorizer.lua', config = function() require('colorizer').setup() end}
@@ -36,7 +37,7 @@ return require('packer').startup(function(use)
   -- translator
   use {'uga-rosa/translate.nvim', config = require('plugin.translate')}
   -- comment
-  use {'numToStr/Comment.nvim', config = function () require('Comment').setup() end}
+  use {'numToStr/Comment.nvim', config = require('plugin.comment')}
   -- use {'b3nj5m1n/kommentary', config = require('plugin.kommentary')}
   use {'folke/todo-comments.nvim', config = function() require('todo-comments').setup() end}
   -- db manage

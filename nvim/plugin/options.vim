@@ -77,6 +77,7 @@ set fileencodings=utf8,ucs-bom,gbk,cp936,gb2312,gb18030,big5,euc-jp,euc-kr,latin
 
 set hidden
 set termguicolors
+" set spell
 
 " Set completeopt to have a better completion experience
 set completeopt=menuone,noinsert,noselect
