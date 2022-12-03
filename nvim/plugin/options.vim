@@ -44,8 +44,8 @@ set foldmethod=marker
 set foldlevelstart=99
 colorscheme vscode
 set relativenumber  
-set mouse=
-" set mouse=a
+" set mouse=
+set mouse=a
 " set cursorcolumn
 " let g:indentLine_enabled = 1
 
