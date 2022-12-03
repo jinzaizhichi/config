@@ -1,4 +1,4 @@
-return function()
+return function ()
   local cmp = require('cmp')
   local lspkind = require('lspkind')
   local menu_source_width = 50
@@ -6,7 +6,7 @@ return function()
     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
   end
   local has_words_before = function()
-    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
     return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
   end
 
@@ -33,8 +33,8 @@ return function()
       end,
     },
     mapping = cmp.mapping.preset.insert({
-      ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }), { 'i', 'c' }),
-      ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }), { 'i', 'c' }),
+      ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }), { 'i', 'c'}),
+      ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }), { 'i', 'c'}),
       ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
       ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
       ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
@@ -70,13 +70,13 @@ return function()
       end, { "i", "s" }),
     }),
     sources = {
-      { name = 'vsnip', max_item_count = 10 },
-      { name = 'nvim_lsp' },
-      { name = 'nvim_lsp_signature_help' },
-      { name = 'git' },
-      { name = 'buffer', max_item_count = 10 },
+      { name = 'vsnip', max_item_count = 10},
+      { name = 'nvim_lsp'},
+      { name = 'nvim_lsp_signature_help'},
+      { name = 'git'},
+      { name = 'buffer', max_item_count = 10},
       { name = 'path', max_item_count = 10 },
-      { name = 'spell', max_item_count = 10 },
+      { name = 'look', max_item_count = 5, keyword_length = 2, option = { convert_case = true, loud = true }},
       { name = 'vim-dadbod-completion' },
     },
     formatting = {
@@ -87,7 +87,7 @@ return function()
 
         -- The function below will be called before any actual modifications from lspkind
         -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
-        before = function(entry, vim_item)
+        before = function (entry, vim_item)
 
           if string.len(vim_item.abbr) > menu_source_width then
             vim_item.abbr = string.sub(vim_item.abbr, 1, menu_source_width) .. '…'
@@ -101,7 +101,6 @@ return function()
             path = "[Path]",
             cmp_tabnine = "[Tabnine]",
             look = "[Look]",
-            spell = "[Spell]",
             treesitter = "[Treesitter]",
             nvim_lua = "[Lua]",
             latex_symbols = "[Latex]",
@@ -128,7 +127,7 @@ return function()
   --   'confirm_done',
   --   cmp_autopairs.on_confirm_done()
   -- )
-  -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+    -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
   cmp.setup.cmdline(':', {
     completion = {
       autocomplete = false,
@@ -167,8 +166,8 @@ return function()
   cmp.setup.cmdline('/', {
     mapping = cmp.mapping.preset.cmdline({
       -- Your configuration here.
-      ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }), { 'i', 'c' }),
-      ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }), { 'i', 'c' }),
+      ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }), { 'i', 'c'}),
+      ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }), { 'i', 'c'}),
       ['<C-b>'] = cmp.mapping.scroll_docs(-4),
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
       ['<C-Space>'] = cmp.mapping.complete(),
