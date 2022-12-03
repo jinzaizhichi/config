@@ -66,7 +66,7 @@ set ignorecase
 set autoread
 set autowriteall
 set confirm
-" set updatetime=500
+set updatetime=500
 
 " encodeing
 set langmenu=zh_CN.UTF-8
