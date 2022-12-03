@@ -18,6 +18,7 @@ return function ()
                 and vim.diagnostic.severity["INFO"]
         end,
       },
+      null_ls.builtins.code_actions.cspell,
       -- null_ls.builtins.diagnostics.codespell,
       null_ls.builtins.formatting.nginx_beautifier,
       null_ls.builtins.formatting.prettier.with{
