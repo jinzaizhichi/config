@@ -56,7 +56,7 @@ return function()
         {
           'buffers',
           mode = 2,
-          show_filename_only = false,
+          show_filename_only = true,
           hide_filename_extension = false
         }
       },
