@@ -1,4 +1,5 @@
 local M = {}
+local lsp_status = require('lsp-status')
 
 function M.set_keymap(bufnr, ...)
   vim.api.nvim_buf_set_keymap(bufnr, ...)
@@ -12,8 +13,10 @@ local opts = { noremap = true, silent = true }
 M.opts = opts
 
 function M.setup(client, bufnr)
-  require('nvim-navic').attach(client, bufnr)
-  require('lsp-status').on_attach(client)
+  lsp_status.on_attach(client)
+  if client.server_capabilities.documentSymbolProvider then
+    require('nvim-navic').attach(client, bufnr)
+  end
   if client.server_capabilities.documentHighlightProvider then
     vim.api.nvim_exec([[
     augroup lsp_document_highlight
@@ -25,6 +28,13 @@ function M.setup(client, bufnr)
     ]], false)
   end
 
+end
+
+function M.make_capabilities()
+  local capabilities = vim.lsp.protocol.make_client_capabilities()
+  capabilities = vim.tbl_extend('keep', capabilities, lsp_status.capabilities)
+  capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+  return capabilities
 end
 
 return M
