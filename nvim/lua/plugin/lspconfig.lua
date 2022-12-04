@@ -48,6 +48,7 @@ return function()
   })
   lsp_status.register_progress()
 
+  local common = require('lsp.common')
   require("mason-lspconfig").setup()
   require("mason-lspconfig").setup_handlers({
     -- The first entry (without a key) will be the default handler
@@ -61,19 +62,13 @@ return function()
       -- vim.lsp.set_log_level('debug')
 
       if server_name ~= "jdtls" then
-        local capabilities = vim.lsp.protocol.make_client_capabilities()
-        capabilities = vim.tbl_extend('keep', capabilities, lsp_status.capabilities)
-        capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
-        -- capabilities.textDocument.completion.completionItem.snippetSupport = true
-        -- capabilities.textDocument.completion.completionItem.resolveSupport = {
-        --   properties = { 'documentation', 'detail', 'additionalTextEdits' }
-        -- }
+        local capabilities = common.make_capabilities()
         local config = {
           -- enable snippet support
           capabilities = capabilities,
           -- map buffer local keybindings when the language server attaches
           on_attach = function(client, bufnr)
-            require('lsp.common').setup(client, bufnr)
+            common.setup(client, bufnr)
           end
         }
 
@@ -97,15 +92,15 @@ return function()
     -- ["rust_analyzer"] = function ()
     --     require("rust-tools").setup {}
     -- end
-    ["groovyls"] = function ()
-        require("lspconfig")['groovyls'].setup {
-          root_dir = require('lspconfig.util').find_git_ancestor
-        }
+    ["groovyls"] = function()
+      require("lspconfig").groovyls.setup {
+        root_dir = require('lspconfig.util').find_git_ancestor
+      }
     end,
-    ["clangd"] = function ()
+    ["clangd"] = function()
       lsp_status.extensions.clangd.setup()
     end,
-    ["pylsp"] = function ()
+    ["pylsp"] = function()
       lsp_status.extensions.pyls_ms.setup()
     end,
 

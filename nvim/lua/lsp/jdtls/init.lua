@@ -1,41 +1,40 @@
 local M = {}
+local common = require('lsp.common')
 
 function M.setup()
   local on_attach = function(client, bufnr)
     -- require'jdtls'.setup_dap({hotcodereplace = 'auto'})
-  local dap = require('dap')
-  local util = require('jdtls.util')
+    local dap = require('dap')
+    local util = require('jdtls.util')
 
+    dap.adapters.java = function(callback)
+      util.execute_command({ command = 'vscode.java.startDebugSession' }, function(err0, port)
+        assert(not err0, vim.inspect(err0))
+        -- print("puerto:", port)
+        callback({
+          type = 'server';
+          host = '127.0.0.1';
+          port = port;
+        })
+      end)
+    end
 
-  dap.adapters.java = function(callback)
-    util.execute_command({command = 'vscode.java.startDebugSession'}, function(err0, port)
-      assert(not err0, vim.inspect(err0))
-      -- print("puerto:", port)
-      callback({
-        type = 'server';
-        host = '127.0.0.1';
-        port = port;
-      })
-    end)
-  end
-
-  local project_name = os.getenv('PROJECT_NAME')
-  if project_name then
-    dap.configurations.java = {
-      {
-        type = 'java',
-        request = 'attach',
-        projectName = project_name or nil,
-        name = "Java attach",
-        hostName = "127.0.0.1",
-        port = 5005
-      },
-    }
-  end
+    local project_name = os.getenv('PROJECT_NAME')
+    if project_name then
+      dap.configurations.java = {
+        {
+          type = 'java',
+          request = 'attach',
+          projectName = project_name or nil,
+          name = "Java attach",
+          hostName = "127.0.0.1",
+          port = 5005
+        },
+      }
+    end
     require('jdtls').setup_dap()
     require('jdtls.dap').setup_dap_main_class_configs()
     require('jdtls.setup').add_commands()
-    local common = require('lsp.common')
     common.setup(client, bufnr)
     local opts = common.opts
     common.set_keymap(bufnr, 'n', '<leader>co', "<Cmd>lua require('jdtls').organize_imports()<CR>", opts)
@@ -50,22 +49,18 @@ function M.setup()
     common.set_keymap(bufnr, 'n', '<leader>dn', "<Cmd>lua require('jdtls').test_nearest_method()<CR>", opts)
   end
 
-  local lsp_status = require('lsp-status')
-  local capabilities = vim.lsp.protocol.make_client_capabilities()
-  capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
-  capabilities = vim.tbl_extend('keep', capabilities, lsp_status.capabilities)
-  capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-  local root_dir = require('jdtls.setup').find_root({'.git', 'mvnw', 'gradlew'})
+  local capabilities = common.make_capabilities()
+  local root_dir = require('jdtls.setup').find_root({ '.git', 'mvnw', 'gradlew' })
   local workspace_name, _ = string.gsub(vim.fn.fnamemodify(root_dir, ":p"), "/", "_")
   local jdtls_path = vim.fn.stdpath('data') .. '/mason/packages/jdtls'
   local config_path = vim.fn.stdpath('config') .. '/lua/lsp/jdtls'
 
   local bundles = {
-    vim.fn.glob(config_path ..  '/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar')
+    vim.fn.glob(config_path .. '/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar')
   }
   vim.list_extend(bundles, vim.split(vim.fn.glob(config_path .. '/vscode-java-test/server/*.jar'), '\n'))
-  vim.list_extend(bundles, vim.split(vim.fn.glob(config_path ..  '/vscode-java-decompiler/server/*.jar'), '\n'))
+  vim.list_extend(bundles, vim.split(vim.fn.glob(config_path .. '/vscode-java-decompiler/server/*.jar'), '\n'))
+  vim.list_extend(bundles, vim.split(vim.fn.glob(config_path .. '/vscode-java-dependency/server/*.jar'), '\n'))
 
   local jdtls_java_home = os.getenv('JDTLS_JAVA_HOME')
   local java_cmd = 'java'
@@ -77,7 +72,7 @@ function M.setup()
     capabilities = capabilities,
     on_attach = on_attach,
     name = 'jdtls',
-    filetypes = {'java'},
+    filetypes = { 'java' },
     init_options = {
       bundles = bundles
     },
@@ -93,7 +88,7 @@ function M.setup()
       '--add-modules=ALL-SYSTEM',
       '--add-opens', 'java.base/java.util=ALL-UNNAMED',
       '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
-      '-javaagent:'.. jdtls_path .. '/lombok.jar',
+      '-javaagent:' .. jdtls_path .. '/lombok.jar',
       '-jar', vim.fn.glob(jdtls_path .. '/plugins/org.eclipse.equinox.launcher_*.jar'),
       '-configuration', jdtls_path .. '/config_linux',
       '-data', jdtls_path .. '/workspace/' .. workspace_name,
