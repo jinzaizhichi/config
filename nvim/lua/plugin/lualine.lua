@@ -62,9 +62,9 @@ return function()
       },
       lualine_b = {},
       lualine_c = {},
-      lualine_x = {},
-      lualine_y = { 'windows' },
-      lualine_z = { 'tabs' }
+      lualine_x = { 'windows' },
+      lualine_y = { 'tabs' },
+      lualine_z = {  }
     },
     winbar = {
       lualine_a = {},
