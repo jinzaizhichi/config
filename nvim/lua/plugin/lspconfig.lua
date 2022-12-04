@@ -29,13 +29,13 @@ return function()
       \ pyright
       \ bash-language-server
       \ eslint-lsp
-      \ eslint-lsp
       \ rust-analyzer
       \ clang-format
       \ clangd
       \ codelldb
       \ cpplint
       \ cpptools
+      \ gradle-language-server
     ]])
 
   end
