@@ -45,29 +45,29 @@ return function ()
       }),
       ['<CR>'] = cmp.mapping {
         i = cmp.mapping.confirm {
-          -- behavior = cmp.ConfirmBehavior.Replace,
+          behavior = cmp.ConfirmBehavior.Replace,
           select = true,
         },
         c = cmp.mapping.confirm { select = true },
       },
-      ["<Tab>"] = cmp.mapping(function(fallback)
-        if cmp.visible() then
-          cmp.select_next_item()
-        elseif vim.fn["vsnip#available"](1) == 1 then
-          feedkey("<Plug>(vsnip-expand-or-jump)", "")
-        elseif has_words_before() then
-          cmp.complete()
-        else
-          fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
-        end
-      end, { "i", "s" }),
-      ["<S-Tab>"] = cmp.mapping(function()
-        if cmp.visible() then
-          cmp.select_prev_item()
-        elseif vim.fn["vsnip#jumpable"](-1) == 1 then
-          feedkey("<Plug>(vsnip-jump-prev)", "")
-        end
-      end, { "i", "s" }),
+      -- ["<Tab>"] = cmp.mapping(function(fallback)
+      --   if cmp.visible() then
+      --     cmp.select_next_item()
+      --   elseif vim.fn["vsnip#available"](1) == 1 then
+      --     feedkey("<Plug>(vsnip-expand-or-jump)", "")
+      --   elseif has_words_before() then
+      --     cmp.complete()
+      --   else
+      --     fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
+      --   end
+      -- end, { "i", "s" }),
+      -- ["<S-Tab>"] = cmp.mapping(function()
+      --   if cmp.visible() then
+      --     cmp.select_prev_item()
+      --   elseif vim.fn["vsnip#jumpable"](-1) == 1 then
+      --     feedkey("<Plug>(vsnip-jump-prev)", "")
+      --   end
+      -- end, { "i", "s" }),
     }),
     sources = {
       { name = 'vsnip', max_item_count = 10},
@@ -129,66 +129,13 @@ return function ()
   -- )
     -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
   cmp.setup.cmdline(':', {
-    completion = {
-      autocomplete = false,
-    },
-    mapping = cmp.mapping.preset.cmdline({
-      -- Your configuration here.
-      ['<C-n>'] = cmp.mapping.select_next_item(),
-      ['<C-p>'] = cmp.mapping.select_prev_item(),
-      ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-      ['<C-f>'] = cmp.mapping.scroll_docs(4),
-      ['<C-Space>'] = cmp.mapping.complete(),
-      ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-      ['<C-e>'] = cmp.mapping.close(),
-      ['<CR>'] = cmp.mapping.confirm(),
-      ["<Tab>"] = cmp.mapping(function()
-        if cmp.visible() then
-          cmp.select_next_item()
-        else
-          cmp.complete()
-        end
-      end, { "i", "c" }),
-      ["<S-Tab>"] = cmp.mapping(function()
-        if cmp.visible() then
-          cmp.select_prev_item()
-        else
-          cmp.complete()
-        end
-      end),
-    }),
     sources = cmp.config.sources({
       { name = 'path' }
     }, {
-      { name = 'cmdline' }
+      { name = 'cmdline' , keyword_length = 3}
     })
   })
   cmp.setup.cmdline('/', {
-    mapping = cmp.mapping.preset.cmdline({
-      -- Your configuration here.
-      ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }), { 'i', 'c'}),
-      ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }), { 'i', 'c'}),
-      ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-      ['<C-f>'] = cmp.mapping.scroll_docs(4),
-      ['<C-Space>'] = cmp.mapping.complete(),
-      ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-      ['<C-e>'] = cmp.mapping.close(),
-      ['<CR>'] = cmp.mapping.confirm(),
-      ["<Tab>"] = cmp.mapping(function()
-        if cmp.visible() then
-          cmp.select_next_item()
-        else
-          cmp.complete()
-        end
-      end, { "i", "c" }),
-      ["<S-Tab>"] = cmp.mapping(function()
-        if cmp.visible() then
-          cmp.select_prev_item()
-        else
-          cmp.complete()
-        end
-      end, { "i", "c" }),
-    }),
     sources = cmp.config.sources({
       { name = 'nvim_lsp_document_symbol' }
     }, {
