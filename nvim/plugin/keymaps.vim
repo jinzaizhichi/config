@@ -74,6 +74,7 @@ nnoremap <leader>fhr <cmd>Telescope resume<cr>
 nnoremap <leader>fhl <cmd>Telescope highlights<cr>
 nnoremap <leader>fhc <cmd>Telescope command_history<cr>
 nnoremap <leader>fhs <cmd>Telescope search_history<cr>
+nnoremap <leader>fhq <cmd>Telescope quickfixhistory<cr>
 nnoremap <leader>ftt <cmd>Telescope treesitter<cr>
 nnoremap <leader>ftp <cmd>Telescope filetypes<cr>
 nnoremap <leader>fwD <cmd>Telescope diagnostics<cr>
