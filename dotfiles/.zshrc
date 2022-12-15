@@ -194,6 +194,7 @@ export EDITOR='nvim'
 export BAT_THEME='OneHalfDark'
 export DOWNGRADE_FROM_ALA=1
 export MUTTER_ALLOW_HYBRID_GPUS=1
+export DISPLAY=:0.0
 # export QT_STYLE_OVERRIDE=adwaita
 export QT_QPA_PLATFORMTHEME=qgnomeplatform
 export QT_QPA_PLATFORMTHEME=gtk3
