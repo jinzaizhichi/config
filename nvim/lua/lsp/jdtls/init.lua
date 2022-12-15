@@ -88,7 +88,7 @@ function M.setup()
       '--add-modules=ALL-SYSTEM',
       '--add-opens', 'java.base/java.util=ALL-UNNAMED',
       '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
-      '-javaagent:' .. jdtls_path .. '/lombok.jar',
+      -- '-javaagent:' .. jdtls_path .. '/lombok.jar',
       '-jar', vim.fn.glob(jdtls_path .. '/plugins/org.eclipse.equinox.launcher_*.jar'),
       '-configuration', jdtls_path .. '/config_linux',
       '-data', jdtls_path .. '/workspace/' .. workspace_name,
