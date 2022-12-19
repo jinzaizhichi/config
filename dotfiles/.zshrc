@@ -1,8 +1,11 @@
 # TMUX
-if which tmux >/dev/null 2>&1; then
-    #if not inside a tmux session, and if no session is started, start a new session
-    test -z "$TMUX" && (tmux attach || tmux new-session)
+if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
+    tmux attach || tmux >/dev/null 2>&1
 fi
+# if which tmux >/dev/null 2>&1; then
+#     #if not inside a tmux session, and if no session is started, start a new session
+#     test -z "$TMUX" && (tmux attach || tmux new-session)
+# fi
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
