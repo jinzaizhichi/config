@@ -40,14 +40,6 @@ return function()
 
   end
 
-  local lsp_status = require('lsp-status')
-  lsp_status.config({
-    diagnostics = false,
-    show_filename = false,
-    current_function = false
-  })
-  lsp_status.register_progress()
-
   local common = require('lsp.common')
   require("mason-lspconfig").setup()
   require("mason-lspconfig").setup_handlers({
@@ -96,12 +88,6 @@ return function()
       require("lspconfig").groovyls.setup {
         root_dir = require('lspconfig.util').find_git_ancestor
       }
-    end,
-    ["clangd"] = function()
-      lsp_status.extensions.clangd.setup()
-    end,
-    ["pylsp"] = function()
-      lsp_status.extensions.pyls_ms.setup()
     end,
 
   })

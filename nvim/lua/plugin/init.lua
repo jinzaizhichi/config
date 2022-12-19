@@ -86,7 +86,7 @@ return require('packer').startup(function(use)
   use {'folke/which-key.nvim', config = require('plugin.which-key')}
   -- lsp setup
   use {'SmiteshP/nvim-navic', config = require('plugin.navic')}
-  use {'nvim-lua/lsp-status.nvim'}
+  use {'j-hui/fidget.nvim', config = function() require('fidget').setup() end}
   use {'williamboman/mason.nvim'}
   use {'williamboman/mason-lspconfig.nvim'}
   use {'neovim/nvim-lspconfig', config = require('plugin.lspconfig')}
