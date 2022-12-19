@@ -11,7 +11,7 @@ local M = {
     },
     jdt = {
       ls = {
-        lombokSupport = { enabled = true},
+        lombokSupport = { enabled = true },
         java = {
           home = jdtls_java_home or java_home
         },
