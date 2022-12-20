@@ -27,7 +27,7 @@ endfunction
 function! OnUIEnter(event) abort
   if s:IsFirenvimActive(a:event)
     " for 4k screen display
-    set guifont=FiraCode_Nerd_Font_Mono:h24
+    set guifont=FiraCode_Nerd_Font_Mono:h20
     " disable auto session
     let g:auto_session_enabled = v:false
   endif
