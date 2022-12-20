@@ -48,7 +48,6 @@ return require('packer').startup(function(use)
   -- fuzzy finder
   use {'sudormrfbin/cheatsheet.nvim'}
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-  use {'nvim-telescope/telescope-dap.nvim'}
   use {'nvim-telescope/telescope-ui-select.nvim'}
   use {'nvim-telescope/telescope-live-grep-args.nvim'}
   use {'nvim-telescope/telescope.nvim', config = require('plugin.telescope')}
@@ -81,7 +80,6 @@ return require('packer').startup(function(use)
   use {'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end}
   -- nvim debug tool
   use {'mfussenegger/nvim-dap'}
-  use {'theHamsta/nvim-dap-virtual-text', config = require('plugin.nvim-dap-virtual-text')}
   -- which keys
   use {'folke/which-key.nvim', config = require('plugin.which-key')}
   -- lsp setup

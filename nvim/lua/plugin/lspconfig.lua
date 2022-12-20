@@ -17,7 +17,7 @@ return function()
       \ vim-language-server
       \ emmet-ls
       \ prettier
-      \ sqls
+      \ sqlls
       \ python-lsp-server
       \ yaml-language-server
       \ lemminx
