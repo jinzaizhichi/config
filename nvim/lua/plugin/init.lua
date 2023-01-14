@@ -27,7 +27,6 @@ return require('packer').startup(function(use)
   -- editing
   -- use {'tpope/vim-surround'}
   use {'kylechui/nvim-surround', config = function() require('nvim-surround').setup() end}
-  use {'mbbill/undotree'}
   -- better marks
   use {'chentoast/marks.nvim', config = require('plugin.marks')}
   -- git
@@ -47,6 +46,7 @@ return require('packer').startup(function(use)
   use {'windwp/nvim-spectre'}
   -- fuzzy finder
   use {'sudormrfbin/cheatsheet.nvim'}
+  use {'debugloop/telescope-undo.nvim'}
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use {'nvim-telescope/telescope-ui-select.nvim'}
   use {'nvim-telescope/telescope-live-grep-args.nvim'}

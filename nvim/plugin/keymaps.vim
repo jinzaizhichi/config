@@ -58,6 +58,7 @@ nnoremap <leader>fr <cmd>Telescope registers<cr>
 nnoremap <leader>fi <cmd>Telescope loclist<cr>
 nnoremap <leader>fj <cmd>Telescope jumplist<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fu <cmd>Telescope undo<cr>
 nnoremap <leader>fii <cmd>Telescope builtin<cr>
 nnoremap <leader>fic <cmd>Telescope colorscheme<cr>
 nnoremap <leader>fiv <cmd>Telescope vim_options<cr>

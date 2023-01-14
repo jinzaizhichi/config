@@ -62,11 +62,19 @@ return function()
           }
         }
       },
+      undo = {
+        side_by_side = true,
+        layout_strategy = "vertical",
+        layout_config = {
+          preview_height = 0.8,
+        },
+      },
     }
   })
   require('telescope').load_extension('projects')
   require('telescope').load_extension('fzf')
-  require("telescope").load_extension("ui-select")
-  require("telescope").load_extension("live_grep_args")
-  require("telescope").load_extension("session-lens")
+  require('telescope').load_extension('undo')
+  require('telescope').load_extension('ui-select')
+  require('telescope').load_extension('live_grep_args')
+  require('telescope').load_extension('session-lens')
 end
