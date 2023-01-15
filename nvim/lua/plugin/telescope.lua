@@ -14,7 +14,7 @@ return function()
       file_ignore_patterns = fileIgnoreTable or nil,
       borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
       wrap_results = true,
-      sorting_strategy = "ascending",
+      -- sorting_strategy = "ascending",
       layout_strategy = 'vertical',
       layout_config = {
         horizontal = {
