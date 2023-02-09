@@ -268,7 +268,8 @@ clrProxy(){
     echo "cleaned all proxy env"
 }
 
-toggleProxy(){
+# toggleProxy
+tp(){
     if proxyIsSet 
     then
         clrProxy
