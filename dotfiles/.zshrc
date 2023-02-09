@@ -162,9 +162,10 @@ alias p='proxychains '
 alias py='python '
 alias rr='ranger '
 alias lg='lazygit '
+alias sudo='sudo -E '
+alias ssh='TERM=xterm-256color ssh '
 # alias vi='vim'
 alias grep="grep --color=auto"
-alias sudo='sudo -E '
 alias natapp='natapp -config=$HOME/.config/natapp/config'
 bindkey '^ ' autosuggest-accept
 export GOPATH=$HOME/.go
