@@ -174,14 +174,17 @@ nnoremap <silent> <leader>dB <cmd>lua require'dap'.set_breakpoint(vim.fn.input('
 nnoremap <silent> <leader>dp <cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
 nnoremap <silent> <leader>dr <cmd>lua require'dap'.repl.open()<CR>
 nnoremap <silent> <leader>dl <cmd>lua require'dap'.run_last()<CR>
+nnoremap <silent> <leader>daa <cmd>lua require'dap'.sessions()<CR>
 command DapScopesFloat :lua require'dap.ui.widgets'.centered_float(require('dap.ui.widgets').scopes)<CR>
 command DapFramesFloat :lua require'dap.ui.widgets'.centered_float(require('dap.ui.widgets').frames)<CR>
 command DapExpressionFloat :lua require'dap.ui.widgets'.centered_float(require('dap.ui.widgets').expression)<CR>
 command DapThreadsFloat :lua require'dap.ui.widgets'.centered_float(require('dap.ui.widgets').threads)<CR>
+command DapSessionFloat :lua require'dap.ui.widgets'.centered_float(require('dap.ui.widgets').sessions)<CR>
 nnoremap <silent> <leader>ds <cmd>DapScopesFloat<CR>
 nnoremap <silent> <leader>df <cmd>DapFramesFloat<CR>
 nnoremap <silent> <leader>de <cmd>DapExpressionFloat<CR>
 nnoremap <silent> <leader>dt <cmd>DapThreadsFloat<CR>
+nnoremap <silent> <leader>daf <cmd>DapSessionFloat<CR>
 nnoremap <silent> <leader>dh <cmd>lua require'dap.ui.widgets'.hover()<CR>
 nnoremap <silent> <leader>dv <cmd>DapVirtualTextToggle<CR>
 
