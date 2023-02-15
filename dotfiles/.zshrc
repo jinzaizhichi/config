@@ -1,6 +1,6 @@
 # TMUX
 if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
-    tmux attach || tmux >/dev/null 2>&1
+    tmux new-session || tmux >/dev/null 2>&1
 fi
 # if which tmux >/dev/null 2>&1; then
 #     #if not inside a tmux session, and if no session is started, start a new session
