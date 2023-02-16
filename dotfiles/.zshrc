@@ -1,5 +1,5 @@
 # TMUX
-if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${VSCODE_INJECTION}" ] && [ -z "${TMUX}" ]; then
+if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ "${TERM_PROGRAM}" != "vscode" ] && [ -z "${TMUX}" ]; then
     tmux attach || tmux >/dev/null 2>&1
 fi
 # if which tmux >/dev/null 2>&1; then
