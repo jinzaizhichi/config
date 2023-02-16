@@ -1,6 +1,7 @@
 return function ()
   local null_ls = require('null-ls')
   local perfer_local = vim.fn.stdpath('data') .. '/mason/bin'
+  local home = os.getenv('HOME')
   null_ls.setup({
     -- log = {
     --   enable = true,
@@ -18,7 +19,13 @@ return function ()
                 and vim.diagnostic.severity["INFO"]
         end,
       },
-      null_ls.builtins.code_actions.cspell,
+      null_ls.builtins.code_actions.cspell.with{
+        config = {
+        find_json = function(params)
+            return home .. "/.cspell.json"
+        end,
+    },
+      },
       -- null_ls.builtins.diagnostics.codespell,
       null_ls.builtins.formatting.nginx_beautifier,
       null_ls.builtins.formatting.prettier.with{
