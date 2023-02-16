@@ -3,21 +3,21 @@ local common = require('lsp.common')
 
 function M.setup()
   local on_attach = function(client, bufnr)
-    -- require'jdtls'.setup_dap({hotcodereplace = 'auto'})
+    require'jdtls'.setup_dap({hotcodereplace = 'auto'})
     local dap = require('dap')
     local util = require('jdtls.util')
 
-    dap.adapters.java = function(callback)
-      util.execute_command({ command = 'vscode.java.startDebugSession' }, function(err0, port)
-        assert(not err0, vim.inspect(err0))
-        -- print("puerto:", port)
-        callback({
-          type = 'server';
-          host = '127.0.0.1';
-          port = port;
-        })
-      end)
-    end
+    -- dap.adapters.java = function(callback)
+    --   util.execute_command({ command = 'vscode.java.startDebugSession' }, function(err0, port)
+    --     assert(not err0, vim.inspect(err0))
+    --     -- print("puerto:", port)
+    --     callback({
+    --       type = 'server';
+    --       host = '127.0.0.1';
+    --       port = port;
+    --     })
+    --   end)
+    -- end
 
     local project_name = os.getenv('PROJECT_NAME')
     if project_name then
@@ -35,6 +35,7 @@ function M.setup()
     require('jdtls').setup_dap()
     require('jdtls.dap').setup_dap_main_class_configs()
     require('jdtls.setup').add_commands()
+    require('dap.ext.vscode').load_launchjs()
     common.setup(client, bufnr)
     local opts = common.opts
     common.set_keymap(bufnr, 'n', '<leader>co', "<Cmd>lua require('jdtls').organize_imports()<CR>", opts)
@@ -84,7 +85,8 @@ function M.setup()
       '-Dlog.protocol=true',
       '-Dlog.level=ALL',
       '-Dfile.encoding=utf-8',
-      '-Xms1g',
+      '-Xms256m',
+      '-Xmx1G',
       '--add-modules=ALL-SYSTEM',
       '--add-opens', 'java.base/java.util=ALL-UNNAMED',
       '--add-opens', 'java.base/java.lang=ALL-UNNAMED',
