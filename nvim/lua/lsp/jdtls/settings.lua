@@ -69,14 +69,14 @@ local M = {
         "/**",
         " * @author: ${user}",
         " * @date: ${date}",
-        " * @description: ${file_name}",
+        " * @description: ",
         " */",
       },
       typeComment = {
         "/**",
         " * @author: ${user}",
         " * @date: ${date}",
-        " * @description: ${type_name}",
+        " * @description: ",
         " */",
       }
     },
