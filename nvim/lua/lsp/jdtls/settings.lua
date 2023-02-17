@@ -15,7 +15,7 @@ local M = {
         java = {
           home = jdtls_java_home or java_home
         },
-        vmargs = "-XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx2G -Xms1G -javaagent:'"
+        vmargs = "-XX:+UseZGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx2G -Xms1G -javaagent:'"
             .. data_path .. "/mason/packages/jdtls/lombok.jar'"
       }
     },
