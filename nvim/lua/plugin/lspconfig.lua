@@ -27,6 +27,7 @@ return function()
       \ marksman
       \ vetur-vls
       \ jdtls
+      \ google-java-format
       \ pyright
       \ bash-language-server
       \ eslint-lsp
