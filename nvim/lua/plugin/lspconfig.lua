@@ -16,6 +16,7 @@ return function()
       \ cspell
       \ vim-language-server
       \ emmet-ls
+      \ html-lsp
       \ prettier
       \ sqlls
       \ python-lsp-server
@@ -36,6 +37,7 @@ return function()
       \ cpplint
       \ cpptools
       \ gradle-language-server
+      \ semgrep
     ]])
 
   end
