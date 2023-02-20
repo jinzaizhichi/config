@@ -167,26 +167,31 @@ map , <Plug>(clever-f-repeat-back)
 
 " nvim-dap
 nnoremap <silent> <leader>db <cmd>lua require'dap'.toggle_breakpoint()<cr>
+nnoremap <silent> <leader>dl <cmd>lua require'dap'.list_breakpoints()<cr>
+nnoremap <silent> <leader>dR <cmd>lua require'dap'.clear_breakpoints()<cr>
 nnoremap <silent> <leader>dc <cmd>lua require'dap'.continue()<cr>
-nnoremap <silent> <leader>do <cmd>lua require'dap'.step_over()<cr>
-nnoremap <silent> <leader>di <cmd>lua require'dap'.step_into()<cr>
+nnoremap <silent> <leader>dC <cmd>lua require'dap'.run_to_cursor()<cr>
+nnoremap <silent> <M-n> <cmd>lua require'dap'.step_over()<cr>
+nnoremap <silent> <M-o> <cmd>lua require'dap'.step_out()<cr>
+nnoremap <silent> <M-b> <cmd>lua require'dap'.step_back()<cr>
+nnoremap <silent> <M-i> <cmd>lua require'dap'.step_into()<cr>
+nnoremap <silent> <M-t> <cmd>lua require'dap'.reverse_continue()<cr>
 nnoremap <silent> <leader>dB <cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
-nnoremap <silent> <leader>dp <cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
-nnoremap <silent> <leader>dr <cmd>lua require'dap'.repl.open()<CR>
-nnoremap <silent> <leader>dl <cmd>lua require'dap'.run_last()<CR>
-nnoremap <silent> <leader>daa <cmd>lua require'dap'.sessions()<CR>
-command DapScopesFloat :lua require'dap.ui.widgets'.centered_float(require('dap.ui.widgets').scopes)<CR>
-command DapFramesFloat :lua require'dap.ui.widgets'.centered_float(require('dap.ui.widgets').frames)<CR>
-command DapExpressionFloat :lua require'dap.ui.widgets'.centered_float(require('dap.ui.widgets').expression)<CR>
-command DapThreadsFloat :lua require'dap.ui.widgets'.centered_float(require('dap.ui.widgets').threads)<CR>
-command DapSessionFloat :lua require'dap.ui.widgets'.centered_float(require('dap.ui.widgets').sessions)<CR>
+nnoremap <silent> <leader>dL <cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
+nnoremap <silent> <leader>dE <cmd>lua require'dap'.set_exception_breakpoints("default")<cr>
+nnoremap <silent> <leader>dr <cmd>lua require'dap'.repl.toggle()<CR>
+nnoremap <silent> <leader>dp <cmd>lua require'dap'.run_last()<CR>
+command DapScopesFloat :lua require'dap.ui.widgets'.preview(require('dap.ui.widgets').scopes)<CR>
+command DapFramesFloat :lua require'dap.ui.widgets'.preview(require('dap.ui.widgets').frames)<CR>
+command DapExpressionFloat :lua require'dap.ui.widgets'.preview(require('dap.ui.widgets').expression)<CR>
+command DapThreadsFloat :lua require'dap.ui.widgets'.preview(require('dap.ui.widgets').threads)<CR>
+command DapSessionFloat :lua require'dap.ui.widgets'.preview(require('dap.ui.widgets').sessions)<CR>
 nnoremap <silent> <leader>ds <cmd>DapScopesFloat<CR>
 nnoremap <silent> <leader>df <cmd>DapFramesFloat<CR>
 nnoremap <silent> <leader>de <cmd>DapExpressionFloat<CR>
 nnoremap <silent> <leader>dt <cmd>DapThreadsFloat<CR>
-nnoremap <silent> <leader>daf <cmd>DapSessionFloat<CR>
+nnoremap <silent> <leader>dS <cmd>DapSessionFloat<CR>
 nnoremap <silent> <leader>dh <cmd>lua require'dap.ui.widgets'.hover()<CR>
-nnoremap <silent> <leader>dv <cmd>DapVirtualTextToggle<CR>
 
 " rest nivim
 command RestNvim :lua require('rest-nvim').run()<CR>
