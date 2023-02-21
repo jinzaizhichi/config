@@ -38,9 +38,6 @@ vmap <leader>p "+p
 
 nnoremap <silent> <leader><leader>h <cmd>noh<CR>
 
-" Provided by setup function
-nnoremap <silent> <leader>mm <cmd>lua vim.lsp.buf.format { async = true }<CR>
-
 " treesitter context
 " nnoremap <leader>cc <cmd>TSContextToggle<cr>
 
@@ -106,14 +103,12 @@ nnoremap [i <cmd>lua vim.diagnostic.goto_prev()<CR>
 nnoremap ]i <cmd>lua vim.diagnostic.goto_next()<CR>
 nnoremap <leader>q <cmd>lua vim.diagnostic.setloclist()<CR>
 nnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
-nnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
+vnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <leader>cr <Cmd>lua require('jdtls').code_action(false, 'refactor')<CR>
 nnoremap <leader>mm <cmd>lua vim.lsp.buf.format({async = true})<CR>
-nnoremap <leader>mm <cmd>lua vim.lsp.buf.format({async = true})<CR>
+vnoremap <leader>mm <cmd>lua vim.lsp.buf.format({async = true})<CR>
 
 nnoremap <leader>fss :lua require('spectre').open()<CR>
-
-
 " search current word
 nnoremap <leader>fsw viw:lua require('spectre').open_visual()<CR>
 vnoremap <leader>fsv :lua require('spectre').open_visual()<CR>
@@ -151,8 +146,6 @@ xnoremap <silent> <leader>ty <cmd>Translate ZH -output=register<CR>
 nnoremap <silent> <leader><leader>d :DBUIToggle<cr>
 " markdown preview
 nnoremap <silent> <leader>mp :Glow<cr>
-
-nnoremap <silent> <leader>uu :UndotreeToggle<cr>
 
 nnoremap <silent> <leader>mt :MarksToggleSigns<cr>
 
