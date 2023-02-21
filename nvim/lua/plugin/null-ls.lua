@@ -27,6 +27,10 @@ return function ()
     },
       },
       -- null_ls.builtins.diagnostics.codespell,
+      null_ls.builtins.diagnostics.semgrep.with{
+        prefer_local = perfer_local,
+        extra_args = { "--config", "auto" },
+      },
       null_ls.builtins.formatting.nginx_beautifier,
       null_ls.builtins.formatting.prettier.with{
         prefer_local = perfer_local
