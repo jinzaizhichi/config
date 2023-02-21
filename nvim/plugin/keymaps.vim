@@ -85,11 +85,6 @@ nnoremap <leader>fwS <cmd>Telescope lsp_document_symbols<cr>
 nnoremap <leader>fwr <cmd>Telescope lsp_references<cr>
 " telescope extensions
 nnoremap <leader>fp <cmd>Telescope projects<cr>
-nnoremap <leader>fdc <cmd>Telescope dap commands<cr>
-nnoremap <leader>fds <cmd>Telescope dap configurations<cr>
-nnoremap <leader>fdl <cmd>Telescope dap list_breakpoints<cr>
-nnoremap <leader>fdv <cmd>Telescope dap variables<cr>
-nnoremap <leader>fdf <cmd>Telescope dap frames<cr>
 nnoremap <leader>fsl <cmd>Telescope session-lens search_session<CR>
 
 " lsp
@@ -181,11 +176,11 @@ nnoremap <silent> <leader>dL <cmd>lua require'dap'.set_breakpoint(nil, nil, vim.
 nnoremap <silent> <leader>dE <cmd>lua require'dap'.set_exception_breakpoints("default")<cr>
 nnoremap <silent> <leader>dr <cmd>lua require'dap'.repl.toggle()<CR>
 nnoremap <silent> <leader>dp <cmd>lua require'dap'.run_last()<CR>
-command DapScopesFloat :lua require'dap.ui.widgets'.preview(require('dap.ui.widgets').scopes)<CR>
-command DapFramesFloat :lua require'dap.ui.widgets'.preview(require('dap.ui.widgets').frames)<CR>
-command DapExpressionFloat :lua require'dap.ui.widgets'.preview(require('dap.ui.widgets').expression)<CR>
-command DapThreadsFloat :lua require'dap.ui.widgets'.preview(require('dap.ui.widgets').threads)<CR>
-command DapSessionFloat :lua require'dap.ui.widgets'.preview(require('dap.ui.widgets').sessions)<CR>
+command DapScopesFloat :lua require'dap.ui.widgets'.cursor_float(require('dap.ui.widgets').scopes)<CR>
+command DapFramesFloat :lua require'dap.ui.widgets'.cursor_float(require('dap.ui.widgets').frames)<CR>
+command DapExpressionFloat :lua require'dap.ui.widgets'.cursor_float(require('dap.ui.widgets').expression)<CR>
+command DapThreadsFloat :lua require'dap.ui.widgets'.cursor_float(require('dap.ui.widgets').threads)<CR>
+command DapSessionFloat :lua require'dap.ui.widgets'.cursor_float(require('dap.ui.widgets').sessions)<CR>
 nnoremap <silent> <leader>ds <cmd>DapScopesFloat<CR>
 nnoremap <silent> <leader>df <cmd>DapFramesFloat<CR>
 nnoremap <silent> <leader>de <cmd>DapExpressionFloat<CR>
