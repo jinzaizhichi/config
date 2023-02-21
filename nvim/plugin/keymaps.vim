@@ -166,11 +166,11 @@ nnoremap <silent> <leader>dl <cmd>lua require'dap'.list_breakpoints()<cr>
 nnoremap <silent> <leader>dR <cmd>lua require'dap'.clear_breakpoints()<cr>
 nnoremap <silent> <leader>dc <cmd>lua require'dap'.continue()<cr>
 nnoremap <silent> <leader>dC <cmd>lua require'dap'.run_to_cursor()<cr>
-nnoremap <silent> <M-n> <cmd>lua require'dap'.step_over()<cr>
-nnoremap <silent> <M-o> <cmd>lua require'dap'.step_out()<cr>
+nnoremap <silent> <M-o> <cmd>lua require'dap'.step_over()<cr>
+nnoremap <silent> <M-u> <cmd>lua require'dap'.step_out()<cr>
 nnoremap <silent> <M-b> <cmd>lua require'dap'.step_back()<cr>
 nnoremap <silent> <M-i> <cmd>lua require'dap'.step_into()<cr>
-nnoremap <silent> <M-t> <cmd>lua require'dap'.reverse_continue()<cr>
+nnoremap <silent> <M-e> <cmd>lua require'dap'.reverse_continue()<cr>
 nnoremap <silent> <leader>dB <cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
 nnoremap <silent> <leader>dL <cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
 nnoremap <silent> <leader>dE <cmd>lua require'dap'.set_exception_breakpoints("default")<cr>

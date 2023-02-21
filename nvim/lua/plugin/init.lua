@@ -79,7 +79,7 @@ return require('packer').startup(function(use)
   -- use neovim in browser
   use {'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end}
   -- nvim debug tool
-  use {'mfussenegger/nvim-dap'}
+  use {'mfussenegger/nvim-dap', config = require('plugin.dap')}
   -- which keys
   use {'folke/which-key.nvim', config = require('plugin.which-key')}
   -- lsp setup
