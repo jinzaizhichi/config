@@ -3,7 +3,7 @@ local common = require('lsp.common')
 
 function M.setup()
   local on_attach = function(client, bufnr)
-    require'jdtls'.setup_dap({hotcodereplace = 'auto'})
+    -- require'jdtls'.setup_dap({hotcodereplace = 'auto'})
     local dap = require('dap')
     local util = require('jdtls.util')
 
