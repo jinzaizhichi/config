@@ -11,4 +11,5 @@
 	path = nvim
 [mergetool "vimdiff"]
 	path = nvim
-    keepBackup = false
+[mergetool]
+	keepBackup = false
