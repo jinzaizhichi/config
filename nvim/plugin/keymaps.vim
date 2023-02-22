@@ -99,8 +99,8 @@ nnoremap <leader>D <cmd>Telescope lsp_type_definitions<CR>
 nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap gr <cmd>Telescope lsp_references<CR>
 nnoremap <leader>i <cmd>lua vim.diagnostic.open_float()<CR>
-nnoremap [i <cmd>lua vim.diagnostic.goto_prev()<CR>
-nnoremap ]i <cmd>lua vim.diagnostic.goto_next()<CR>
+nnoremap [d <cmd>lua vim.diagnostic.goto_prev()<CR>
+nnoremap ]d <cmd>lua vim.diagnostic.goto_next()<CR>
 nnoremap <leader>q <cmd>lua vim.diagnostic.setloclist()<CR>
 nnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
 vnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
@@ -181,7 +181,7 @@ nnoremap <silent> <leader>dt <cmd>DapThreadsFloat<CR>
 nnoremap <silent> <leader>dS <cmd>DapSessionFloat<CR>
 nnoremap <silent> <leader>dh <cmd>lua require'dap.ui.widgets'.hover()<CR>
 
-" rest nivim
+" rest nvim
 command RestNvim :lua require('rest-nvim').run()<CR>
 command RestNvimPreview :lua require('rest-nvim').run(true)<CR>
 command RestNvimLast :lua require('rest-nvim').last()<CR>
