@@ -13,6 +13,8 @@ au FileType dap-repl lua require('dap.ext.autocompl').attach()
 if executable('ctags') && getcwd() != getenv('HOME')
     au BufWritePost *.c,*.h,*.asp,*.awk,*.cpp,*.cs,*.html,*.java,*.js,*.lua,makefile,*.sql,*.py,*.vim,*.yml,*.json,*.ts,*.go,*.properties,*.lisp silent! !ctags
 endif
+autocmd User TelescopePreviewerLoaded setlocal wrap
+autocmd User TelescopePreviewerLoaded setlocal number
 
 " firenvim setting
 function! s:IsFirenvimActive(event) abort
