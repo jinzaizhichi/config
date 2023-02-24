@@ -39,7 +39,9 @@ return function()
         "--line-number",
         "--column",
         "--smart-case",
-        "--trim"
+        "--trim",
+        "--hidden",
+        "--multiline"
       }
     },
     pickers = {

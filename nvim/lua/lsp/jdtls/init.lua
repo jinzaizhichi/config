@@ -44,9 +44,9 @@ function M.setup()
     common.set_keymap(bufnr, 'n', '<leader>cc', "<Cmd>lua require('jdtls').extract_constant()<CR>", opts)
     common.set_keymap(bufnr, 'v', '<leader>cc', "<Cmd>lua require('jdtls').extract_constant(true)<CR>", opts)
     common.set_keymap(bufnr, 'v', '<leader>cm', "<Cmd>lua require('jdtls').extract_method(true)<CR>", opts)
-    common.set_keymap(bufnr, 'v', '<leader>jh', "<Cmd>JdtCompile incremental | JdtHotcodeReplace<CR>", opts)
-    common.set_keymap(bufnr, 'v', '<leader>jcf', "<Cmd>JdtCompile full<CR>", opts)
-    common.set_keymap(bufnr, 'v', '<leader>jci', "<Cmd>JdtCompile incremental<CR>", opts)
+    common.set_keymap(bufnr, 'n', '<leader>jh', "<Cmd>JdtHotcodeReplace<CR>", opts)
+    common.set_keymap(bufnr, 'n', '<leader>jf', "<Cmd>JdtCompile full<CR>", opts)
+    common.set_keymap(bufnr, 'n', '<leader>ji', "<Cmd>JdtCompile incremental<CR>", opts)
     -- If using nvim-dap
     -- This requires java-debug and vscode-java-test bundles, see install steps in this README further below.
     common.set_keymap(bufnr, 'n', '<leader>da', "<Cmd>lua require('jdtls').test_class()<CR>", opts)

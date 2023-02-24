@@ -153,9 +153,14 @@ nnoremap <silent> <leader>mt :MarksToggleSigns<cr>
 map ; <Plug>(clever-f-repeat-forward)
 map , <Plug>(clever-f-repeat-back)
 
+function! OpenBreakPoints()
+    :lua require'dap'.list_breakpoints()
+    :exec ToggleQuickFix()
+endfunction
+
 " nvim-dap
 nnoremap <silent> <leader>db <cmd>lua require'dap'.toggle_breakpoint()<cr>
-nnoremap <silent> <leader>dl <cmd>lua require'dap'.list_breakpoints()<cr>
+nnoremap <silent> <leader>dl <cmd>exec OpenBreakPoints()<cr>
 nnoremap <silent> <leader>dR <cmd>lua require'dap'.clear_breakpoints()<cr>
 nnoremap <silent> <leader>dc <cmd>lua require'dap'.continue()<cr>
 nnoremap <silent> <leader>dC <cmd>lua require'dap'.run_to_cursor()<cr>
@@ -197,7 +202,7 @@ function! ToggleQuickFix()
     endif
 endfunction
 
-nnoremap <silent> <leader><leader>l :call ToggleQuickFix()<cr>
+nnoremap <silent> <leader><leader>l <cmd>exec ToggleQuickFix()<cr>
 
 " source config
 if !exists('*SourceMyConfig')
