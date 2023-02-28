@@ -15,14 +15,6 @@ function M.setup(client, bufnr)
   if client.server_capabilities.documentSymbolProvider then
     require('nvim-navic').attach(client, bufnr)
   end
-  if client.name == 'eslint' then
-    vim.api.nvim_exec([[
-      function LspFormatPost()
-        echo 111
-        EslintFixAll
-      endfunction
-    ]], false)
-  end
   if client.server_capabilities.documentHighlightProvider then
     vim.api.nvim_exec([[
     augroup lsp_document_highlight
