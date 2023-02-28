@@ -106,7 +106,15 @@ nnoremap <leader>q <cmd>lua vim.diagnostic.setloclist()<CR>
 nnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
 vnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <leader>cr <Cmd>lua require('jdtls').code_action(false, 'refactor')<CR>
-nnoremap <leader>mm <cmd>lua vim.lsp.buf.format({async = true})<CR>
+
+autocmd! User LspFormatPost if exists('*LspFormatPost') | call LspFormatPost() | endif
+
+function LspFormat()
+    lua vim.lsp.buf.format({async = true})
+    doautocmd User LspFormatPost
+endfunction
+
+nnoremap <leader>mm <cmd>call LspFormat()<CR>
 vnoremap <leader>mm <cmd>lua vim.lsp.buf.format({async = true})<CR>
 
 nnoremap <leader>fss :lua require('spectre').open()<CR>

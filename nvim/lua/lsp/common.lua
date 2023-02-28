@@ -16,10 +16,12 @@ function M.setup(client, bufnr)
     require('nvim-navic').attach(client, bufnr)
   end
   if client.name == 'eslint' then
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      buffer = bufnr,
-      command = "EslintFixAll",
-    })
+    vim.api.nvim_exec([[
+      function LspFormatPost()
+        echo 111
+        EslintFixAll
+      endfunction
+    ]], false)
   end
   if client.server_capabilities.documentHighlightProvider then
     vim.api.nvim_exec([[
