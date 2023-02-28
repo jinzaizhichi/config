@@ -99,8 +99,8 @@ nnoremap <leader>D <cmd>Telescope lsp_type_definitions<CR>
 nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap gr <cmd>Telescope lsp_references<CR>
 nnoremap <leader>i <cmd>lua vim.diagnostic.open_float()<CR>
-nnoremap [d <cmd>lua vim.diagnostic.goto_prev()<CR>
-nnoremap ]d <cmd>lua vim.diagnostic.goto_next()<CR>
+nnoremap [i <cmd>lua vim.diagnostic.goto_prev()<CR>
+nnoremap ]i <cmd>lua vim.diagnostic.goto_next()<CR>
 nnoremap <leader>q <cmd>lua vim.diagnostic.setloclist()<CR>
 nnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
 vnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>

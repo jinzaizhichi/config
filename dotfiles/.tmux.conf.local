@@ -418,6 +418,7 @@ set -g @plugin 'tmux-plugins/tmux-continuum'
 set -g @continuum-restore 'on'
 setw -g monitor-activity on # 非当前窗口有内容更新时在状态栏通知
 set -g @continuum-save-interval '15'
+set -g display-panes-time 5000
 set -g @resurrect-capture-pane-contents 'on'
 set -g @continuum-boot 'on'
 # set -g @continuum-systemd-start-cmd 'start-server'
