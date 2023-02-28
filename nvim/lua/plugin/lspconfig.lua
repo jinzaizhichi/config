@@ -3,7 +3,7 @@ return function()
   local installed_pkgs = require('mason-registry').get_installed_packages()
   local install_confirm = ''
   if #installed_pkgs == 0 then
-    install_confirm = vim.fn.input('No LSP installed yet, install default LSP now (use Mason) ? Y/n = ')
+    install_confirm = vim.fn.input('No package installed yet, install default package now ? (via Mason) Y/n = ')
   end
 
   install_confirm = string.lower(install_confirm)
@@ -33,12 +33,12 @@ return function()
       \ eslint-lsp
       \ rust-analyzer
       \ clang-format
+      \ taplo
       \ clangd
       \ codelldb
       \ cpplint
       \ cpptools
       \ gradle-language-server
-      \ semgrep
     ]])
 
   end
@@ -57,6 +57,7 @@ return function()
       -- vim.lsp.set_log_level('debug')
 
       if server_name ~= "jdtls" then
+        local lsp_config_path = 'lsp.' .. server_name
         local capabilities = common.make_capabilities()
         local config = {
           -- enable snippet support
@@ -64,10 +65,13 @@ return function()
           -- map buffer local keybindings when the language server attaches
           on_attach = function(client, bufnr)
             common.setup(client, bufnr)
+            if pcall(require, lsp_config_path) and require(lsp_config_path).attach ~= nil then
+              require(lsp_config_path).attach(client, bufnr)
+            end
           end
         }
 
-        local settings = 'lsp.' .. server_name .. '.settings'
+        local settings = lsp_config_path .. '.settings'
         if pcall(require, settings) then
           config.settings = require(settings)
         end

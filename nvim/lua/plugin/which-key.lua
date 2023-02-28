@@ -11,10 +11,10 @@ return function()
       t = {name = 'TreeSitter & FileTypes'},
       w = {name = 'Workspace & LSP Action'},
       s = {name = 'Spectre'},
-      d = {name = 'DAP Telescope Action'},
     },
     b = {name = 'Buffer Operate'},
-    c = {name = 'Code Action', j = {name = 'Java Code Action'}},
+    c = {name = 'Code Action'},
+    j = {name = 'Java Action'},
     d = {name = 'DAP Action'},
     x = {name = 'Close Current Buffer'},
     m = {name = 'Markdown & Format'},
@@ -22,7 +22,7 @@ return function()
     s = {name = 'Source & Session'},
     t = {name = 'Translate'},
     w = {name = 'Workspace'},
-    p = {name = 'Paste System Clipboard'},
+    p = {name = 'Paste to System Clipboard'},
     g = {name = 'Git Action'}
   }, {prefix = '<leader>'})
 end
