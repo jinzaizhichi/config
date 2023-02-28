@@ -15,6 +15,9 @@ return require('packer').startup(function(use)
   -- session manager
   use {'rmagatti/auto-session', config = require('plugin.auto-session')}
   use {'rmagatti/session-lens'}
+  -- remote develop
+  use {'miversen33/netman.nvim', run = function() require('netman') end}
+  -- status line
   use {'kyazdani42/nvim-web-devicons'}
   use {'nvim-lualine/lualine.nvim', config = require('plugin.lualine')}
   -- treesitter and treesitter base plug
