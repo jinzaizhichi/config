@@ -33,7 +33,10 @@ return function ()
       -- },
       null_ls.builtins.formatting.nginx_beautifier,
       null_ls.builtins.formatting.prettier.with{
-        prefer_local = perfer_local
+        prefer_local = perfer_local,
+        condition = function(utils)
+          return utils.has_file({ ".prettierrc.js" })
+        end,
       },
       null_ls.builtins.formatting.sqlformat,
       null_ls.builtins.formatting.stylelint,

@@ -25,7 +25,7 @@ return function()
       \ luaformatter
       \ lua-language-server
       \ marksman
-      \ vetur-vls
+      \ vue-language-server
       \ jdtls
       \ google-java-format
       \ pyright

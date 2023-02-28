@@ -15,6 +15,12 @@ function M.setup(client, bufnr)
   if client.server_capabilities.documentSymbolProvider then
     require('nvim-navic').attach(client, bufnr)
   end
+  if client.name == 'eslint' then
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = bufnr,
+      command = "EslintFixAll",
+    })
+  end
   if client.server_capabilities.documentHighlightProvider then
     vim.api.nvim_exec([[
     augroup lsp_document_highlight
