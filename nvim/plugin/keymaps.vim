@@ -34,6 +34,7 @@ vmap <leader>y "+y
 
 " paste to vim register
 nnoremap <leader>p "+p
+nnoremap <leader>0 "0p
 vmap <leader>p "+p
 
 nnoremap <silent> <leader><leader>h <cmd>noh<CR>
