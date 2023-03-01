@@ -232,3 +232,9 @@ nnoremap <silent> <Leader>sd <cmd>DeleteSession<CR>
 tnoremap <silent> <C-r><C-e> <C-\><C-n>:RnvimrResize<CR>
 nnoremap <silent> <leader>rr :RnvimrToggle<CR>
 tnoremap <silent> <C-r><C-r> <C-\><C-n>:RnvimrToggle<CR>
+
+let s:textdomain = $TEXTDOMAIN
+if s:textdomain == 'git'
+    nnoremap <silent> gl <cmd>diffget LO<CR>
+    nnoremap <silent> gr <cmd>diffget RE<CR>
+endif
