@@ -36,6 +36,7 @@ vmap <leader>y "+y
 nnoremap <leader>p "+p
 nnoremap <leader>0 "0p
 vmap <leader>p "+p
+vmap <leader>0 "0p
 
 nnoremap <silent> <leader><leader>h <cmd>noh<CR>
 
@@ -80,7 +81,7 @@ nnoremap <leader>fwD <cmd>Telescope diagnostics<cr>
 nnoremap <leader>fwd :lua require'telescope.builtin'.diagnostics{bufnr=0}<cr>
 nnoremap <leader>fws <cmd>Telescope lsp_dynamic_workspace_symbols<cr>
 nnoremap <leader>fwS <cmd>Telescope lsp_document_symbols<cr>
-nnoremap <leader>fwr <cmd>Telescope lsp_references<cr>
+nnoremap <leader>fwr <cmd>Telescope lsp_references show_line=false<cr>
 " telescope extensions
 nnoremap <leader>fp <cmd>Telescope projects<cr>
 nnoremap <leader>fsl <cmd>Telescope session-lens search_session<CR>
