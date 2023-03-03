@@ -99,7 +99,7 @@ nnoremap <leader>wr <cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>
 nnoremap <leader>wl <cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>
 nnoremap <leader>D <cmd>Telescope lsp_type_definitions<CR>
 nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
-nnoremap gr <cmd>Telescope lsp_references<CR>
+nnoremap gr <cmd>Telescope lsp_references show_line=false<CR>
 nnoremap <leader>i <cmd>lua vim.diagnostic.open_float()<CR>
 nnoremap [i <cmd>lua vim.diagnostic.goto_prev()<CR>
 nnoremap ]i <cmd>lua vim.diagnostic.goto_next()<CR>
