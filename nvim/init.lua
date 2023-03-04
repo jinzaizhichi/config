@@ -25,3 +25,12 @@ vim.api.nvim_create_user_command("BufferDelete", function()
   vim.cmd(force and "bd!" or string.format("bp | bd! %s", vim.api.nvim_get_current_buf()))
 end, { desc = "Delete the current Buffer while maintaining the window layout" })
 
+-- sync wsl clipboard
+if vim.fn.has('wsl') then
+  vim.cmd [[
+  augroup Yank
+  autocmd!
+  autocmd TextYankPost * :call system('/mnt/c/windows/system32/clip.exe ',@")
+  augroup END
+  ]]
+end
