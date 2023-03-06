@@ -8,8 +8,8 @@ au VimEnter * if &diff | execute 'windo set wrap' | endif
 " au BufWritePost *.lua source <afile> | PackerCompile
 " nvim-dap repl completion
 au FileType dap-repl lua require('dap.ext.autocompl').attach()
-au FileType dap-float nnoremap <silent> q <cmd>quit<CR>
-au FileType dap-float nnoremap <silent> <Esc> <cmd>quit<CR>
+au FileType dap-float nnoremap <buffer> <silent> q <cmd>quit<CR>
+au FileType dap-float nnoremap <buffer> <silent> <Esc> <cmd>quit<CR>
 
 " Auto generate tags file on file write of ctags supported languages file,
 " Languages Supported by Exuberant Ctags: http://ctags.sourceforge.net/languages.html
