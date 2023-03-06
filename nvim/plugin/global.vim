@@ -11,7 +11,7 @@ let g:rnvimr_enable_ex = 1
 " Make Ranger to be hidden after picking a file
 let g:rnvimr_enable_picker = 0
 " Disable a border for floating window
-let g:rnvimr_draw_border = 1
+let g:rnvimr_draw_border = 0
 " Hide the files included in gitignore
 let g:rnvimr_hide_gitignore = 0
 " Change the border's color
