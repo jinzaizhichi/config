@@ -12,12 +12,16 @@ return function()
   require('telescope').setup({
     defaults = {
       file_ignore_patterns = fileIgnoreTable or nil,
-      borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+      -- borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+      borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
       wrap_results = true,
-      -- sorting_strategy = "ascending",
+      sorting_strategy = "ascending",
       layout_strategy = 'vertical',
       layout_config = {
         horizontal = {
+          prompt_position = "top"
+        },
+        vertical = {
           prompt_position = "top"
         },
       },
@@ -58,11 +62,12 @@ return function()
       },
       ["ui-select"] = {
         require("telescope.themes").get_cursor {
-          borderchars = {
-            prompt = { "─", "│", " ", "│", "┌", "┐", "│", "│" },
-            results = { "─", "│", "─", "│", "├", "┤", "┘", "└" },
-            preview = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
-          }
+          borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
+          -- borderchars = {
+            -- prompt = { "─", "│", " ", "│", "┌", "┐", "│", "│" },
+            -- results = { "─", "│", "─", "│", "├", "┤", "┘", "└" },
+            -- preview = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+          -- }
         }
       },
       undo = {
