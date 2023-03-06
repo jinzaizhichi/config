@@ -107,6 +107,9 @@ nnoremap <leader>q <cmd>lua vim.diagnostic.setloclist()<CR>
 nnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
 vnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <leader>cr <Cmd>lua require('jdtls').code_action(false, 'refactor')<CR>
+nnoremap <leader>jh <Cmd>JdtHotcodeReplace<CR>
+nnoremap <leader>jf <Cmd>JdtCompile full<CR>
+nnoremap <leader>ji <Cmd>JdtCompile incremental<CR>
 
 nnoremap <leader>mm <cmd>lua vim.lsp.buf.format({async = true})<CR>
 vnoremap <leader>mm <cmd>lua vim.lsp.buf.format({async = true})<CR>
