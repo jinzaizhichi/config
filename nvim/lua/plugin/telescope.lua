@@ -13,7 +13,6 @@ return function()
     defaults = {
       file_ignore_patterns = fileIgnoreTable or nil,
       borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
-      path_display = {'smart'},
       wrap_results = true,
       -- sorting_strategy = "ascending",
       layout_strategy = 'vertical',
