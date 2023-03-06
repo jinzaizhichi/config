@@ -11,7 +11,7 @@ au FileType dap-repl lua require('dap.ext.autocompl').attach()
 " Auto generate tags file on file write of ctags supported languages file,
 " Languages Supported by Exuberant Ctags: http://ctags.sourceforge.net/languages.html
 if executable('ctags') && getcwd() != getenv('HOME')
-    au BufWritePost,BufLeave *.c,*.h,*.asp,*.awk,*.cpp,*.cs,*.html,*.java,*.js,*.lua,makefile,*.sql,*.py,*.vim,*.yml,*.json,*.ts,*.go,*.properties,*.lisp silent! !ctags
+    au BufWritePost,BufLeave,BufDelete *.c,*.h,*.asp,*.awk,*.cpp,*.cs,*.html,*.java,*.js,*.lua,makefile,*.sql,*.py,*.vim,*.yml,*.json,*.ts,*.go,*.properties,*.lisp silent! !ctags
 endif
 autocmd User TelescopePreviewerLoaded setlocal wrap
 autocmd User TelescopePreviewerLoaded setlocal number
