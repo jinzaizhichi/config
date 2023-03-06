@@ -177,17 +177,17 @@ nnoremap <silent> <leader>dL <cmd>lua require'dap'.set_breakpoint(nil, nil, vim.
 nnoremap <silent> <leader>dE <cmd>lua require'dap'.set_exception_breakpoints("default")<cr>
 nnoremap <silent> <leader>dr <cmd>lua require'dap'.repl.toggle()<CR>
 nnoremap <silent> <leader>dp <cmd>lua require'dap'.run_last()<CR>
-command DapScopesFloat :lua require'dap.ui.widgets'.cursor_float(require('dap.ui.widgets').scopes)<CR>
-command DapFramesFloat :lua require'dap.ui.widgets'.cursor_float(require('dap.ui.widgets').frames)<CR>
-command DapExpressionFloat :lua require'dap.ui.widgets'.cursor_float(require('dap.ui.widgets').expression)<CR>
-command DapThreadsFloat :lua require'dap.ui.widgets'.cursor_float(require('dap.ui.widgets').threads)<CR>
-command DapSessionFloat :lua require'dap.ui.widgets'.cursor_float(require('dap.ui.widgets').sessions)<CR>
+command DapScopesFloat :lua require'dap.ui.widgets'.cursor_float(require('dap.ui.widgets').scopes, {border = 'none'})<CR>
+command DapFramesFloat :lua require'dap.ui.widgets'.cursor_float(require('dap.ui.widgets').frames), {border = 'none'}<CR>
+command DapExpressionFloat :lua require'dap.ui.widgets'.cursor_float(require('dap.ui.widgets').expression, {border = 'none'})<CR>
+command DapThreadsFloat :lua require'dap.ui.widgets'.cursor_float(require('dap.ui.widgets').threads, {border = 'none'})<CR>
+command DapSessionFloat :lua require'dap.ui.widgets'.cursor_float(require('dap.ui.widgets').sessions, {border = 'none'})<CR>
 nnoremap <silent> <leader>ds <cmd>DapScopesFloat<CR>
 nnoremap <silent> <leader>df <cmd>DapFramesFloat<CR>
 nnoremap <silent> <leader>de <cmd>DapExpressionFloat<CR>
 nnoremap <silent> <leader>dt <cmd>DapThreadsFloat<CR>
 nnoremap <silent> <leader>dS <cmd>DapSessionFloat<CR>
-nnoremap <silent> <leader>dh <cmd>lua require'dap.ui.widgets'.hover()<CR>
+nnoremap <silent> <leader>dh <cmd>lua require'dap.ui.widgets'.hover('<cexpr>', {border = 'none'})<CR>
 
 " rest nvim
 command RestNvim :lua require('rest-nvim').run()<CR>
