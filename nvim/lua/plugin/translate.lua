@@ -6,6 +6,13 @@ return function()
   require('translate').setup({
     default = {
       command = default_command
+    },
+    preset = {
+      output = {
+        floating = {
+          border = 'none'
+        }
+      }
     }
   })
 end
