@@ -1,3 +1,4 @@
+export LANG=en_US.UTF-8
 # TMUX
 if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ "${TERM_PROGRAM}" != "vscode" ] && [ -z "${TMUX}" ]; then
     tmux attach || tmux >/dev/null 2>&1
@@ -130,7 +131,6 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # You may need to manually set your language environment
 # export LANG=zh_CN.UTF-8
-export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
