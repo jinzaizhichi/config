@@ -42,6 +42,12 @@ return function()
     ]])
 
   end
+  local lsp_status = require('lsp-status')
+  lsp_status.register_progress();
+  lsp_status.config({
+    diagnostics = false,
+    status_symbol = ''
+  })
 
   local common = require('lsp.common')
   local textdomain = os.getenv('TEXTDOMAIN')
