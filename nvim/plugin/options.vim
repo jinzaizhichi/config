@@ -2,7 +2,6 @@ set nocompatible
 filetype on
 filetype plugin on
 set noeb
-syntax enable
 syntax on
 set t_Co=256
 set cmdheight=1
