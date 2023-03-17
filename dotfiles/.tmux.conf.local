@@ -428,6 +428,7 @@ set -g @resurrect-capture-pane-contents 'on'
 set -g @resurrect-strategy-vim 'session'
 # for neovim
 set -g @resurrect-strategy-nvim 'session'
+set -g remain-on-exit on
 # set -g @net_speed_format "D %7s U %7s"
 # set -g @download_speed_format "%7s"
 # set -g @upload_speed_format "%7s"
