@@ -1,7 +1,7 @@
 " auto positioning to last edit position when open file
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g'\"" | endif
 " auto save buffer
-au BufLeave,InsertLeave,TextChanged * if &readonly==0 && filereadable(bufname('%')) | silent update | endif
+au BufLeave * if &readonly==0 && filereadable(bufname('%')) | silent update | endif
 " auto vimdiff wrap
 au VimEnter * if &diff | execute 'windo set wrap' | endif
 " auto run PackerCompile whether plugins.lua is updated
@@ -12,9 +12,9 @@ au FileType dap-float nnoremap <buffer> <silent> q <cmd>quit<CR>
 
 " Auto generate tags file on file write of ctags supported languages file,
 " Languages Supported by Exuberant Ctags: http://ctags.sourceforge.net/languages.html
-if executable('ctags') && getcwd() != getenv('HOME')
-    au BufWritePost,QuitPre *.c,*.h,*.asp,*.awk,*.cpp,*.cs,*.html,*.java,*.js,*.lua,makefile,*.sql,*.py,*.vim,*.yml,*.json,*.ts,*.go,*.properties,*.lisp silent! !ctags
-endif
+" if executable('ctags') && getcwd() != getenv('HOME')
+"     au BufWritePost,QuitPre *.c,*.h,*.asp,*.awk,*.cpp,*.cs,*.html,*.java,*.js,*.lua,makefile,*.sql,*.py,*.vim,*.yml,*.json,*.ts,*.go,*.properties,*.lisp silent! !ctags
+" endif
 autocmd User TelescopePreviewerLoaded setlocal wrap
 autocmd User TelescopePreviewerLoaded setlocal number
 
