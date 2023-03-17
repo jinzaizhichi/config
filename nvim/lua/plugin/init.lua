@@ -48,7 +48,6 @@ return require('packer').startup(function(use)
   -- powerful replace tool
   use {'windwp/nvim-spectre'}
   -- fuzzy finder
-  use {'sudormrfbin/cheatsheet.nvim'}
   use {'debugloop/telescope-undo.nvim'}
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use {'nvim-telescope/telescope-ui-select.nvim'}
