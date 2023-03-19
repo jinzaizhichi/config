@@ -118,13 +118,18 @@ local vsc_color_scheme = {
 wezterm.on(
   'format-tab-title',
   function(tab, tabs, panes, config, hover, max_width)
+    local zoomed = ''
+    if tab.active_pane.is_zoomed then
+      zoomed = ' [Z]'
+    end
+
     if tab.is_active then
       return {
         { Attribute = { Intensity = "Bold" } },
-        { Text = ' ' .. tab.tab_index + 1 .. ' ' .. tab.active_pane.title .. ' ' },
+        { Text = ' ' .. tab.tab_index + 1 .. ' ' .. tab.active_pane.title .. zoomed .. ' ' },
       }
     end
-    return ' ' .. tab.tab_index + 1 .. ' ' .. tab.active_pane.title .. ' '
+    return ' ' .. tab.tab_index + 1 .. ' ' .. tab.active_pane.title .. zoomed .. ' '
   end
 )
 
