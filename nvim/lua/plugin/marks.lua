@@ -1,4 +1,5 @@
-return function ()
+  -- better marks
+return {'chentoast/marks.nvim', config =  function ()
   require'marks'.setup {
   -- whether to map keybinds or not. default true
   default_mappings = true,
@@ -35,6 +36,7 @@ return function ()
     'glowpreview',
     'help',
     'zsh',
+    'lazy',
     ''
   },
   mappings = {}
@@ -47,4 +49,4 @@ return function ()
   --   virt_text = "hello world"
   -- },
 }
-end
+end}

@@ -1,4 +1,5 @@
-return function()
+  -- terminal
+return {'akinsho/nvim-toggleterm.lua', config =  function()
 
   local get_height = function()
     return math.floor(vim.o.lines * 0.80 + 2)
@@ -41,4 +42,4 @@ return function()
     },
 
   })
-end
+end}

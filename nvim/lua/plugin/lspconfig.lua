@@ -1,4 +1,10 @@
-return function()
+return {
+  'neovim/nvim-lspconfig',
+  dependencies = {
+    {'williamboman/mason.nvim'},
+    {'williamboman/mason-lspconfig.nvim'},
+  },
+  config = function()
   require("mason").setup()
   local installed_pkgs = require('mason-registry').get_installed_packages()
   local install_confirm = ''
@@ -105,4 +111,4 @@ return function()
     end,
 
   })
-end
+end}

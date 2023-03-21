@@ -1,16 +1,18 @@
-return function()
-  local dap = require('dap')
-  dap.defaults.fallback.terminal_win_cmd = 'tabnew'
-  dap.defaults.fallback.external_terminal = {
-    command = '/usr/bin/tmux';
-    args = {'new-window', '-d'}
-    -- command = '/usr/bin/wezterm';
-    -- args = {'cli', 'spawn'}
-  }
-end
+return {
+  'mfussenegger/nvim-dap',
+  config = function()
+    local dap = require('dap')
+    dap.defaults.fallback.terminal_win_cmd = 'tabnew'
+    dap.defaults.fallback.external_terminal = {
+      command = '/usr/bin/tmux',
+      args = { 'new-window', '-d' }
+      -- command = '/usr/bin/wezterm';
+      -- args = {'cli', 'spawn'}
+    }
+  end
+}
+-- all about launch.json options
 
--- all about launch options
---
 -- ### Launch
 
 -- - `mainClass` - The fully qualified name of the class containing the main method. If not specified, the debugger automatically resolves the possible main class from current project.

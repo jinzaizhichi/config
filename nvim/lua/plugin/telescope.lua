@@ -1,4 +1,12 @@
-return function()
+return 
+  {'nvim-telescope/telescope.nvim',
+    dependencies = {
+      {'debugloop/telescope-undo.nvim'},
+      {'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+      {'nvim-telescope/telescope-ui-select.nvim'},
+      {'nvim-telescope/telescope-live-grep-args.nvim'},
+    },
+    config =  function()
   local fileIgnorePatterns = os.getenv('TELESCOPE_FILE_IGNORE_PATTERNS')
   local fileIgnoreTable = nil
   if fileIgnorePatterns then
@@ -84,5 +92,4 @@ return function()
   require('telescope').load_extension('undo')
   require('telescope').load_extension('ui-select')
   require('telescope').load_extension('live_grep_args')
-  require('telescope').load_extension('session-lens')
-end
+end}

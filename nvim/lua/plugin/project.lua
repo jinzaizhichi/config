@@ -1,4 +1,5 @@
-return function ()
+-- project manager
+return {'ahmedkhalf/project.nvim', config =  function ()
   require("project_nvim").setup {
     -- All the patterns used to detect root dir, when **"pattern"** is in
     detection_methods = { "lsp", "pattern" },
@@ -8,4 +9,4 @@ return function ()
     show_hidden = true,
     silent_chdir = false,
   }
-end
+end}

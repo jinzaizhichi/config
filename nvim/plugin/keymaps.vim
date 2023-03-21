@@ -221,7 +221,6 @@ if !exists('*SourceMyConfig')
             exe 'source' f
         endfor
         source $MYVIMRC
-        PackerCompile
     endfunction
 endif
 

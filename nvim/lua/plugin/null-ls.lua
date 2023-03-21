@@ -1,4 +1,4 @@
-return function ()
+return {'jose-elias-alvarez/null-ls.nvim', config =  function ()
   local null_ls = require('null-ls')
   local perfer_local = vim.fn.stdpath('data') .. '/mason/bin'
   local home = os.getenv('HOME')
@@ -44,4 +44,4 @@ return function ()
       null_ls.builtins.hover.dictionary,
     }
   })
-end
+end}

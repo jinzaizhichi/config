@@ -1,4 +1,13 @@
-return function()
+  -- treesitter and treesitter base plug
+return {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate',
+  dependencies = {
+    {'nvim-treesitter/nvim-treesitter-textobjects'},
+    {'JoosepAlviste/nvim-ts-context-commentstring'},
+    {'mrjones2014/nvim-ts-rainbow'},
+    {'windwp/nvim-ts-autotag'},
+    {'windwp/nvim-autopairs', opts = { check_ts = true }},
+  },
+config =  function()
   require('nvim-treesitter.configs').setup({
     autotag = {
       enable = true,
@@ -75,3 +84,4 @@ return function()
     },
   })
 end
+}

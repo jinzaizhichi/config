@@ -1,4 +1,6 @@
-return function()
+return {
+  'nvim-lualine/lualine.nvim', config = function()
+  local lazy_status = require('lazy.status')
   require('lualine').setup({
     options = {
       icons_enabled = true,
@@ -25,7 +27,10 @@ return function()
       lualine_a = { 'mode' },
       lualine_b = { 'branch', 'diff', 'diagnostics' },
       lualine_c = { 'filename', "require'lsp-status'.status()" },
-      lualine_x = { 'encoding', 'fileformat', 'filetype' },
+      lualine_x = { {
+        lazy_status.updates,
+        cond = lazy_status.has_updates,
+      }, 'encoding', 'fileformat', 'filetype' },
       lualine_y = { 'progress' },
       lualine_z = { 'location' }
     },
@@ -68,3 +73,4 @@ return function()
     }
   })
 end
+}
