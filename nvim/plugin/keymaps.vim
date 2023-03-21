@@ -225,7 +225,7 @@ if !exists('*SourceMyConfig')
 endif
 
 nnoremap <silent> <Leader>sc <cmd>call SourceMyConfig()<CR>
-nnoremap <silent> <Leader>u <cmd>PackerSync<CR>
+nnoremap <silent> <Leader>u <cmd>Lazy update<CR>
 
 " auto session
 nnoremap <silent> <Leader>ss <cmd>SaveSession<CR>

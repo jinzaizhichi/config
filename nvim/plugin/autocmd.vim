@@ -4,8 +4,6 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "norma
 au BufLeave * if &readonly==0 && filereadable(bufname('%')) | silent update | endif
 " auto vimdiff wrap
 au VimEnter * if &diff | execute 'windo set wrap' | endif
-" auto run PackerCompile whether plugins.lua is updated
-" au BufWritePost *.lua source <afile> | PackerCompile
 " nvim-dap repl completion
 au FileType dap-repl lua require('dap.ext.autocompl').attach()
 au FileType dap-float nnoremap <buffer> <silent> q <cmd>quit<CR>
