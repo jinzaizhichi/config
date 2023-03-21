@@ -11,7 +11,7 @@ return {
   -- powerful replace tool
   {'windwp/nvim-spectre'},
   -- remote develop
-  {'miversen33/netman.nvim'},
+  {'miversen33/netman.nvim', config = function () require('netman') end},
   {
     'uga-rosa/translate.nvim',
     config = function()
