@@ -50,6 +50,7 @@ return {
       \ cpplint
       \ cpptools
       \ gradle-language-server
+      \ glow
     ]])
       end
       local lsp_status = require('lsp-status')

@@ -2,7 +2,7 @@ return {
   -- rest client
   {'NTBBloodbath/rest.nvim', config = true},
   -- markdown preview
-  {'ellisonleao/glow.nvim'},
+  {'ellisonleao/glow.nvim', config = true, cmd = 'Glow'},
   -- neovim in browser
   {'glacambre/firenvim', build = function() vim.fn['firenvim#install'](0) end},
   -- db manage
