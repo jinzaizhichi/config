@@ -20,6 +20,7 @@ return {
   config = function()
     local cmp = require('cmp')
     local lspkind = require('lspkind')
+    local cmp_buffer = require('cmp_buffer')
     local menu_source_width = 50
     local feedkey = function(key, mode)
       vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
@@ -89,7 +90,10 @@ return {
         end, { "i", "s" }),
       }),
       sources = {
-        { name = 'vsnip',                  max_item_count = 10 },
+        {
+          name = 'vsnip',
+          max_item_count = 10
+        },
         { name = 'nvim_lsp' },
         { name = 'nvim_lsp_signature_help' },
         { name = 'git' },
@@ -102,10 +106,19 @@ return {
             end
           }
         },
-        { name = 'path',                 max_item_count = 10 },
-        { name = 'look',                 max_item_count = 5, keyword_length = 2,
-                                                                                   option = { convert_case = true,
-            loud = true } },
+        {
+          name = 'path',
+          max_item_count = 10
+        },
+        {
+          name = 'look',
+          max_item_count = 5,
+          keyword_length = 2,
+          option = {
+            convert_case = true,
+            loud = true
+          }
+        },
         { name = 'vim-dadbod-completion' },
       },
       formatting = {
@@ -146,6 +159,12 @@ return {
         --
         --   return vim_item
         -- end
+      },
+      sorting = {
+        comparators = {
+          function(...) return cmp_buffer:compare_locality(...) end,
+          -- The rest of your comparators...
+        }
       }
     })
     -- If you want insert `(` after select function or method item
@@ -191,7 +210,7 @@ return {
         { name = 'cmdline' }
       })
     })
-    cmp.setup.cmdline('/', {
+    cmp.setup.cmdline({ '/', '?' }, {
       mapping = cmp.mapping.preset.cmdline({
         -- Your configuration here.
         ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }), { 'i', 'c' }),

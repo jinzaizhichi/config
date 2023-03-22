@@ -6,8 +6,14 @@ return {
       path = vim.split(package.path, ';'),
     },
     format = {
+      enable = true,
       defaultConfig = {
-        align_array_table = false
+        indent_style = 'space',
+        indent_size = '4',
+        quote_style = 'double',
+        align_array_table = false,
+        align_continuous_assign_statement = false,
+        align_continuous_rect_table_field = false
       }
     },
     diagnostics = {
