@@ -160,12 +160,12 @@ return {
         --   return vim_item
         -- end
       },
-      sorting = {
-        comparators = {
-          function(...) return cmp_buffer:compare_locality(...) end,
-          -- The rest of your comparators...
-        }
-      }
+      -- sorting = {
+      --   comparators = {
+      --     function(...) return cmp_buffer:compare_locality(...) end,
+      --     -- The rest of your comparators...
+      --   }
+      -- }
     })
     -- If you want insert `(` after select function or method item
     -- local cmp_autopairs = require('nvim-autopairs.completion.cmp')
