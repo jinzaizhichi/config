@@ -26,8 +26,9 @@ vim.api.nvim_create_user_command("BufferDelete", function()
     end
     return
   end
-  local force = not vim.bo.buflisted or vim.bo.buftype == "nofile"
-  vim.cmd(force and "bd!" or string.format("bp | bd! %s", vim.api.nvim_get_current_buf()))
+  -- local force = not vim.bo.buflisted or vim.bo.buftype == "nofile"
+  -- vim.cmd(force and "bd!" or string.format("bp | bd! %s", vim.api.nvim_get_current_buf()))
+  vim.cmd(string.format("bp | bd! %s", vim.api.nvim_get_current_buf()))
 end, { desc = "Delete the current Buffer while maintaining the window layout" })
 
 -- sync wsl clipboard
