@@ -126,10 +126,10 @@ nnoremap <leader>gbc <cmd>Telescope git_bcommits<cr>
 nnoremap <leader>gbb <cmd>Telescope git_branches<cr>
 nnoremap <leader>gh <cmd>Telescope git_stash<cr>
 
-nnoremap <silent> <leader><leader>w <cmd>lua require'hop'.hint_words()<cr>
-nnoremap <silent> <leader><leader>p <cmd>lua require'hop'.hint_patterns()<cr>
-nnoremap <silent> <leader><leader>j <cmd>lua require'hop'.hint_lines()<cr>
-nnoremap <silent> <leader><leader>s <cmd>lua require'hop'.hint_char1()<cr>
+nnoremap <silent> <leader><leader>w <cmd>HopWordMW<cr>
+nnoremap <silent> <leader><leader>p <cmd>HopPatternMW<cr>
+nnoremap <silent> <leader><leader>j <cmd>HopLineMW<cr>
+nnoremap <silent> <leader><leader>s <cmd>HopChar1MW<cr>
 
 " Use <Tab> and <S-Tab> to navigate through popup menu
 " inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -168,13 +168,27 @@ endfunction
 nnoremap <silent> <leader>db <cmd>lua require'dap'.toggle_breakpoint()<cr>
 nnoremap <silent> <leader>dl <cmd>exec OpenBreakPoints()<cr>
 nnoremap <silent> <leader>dR <cmd>lua require'dap'.clear_breakpoints()<cr>
-nnoremap <silent> <leader>dc <cmd>lua require'dap'.continue()<cr>
-nnoremap <silent> <leader>dC <cmd>lua require'dap'.run_to_cursor()<cr>
-nnoremap <silent> <M-o> <cmd>lua require'dap'.step_over()<cr>
-nnoremap <silent> <M-u> <cmd>lua require'dap'.step_out()<cr>
-nnoremap <silent> <M-b> <cmd>lua require'dap'.step_back()<cr>
-nnoremap <silent> <M-i> <cmd>lua require'dap'.step_into()<cr>
-nnoremap <silent> <M-e> <cmd>lua require'dap'.reverse_continue()<cr>
+nnoremap <silent> <plug>(DapContinue) <cmd>lua require'dap'.continue()<cr>
+call repeat#set("\<plug>(DapContinue)", v:count)
+nnoremap <silent> <leader>dc <plug>(DapContinue)
+nnoremap <silent> <plug>(DapRunToCursor) <cmd>lua require'dap'.run_to_cursor()<cr>
+call repeat#set("\<plug>(DapRunToCursor)", v:count)
+nnoremap <silent> <leader>dC <plug>(DapRunToCursor)
+nnoremap <silent> <plug>(DapStepOver) <cmd>lua require'dap'.step_over()<cr>
+call repeat#set("\<plug>(DapStepOver)", v:count)
+nnoremap <silent> <leader>do <plug>(DapStepOver)
+nnoremap <silent> <plug>(DapStepOut) <cmd>lua require'dap'.step_out()<cr>
+call repeat#set("\<plug>(DapStepOut)", v:count)
+nnoremap <silent> <leader>dO <plug>(DapStepBack)
+nnoremap <silent> <plug>(DapStepBack) <cmd>lua require'dap'.step_back()<cr>
+call repeat#set("\<plug>(DapStepBack)", v:count)
+nnoremap <silent> <leader>du <plug>(DapStepInto)
+nnoremap <silent> <plug>(DapStepInto) <cmd>lua require'dap'.step_into()<cr>
+call repeat#set("\<plug>(DapStepInto)", v:count)
+nnoremap <silent> <leader>di <plug>(DapStepInto)
+nnoremap <silent> <plug>(DapReverseContinue) <cmd>lua require'dap'.reverse_continue()<cr>
+call repeat#set("\<plug>(DapReverseContinue)", v:count)
+nnoremap <silent> <leader>de <plug>(DapReverseContinue)
 nnoremap <silent> <leader>dB <cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
 nnoremap <silent> <leader>dL <cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
 nnoremap <silent> <leader>dE <cmd>lua require'dap'.set_exception_breakpoints("default")<cr>
@@ -232,11 +246,12 @@ nnoremap <silent> <Leader>ss <cmd>SaveSession<CR>
 nnoremap <silent> <Leader>sr <cmd>RestoreSession<CR>
 nnoremap <silent> <Leader>sd <cmd>DeleteSession<CR>
 
-"
+" rnvimr
 tnoremap <silent> <C-r><C-e> <C-\><C-n>:RnvimrResize<CR>
 nnoremap <silent> <leader>rr :RnvimrToggle<CR>
 tnoremap <silent> <C-r><C-r> <C-\><C-n>:RnvimrToggle<CR>
 
+" ctags
 nnoremap <silent> <leader>C <cmd>!ctags<CR>
 
 let s:textdomain = $TEXTDOMAIN
