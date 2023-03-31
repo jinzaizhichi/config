@@ -76,6 +76,7 @@ return {
           'quickfix',
           'man',
           'toggleterm',
+          'lazy',
         }
       })
     end
