@@ -15,6 +15,7 @@ highlight! link TelescopePromptBorder Pmenu
 highlight! link TelescopePromptTitle lualine_a_insert
 highlight! link TelescopeResultsTitle lualine_a_normal
 highlight! link TelescopePreviewTitle lualine_a_normal
+highlight! link @interface @constant
 highlight! link @lsp.type.class @class
 highlight! link @lsp.type.interface @interface
 highlight! link @lsp.type.enum @enum
