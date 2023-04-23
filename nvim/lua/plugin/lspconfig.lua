@@ -51,6 +51,7 @@ return {
       \ cpptools
       \ gradle-language-server
       \ glow
+      \ sonarlint-language-server
     ]])
       end
       local lsp_status = require('lsp-status')
