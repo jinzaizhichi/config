@@ -65,7 +65,7 @@ return {
         }),
         ['<CR>'] = cmp.mapping {
           i = cmp.mapping.confirm {
-            behavior = cmp.ConfirmBehavior.Replace,
+            -- behavior = cmp.ConfirmBehavior.Replace,
             select = true,
           },
           c = cmp.mapping.confirm { select = true },
