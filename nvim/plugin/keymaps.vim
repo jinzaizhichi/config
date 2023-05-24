@@ -56,7 +56,7 @@ nnoremap <leader>fq <cmd>Telescope quickfix<cr>
 nnoremap <leader>fr <cmd>Telescope registers<cr>
 nnoremap <leader>fi <cmd>Telescope loclist<cr>
 nnoremap <leader>fj <cmd>Telescope jumplist<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
+" nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fu <cmd>Telescope undo<cr>
 nnoremap <leader>fii <cmd>Telescope builtin<cr>
 nnoremap <leader>fic <cmd>Telescope colorscheme<cr>
@@ -87,6 +87,15 @@ nnoremap <leader>fp <cmd>Telescope projects<cr>
 nnoremap <leader>fsl <cmd>Telescope session-lens search_session<CR>
 
 " lsp
+if !exists('g:vscode')
+    nnoremap K <Cmd>lua vim.lsp.buf.hover()<CR>
+    nnoremap gD <Cmd>lua vim.lsp.buf.declaration()<CR>
+    nnoremap gd <Cmd>Telescope lsp_definitions<CR>
+    nnoremap gi <cmd>Telescope lsp_implementations<CR>
+    nnoremap gI <cmd>Telescope lsp_incoming_calls<CR>
+    nnoremap gO <cmd>Telescope lsp_outgoing_calls<CR>
+    nnoremap gr <cmd>Telescope lsp_references show_line=false<CR>
+endif
 nnoremap <leader>k <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <leader>wa <cmd>lua vim.lsp.buf.add_workspace_folder()<CR>
 nnoremap <leader>wr <cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>
@@ -255,17 +264,16 @@ if s:textdomain == 'git'
     nnoremap <silent> gl <cmd>diffget LO<CR>
     nnoremap <silent> gr <cmd>diffget RE<CR>
 endif
-if !exists('g:vscode')
-    nnoremap K <Cmd>lua vim.lsp.buf.hover()<CR>
-    nnoremap gD <Cmd>lua vim.lsp.buf.declaration()<CR>
-    nnoremap gd <Cmd>Telescope lsp_definitions<CR>
-    nnoremap gi <cmd>Telescope lsp_implementations<CR>
-    nnoremap gI <cmd>Telescope lsp_incoming_calls<CR>
-    nnoremap gO <cmd>Telescope lsp_outgoing_calls<CR>
-    nnoremap gr <cmd>Telescope lsp_references show_line=false<CR>
-else
+if exists('g:vscode')
+    nnoremap gi <cmd>call VSCodeNotify('editor.action.goToImplementation')<CR>
+    nnoremap gI <cmd>call VSCodeNotify('editor.showIncomingCalls')<CR>
+    nnoremap gO <cmd>call VSCodeNotify('editor.showOutgoingCalls')<CR>
+    nnoremap gr <cmd>call VSCodeNotify('editor.action.goToReferences')<CR>
     nnoremap <leader>ff <cmd>call VSCodeNotify('workbench.action.quickOpen')<cr>
     nnoremap <leader>fg <cmd>call VSCodeNotify('workbench.view.search')<cr>
+    nnoremap <leader>fb <cmd>call VSCodeNotify('workbench.action.quickOpenPreviousRecentlyUsedEditor')<CR>
+    nnoremap <C-n> <cmd>call VSCodeNotify('workbench.action.quickOpenPreviousRecentlyUsedEditor')<CR>
+    nnoremap <C-p> <cmd>call VSCodeNotify('workbench.action.quickOpenLeastRecentlyUsedEditor')<CR>
     nnoremap <C-j> <Cmd>call VSCodeNotify('workbench.action.focusBelowGroup')<CR>
     xnoremap <C-j> <Cmd>call VSCodeNotify('workbench.action.focusBelowGroup')<CR>
     nnoremap <C-k> <Cmd>call VSCodeNotify('workbench.action.focusAboveGroup')<CR>
@@ -274,4 +282,6 @@ else
     xnoremap <C-h> <Cmd>call VSCodeNotify('workbench.action.focusLeftGroup')<CR>
     nnoremap <C-l> <Cmd>call VSCodeNotify('workbench.action.focusRightGroup')<CR>
     xnoremap <C-l> <Cmd>call VSCodeNotify('workbench.action.focusRightGroup')<CR>
+    nnoremap <leader>mm <cmd>call VSCodeNotify('editor.action.formatDocument')<CR>
+    vnoremap <leader>mm <cmd>call VSCodeNotify('editor.action.formatSelection')<CR>
 endif
