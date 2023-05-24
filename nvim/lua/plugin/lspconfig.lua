@@ -1,10 +1,11 @@
 return {
-  { 'nvim-lua/lsp-status.nvim' },
-  { 'onsails/lspkind.nvim' },
+  { 'nvim-lua/lsp-status.nvim', cond = not vim.g.vscode },
+  { 'onsails/lspkind.nvim', cond = not vim.g.vscode },
   -- enhancement for jdtls
-  { 'mfussenegger/nvim-jdtls' },
+  { 'mfussenegger/nvim-jdtls', cond = not vim.g.vscode },
   {
     url = 'https://gitlab.com/schrieveslaach/sonarlint.nvim',
+    cond = not vim.g.vscode,
     config = function()
       require('sonarlint').setup({
         server = {
@@ -31,6 +32,7 @@ return {
   },
   {
     'neovim/nvim-lspconfig',
+    cond = not vim.g.vscode,
     dependencies = {
       { 'williamboman/mason.nvim' },
       { 'williamboman/mason-lspconfig.nvim' },
@@ -146,6 +148,7 @@ return {
   },
   {
     'jose-elias-alvarez/null-ls.nvim',
+    cond = not vim.g.vscode,
     config = function()
       local null_ls = require('null-ls')
       local perfer_local = vim.fn.stdpath('data') .. '/mason/bin'
@@ -196,6 +199,7 @@ return {
   },
   {
     'ahmedkhalf/project.nvim',
+    cond = not vim.g.vscode,
     config = function()
       require("project_nvim").setup({
         -- All the patterns used to detect root dir, when **"pattern"** is in

@@ -1,19 +1,20 @@
 return {
   -- rest client
-  {'NTBBloodbath/rest.nvim', config = true},
+  {'NTBBloodbath/rest.nvim', cond = not vim.g.vscode, config = true},
   -- markdown preview
-  {'ellisonleao/glow.nvim', config = true, cmd = 'Glow'},
+  {'ellisonleao/glow.nvim', cond = not vim.g.vscode, config = true, cmd = 'Glow'},
   -- neovim in browser
-  {'glacambre/firenvim', build = function() vim.fn['firenvim#install'](0) end},
+  {'glacambre/firenvim', cond = not vim.g.vscode, build = function() vim.fn['firenvim#install'](0) end},
   -- db manage
-  {'tpope/vim-dadbod'},
-  {'kristijanhusak/vim-dadbod-ui'},
+  {'tpope/vim-dadbod', cond = not vim.g.vscode},
+  {'kristijanhusak/vim-dadbod-ui', cond = not vim.g.vscode},
   -- powerful replace tool
-  {'windwp/nvim-spectre'},
+  {'windwp/nvim-spectre', cond = not vim.g.vscode},
   -- remote develop
-  {'miversen33/netman.nvim', config = function () require('netman') end},
+  {'miversen33/netman.nvim', cond = not vim.g.vscode, config = function () require('netman') end},
   {
     'uga-rosa/translate.nvim',
+    cond = not vim.g.vscode,
     config = function()
       local default_command = 'google'
       -- if vim.fn.executable('trans') then
@@ -34,6 +35,7 @@ return {
     end
   },
   { 'folke/which-key.nvim',
+    cond = not vim.g.vscode,
     config = function()
       require('which-key').setup()
       local wk = require('which-key')
@@ -64,6 +66,7 @@ return {
   },
   {
   'rmagatti/auto-session',
+  cond = not vim.g.vscode,
   config = function()
     require('auto-session').setup({
       bypass_session_save_file_types = { 'alpha', 'dashboard' },

@@ -1,6 +1,7 @@
 -- nvim debug
 return {
   'mfussenegger/nvim-dap',
+  cond = not vim.g.vscode,
   config = function()
     local dap = require('dap')
     dap.defaults.fallback.terminal_win_cmd = 'enew'

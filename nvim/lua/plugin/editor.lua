@@ -2,6 +2,7 @@ return {
   { 'kylechui/nvim-surround' },
   {
     'numToStr/Comment.nvim',
+    cond = not vim.g.vscode,
     config = function()
       require('Comment').setup({
         pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
@@ -9,6 +10,7 @@ return {
     end
   },
   { 'nvim-treesitter/nvim-treesitter',
+  cond = not vim.g.vscode,
   dependencies = {
     { 'nvim-treesitter/nvim-treesitter-textobjects' },
     { 'JoosepAlviste/nvim-ts-context-commentstring' },

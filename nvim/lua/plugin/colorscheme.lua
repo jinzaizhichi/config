@@ -1,8 +1,8 @@
 return {
-  {'Mofiqul/vscode.nvim', config = function ()
+  {'Mofiqul/vscode.nvim', cond = not vim.g.vscode, config = function ()
     require('vscode').setup({
       transparent = true
     })
   end},
-  {'NvChad/nvim-colorizer.lua', config = true},
+  {'NvChad/nvim-colorizer.lua', cond = not vim.g.vscode, config = true},
 }

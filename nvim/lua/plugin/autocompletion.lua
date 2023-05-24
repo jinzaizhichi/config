@@ -1,6 +1,7 @@
 -- lsp auto completion & snip
 return {
   'hrsh7th/nvim-cmp',
+  cond = not vim.g.vscode,
   dependencies = {
     { 'rafamadriz/friendly-snippets' },
     { 'hrsh7th/vim-vsnip' },

@@ -87,19 +87,12 @@ nnoremap <leader>fp <cmd>Telescope projects<cr>
 nnoremap <leader>fsl <cmd>Telescope session-lens search_session<CR>
 
 " lsp
-nnoremap gD <Cmd>lua vim.lsp.buf.declaration()<CR>
-nnoremap gd <Cmd>Telescope lsp_definitions<CR>
-nnoremap K <Cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap gi <cmd>Telescope lsp_implementations<CR>
-nnoremap gI <cmd>Telescope lsp_incoming_calls<CR>
-nnoremap gO <cmd>Telescope lsp_outgoing_calls<CR>
 nnoremap <leader>k <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <leader>wa <cmd>lua vim.lsp.buf.add_workspace_folder()<CR>
 nnoremap <leader>wr <cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>
 nnoremap <leader>wl <cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>
 nnoremap <leader>D <cmd>Telescope lsp_type_definitions<CR>
 nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
-nnoremap gr <cmd>Telescope lsp_references show_line=false<CR>
 nnoremap <leader>i <cmd>lua vim.diagnostic.open_float()<CR>
 nnoremap [i <cmd>lua vim.diagnostic.goto_prev()<CR>
 nnoremap ]i <cmd>lua vim.diagnostic.goto_next()<CR>
@@ -261,4 +254,16 @@ let s:textdomain = $TEXTDOMAIN
 if s:textdomain == 'git'
     nnoremap <silent> gl <cmd>diffget LO<CR>
     nnoremap <silent> gr <cmd>diffget RE<CR>
+endif
+if !exists('g:vscode')
+    nnoremap K <Cmd>lua vim.lsp.buf.hover()<CR>
+    nnoremap gD <Cmd>lua vim.lsp.buf.declaration()<CR>
+    nnoremap gd <Cmd>Telescope lsp_definitions<CR>
+    nnoremap gi <cmd>Telescope lsp_implementations<CR>
+    nnoremap gI <cmd>Telescope lsp_incoming_calls<CR>
+    nnoremap gO <cmd>Telescope lsp_outgoing_calls<CR>
+    nnoremap gr <cmd>Telescope lsp_references show_line=false<CR>
+else
+    nnoremap <leader>ff <cmd>call VSCodeNotify('workbench.action.quickOpen')<cr>
+    nnoremap <leader>fg <cmd>call VSCodeNotify('workbench.view.search')<cr>
 endif

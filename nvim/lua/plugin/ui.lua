@@ -1,10 +1,11 @@
 return {
   -- buffer | statusline | icon | treeview | startup buffer
-  {'goolord/alpha-nvim', config = function() require'alpha'.setup(require'alpha.themes.theta'.config) end },
+  {'goolord/alpha-nvim', cond = not vim.g.vscode, config = function() require'alpha'.setup(require'alpha.themes.theta'.config) end },
   {'kyazdani42/nvim-web-devicons'},
   {'folke/todo-comments.nvim', config = true},
   {
     'nvim-lualine/lualine.nvim',
+    cond = not vim.g.vscode,
     config = function()
       local lazy_status = require('lazy.status')
       require('lualine').setup({
@@ -80,6 +81,7 @@ return {
   },
   {
     'chentoast/marks.nvim',
+    cond = not vim.g.vscode,
     config = function()
       require 'marks'.setup({
         -- whether to map keybinds or not. default true
@@ -134,6 +136,7 @@ return {
   },
   {
   'akinsho/nvim-toggleterm.lua',
+  cond = not vim.g.vscode,
   config = function()
     local get_height = function()
       return math.floor(vim.o.lines * 0.80 + 2)
