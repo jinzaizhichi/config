@@ -2,7 +2,7 @@ return {
   -- buffer | statusline | icon | treeview | startup buffer
   {'goolord/alpha-nvim', cond = not vim.g.vscode, config = function() require'alpha'.setup(require'alpha.themes.theta'.config) end },
   {'kyazdani42/nvim-web-devicons'},
-  {'folke/todo-comments.nvim', config = true},
+  {'folke/todo-comments.nvim', cond = not vim.g.vscode, config = true},
   {
     'nvim-lualine/lualine.nvim',
     cond = not vim.g.vscode,
