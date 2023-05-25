@@ -95,6 +95,8 @@ if !exists('g:vscode')
     nnoremap gI <cmd>Telescope lsp_incoming_calls<CR>
     nnoremap gO <cmd>Telescope lsp_outgoing_calls<CR>
     nnoremap gr <cmd>Telescope lsp_references show_line=false<CR>
+    nnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
+    vnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
 endif
 nnoremap <leader>k <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <leader>wa <cmd>lua vim.lsp.buf.add_workspace_folder()<CR>
@@ -106,8 +108,6 @@ nnoremap <leader>i <cmd>lua vim.diagnostic.open_float()<CR>
 nnoremap [i <cmd>lua vim.diagnostic.goto_prev()<CR>
 nnoremap ]i <cmd>lua vim.diagnostic.goto_next()<CR>
 nnoremap <leader>q <cmd>lua vim.diagnostic.setloclist()<CR>
-nnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
-vnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <leader>cr <Cmd>lua require('jdtls').code_action(false, 'refactor')<CR>
 nnoremap <leader>jh <Cmd>JdtHotcodeReplace<CR>
 nnoremap <leader>jf <Cmd>JdtCompile full<CR>
@@ -284,4 +284,6 @@ if exists('g:vscode')
     xnoremap <C-l> <Cmd>call VSCodeNotify('workbench.action.focusRightGroup')<CR>
     nnoremap <leader>mm <cmd>call VSCodeNotify('editor.action.formatDocument')<CR>
     vnoremap <leader>mm <cmd>call VSCodeNotify('editor.action.formatSelection')<CR>
+    nnoremap <leader>ca <cmd>call VSCodeNotify('editor.action.quickFix')<CR>
+    vnoremap <leader>ca <cmd>call VSCodeNotify('editor.action.quickFix')<CR>
 endif
