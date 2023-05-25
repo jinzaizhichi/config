@@ -269,6 +269,7 @@ if exists('g:vscode')
     nnoremap gI <cmd>call VSCodeNotify('editor.showIncomingCalls')<CR>
     nnoremap gO <cmd>call VSCodeNotify('editor.showOutgoingCalls')<CR>
     nnoremap gr <cmd>call VSCodeNotify('editor.action.goToReferences')<CR>
+    vnoremap <leader>tt <cmd>call VSCodeNotifyVisual('translates.translates', 1)<cr>
     nnoremap <leader>ff <cmd>call VSCodeNotify('workbench.action.quickOpen')<cr>
     nnoremap <leader>fg <cmd>call VSCodeNotify('workbench.view.search')<cr>
     nnoremap <leader>fb <cmd>call VSCodeNotify('workbench.action.quickOpenPreviousRecentlyUsedEditor')<CR>
@@ -283,7 +284,7 @@ if exists('g:vscode')
     nnoremap <C-l> <Cmd>call VSCodeNotify('workbench.action.focusRightGroup')<CR>
     xnoremap <C-l> <Cmd>call VSCodeNotify('workbench.action.focusRightGroup')<CR>
     nnoremap <leader>mm <cmd>call VSCodeNotify('editor.action.formatDocument')<CR>
-    vnoremap <leader>mm <cmd>call VSCodeNotify('editor.action.formatSelection')<CR>
+    vnoremap <leader>mm <cmd>call VSCodeNotifyVisual('editor.action.formatSelection')<CR>
     nnoremap <leader>ca <cmd>call VSCodeNotify('editor.action.quickFix')<CR>
-    vnoremap <leader>ca <cmd>call VSCodeNotify('editor.action.quickFix')<CR>
+    vnoremap <leader>ca <cmd>call VSCodeNotifyVisual('editor.action.quickFix')<CR>
 endif
