@@ -253,7 +253,7 @@ assignProxy(){
     do
        export $envar=$2
     done
-    echo "set all proxy env successfull"
+    echo "set all proxy env done"
     echo "proxy value is:"
     echo ${proxy_value}
     echo "no proxy value is:"
