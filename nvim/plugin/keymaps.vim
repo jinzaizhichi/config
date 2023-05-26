@@ -266,7 +266,7 @@ if s:textdomain == 'git'
 endif
 if exists('g:vscode')
     nnoremap gi <cmd>call VSCodeNotify('editor.action.goToImplementation')<CR>
-    nnoremap K <cmd>call VSCodeNotify('editor.action.showDefinitionPreviewHover')<CR>
+    nnoremap gh <cmd>call VSCodeNotify('editor.action.showDefinitionPreviewHover')<CR>
     nnoremap gI <cmd>call VSCodeNotify('editor.showIncomingCalls')<CR>
     nnoremap gO <cmd>call VSCodeNotify('editor.showOutgoingCalls')<CR>
     nnoremap gr <cmd>call VSCodeNotify('editor.action.goToReferences')<CR>
