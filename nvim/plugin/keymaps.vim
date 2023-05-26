@@ -1,10 +1,6 @@
 " NOTE: some keymap base on plug setting, you can find those in following file:
 " ../lua/plugin/cmp.lua | ../lua/plugin/gitsigns.lua | ../lua/plugin/lsp_sinature.lua 
 " ../lua/lsp/common.lua | ../lua/lsp/jdtls.lua | ../lua/plugin/telescope.lua | ../lua/plugin/treesitter.lua
-nnoremap <silent> j gj
-nnoremap <silent> gj j
-nnoremap <silent> k gk
-nnoremap <silent> gk k
 nnoremap <silent> <C-h> <cmd>wincmd h<CR>
 nnoremap <silent> <C-j> <cmd>wincmd j<CR>
 nnoremap <silent> <C-k> <cmd>wincmd k<CR>
