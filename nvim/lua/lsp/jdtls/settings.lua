@@ -80,6 +80,9 @@ local M = {
         " */",
       }
     },
+    typeHierarchy = {
+      lazyLoad = true
+    },
     import = {
       gradle = { enabled = true },
       generatesMetadataFilesAtProjectRoot = true,
