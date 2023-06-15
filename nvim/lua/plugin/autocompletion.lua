@@ -13,6 +13,7 @@ local item_source = {
   git = "[Git]",
   ['vim-dadbod-completion'] = "[Dadbod]",
 }
+local item_maxwidth = 50
 
 return {
   'hrsh7th/nvim-cmp',
@@ -142,19 +143,24 @@ return {
       },
       formatting = {
         deprecated = true,
+        fields = {'kind', 'abbr', 'menu'},
         format = lspkind.cmp_format({
-          mode = 'symbol_text', -- show only symbol annotations
-          maxwidth = 50,        -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+          mode = 'symbol', -- show only symbol annotations
+          maxwidth = item_maxwidth,        -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
           ellipsis_char = '…', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
 
           -- The function below will be called before any actual modifications from lspkind
           -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
           before = function(entry, vim_item)
-            if vim_item.menu then
-              vim_item.menu = string.format('%s %s', item_source[entry.source.name], vim_item.menu)
-            else
-              vim_item.menu = (item_source)[entry.source.name]
+            local abbr = vim_item.abbr
+            if string.find(abbr, '~', -1, true) then
+              vim_item.abbr = string.sub(abbr, 1, string.len(abbr) - 1)
             end
+            if vim_item.menu then
+              local space = item_maxwidth - string.len(vim_item.abbr) - string.len(vim_item.menu)
+              vim_item.abbr = string.format('%s%' .. space .. 's%s', vim_item.abbr, ' ', vim_item.menu)
+            end
+            vim_item.menu = (item_source)[entry.source.name]
             return vim_item
           end
         })
