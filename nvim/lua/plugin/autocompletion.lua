@@ -157,11 +157,14 @@ return {
               vim_item.abbr = string.sub(abbr, 1, string.len(abbr) - 1)
             end
             if vim_item.menu then
-              if vim_item.kind == 'Method' then
+              if vim_item.kind == 'Method' or vim_item.kind == 'Constructor' then
                 vim_item.abbr = vim_item.abbr .. string.sub(vim_item.menu, 1, string.find(vim_item.menu, ')', 1, true))
                 vim_item.menu = string.sub(vim_item.menu, string.find(vim_item.menu, ')', 1, true) + 1, string.len(vim_item.menu))
               end
               local space_count = item_maxwidth - string.len(vim_item.abbr) - string.len(vim_item.menu)
+              if space_count < 0 then
+                space_count = 0
+              end
               local space = ' '
               vim_item.abbr = string.format('%s%' .. space_count .. 's%s', vim_item.abbr, space, vim_item.menu)
             end
