@@ -1,6 +1,6 @@
 return {
   -- rest client
-  {'NTBBloodbath/rest.nvim', cond = not vim.g.vscode, config = true, opts = { env_file = '.envrc'}},
+  {'NTBBloodbath/rest.nvim', cond = not vim.g.vscode, config = true}},
   -- markdown preview
   {'ellisonleao/glow.nvim', cond = not vim.g.vscode, config = true, cmd = 'Glow'},
   -- neovim in browser
