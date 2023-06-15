@@ -47,6 +47,9 @@ return {
     end
 
     cmp.setup({
+      completion = {
+        completeopt = 'menu,menuone,noinsert,preview'
+      },
       view = {
         entries = "custom" -- can be "custom", "wildmenu" or "native"
       },
