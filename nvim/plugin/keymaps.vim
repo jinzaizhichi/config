@@ -52,7 +52,6 @@ nnoremap <leader>fq <cmd>Telescope quickfix<cr>
 nnoremap <leader>fr <cmd>Telescope registers<cr>
 nnoremap <leader>fi <cmd>Telescope loclist<cr>
 nnoremap <leader>fj <cmd>Telescope jumplist<cr>
-" nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fu <cmd>Telescope undo<cr>
 nnoremap <leader>fii <cmd>Telescope builtin<cr>
 nnoremap <leader>fic <cmd>Telescope colorscheme<cr>
@@ -93,6 +92,7 @@ if !exists('g:vscode')
     nnoremap gr <cmd>Telescope lsp_references show_line=false<CR>
     nnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
     vnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
+    nnoremap <leader>fb <cmd>Telescope buffers<cr>
 endif
 nnoremap <leader>k <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <leader>wa <cmd>lua vim.lsp.buf.add_workspace_folder()<CR>
