@@ -157,9 +157,10 @@ return {
               vim_item.abbr = string.sub(abbr, 1, string.len(abbr) - 1)
             end
             if vim_item.menu then
-              if vim_item.kind == 'Method' or vim_item.kind == 'Constructor' then
-                vim_item.abbr = vim_item.abbr .. string.sub(vim_item.menu, 1, string.find(vim_item.menu, ')', 1, true))
-                vim_item.menu = string.sub(vim_item.menu, string.find(vim_item.menu, ')', 1, true) + 1, string.len(vim_item.menu))
+              local bracket_index = string.find(vim_item.menu, ')', 1, true);
+              if bracket_index and (vim_item.kind == 'Method' or vim_item.kind == 'Constructor') then
+                vim_item.abbr = vim_item.abbr .. string.sub(vim_item.menu, 1, bracket_index)
+                vim_item.menu = string.sub(vim_item.menu, bracket_index + 1, string.len(vim_item.menu))
               end
               local space_count = item_maxwidth - string.len(vim_item.abbr) - string.len(vim_item.menu)
               if space_count < 0 then
