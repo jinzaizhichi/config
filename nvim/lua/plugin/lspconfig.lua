@@ -124,13 +124,20 @@ return {
             end
             require("lspconfig")[server_name].setup(config)
           else
+            local jdtls = require('lsp.jdtls')
             -- This setup() function is exactly the same as lspconfig's setup function (:help lspconfig-quickstart)
-            vim.api.nvim_exec([[
-          augroup jdtls_lsp
-            autocmd!
-            autocmd FileType java lua require('lsp.jdtls').setup()
-          augroup end
-        ]], false)
+            vim.api.nvim_create_augroup("user_jdtls_setup", { clear = true })
+            vim.api.nvim_create_autocmd(
+              { "FileType" },
+              { group = "user_jdtls_setup", pattern = "java,ant", callback = jdtls.setup })
+            vim.api.nvim_create_autocmd(
+              { "FileType" },
+              { group = "user_jdtls_setup", pattern = "xml", callback = function()
+                local name = vim.fn.expand("%:t")
+                if name == "pom.xml" then
+                  jdtls.setup()
+                end
+              end})
           end
         end,
         -- -- Next, you can provide targeted overrides for specific servers.

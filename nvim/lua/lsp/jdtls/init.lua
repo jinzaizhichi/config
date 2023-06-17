@@ -74,7 +74,7 @@ function M.setup()
     capabilities = capabilities,
     on_attach = on_attach,
     name = 'jdtls',
-    filetypes = { 'java' },
+    filetypes = { 'java', 'xml', 'gradle', 'groovy' },
     init_options = {
       bundles = bundles
     },
