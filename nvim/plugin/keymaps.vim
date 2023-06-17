@@ -1,6 +1,3 @@
-" NOTE: some keymap base on plug setting, you can find those in following file:
-" ../lua/plugin/cmp.lua | ../lua/plugin/gitsigns.lua | ../lua/plugin/lsp_sinature.lua 
-" ../lua/lsp/common.lua | ../lua/lsp/jdtls.lua | ../lua/plugin/telescope.lua | ../lua/plugin/treesitter.lua
 nnoremap <silent> <C-h> <cmd>wincmd h<CR>
 nnoremap <silent> <C-j> <cmd>wincmd j<CR>
 nnoremap <silent> <C-k> <cmd>wincmd k<CR>
@@ -251,6 +248,28 @@ nnoremap <silent> <leader>sd <cmd>SessionDelete<CR>
 tnoremap <silent> <C-r><C-e> <C-\><C-n>:RnvimrResize<CR>
 nnoremap <silent> <leader>rr :RnvimrToggle<CR>
 tnoremap <silent> <C-r><C-r> <C-\><C-n>:RnvimrToggle<CR>
+
+" gitsigns
+" Navigation
+nnoremap <silent> <expr> ]c &diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'
+nnoremap <silent> <expr> [c &diff ? '[c' : '<cmd>Gitsigns prev_hunk<CR>'
+" Actions
+nnoremap <silent> <leader>gs :Gitsigns stage_hunk<CR>
+vnoremap <silent> <leader>gs :Gitsigns stage_hunk<CR>
+nnoremap <silent> <leader>gr :Gitsigns reset_hunk<CR>
+vnoremap <silent> <leader>gr :Gitsigns reset_hunk<CR>
+nnoremap <silent> <leader>gS <cmd>Gitsigns stage_buffer<CR>
+nnoremap <silent> <leader>gu <cmd>Gitsigns undo_stage_hunk<CR>
+nnoremap <silent> <leader>gR <cmd>Gitsigns reset_buffer<CR>
+nnoremap <silent> <leader>gp <cmd>Gitsigns preview_hunk<CR>
+nnoremap <silent> <leader>gb <cmd>lua require"gitsigns".blame_line{full=true}<CR>
+nnoremap <silent> <leader>gB <cmd>Gitsigns toggle_current_line_blame<CR>
+nnoremap <silent> <leader>gd <cmd>Gitsigns diffthis<CR>
+nnoremap <silent> <leader>gD <cmd>lua require"gitsigns".diffthis("~")<CR>
+nnoremap <silent> <leader>gt <cmd>Gitsigns toggle_deleted<CR>
+" Text object
+onoremap <silent> ih :<C-U>Gitsigns select_hunk<CR>
+xnoremap <silent> ih :<C-U>Gitsigns select_hunk<CR>
 
 " ctags
 nnoremap <silent> <leader>C <cmd>!ctags<CR>
