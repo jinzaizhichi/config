@@ -177,13 +177,19 @@ nnoremap <silent> <plug>(DapStepInto) <cmd>lua require'dap'.step_into()<cr>
 nnoremap <silent> <plug>(DapReverseContinue) <cmd>lua require'dap'.reverse_continue()<cr>
             \ <cmd>call RepeatSet("\<plug>(DapReverseContinue)")<cr>
 nnoremap <silent> <leader>db <cmd>lua require'dap'.toggle_breakpoint()<cr>
+nnoremap <silent> <f9> <cmd>lua require'dap'.toggle_breakpoint()<cr>
 nnoremap <silent> <leader>dl <cmd>exec OpenBreakPoints()<cr>
 nnoremap <silent> <leader>dR <cmd>lua require'dap'.clear_breakpoints()<cr>
 nnoremap <silent> <leader>dc <cmd>lua require'dap'.continue()<cr>
+nnoremap <silent> <f5> <cmd>lua require'dap'.continue()<cr>
 nnoremap <silent> <leader>dC <plug>(DapRunToCursor)
 nnoremap <silent> <leader>do <plug>(DapStepOver)
-nnoremap <silent> <leader>dO <plug>(DapStepBack)
+nnoremap <silent> <f10> <plug>(DapStepOver)
+nnoremap <silent> <leader>dk <plug>(DapStepBack)
 nnoremap <silent> <leader>di <plug>(DapStepInto)
+nnoremap <silent> <f11> <plug>(DapStepInto)
+nnoremap <silent> <leader>dO <plug>(DapStepOut)
+nnoremap <silent> <f12> <plug>(DapStepOut)
 nnoremap <silent> <leader>de <plug>(DapReverseContinue)
 nnoremap <silent> <leader>dB <cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
 nnoremap <silent> <leader>dL <cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
