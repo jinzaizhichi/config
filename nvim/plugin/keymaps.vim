@@ -209,12 +209,12 @@ nnoremap <silent> <leader>dS <cmd>DapSessionFloat<CR>
 nnoremap <silent> <leader>dh <cmd>lua require'dap.ui.widgets'.hover('<cexpr>', {border = 'none'})<CR>
 
 " rest nvim
-command RestNvim :lua require('rest-nvim').run()<CR>
-command RestNvimPreview :lua require('rest-nvim').run(true)<CR>
-command RestNvimLast :lua require('rest-nvim').last()<CR>
-nnoremap <leader>re <cmd>RestNvim<CR>
-nnoremap <leader>rp <cmd>RestNvimPreview<CR>
-nnoremap <leader>rl <cmd>RestNvimLast<CR>
+" command RestNvim :lua require('rest-nvim').run()<CR>
+" command RestNvimPreview :lua require('rest-nvim').run(true)<CR>
+" command RestNvimLast :lua require('rest-nvim').last()<CR>
+nnoremap <leader>re <plug>RestNvim
+nnoremap <leader>rp <plug>RestNvimPreview
+nnoremap <leader>rl <plug>RestNvimLast
 
 function! ToggleQuickFix()
     if empty(filter(getwininfo(), 'v:val.quickfix'))
