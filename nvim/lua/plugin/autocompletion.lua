@@ -1,17 +1,17 @@
 -- lsp auto completion & snip
 local item_source = {
-  buffer = "[Buf]",
-  nvim_lsp = "[LSP]",
-  vsnip = "[Snip]",
-  nvim_lsp_signature_help = "[Sign]",
-  path = "[Path]",
-  cmp_tabnine = "[Tabnine]",
-  look = "[Look]",
-  treesitter = "[Treesitter]",
-  nvim_lua = "[Lua]",
-  latex_symbols = "[Latex]",
-  git = "[Git]",
-  ['vim-dadbod-completion'] = "[Dadbod]",
+  buffer = "buf",
+  nvim_lsp = "lsp",
+  vsnip = "snip",
+  nvim_lsp_signature_help = "sign",
+  path = "path",
+  cmp_tabnine = "tabnine",
+  look = "look",
+  treesitter = "treesitter",
+  nvim_lua = "lua",
+  latex_symbols = "latex",
+  git = "git",
+  ['vim-dadbod-completion'] = "dadbod",
 }
 local item_maxwidth = 50
 

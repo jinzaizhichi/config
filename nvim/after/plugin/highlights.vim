@@ -20,5 +20,6 @@ highlight! link @lsp.type.class @class
 highlight! link @lsp.type.interface @interface
 highlight! link @lsp.type.enum @enum
 highlight! link @lsp.type.enumMember @enumMember
+highlight! link CmpItemMenu Comment
 " highlight! link TelescopeBorder guifg=#272727 guibg=#bbbbbb
 " " highlight! HopNextKey  guifg=#ff007c gui=bold ctermfg=198 cterm=bold guibg=NONE
