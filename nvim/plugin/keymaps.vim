@@ -57,7 +57,9 @@ nnoremap <leader>fib <cmd>Telescope current_buffer_fuzzy_find<cr>
 nnoremap <leader>fit <cmd>Telescope current_buffer_tags<cr>
 nnoremap <leader>fis <cmd>Telescope spell_suggest<cr>
 nnoremap <leader>fir <cmd>Telescope reloader<cr>
-nnoremap <leader>fit <cmd>Telescope tags<cr>
+nnoremap <leader>fiT <cmd>Telescope tags<cr>
+nnoremap <leader>fit <cmd>Telescope treesitter<cr>
+nnoremap <leader>fif <cmd>Telescope filetypes<cr>
 nnoremap <leader>fip <cmd>Telescope pickers<cr>
 nnoremap <leader>fim <cmd>Telescope man_pages<cr>
 nnoremap <leader>fm <cmd>Telescope marks<cr>
@@ -67,8 +69,7 @@ nnoremap <leader>fhl <cmd>Telescope highlights<cr>
 nnoremap <leader>fhc <cmd>Telescope command_history<cr>
 nnoremap <leader>fhs <cmd>Telescope search_history<cr>
 nnoremap <leader>fhq <cmd>Telescope quickfixhistory<cr>
-nnoremap <leader>ftt <cmd>Telescope treesitter<cr>
-nnoremap <leader>ftp <cmd>Telescope filetypes<cr>
+nnoremap <leader>ft <cmd>TermSelect<cr>
 nnoremap <leader>fwD <cmd>Telescope diagnostics<cr>
 nnoremap <leader>fwd :lua require'telescope.builtin'.diagnostics{bufnr=0}<cr>
 nnoremap <leader>fws <cmd>Telescope lsp_dynamic_workspace_symbols<cr>
