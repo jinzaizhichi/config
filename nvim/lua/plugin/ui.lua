@@ -179,13 +179,17 @@ return {
           end
           local buf_len = string.len(buf_name)
           local colon_index = buf_name:match('^.*():')
-          if colon_index then
-            return buf_name:sub(colon_index + 1, buf_len)
-          end
           local slash_index = buf_name:match('^.*()/')
-          if slash_index then
-            return buf_name:sub(slash_index + 1, buf_len)
+          local sub_index
+          if colon_index then
+            sub_index = colon_index
+          elseif slash_index then
+            sub_index = slash_index
           end
+          if sub_index then
+            buf_name = buf_name:sub(sub_index + 1, buf_len)
+          end
+          term.name = buf_name
           return buf_name
         end
       }
