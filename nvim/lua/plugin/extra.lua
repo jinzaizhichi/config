@@ -81,7 +81,8 @@ return {
           '~/project/', '~/Documents/', '~/Downloads/', '~/Templates/' },
         auto_restore_enabled = true,
         auto_save_enabled = true,
-        auto_session_use_git_branch = true
+        auto_session_use_git_branch = true,
+        pre_save_cmds = { ':lua require("toggleterm").toggle_all(true)' }
       })
     end
   }
