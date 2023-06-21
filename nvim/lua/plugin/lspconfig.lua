@@ -80,6 +80,8 @@ return {
       \ gradle-language-server
       \ glow
       \ sonarlint-language-server
+      \ jq
+      \ jsonls
     ]])
       end
       local lsp_status = require('lsp-status')
