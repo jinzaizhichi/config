@@ -7,7 +7,9 @@ return {
     -- dap.defaults.fallback.terminal_win_cmd = 'enew'
     dap.defaults.fallback.terminal_win_cmd = function ()
       local Terminal = require('toggleterm.terminal').Terminal
-      local new_term = Terminal:new()
+      local new_term = Terminal:new({
+        clear_env = true
+      })
       new_term:toggle()
       return new_term.bufnr, new_term.window
     end
