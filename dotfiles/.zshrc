@@ -1,4 +1,7 @@
 export LANG=en_US.UTF-8
+if [[ -n "${IS_NVIM_DAP_TOGGLETERM}" ]]; then
+    return
+fi
 # TMUX
 if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ "${TERM_PROGRAM}" != "vscode" ] && [ -z "${TMUX}" ]; then
     tmux attach || tmux >/dev/null 2>&1

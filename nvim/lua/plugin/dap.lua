@@ -9,7 +9,8 @@ return {
       local Terminal = require('toggleterm.terminal').Terminal
       local new_term = Terminal:new({
         -- start zsh without rc file
-        shell = 'zsh -df'
+        env = { ['IS_NVIM_DAP_TOGGLETERM'] = 1},
+        clear_env = true
       })
       new_term:toggle()
       return new_term.bufnr, new_term.window
