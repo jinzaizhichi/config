@@ -198,7 +198,7 @@ nnoremap <silent> <leader>dE <cmd>lua require'dap'.set_exception_breakpoints("de
 nnoremap <silent> <leader>dr <cmd>lua require'dap'.repl.toggle()<CR>
 nnoremap <silent> <leader>dp <cmd>lua require'dap'.run_last()<CR>
 command DapScopesFloat :lua require'dap.ui.widgets'.cursor_float(require('dap.ui.widgets').scopes, {border = 'none'})<CR>
-command DapFramesFloat :lua require'dap.ui.widgets'.cursor_float(require('dap.ui.widgets').frames), {border = 'none'}<CR>
+command DapFramesFloat :lua require'dap.ui.widgets'.cursor_float(require('dap.ui.widgets').frames, {border = 'none'})<CR>
 command DapExpressionFloat :lua require'dap.ui.widgets'.cursor_float(require('dap.ui.widgets').expression, {border = 'none'})<CR>
 command DapThreadsFloat :lua require'dap.ui.widgets'.cursor_float(require('dap.ui.widgets').threads, {border = 'none'})<CR>
 command DapSessionFloat :lua require'dap.ui.widgets'.cursor_float(require('dap.ui.widgets').sessions, {border = 'none'})<CR>
