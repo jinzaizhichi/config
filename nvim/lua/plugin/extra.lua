@@ -1,6 +1,10 @@
 return {
   -- rest client
-  { 'NTBBloodbath/rest.nvim',       cond = not vim.g.vscode, config = true },
+  {
+    'NTBBloodbath/rest.nvim',
+    cond = not vim.g.vscode,
+    config = true
+  },
   -- markdown preview
   {
     'ellisonleao/glow.nvim',
@@ -10,14 +14,31 @@ return {
     'Glow'
   },
   -- neovim in browser
-  { 'glacambre/firenvim',           cond = not vim.g.vscode, build = function() vim.fn['firenvim#install'](0) end },
+  {
+    'glacambre/firenvim',
+    cond = not vim.g.vscode,
+    build = function() vim.fn['firenvim#install'](0) end
+  },
   -- db manage
-  { 'tpope/vim-dadbod',             cond = not vim.g.vscode },
-  { 'kristijanhusak/vim-dadbod-ui', cond = not vim.g.vscode },
+  {
+    'tpope/vim-dadbod',
+    cond = not vim.g.vscode
+  },
+  {
+    'kristijanhusak/vim-dadbod-ui',
+    cond = not vim.g.vscode
+  },
   -- powerful replace tool
-  { 'windwp/nvim-spectre',          cond = not vim.g.vscode },
+  {
+    'windwp/nvim-spectre',
+    cond = not vim.g.vscode
+  },
   -- remote develop
-  { 'miversen33/netman.nvim',       cond = not vim.g.vscode, config = function() require('netman') end },
+  {
+    'miversen33/netman.nvim',
+    cond = not vim.g.vscode,
+    config = function() require('netman') end
+  },
   {
     'uga-rosa/translate.nvim',
     cond = not vim.g.vscode,
