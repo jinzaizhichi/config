@@ -210,9 +210,6 @@ nnoremap <silent> <leader>dS <cmd>DapSessionFloat<CR>
 nnoremap <silent> <leader>dh <cmd>lua require'dap.ui.widgets'.hover('<cexpr>', {border = 'none'})<CR>
 
 " rest nvim
-" command RestNvim :lua require('rest-nvim').run()<CR>
-" command RestNvimPreview :lua require('rest-nvim').run(true)<CR>
-" command RestNvimLast :lua require('rest-nvim').last()<CR>
 nnoremap <leader>re <plug>RestNvim
 nnoremap <leader>rp <plug>RestNvimPreview
 nnoremap <leader>rl <plug>RestNvimLast
@@ -250,11 +247,6 @@ nnoremap <silent> <leader>L <cmd>Mason<CR>
 nnoremap <silent> <leader>ss <cmd>SessionSave<CR>
 nnoremap <silent> <leader>sr <cmd>SessionRestore<CR>
 nnoremap <silent> <leader>sd <cmd>SessionDelete<CR>
-
-" rnvimr
-tnoremap <silent> <C-r><C-e> <C-\><C-n>:RnvimrResize<CR>
-nnoremap <silent> <leader>rr :RnvimrToggle<CR>
-tnoremap <silent> <C-r><C-r> <C-\><C-n>:RnvimrToggle<CR>
 
 " gitsigns
 " Navigation
