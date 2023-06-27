@@ -83,7 +83,7 @@ return {
         end
       end
       require('auto-session').setup({
-        bypass_session_save_file_types = { 'alpha', 'dashboard' },
+        bypass_session_save_file_types = { 'alpha', 'dashboard', 'lazy', 'mason' },
         auto_session_suppress_dirs = { '~/', '/', '~/Desktop/', '~/Music/', '~/Public/', '~/Videos/', '~/Pictures/',
           '~/project/', '~/Documents/', '~/Downloads/', '~/Templates/' },
         auto_restore_enabled = true,
