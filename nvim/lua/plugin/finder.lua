@@ -6,6 +6,7 @@ return {
     { 'nvim-telescope/telescope-fzf-native.nvim',    build = 'make' },
     { 'nvim-telescope/telescope-ui-select.nvim' },
     { 'nvim-telescope/telescope-live-grep-args.nvim' },
+    { 'nvim-telescope/telescope-file-browser.nvim' },
   },
   config = function()
     local fileIgnorePatterns = os.getenv('TELESCOPE_FILE_IGNORE_PATTERNS')
@@ -16,7 +17,6 @@ return {
         table.insert(fileIgnoreTable, pattern)
       end
     end
-    -- print(vim.inspect(fileIgnoreTable))
     local layout = require('telescope.actions.layout')
     require('telescope').setup({
       defaults = {
@@ -86,6 +86,17 @@ return {
             preview_height = 0.8,
           },
         },
+        file_browser = {
+          layout_strategy = "horizontal",
+          select_buffer = true,
+          grouped = true,
+          auto_depth = true,
+          collapse_path = true,
+          cwd_to_path = true,
+          path = '%:p:h',
+          prompt_path = true,
+          hijack_netrw = true,
+        },
       }
     })
     require('telescope').load_extension('projects')
@@ -93,5 +104,6 @@ return {
     require('telescope').load_extension('undo')
     require('telescope').load_extension('ui-select')
     require('telescope').load_extension('live_grep_args')
+    require('telescope').load_extension('file_browser')
   end
 }
