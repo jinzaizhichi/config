@@ -34,7 +34,11 @@ set backspace=2
 set sidescroll=10
 set list
 " set listchars=tab:>~,space:·,precedes:«,extends:»,trail:·,eol:↴
-set listchars=tab:>-,precedes:«,extends:»,trail:·,lead:·
+if &buftype != 'terminal'
+    set listchars=tab:>-,precedes:«,extends:»,trail:·,lead:·,eol:↴
+else
+    set listchars=tab:>-,precedes:«,extends:»,trail:·,lead:·
+endif
 set undofile
 set undodir=~/.local/share/nvim/undo
 set noshowmode
