@@ -87,7 +87,6 @@ return {
           },
         },
         file_browser = {
-          layout_strategy = "horizontal",
           select_buffer = true,
           grouped = true,
           auto_depth = true,
