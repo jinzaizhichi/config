@@ -90,7 +90,6 @@ return {
           select_buffer = true,
           grouped = true,
           auto_depth = true,
-          collapse_path = true,
           cwd_to_path = true,
           path = '%:p:h',
           prompt_path = true,
