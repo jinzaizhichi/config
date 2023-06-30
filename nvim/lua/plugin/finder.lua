@@ -34,11 +34,14 @@ return {
             prompt_position = "top"
           },
         },
+        dynamic_preview_title = true,
         mappings = {
           i = {
             -- example
             -- ["<C-o>"] = trouble.open_with_trouble,
             ["<C-o>"] = function() layout.toggle_preview(vim.fn.bufnr()) end,
+            ["<M-n>"] = require('telescope.actions').cycle_history_next,
+            ["<M-p>"] = require('telescope.actions').cycle_history_prev,
           },
           n = {
             ["<C-o>"] = function() layout.toggle_preview(vim.fn.bufnr()) end,
