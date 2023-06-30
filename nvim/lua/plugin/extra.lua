@@ -107,7 +107,7 @@ return {
         bypass_session_save_file_types = { 'alpha', 'dashboard', 'lazy', 'mason' },
         auto_session_suppress_dirs = { '~/', '/', '~/Desktop/', '~/Music/', '~/Public/', '~/Videos/', '~/Pictures/',
           '~/project/', '~/Documents/', '~/Downloads/', '~/Templates/' },
-        auto_restore_enabled = true,
+        auto_restore_enabled = false,
         auto_save_enabled = true,
         auto_session_use_git_branch = true,
         pre_save_cmds = { shutdown_term }
