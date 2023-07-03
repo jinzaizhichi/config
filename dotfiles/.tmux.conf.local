@@ -135,7 +135,7 @@ tmux_conf_theme_mode_attr="bold"
 
 # status line style
 tmux_conf_theme_status_fg="$tmux_conf_theme_colour_3"
-tmux_conf_theme_status_bg="$tmux_conf_theme_colour_1"
+tmux_conf_theme_status_bg="terminal"
 tmux_conf_theme_status_attr="none"
 
 # terminal title
@@ -161,7 +161,7 @@ tmux_conf_theme_terminal_title="#h ❐ #S ● #I #W"
 #     - #{username}
 #     - #{username_ssh}
 tmux_conf_theme_window_status_fg="$tmux_conf_theme_colour_3"
-tmux_conf_theme_window_status_bg="$tmux_conf_theme_colour_1"
+tmux_conf_theme_window_status_bg="terminal"
 tmux_conf_theme_window_status_attr="none"
 # tmux_conf_theme_window_status_format="#I #W"
 # tmux_conf_theme_window_status_format="#{circled_window_index} #W"
@@ -196,7 +196,7 @@ tmux_conf_theme_window_status_bell_attr="blink,bold"
 
 # window last status style
 tmux_conf_theme_window_status_last_fg="$tmux_conf_theme_colour_4"
-tmux_conf_theme_window_status_last_bg="$tmux_conf_theme_colour_2"
+tmux_conf_theme_window_status_last_bg="terminal"
 tmux_conf_theme_window_status_last_attr="none"
 
 # status left/right sections separators
@@ -251,7 +251,7 @@ tmux_conf_theme_status_left_attr="bold,none,none"
 
 # status right style
 tmux_conf_theme_status_right_fg="$tmux_conf_theme_colour_12,$tmux_conf_theme_colour_14,$tmux_conf_theme_colour_13,$tmux_conf_theme_colour_14"
-tmux_conf_theme_status_right_bg="$tmux_conf_theme_colour_15,$tmux_conf_theme_colour_17,$tmux_conf_theme_colour_16,$tmux_conf_theme_colour_10"
+tmux_conf_theme_status_right_bg="terminal,$tmux_conf_theme_colour_17,$tmux_conf_theme_colour_16,$tmux_conf_theme_colour_10"
 tmux_conf_theme_status_right_attr="none,none,bold,bold"
 
 # pairing indicator
@@ -432,10 +432,10 @@ set -g remain-on-exit on
 # set -g @net_speed_format "D %7s U %7s"
 # set -g @download_speed_format "%7s"
 # set -g @upload_speed_format "%7s"
-# set -g default-terminal "tmux-256color" # colors!
+set -g default-terminal "xterm-256color" # colors!
 set -sa terminal-features ",*256col*:RGB"                                                                 # True color support
-set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'                                                        # Undercurl support
-set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m' # Underscore colors
+# set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'                                                        # Undercurl support
+# set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m' # Underscore colors
 
 # -- custom variables ----------------------------------------------------------
 
