@@ -9,6 +9,24 @@ return {
     { 'nvim-telescope/telescope-file-browser.nvim' },
   },
   config = function()
+    local function flash(prompt_bufnr)
+      require("flash").jump({
+        pattern = "^",
+        label = { after = { 0, 0 } },
+        search = {
+          mode = "search",
+          exclude = {
+            function(win)
+              return vim.bo[vim.api.nvim_win_get_buf(win)].filetype ~= "TelescopeResults"
+            end,
+          },
+        },
+        action = function(match)
+          local picker = require("telescope.actions.state").get_current_picker(prompt_bufnr)
+          picker:set_selection(match.pos[1] - 1)
+        end,
+      })
+    end
     local fileIgnorePatterns = os.getenv('TELESCOPE_FILE_IGNORE_PATTERNS')
     local fileIgnoreTable = nil
     if fileIgnorePatterns then
@@ -42,9 +60,13 @@ return {
             ["<C-o>"] = function() layout.toggle_preview(vim.fn.bufnr()) end,
             ["<M-n>"] = require('telescope.actions').cycle_history_next,
             ["<M-p>"] = require('telescope.actions').cycle_history_prev,
+            ["<C-s>"] = flash,
           },
           n = {
             ["<C-o>"] = function() layout.toggle_preview(vim.fn.bufnr()) end,
+            ["<M-n>"] = require('telescope.actions').cycle_history_next,
+            ["<M-p>"] = require('telescope.actions').cycle_history_prev,
+            ["<s>"] = flash,
           }
         },
         vimgrep_arguments = {
