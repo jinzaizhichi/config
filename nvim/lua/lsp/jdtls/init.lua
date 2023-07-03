@@ -41,8 +41,8 @@ function M.setup()
     common.set_keymap(bufnr, 'n', '<leader>co', "<Cmd>lua require('jdtls').organize_imports()<CR>", opts)
     common.set_keymap(bufnr, 'n', '<leader>cv', "<Cmd>lua require('jdtls').extract_variable()<CR>", opts)
     common.set_keymap(bufnr, 'v', '<leader>cv', "<Cmd>lua require('jdtls').extract_variable(true)<CR>", opts)
-    common.set_keymap(bufnr, 'n', '<leader>cc', "<Cmd>lua require('jdtls').extract_constant()<CR>", opts)
-    common.set_keymap(bufnr, 'v', '<leader>cc', "<Cmd>lua require('jdtls').extract_constant(true)<CR>", opts)
+    common.set_keymap(bufnr, 'n', '<leader>cV', "<Cmd>lua require('jdtls').extract_constant()<CR>", opts)
+    common.set_keymap(bufnr, 'v', '<leader>cV', "<Cmd>lua require('jdtls').extract_constant(true)<CR>", opts)
     common.set_keymap(bufnr, 'v', '<leader>cm', "<Cmd>lua require('jdtls').extract_method(true)<CR>", opts)
     -- If using nvim-dap
     -- This requires java-debug and vscode-java-test bundles, see install steps in this README further below.
