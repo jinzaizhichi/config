@@ -5,8 +5,14 @@ return {
     opts = {
       label = {
         uppercase = false,
+      },
+      highlight = {
+        groups = {
+          label = "TelescopeMatching",
+        },
       }
     },
+    event = 'VeryLazy',
     keys = {
       {
         "s",
