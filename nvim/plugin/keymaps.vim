@@ -120,11 +120,6 @@ nnoremap <leader>gbc <cmd>Telescope git_bcommits<cr>
 nnoremap <leader>gbb <cmd>Telescope git_branches<cr>
 nnoremap <leader>gh <cmd>Telescope git_stash<cr>
 
-nnoremap <silent> <leader><leader>w <cmd>HopWordMW<cr>
-nnoremap <silent> <leader><leader>p <cmd>HopPatternMW<cr>
-nnoremap <silent> <leader><leader>j <cmd>HopLineMW<cr>
-nnoremap <silent> <leader><leader>s <cmd>HopChar1MW<cr>
-
 " Use <Tab> and <S-Tab> to navigate through popup menu
 " inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
