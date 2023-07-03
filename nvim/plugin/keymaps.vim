@@ -91,13 +91,14 @@ if !exists('g:vscode')
     nnoremap <leader>fb <cmd>Telescope buffers<cr>
 endif
 nnoremap <leader>k <cmd>lua vim.lsp.buf.signature_help()<CR>
-nnoremap <leader>D <cmd>lua vim.diagnostic.open_float()<CR>
+nnoremap <leader>K <cmd>lua vim.diagnostic.open_float()<CR>
 nnoremap [d <cmd>lua vim.diagnostic.goto_prev()<CR>
 nnoremap ]d <cmd>lua vim.diagnostic.goto_next()<CR>
 nnoremap <leader>wa <cmd>lua vim.lsp.buf.add_workspace_folder()<CR>
 nnoremap <leader>wr <cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>
 nnoremap <leader>wl <cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>
 nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
+nnoremap <leader>q <cmd>lua vim.diagnostic.setloclist()<CR>
 nnoremap <leader>q <cmd>lua vim.diagnostic.setloclist()<CR>
 nnoremap <leader>cr <cmd>lua require('jdtls').code_action(false, 'refactor')<CR>
 
@@ -215,7 +216,7 @@ function! ToggleQuickFix()
     endif
 endfunction
 
-nnoremap <silent> <leader><leader>l <cmd>exec ToggleQuickFix()<cr>
+nnoremap <silent> <leader>Q <cmd>exec ToggleQuickFix()<cr>
 
 " source config
 if !exists('*SourceMyConfig')
