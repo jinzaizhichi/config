@@ -8,8 +8,6 @@ nnoremap <silent> <M-k> <cmd>wincmd -<CR>
 nnoremap <silent> <M-l> <cmd>wincmd ><CR>
 noremap <silent> <M-n> :tabn<cr>
 noremap <silent> <M-p> :tabp<cr>
-tnoremap <silent> <M-n> <cmd>tabn<cr>
-tnoremap <silent> <M-p> <cmd>tabp<cr>
 " cnoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 " These commands will navigate through buffers in order regardless of which mode you are using
 " e.g. if you change the order of buffers :bnext and :bprevious will not respect the custom ordering
@@ -93,22 +91,22 @@ if !exists('g:vscode')
     nnoremap <leader>fb <cmd>Telescope buffers<cr>
 endif
 nnoremap <leader>k <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <leader>D <cmd>lua vim.diagnostic.open_float()<CR>
+nnoremap [d <cmd>lua vim.diagnostic.goto_prev()<CR>
+nnoremap ]d <cmd>lua vim.diagnostic.goto_next()<CR>
 nnoremap <leader>wa <cmd>lua vim.lsp.buf.add_workspace_folder()<CR>
 nnoremap <leader>wr <cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>
 nnoremap <leader>wl <cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>
-nnoremap <leader>D <cmd>Telescope lsp_type_definitions<CR>
 nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
-nnoremap <leader>i <cmd>lua vim.diagnostic.open_float()<CR>
-nnoremap [i <cmd>lua vim.diagnostic.goto_prev()<CR>
-nnoremap ]i <cmd>lua vim.diagnostic.goto_next()<CR>
 nnoremap <leader>q <cmd>lua vim.diagnostic.setloclist()<CR>
 nnoremap <leader>cr <cmd>lua require('jdtls').code_action(false, 'refactor')<CR>
-nnoremap <leader>jh <cmd>JdtHotcodeReplace<CR>
-nnoremap <leader>jf <cmd>JdtCompile full<CR>
-nnoremap <leader>ji <cmd>JdtCompile incremental<CR>
 
 nnoremap <leader>mm <cmd>lua vim.lsp.buf.format({async = true})<CR>
 vnoremap <leader>mm <cmd>lua vim.lsp.buf.format({async = true})<CR>
+
+nnoremap <leader>cC <cmd>JdtCompile full<CR>
+nnoremap <leader>cc <cmd>JdtCompile incremental<CR>
+nnoremap <leader>ch <cmd>JdtHotcodeReplace<CR>
 
 nnoremap <leader>fss :lua require('spectre').open()<CR>
 " search current word
@@ -152,8 +150,8 @@ nnoremap <silent> <leader>mp :Glow<cr>
 nnoremap <silent> <leader>mt :MarksToggleSigns<cr>
 
 " clever-f
-map ; <Plug>(clever-f-repeat-forward)
-map , <Plug>(clever-f-repeat-back)
+" map ; <Plug>(clever-f-repeat-forward)
+" map , <Plug>(clever-f-repeat-back)
 
 function! OpenBreakPoints()
     :lua require'dap'.list_breakpoints()
