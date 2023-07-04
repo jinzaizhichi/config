@@ -25,7 +25,7 @@ return {
         function()
           require("flash").jump()
         end,
-        desc = "Flash Jump To",
+        desc = "Flash Jump",
       },
       {
         "S",
@@ -82,7 +82,7 @@ return {
             end,
           })
         end,
-        desc = "Flash Line Diagnostic",
+        desc = "Flash Diagnostic",
       },
     },
   },

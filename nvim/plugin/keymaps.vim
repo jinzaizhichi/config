@@ -26,7 +26,7 @@ nnoremap <leader>0 "0p
 vmap <leader>p "+p
 vmap <leader>0 "0p
 
-nnoremap <silent> <leader><leader>h <cmd>noh<CR>
+nnoremap <silent> <leader>h <cmd>noh<CR>
 
 " treesitter context
 " nnoremap <leader>cc <cmd>TSContextToggle<cr>
@@ -42,6 +42,7 @@ nnoremap <leader>fk <cmd>Telescope keymaps<cr>
 nnoremap <leader>fg <cmd>lua require("telescope").extensions.live_grep_args.live_grep_args()<cr>
 nnoremap <leader>fq <cmd>Telescope quickfix<cr>
 nnoremap <leader>fr <cmd>Telescope registers<cr>
+nnoremap <leader>fR <cmd>Telescope resume<cr>
 nnoremap <leader>fi <cmd>Telescope loclist<cr>
 nnoremap <leader>fj <cmd>Telescope jumplist<cr>
 nnoremap <leader>fu <cmd>Telescope undo<cr>
@@ -59,7 +60,6 @@ nnoremap <leader>fip <cmd>Telescope pickers<cr>
 nnoremap <leader>fim <cmd>Telescope man_pages<cr>
 nnoremap <leader>fm <cmd>Telescope marks<cr>
 nnoremap <leader>fhh <cmd>Telescope help_tags<cr>
-nnoremap <leader>fhr <cmd>Telescope resume<cr>
 nnoremap <leader>fhl <cmd>Telescope highlights<cr>
 nnoremap <leader>fhc <cmd>Telescope command_history<cr>
 nnoremap <leader>fhs <cmd>Telescope search_history<cr>
@@ -75,18 +75,16 @@ nnoremap <leader>fp <cmd>Telescope projects<cr>
 nnoremap <leader>fsl <cmd>Telescope session-lens search_session<CR>
 
 " lsp
-if !exists('g:vscode')
-    nnoremap K <cmd>lua vim.lsp.buf.hover()<CR>
-    nnoremap gD <cmd>lua vim.lsp.buf.declaration()<CR>
-    nnoremap gd <cmd>Telescope lsp_definitions<CR>
-    nnoremap gi <cmd>Telescope lsp_implementations<CR>
-    nnoremap gI <cmd>Telescope lsp_incoming_calls<CR>
-    nnoremap gO <cmd>Telescope lsp_outgoing_calls<CR>
-    nnoremap gr <cmd>Telescope lsp_references show_line=false<CR>
-    nnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
-    vnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
-    nnoremap <leader>fb <cmd>Telescope buffers<cr>
-endif
+nnoremap K <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap gD <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap gd <cmd>Telescope lsp_definitions<CR>
+nnoremap gi <cmd>Telescope lsp_implementations<CR>
+nnoremap gI <cmd>Telescope lsp_incoming_calls<CR>
+nnoremap gO <cmd>Telescope lsp_outgoing_calls<CR>
+nnoremap gr <cmd>Telescope lsp_references show_line=false<CR>
+nnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
+vnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>k <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <leader>K <cmd>lua vim.diagnostic.open_float()<CR>
 nnoremap [d <cmd>lua vim.diagnostic.goto_prev()<CR>
@@ -97,7 +95,6 @@ nnoremap <leader>wl <cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folder
 nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <leader>Q <cmd>lua vim.diagnostic.setloclist()<CR>
 nnoremap <leader>q <cmd>lua vim.diagnostic.setloclist()<CR>
-nnoremap <leader>cr <cmd>lua require('jdtls').code_action(false, 'refactor')<CR>
 
 nnoremap <leader>mm <cmd>lua vim.lsp.buf.format({async = true})<CR>
 vnoremap <leader>mm <cmd>lua vim.lsp.buf.format({async = true})<CR>
@@ -105,6 +102,7 @@ vnoremap <leader>mm <cmd>lua vim.lsp.buf.format({async = true})<CR>
 nnoremap <leader>cC <cmd>JdtCompile full<CR>
 nnoremap <leader>cc <cmd>JdtCompile incremental<CR>
 nnoremap <leader>ch <cmd>JdtHotcodeReplace<CR>
+nnoremap <leader>cr <cmd>lua require('jdtls').code_action(false, 'refactor')<CR>
 
 nnoremap <leader>fss :lua require('spectre').open()<CR>
 " search current word
@@ -266,8 +264,11 @@ if s:textdomain == 'git'
     nnoremap <silent> gr <cmd>diffget RE<CR>
 endif
 if exists('g:vscode')
-    nnoremap gi <cmd>call VSCodeNotify('editor.action.goToImplementation')<CR>
+    nnoremap K <cmd>call VSCodeNotify('editor.action.showHover')<CR>
+    nnoremap gd <cmd>call VSCodeNotify('editor.action.peekDefinition')<CR>
+    nnoremap gD <cmd>call VSCodeNotify('editor.action.peekDeclaration')<CR>
     nnoremap gh <cmd>call VSCodeNotify('editor.action.showDefinitionPreviewHover')<CR>
+    nnoremap gi <cmd>call VSCodeNotify('editor.action.goToImplementation')<CR>
     nnoremap gI <cmd>call VSCodeNotify('editor.showIncomingCalls')<CR>
     nnoremap gO <cmd>call VSCodeNotify('editor.showOutgoingCalls')<CR>
     nnoremap gr <cmd>call VSCodeNotify('editor.action.goToReferences')<CR>
