@@ -2,16 +2,21 @@ return {
   -- motion
   {
     'folke/flash.nvim',
-    opts = {
-      label = {
-        uppercase = false,
-      },
-      highlight = {
-        groups = {
-          label = "TelescopeMatching",
-        },
+    opts = function()
+      local opts = {
+        label = {
+          uppercase = false,
+        }
       }
-    },
+      if not vim.g.vscode then
+        opts.highlight = {
+          groups = {
+            label = "TelescopeMatching",
+          },
+        }
+      end
+      return opts
+    end,
     event = 'VeryLazy',
     keys = {
       {
