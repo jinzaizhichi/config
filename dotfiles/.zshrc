@@ -153,9 +153,7 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias clr='clear'
 alias vi='nvim'
-alias ev='expressvpn'
 alias ap='create_ap --config /etc/create_ap.conf --freq-band 2.4'
 alias kc='kubectl '
 alias mk='minikube '
