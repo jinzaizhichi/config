@@ -1,7 +1,3 @@
-nnoremap <silent> <C-h> <cmd>wincmd h<CR>
-nnoremap <silent> <C-j> <cmd>wincmd j<CR>
-nnoremap <silent> <C-k> <cmd>wincmd k<CR>
-nnoremap <silent> <C-l> <cmd>wincmd l<CR>
 nnoremap <silent> <M-h> <cmd>wincmd <<CR>
 nnoremap <silent> <M-j> <cmd>wincmd +<CR>
 nnoremap <silent> <M-k> <cmd>wincmd -<CR>
@@ -15,6 +11,7 @@ noremap <silent> <M-p> :tabp<cr>
 nnoremap <silent><c-n> <cmd>bn<CR>
 nnoremap <silent><c-p> <cmd>bp<CR>
 nnoremap <silent><leader>b <cmd>exe "LualineBuffersJump!" . v:count1<CR>
+nnoremap <silent><c-j> <cmd>exe "LualineBuffersJump!" . v:count1<CR>
 nnoremap <silent><leader>B <cmd>LualineBuffersJump $<CR>
 nnoremap <silent><leader>x <cmd>BufferDelete<CR>
 " nnoremap <silent><leader>a <cmd>Alpha<CR>
@@ -98,7 +95,7 @@ nnoremap <leader>wa <cmd>lua vim.lsp.buf.add_workspace_folder()<CR>
 nnoremap <leader>wr <cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>
 nnoremap <leader>wl <cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>
 nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
-nnoremap <leader>q <cmd>lua vim.diagnostic.setloclist()<CR>
+nnoremap <leader>Q <cmd>lua vim.diagnostic.setloclist()<CR>
 nnoremap <leader>q <cmd>lua vim.diagnostic.setloclist()<CR>
 nnoremap <leader>cr <cmd>lua require('jdtls').code_action(false, 'refactor')<CR>
 
@@ -144,10 +141,6 @@ nnoremap <silent> <leader><leader>d :DBUIToggle<cr>
 nnoremap <silent> <leader>mp :Glow<cr>
 
 nnoremap <silent> <leader>mt :MarksToggleSigns<cr>
-
-" clever-f
-" map ; <Plug>(clever-f-repeat-forward)
-" map , <Plug>(clever-f-repeat-back)
 
 function! OpenBreakPoints()
     :lua require'dap'.list_breakpoints()
@@ -216,7 +209,7 @@ function! ToggleQuickFix()
     endif
 endfunction
 
-nnoremap <silent> <leader>Q <cmd>exec ToggleQuickFix()<cr>
+nnoremap <silent> <leader>q <cmd>exec ToggleQuickFix()<cr>
 
 " source config
 if !exists('*SourceMyConfig')
@@ -284,14 +277,6 @@ if exists('g:vscode')
     nnoremap <leader>fb <cmd>call VSCodeNotify('workbench.action.quickOpenPreviousRecentlyUsedEditor')<CR>
     nnoremap <C-n> <cmd>call VSCodeNotify('workbench.action.quickOpenPreviousRecentlyUsedEditor')<CR>
     nnoremap <C-p> <cmd>call VSCodeNotify('workbench.action.quickOpenLeastRecentlyUsedEditor')<CR>
-    nnoremap <C-j> <cmd>call VSCodeNotify('workbench.action.focusBelowGroup')<CR>
-    xnoremap <C-j> <cmd>call VSCodeNotify('workbench.action.focusBelowGroup')<CR>
-    nnoremap <C-k> <cmd>call VSCodeNotify('workbench.action.focusAboveGroup')<CR>
-    xnoremap <C-k> <cmd>call VSCodeNotify('workbench.action.focusAboveGroup')<CR>
-    nnoremap <C-h> <cmd>call VSCodeNotify('workbench.action.focusLeftGroup')<CR>
-    xnoremap <C-h> <cmd>call VSCodeNotify('workbench.action.focusLeftGroup')<CR>
-    nnoremap <C-l> <cmd>call VSCodeNotify('workbench.action.focusRightGroup')<CR>
-    xnoremap <C-l> <cmd>call VSCodeNotify('workbench.action.focusRightGroup')<CR>
     nnoremap <leader>mm <cmd>call VSCodeNotify('editor.action.formatDocument')<CR>
     vnoremap <leader>mm <cmd>call VSCodeNotifyVisual('editor.action.formatSelection')<CR>
     nnoremap <leader>ca <cmd>call VSCodeNotify('editor.action.quickFix')<CR>

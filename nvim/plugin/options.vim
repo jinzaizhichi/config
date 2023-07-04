@@ -52,7 +52,7 @@ set relativenumber
 " set mouse=
 set mouse=a
 " set cursorcolumn
-" let g:indentLine_enabled = 1
+set colorcolumn=+1
 
 " code lens
 " command line lens menu
