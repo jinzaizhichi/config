@@ -112,6 +112,7 @@ return {
           },
         },
         file_browser = {
+          respect_gitignore = false,
           select_buffer = true,
           grouped = true,
           auto_depth = true,
