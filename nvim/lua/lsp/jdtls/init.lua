@@ -47,7 +47,7 @@ function M.setup()
     -- If using nvim-dap
     -- This requires java-debug and vscode-java-test bundles, see install steps in this README further below.
     common.set_keymap(bufnr, 'n', '<leader>da', "<Cmd>lua require('jdtls').test_class()<CR>", opts)
-    common.set_keymap(bufnr, 'n', '<leader>dn', "<Cmd>lua require('jdtls').test_nearest_method()<CR>", opts)
+    common.set_keymap(bufnr, 'n', '<leader>dm', "<Cmd>lua require('jdtls').test_nearest_method()<CR>", opts)
   end
 
   local capabilities = common.make_capabilities()
