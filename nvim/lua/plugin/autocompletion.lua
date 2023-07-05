@@ -28,7 +28,6 @@ return {
     { 'hrsh7th/cmp-path' },
     { 'hrsh7th/cmp-cmdline' },
     { 'hrsh7th/cmp-nvim-lsp-signature-help' },
-    { 'hrsh7th/cmp-nvim-lsp-document-symbol' },
     { 'octaltree/cmp-look' },
     { 'petertriho/cmp-git' },
     -- {'tzachar/cmp-tabnine', run='./install.sh'},
@@ -251,8 +250,6 @@ return {
         end, { "i", "c" }),
       }),
       sources = cmp.config.sources({
-        { name = 'nvim_lsp_document_symbol' }
-      }, {
         { name = 'buffer' }
       })
     })
