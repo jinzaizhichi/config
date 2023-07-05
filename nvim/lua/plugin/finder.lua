@@ -36,6 +36,7 @@ return {
       end
     end
     local layout = require('telescope.actions.layout')
+    local toggle_preview = function() layout.toggle_preview(vim.fn.bufnr()) end
     require('telescope').setup({
       defaults = {
         file_ignore_patterns = fileIgnoreTable or nil,
@@ -57,13 +58,13 @@ return {
           i = {
             -- example
             -- ["<C-o>"] = trouble.open_with_trouble,
-            ["<C-o>"] = function() layout.toggle_preview(vim.fn.bufnr()) end,
+            ["<C-o>"] = toggle_preview,
             ["<M-n>"] = require('telescope.actions').cycle_history_next,
             ["<M-p>"] = require('telescope.actions').cycle_history_prev,
             ["<C-s>"] = flash,
           },
           n = {
-            ["<C-o>"] = function() layout.toggle_preview(vim.fn.bufnr()) end,
+            ["<C-o>"] = toggle_preview,
             ["<M-n>"] = require('telescope.actions').cycle_history_next,
             ["<M-p>"] = require('telescope.actions').cycle_history_prev,
             ["<s>"] = flash,
