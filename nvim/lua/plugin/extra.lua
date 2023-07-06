@@ -73,7 +73,6 @@ return {
           i = { name = 'BuildIn & Reloader' },
           m = { name = 'Mark' },
           h = { name = 'History | Help | Highlight' },
-          t = { name = 'TreeSitter | FileTypes' },
           w = { name = 'Workspace | LSP Action' },
           s = { name = 'Spectre' },
         },
