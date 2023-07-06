@@ -77,14 +77,14 @@ return {
           w = { name = 'Workspace | LSP Action' },
           s = { name = 'Spectre' },
         },
-        c = { name = 'Code Action' },
-        d = { name = 'DAP Action' },
+        c = { name = 'Code' },
+        d = { name = 'DAP' },
         m = { name = 'Markdown | Format | Marks' },
         r = { name = 'Rename | Rest' },
         s = { name = 'Source | Session' },
         t = { name = 'Translate' },
         w = { name = 'Workspace' },
-        g = { name = 'Git Action' }
+        g = { name = 'Git' }
       }, { prefix = '<leader>' })
     end
   },
