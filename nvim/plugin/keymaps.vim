@@ -33,7 +33,7 @@ nnoremap <silent> <leader>h <cmd>noh<CR>
 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files hidden=true<cr>
-nnoremap <leader>fo <cmd>Telescope oldfiles<cr>
+nnoremap <leader>fo <cmd>Telescope oldfiles only_cwd=true<cr>
 nnoremap <leader>fe <cmd>Telescope file_browser<cr>
 nnoremap <leader>fc <cmd>Telescope commands<cr>
 nnoremap <leader>fa <cmd>Telescope autocommands<cr>
