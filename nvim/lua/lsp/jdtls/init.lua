@@ -20,6 +20,8 @@ function M.setup()
     -- end
 
     local project_name = os.getenv('PROJECT_NAME')
+    local host_name = os.getenv('DAP_HOST')
+    local host_port = os.getenv('DAP_HOST_PORT')
     if project_name then
       dap.configurations.java = {
         {
@@ -27,8 +29,8 @@ function M.setup()
           request = 'attach',
           projectName = project_name or nil,
           name = "Java attach: " .. project_name,
-          hostName = "127.0.0.1",
-          port = 5005
+          hostName = host_name or "127.0.0.1",
+          port = host_port or 5005
         },
       }
     end
