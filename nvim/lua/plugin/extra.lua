@@ -7,11 +7,13 @@ return {
   },
   -- markdown preview
   {
-    'ellisonleao/glow.nvim',
+    'iamcco/markdown-preview.nvim',
+    build = function() vim.fn["mkdp#util#install"]() end,
     cond = not vim.g.vscode,
-    config = true,
-    cmd =
-    'Glow'
+    ft = 'markdown',
+    config = function ()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end
   },
   -- neovim in browser
   {
