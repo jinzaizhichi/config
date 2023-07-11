@@ -83,6 +83,7 @@ nnoremap gi <cmd>Telescope lsp_implementations<CR>
 nnoremap gI <cmd>Telescope lsp_incoming_calls<CR>
 nnoremap gO <cmd>Telescope lsp_outgoing_calls<CR>
 nnoremap gr <cmd>Telescope lsp_references show_line=false<CR>
+nnoremap gt <cmd>lua require("jdtls.tests").goto_subjects()<CR>
 nnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
 vnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
@@ -104,6 +105,7 @@ nnoremap <leader>cC <cmd>JdtCompile full<CR>
 nnoremap <leader>cc <cmd>JdtCompile incremental<CR>
 nnoremap <leader>ch <cmd>JdtHotcodeReplace<CR>
 nnoremap <leader>cr <cmd>lua require('jdtls').code_action(false, 'refactor')<CR>
+nnoremap <leader>cg <cmd>lua require("jdtls.tests").generate()<CR>
 
 nnoremap <leader>fss :lua require('spectre').open()<CR>
 " search current word
