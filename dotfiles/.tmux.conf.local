@@ -432,10 +432,10 @@ set -g remain-on-exit on
 # set -g @net_speed_format "D %7s U %7s"
 # set -g @download_speed_format "%7s"
 # set -g @upload_speed_format "%7s"
-set -g default-terminal "xterm-256color" # colors!
+# set -g default-terminal "xterm-256color" # colors!
 set -sa terminal-features ",*256col*:RGB"                                                                 # True color support
-# set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'                                                        # Undercurl support
-# set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m' # Underscore colors
+set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'                                                        # Undercurl support
+set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m' # Underscore colors
 
 # -- custom variables ----------------------------------------------------------
 
