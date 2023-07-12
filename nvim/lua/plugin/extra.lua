@@ -72,7 +72,7 @@ return {
       wk.register({
         f = {
           name = 'Telescope Finder',
-          i = { name = 'BuildIn & Reloader' },
+          i = { name = 'BuildIn | Reloader' },
           m = { name = 'Mark' },
           h = { name = 'History | Help | Highlight' },
           w = { name = 'Workspace | LSP Action' },
