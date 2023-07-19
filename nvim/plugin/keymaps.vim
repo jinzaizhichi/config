@@ -10,10 +10,10 @@ noremap <silent> <M-p> :tabp<cr>
 " These commands will move the current buffer backwards or forwards in the bufferline
 nnoremap <silent><c-n> <cmd>bn<CR>
 nnoremap <silent><c-p> <cmd>bp<CR>
-nnoremap <silent><c-s> <cmd>windo set scrollbind!<CR>
 nnoremap <silent><leader>b <cmd>exe "LualineBuffersJump!" . v:count1<CR>
 nnoremap <silent><c-j> <cmd>exe "LualineBuffersJump!" . v:count1<CR>
 nnoremap <silent><leader>B <cmd>LualineBuffersJump $<CR>
+nnoremap <silent><leader>S <cmd>windo set scrollbind!<CR>
 nnoremap <silent><leader>x <cmd>BufferDelete<CR>
 nnoremap <silent><leader>X <cmd>only<CR>
 " nnoremap <silent><leader>a <cmd>Alpha<CR>
