@@ -15,6 +15,7 @@ nnoremap <silent><leader>b <cmd>exe "LualineBuffersJump!" . v:count1<CR>
 nnoremap <silent><c-j> <cmd>exe "LualineBuffersJump!" . v:count1<CR>
 nnoremap <silent><leader>B <cmd>LualineBuffersJump $<CR>
 nnoremap <silent><leader>x <cmd>BufferDelete<CR>
+nnoremap <silent><leader>X <cmd>tabclose<CR>
 " nnoremap <silent><leader>a <cmd>Alpha<CR>
 nnoremap <silent><leader><leader>b <c-^>
 
