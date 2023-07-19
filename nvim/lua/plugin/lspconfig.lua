@@ -1,8 +1,7 @@
 return {
-  { 'nvim-lua/lsp-status.nvim', cond = not vim.g.vscode },
-  { 'onsails/lspkind.nvim', cond = not vim.g.vscode },
-  -- enhancement for jdtls
-  { 'mfussenegger/nvim-jdtls', cond = not vim.g.vscode },
+  { 'nvim-lua/lsp-status.nvim', cond = not vim.g.vscode, },
+  { 'onsails/lspkind.nvim',     cond = not vim.g.vscode, }, -- enhancement for jdtls
+  { 'mfussenegger/nvim-jdtls',  cond = not vim.g.vscode, },
   {
     url = 'https://gitlab.com/schrieveslaach/sonarlint.nvim',
     cond = not vim.g.vscode,
@@ -15,9 +14,9 @@ return {
             '-stdio',
             '-analyzers',
             -- paths to the analyzers you need, using those for python and java in this example
-            vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarpython.jar"),
-            vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarcfamily.jar"),
-            vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarjava.jar"),
+            vim.fn.expand('$MASON/share/sonarlint-analyzers/sonarpython.jar'),
+            vim.fn.expand('$MASON/share/sonarlint-analyzers/sonarcfamily.jar'),
+            vim.fn.expand('$MASON/share/sonarlint-analyzers/sonarjava.jar'),
           }
         },
         filetypes = {
@@ -39,7 +38,7 @@ return {
       { 'b0o/SchemaStore.nvim' },
     },
     config = function()
-      require("mason").setup()
+      require('mason').setup()
       local installed_pkgs = require('mason-registry').get_installed_packages()
       local install_confirm = ''
       if #installed_pkgs == 0 then
@@ -94,8 +93,8 @@ return {
 
       local common = require('lsp.common')
       local textdomain = os.getenv('TEXTDOMAIN')
-      require("mason-lspconfig").setup()
-      require("mason-lspconfig").setup_handlers({
+      require('mason-lspconfig').setup()
+      require('mason-lspconfig').setup_handlers({
         -- The first entry (without a key) will be the default handler
         -- and will be called for each installed server that doesn't have
         -- a dedicated handler.
@@ -106,7 +105,7 @@ return {
 
           -- vim.lsp.set_log_level('debug')
 
-          if server_name ~= "jdtls" then
+          if server_name ~= 'jdtls' then
             local lsp_config_path = 'lsp.' .. server_name
             local capabilities = common.make_capabilities()
             local config = {
@@ -125,22 +124,26 @@ return {
             if pcall(require, settings) then
               config.settings = require(settings)
             end
-            require("lspconfig")[server_name].setup(config)
+            require('lspconfig')[server_name].setup(config)
           else
             local jdtls = require('lsp.jdtls')
             -- This setup() function is exactly the same as lspconfig's setup function (:help lspconfig-quickstart)
-            vim.api.nvim_create_augroup("user_jdtls_setup", { clear = true })
+            vim.api.nvim_create_augroup('user_jdtls_setup', { clear = true })
             vim.api.nvim_create_autocmd(
-              { "FileType" },
-              { group = "user_jdtls_setup", pattern = "java,ant", callback = jdtls.setup })
+              { 'FileType' },
+              { group = 'user_jdtls_setup', pattern = 'java,ant', callback = jdtls.setup })
             vim.api.nvim_create_autocmd(
-              { "FileType" },
-              { group = "user_jdtls_setup", pattern = "xml", callback = function()
-                local name = vim.fn.expand("%:t")
-                if name == "pom.xml" then
-                  jdtls.setup()
+              { 'FileType' },
+              {
+                group = 'user_jdtls_setup',
+                pattern = 'xml',
+                callback = function()
+                  local name = vim.fn.expand('%:t')
+                  if name == 'pom.xml' then
+                    jdtls.setup()
+                  end
                 end
-              end})
+              })
           end
         end,
         -- -- Next, you can provide targeted overrides for specific servers.
@@ -148,11 +151,26 @@ return {
         -- ["rust_analyzer"] = function ()
         --     require("rust-tools").setup {}
         -- end
-        ["groovyls"] = function()
-          require("lspconfig").groovyls.setup {
+        ['groovyls'] = function()
+          require('lspconfig').groovyls.setup {
             root_dir = require('lspconfig.util').find_git_ancestor
           }
         end,
+        ['lemminx'] = function()
+          local lemminx_jars = {}
+          for _, bundle in ipairs(vim.split(vim.fn.glob('/home/hewenjin/.lemminx/' .. '/*.jar'), '\n')) do
+            table.insert(lemminx_jars, bundle)
+          end
+          require 'lspconfig'.lemminx.setup {
+            cmd = {
+              '/usr/lib/jvm/java-17-openjdk/bin/java',
+              -- 'lemminx',
+              '-cp',
+              vim.fn.join(lemminx_jars, ':'),
+              'org.eclipse.lemminx.XMLServerLauncher'
+            }
+          }
+        end
       })
     end
   },
@@ -176,14 +194,14 @@ return {
           null_ls.builtins.diagnostics.cspell.with {
             prefer_local = perfer_local,
             diagnostics_postprocess = function(diagnostic)
-              diagnostic.severity = diagnostic.message:find("Unknown word")
-                  and vim.diagnostic.severity["INFO"]
+              diagnostic.severity = diagnostic.message:find('Unknown word')
+                  and vim.diagnostic.severity['INFO']
             end,
           },
           null_ls.builtins.code_actions.cspell.with {
             config = {
               find_json = function(params)
-                return home .. "/.cspell.json"
+                return home .. '/.cspell.json'
               end,
             },
           },
@@ -196,7 +214,7 @@ return {
           null_ls.builtins.formatting.prettier.with {
             prefer_local = perfer_local,
             condition = function(utils)
-              return utils.has_file({ ".prettierrc.js" })
+              return utils.has_file({ '.prettierrc.js' })
             end,
           },
           null_ls.builtins.formatting.sqlformat,
@@ -211,11 +229,11 @@ return {
     'ahmedkhalf/project.nvim',
     cond = not vim.g.vscode,
     config = function()
-      require("project_nvim").setup({
+      require('project_nvim').setup({
         -- All the patterns used to detect root dir, when **"pattern"** is in
-        detection_methods = { "lsp", "pattern" },
+        detection_methods = { 'lsp', 'pattern' },
         -- detection_methods
-        patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json" },
+        patterns = { '.git', '_darcs', '.hg', '.bzr', '.svn', 'Makefile', 'package.json' },
         -- Show hidden files in telescope
         show_hidden = true,
         silent_chdir = false,

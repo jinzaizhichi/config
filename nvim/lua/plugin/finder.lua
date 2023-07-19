@@ -3,26 +3,29 @@ return {
   cond = not vim.g.vscode,
   dependencies = {
     { 'debugloop/telescope-undo.nvim' },
-    { 'nvim-telescope/telescope-fzf-native.nvim',    build = 'make' },
+    {
+      'nvim-telescope/telescope-fzf-native.nvim',
+      build = 'make'
+    },
     { 'nvim-telescope/telescope-ui-select.nvim' },
     { 'nvim-telescope/telescope-live-grep-args.nvim' },
     { 'nvim-telescope/telescope-file-browser.nvim' },
   },
   config = function()
     local function flash(prompt_bufnr)
-      require("flash").jump({
-        pattern = "^",
+      require('flash').jump({
+        pattern = '^',
         label = { after = { 0, 0 } },
         search = {
-          mode = "search",
+          mode = 'search',
           exclude = {
             function(win)
-              return vim.bo[vim.api.nvim_win_get_buf(win)].filetype ~= "TelescopeResults"
+              return vim.bo[vim.api.nvim_win_get_buf(win)].filetype ~= 'TelescopeResults'
             end,
           },
         },
         action = function(match)
-          local picker = require("telescope.actions.state").get_current_picker(prompt_bufnr)
+          local picker = require('telescope.actions.state').get_current_picker(prompt_bufnr)
           picker:set_selection(match.pos[1] - 1)
         end,
       })
@@ -31,7 +34,7 @@ return {
     local fileIgnoreTable = nil
     if fileIgnorePatterns then
       fileIgnoreTable = {}
-      for pattern in string.gmatch(fileIgnorePatterns, "%S+") do
+      for pattern in string.gmatch(fileIgnorePatterns, '%S+') do
         table.insert(fileIgnoreTable, pattern)
       end
     end
@@ -41,16 +44,16 @@ return {
       defaults = {
         file_ignore_patterns = fileIgnoreTable or nil,
         -- borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
-        borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
+        borderchars = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
         wrap_results = true,
-        sorting_strategy = "ascending",
+        sorting_strategy = 'ascending',
         layout_strategy = 'vertical',
         layout_config = {
           horizontal = {
-            prompt_position = "top"
+            prompt_position = 'top'
           },
           vertical = {
-            prompt_position = "top"
+            prompt_position = 'top'
           },
         },
         dynamic_preview_title = true,
@@ -58,34 +61,34 @@ return {
           i = {
             -- example
             -- ["<C-o>"] = trouble.open_with_trouble,
-            ["<C-o>"] = toggle_preview,
-            ["<M-n>"] = require('telescope.actions').cycle_history_next,
-            ["<M-p>"] = require('telescope.actions').cycle_history_prev,
-            ["<C-s>"] = flash,
+            ['<C-o>'] = toggle_preview,
+            ['<M-n>'] = require('telescope.actions').cycle_history_next,
+            ['<M-p>'] = require('telescope.actions').cycle_history_prev,
+            ['<C-s>'] = flash,
           },
           n = {
-            ["<C-o>"] = toggle_preview,
-            ["<M-n>"] = require('telescope.actions').cycle_history_next,
-            ["<M-p>"] = require('telescope.actions').cycle_history_prev,
-            ["<s>"] = flash,
+            ['<C-o>'] = toggle_preview,
+            ['<M-n>'] = require('telescope.actions').cycle_history_next,
+            ['<M-p>'] = require('telescope.actions').cycle_history_prev,
+            ['<s>'] = flash,
           }
         },
         vimgrep_arguments = {
-          "rg",
-          "--color=never",
-          "--no-heading",
-          "--with-filename",
-          "--line-number",
-          "--column",
-          "--smart-case",
-          "--trim",
-          "--hidden",
-          "--multiline"
+          'rg',
+          '--color=never',
+          '--no-heading',
+          '--with-filename',
+          '--line-number',
+          '--column',
+          '--smart-case',
+          '--trim',
+          '--hidden',
+          '--multiline'
         }
       },
       pickers = {
         find_files = {
-          find_command = { "fd", "--type", "f", "--strip-cwd-prefix" }
+          find_command = { 'fd', '--type', 'f', '--strip-cwd-prefix' }
         },
       },
       extensions = {
@@ -93,11 +96,11 @@ return {
           fuzzy = true,                   -- false will only do exact matching
           override_generic_sorter = true, -- override the generic sorter
           override_file_sorter = true,    -- override the file sorter
-          case_mode = "smart_case",       -- or "ignore_case" or "respect_case", the default case_mode is "smart_case"
+          case_mode = 'smart_case',       -- or "ignore_case" or "respect_case", the default case_mode is "smart_case"
         },
-        ["ui-select"] = {
-          require("telescope.themes").get_cursor {
-            borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
+        ['ui-select'] = {
+          require('telescope.themes').get_cursor {
+            borderchars = { ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ' },
             -- borderchars = {
             -- prompt = { "─", "│", " ", "│", "┌", "┐", "│", "│" },
             -- results = { "─", "│", "─", "│", "├", "┤", "┘", "└" },
@@ -107,7 +110,7 @@ return {
         },
         undo = {
           side_by_side = true,
-          layout_strategy = "vertical",
+          layout_strategy = 'vertical',
           layout_config = {
             preview_height = 0.8,
           },
