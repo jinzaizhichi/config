@@ -126,6 +126,7 @@ return {
           'zsh',
           'lazy',
           'org',
+          'orghelp',
           ''
         },
         mappings = {}
