@@ -79,6 +79,7 @@ return {
           'man',
           'toggleterm',
           'lazy',
+          'fugitive'
         }
       })
     end
