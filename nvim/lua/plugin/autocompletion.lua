@@ -139,6 +139,7 @@ return {
           }
         },
         { name = 'vim-dadbod-completion' },
+        { name = 'orgmode' },
       },
       formatting = {
         deprecated = true,
