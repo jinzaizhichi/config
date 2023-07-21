@@ -98,6 +98,8 @@ nnoremap <leader>wl <cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folder
 nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
 nnoremap <leader>Q <cmd>lua vim.diagnostic.setloclist()<CR>
 nnoremap <leader>q <cmd>lua vim.diagnostic.setloclist()<CR>
+nnoremap <leader>n <cmd>lua vim.diagnostic.hide(nil, 0)<CR>
+nnoremap <leader>N <cmd>lua vim.diagnostic.show(nil, 0)<CR>
 
 nnoremap <leader>mm <cmd>lua vim.lsp.buf.format({async = true})<CR>
 vnoremap <leader>mm <cmd>lua vim.lsp.buf.format({async = true})<CR>
