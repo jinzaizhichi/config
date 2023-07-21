@@ -11,7 +11,7 @@ return {
     config = function()
       require('orgmode').setup_ts_grammar()
       require('orgmode').setup({
-        org_agenda_files = { '~/project/my/archive/org/agenda/*' },
+        org_agenda_files = { '~/project/my/archive/org/*' },
         org_default_notes_file = '~/project/my/archive/org/refile.org',
         win_border = 'none',
       })
