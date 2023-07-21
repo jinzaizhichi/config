@@ -18,7 +18,13 @@ return {
     'nvim-lualine/lualine.nvim',
     cond = not vim.g.vscode,
     config = function()
-      local lazy_status = require('lazy.status')
+      local lsp_status = function()
+        local lsp_status = require('lsp-status')
+        local ok, result = pcall(lsp_status.status)
+        if ok then
+          return result
+        end
+      end
       require('lualine').setup({
         options = {
           icons_enabled = true,
@@ -44,7 +50,7 @@ return {
         sections = {
           lualine_a = { 'mode' },
           lualine_b = { 'branch', 'diff', 'diagnostics' },
-          lualine_c = { 'filename', "require'lsp-status'.status()" },
+          lualine_c = { 'filename', lsp_status },
           lualine_x = { 'encoding', 'fileformat', 'filetype' },
           lualine_y = { 'progress' },
           lualine_z = { 'location' }
