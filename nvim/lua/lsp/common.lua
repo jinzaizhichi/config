@@ -17,10 +17,10 @@ function M.setup(client, bufnr)
   if client.server_capabilities.documentHighlightProvider then
     vim.api.nvim_exec([[
     augroup lsp_document_highlight
-    autocmd! * <buffer>
-    autocmd CursorHold <buffer> lua pcall(vim.lsp.buf.document_highlight)
-    autocmd CursorHoldI <buffer> lua pcall(vim.lsp.buf.document_highlight)
-    autocmd CursorMoved <buffer> lua pcall(vim.lsp.buf.clear_references)
+      autocmd! *
+      autocmd CursorHold * silent! lua vim.lsp.buf.document_highlight()
+      autocmd CursorHoldI * silent! lua vim.lsp.buf.document_highlight()
+      autocmd CursorMoved * silent! lua vim.lsp.buf.clear_references()
     augroup END
     ]], false)
   end
