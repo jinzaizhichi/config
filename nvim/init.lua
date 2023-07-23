@@ -13,7 +13,11 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
-require('lazy').setup('plugin')
+require('lazy').setup('plugin', {
+  dev = {
+    path = '~/project/my'
+  }
+})
 
 vim.api.nvim_create_user_command("BufferDelete", function()
   ---@diagnostic disable-next-line: missing-parameter
