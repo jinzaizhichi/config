@@ -175,53 +175,24 @@ return {
     end
   },
   {
-    'jose-elias-alvarez/null-ls.nvim',
+    'hewenjin/nvim-lint',
     cond = not vim.g.vscode,
+    branch = 'fix-cspell',
     config = function()
-      local null_ls = require('null-ls')
-      local perfer_local = vim.fn.stdpath('data') .. '/mason/bin'
-      local home = os.getenv('HOME')
-      null_ls.setup({
-        -- log = {
-        --   enable = true,
-        --   level = "trace",
-        --   use_console = "async",
-        -- },
-        sources = {
-          -- null_ls.builtins.code_actions.gitsigns,
-          -- null_ls.builtins.completion.spell,
-          -- NOTE: cspell needs to installed first by using npm install -g cspell
-          null_ls.builtins.diagnostics.cspell.with {
-            prefer_local = perfer_local,
-            diagnostics_postprocess = function(diagnostic)
-              diagnostic.severity = diagnostic.message:find('Unknown word')
-                  and vim.diagnostic.severity['INFO']
-            end,
-          },
-          null_ls.builtins.code_actions.cspell.with {
-            config = {
-              find_json = function(params)
-                return home .. '/.cspell.json'
-              end,
-            },
-          },
-          -- null_ls.builtins.diagnostics.codespell,
-          -- null_ls.builtins.diagnostics.semgrep.with{
-          --   prefer_local = perfer_local,
-          --   extra_args = { "--config", "auto" },
-          -- },
-          null_ls.builtins.formatting.nginx_beautifier,
-          null_ls.builtins.formatting.prettier.with {
-            prefer_local = perfer_local,
-            condition = function(utils)
-              return utils.has_file({ '.prettierrc.js' })
-            end,
-          },
-          null_ls.builtins.formatting.sqlformat,
-          null_ls.builtins.formatting.stylelint,
-          -- null_ls.builtins.formatting.codespell,
-          null_ls.builtins.hover.dictionary,
-        }
+      local lint = require('lint')
+      vim.api.nvim_create_autocmd({ 'BufWritePost','BufReadPost','InsertLeave' }, {
+        desc = "nvim-lint",
+        callback = function()
+          local linters = lint.linters_by_ft[vim.bo.filetype]
+          if not linters then
+            linters = {}
+            lint.linters_by_ft[vim.bo.filetype] = linters
+          end
+          if not vim.tbl_contains(linters, 'cspell') then
+            table.insert(linters, 'cspell')
+          end
+          lint.try_lint()
+        end,
       })
     end
   },
