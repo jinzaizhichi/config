@@ -133,6 +133,7 @@ return {
           'lazy',
           'org',
           'orghelp',
+          'orgagenda',
           ''
         },
         mappings = {}
