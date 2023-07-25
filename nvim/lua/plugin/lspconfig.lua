@@ -180,6 +180,7 @@ return {
     branch = 'fix-cspell',
     config = function()
       local lint = require('lint')
+      lint.linters_by_ft = {}
       vim.api.nvim_create_autocmd({ 'BufWritePost','BufReadPost','InsertLeave' }, {
         desc = "nvim-lint",
         callback = function()
@@ -188,7 +189,7 @@ return {
             linters = {}
             lint.linters_by_ft[vim.bo.filetype] = linters
           end
-          if not vim.tbl_contains(linters, 'cspell') then
+          if not vim.bo.buftype and not vim.tbl_contains(linters, 'cspell') then
             table.insert(linters, 'cspell')
           end
           lint.try_lint()
