@@ -11,7 +11,7 @@ return {
       if not vim.g.vscode then
         opts.highlight = {
           groups = {
-            label = "TelescopeMatching",
+            label = "lualine_a_normal",
           },
         }
       end
