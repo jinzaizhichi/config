@@ -175,13 +175,12 @@ return {
     end
   },
   {
-    'hewenjin/nvim-lint',
+    'mfussenegger/nvim-lint',
     cond = not vim.g.vscode,
-    branch = 'fix-cspell',
     config = function()
       local lint = require('lint')
       lint.linters_by_ft = {markdown = {'cspell'}}
-      vim.api.nvim_create_autocmd({ 'BufWritePost','BufReadPost','InsertLeave' }, {
+      vim.api.nvim_create_autocmd({ 'BufWritePost','BufReadPost','TextChanged' }, {
         desc = "nvim-lint",
         callback = function()
           local linters = lint.linters_by_ft[vim.bo.filetype]
