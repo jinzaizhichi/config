@@ -230,7 +230,7 @@ if type lsd &> /dev/null; then
 fi
 PROXY_ENV=(http_proxy ftp_proxy https_proxy all_proxy HTTP_PROXY HTTPS_PROXY FTP_PROXY ALL_PROXY)
 NO_PROXY_ENV=(no_proxy NO_PROXY)
-proxy_value=http://172.30.224.1:7890
+proxy_value=http://127.0.0.1:7890
 no_proxy_value=localhost,127.0.0.1,localaddress,.localdomain.com,10.96.0.0/12,192.168.99.0/24,192.168.39.0/24,192.168.49.2/24
 
 proxyIsSet(){
@@ -293,4 +293,3 @@ timestamp(){
     currentTimeStamp=$((timeStamp*1000+`date "+%N"`/1000000))
     echo $currentTimeStamp
 }
-source /usr/share/nvm/init-nvm.sh
