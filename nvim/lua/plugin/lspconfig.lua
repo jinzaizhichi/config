@@ -179,7 +179,7 @@ return {
     cond = not vim.g.vscode,
     config = function()
       local lint = require('lint')
-      lint.linters_by_ft = {markdown = {'cspell'}}
+      lint.linters_by_ft = {}
       vim.api.nvim_create_autocmd({ 'BufWritePost','BufReadPost','TextChanged' }, {
         desc = "nvim-lint",
         callback = function()
