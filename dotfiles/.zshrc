@@ -183,10 +183,14 @@ PATH=$PATH:$HOME/.local/bin/:$GOPATH/bin:$HOME/.local/share/gem/ruby/3.0.0/bin/:
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # ibus
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
-export IBUS_USE_PORTAL=1
+# export GTK_IM_MODULE=ibus
+# export XMODIFIERS=@im=ibus
+# export QT_IM_MODULE=ibus
+# export IBUS_USE_PORTAL=1
+# fcitx5
+export GTK_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+export QT_IM_MODULE=fcitx
 # java
 # export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 export JDTLS_JAVA_HOME=/usr/lib/jvm/java-17-openjdk
